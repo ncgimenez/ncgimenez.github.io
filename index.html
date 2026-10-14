@@ -1,74 +1,126 @@
 ---
 layout: default
-title: Business Analyst
+title: Systems & Interfaces
 ---
 
   <main>
-    <span class="etiquette" data-i18n="hero.label">Business Analyst</span>
-    <h1 data-i18n="hero.title">I map the friction, clear the clutter, and build flows that hold.</h1>
-    <p class="chapo" data-i18n="hero.sub">
-      3 years of ERP experience bridging business and technical teams — SAP S/4HANA Public Cloud and Odoo.
-      I analyze why systems get bypassed and design flows that people actually use.
+    <!-- HERO -->
+    <span class="etiquette" style="color: var(--accent);">Product &amp; Systems Engineer</span>
+    <h1>I map complex logic, clear friction, and build tactile interfaces that hold.</h1>
+    <p class="chapo">
+      Bridging functional systems architecture and frontend execution. 
+      From structuring enterprise ERP data flows (SAP S/4HANA &amp; Odoo) to designing and deploying interactive, user-focused web applications from scratch.
     </p>
 
     <div class="actions">
-      <a class="bouton plein" href="/projects/" data-i18n="hero.cta1">View all projects</a>
-      <a class="bouton" href="/about.html" data-i18n="hero.cta2">About me</a>
+      <a class="bouton plein" href="#software">Explore Live Apps ↗</a>
+      <a class="bouton" href="/projects/">All Case Studies</a>
+      <a class="bouton" href="/about.html">About Me</a>
     </div>
 
+    <!-- STATS STRIP -->
     <div class="stats-strip">
-      <div class="stat"><span class="stat-val">3</span><span class="stat-lbl" data-i18n="stat.years">years ERP</span></div>
-      <div class="stat"><span class="stat-val">2</span><span class="stat-lbl" data-i18n="stat.erp">ecosystems</span></div>
-      <div class="stat"><span class="stat-val stat-val--text">BE · LU · NO</span><span class="stat-lbl" data-i18n="stat.markets">markets</span></div>
-      <div class="stat"><span class="stat-val">6</span><span class="stat-lbl" data-i18n="stat.projects">projects</span></div>
+      <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">Live Web Apps</span></div>
+      <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">years ERP Systems</span></div>
+      <div class="stat"><span class="stat-val stat-val--text">React · Supabase</span><span class="stat-lbl">Modern Stack</span></div>
+      <div class="stat"><span class="stat-val">PWA</span><span class="stat-lbl">Tactile &amp; Offline</span></div>
     </div>
 
-    <h2 id="projects">Featured Case Studies</h2>
-    <div class="grille">
-      <a class="carte" href="projects/projet-1.html">
-        <div class="carte-barre" style="background:#b4502d"></div>
-        <span class="etiquette" data-i18n="card1.label">Case study</span>
-        <h3 data-i18n="card1.title">O2C Without the Chaos: Standardising SAP SD for a B2B Team</h3>
-        <p data-i18n="card1.desc">Mapping and fixing a broken order management process during a greenfield SAP S/4HANA implementation.</p>
-      </a>
-      <a class="carte" href="projects/projet-5.html">
-        <div class="carte-barre" style="background:#b4502d"></div>
-        <span class="etiquette" data-i18n="card5.label">Case study</span>
-        <h3 data-i18n="card5.title">Odoo: Three Disconnected Tools, One Coherent Flow</h3>
-        <p data-i18n="card5.desc">Implementing Sales, Inventory and Accounting for a Belgian SME — and solving the over-committed stock problem.</p>
-      </a>
-    </div>
-
-    <p style="margin-top: 1.5rem;">
-      <a href="/projects/" style="font-weight: 600; text-decoration: none;">Explore all projects &amp; UX concepts →</a>
+    <!-- SECTION 1 : VOS APPLICATIONS EN LIGNE (FEATURED SOFTWARE) -->
+    <h2 id="software" style="margin-top: 3.5rem;">Featured Software: The Span Suite</h2>
+    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+      A modular productivity ecosystem closing the gap between macro planning and micro execution.
     </p>
 
-    <h2 data-i18n="section.notes.title" style="margin-top: 3.5rem;">Notes &amp; Thinking</h2>
-    <p class="chapo" style="font-size:1rem; margin-bottom: 20px;" data-i18n="section.notes.sub">Short articles on process design, systems and interaction friction.</p>
     <div class="grille">
-      <a class="carte" href="blog/available-to-promise.html">
-        <div class="carte-barre" style="background:#b4502d"></div>
-        <span class="etiquette" data-i18n="soon1.label">SAP concept</span>
-        <h3 data-i18n="soon1.title">Available-to-Promise in Order-to-Cash</h3>
-        <p data-i18n="soon1.desc">Why confirming a delivery date without checking available stock creates cascading problems.</p>
+      <!-- CARTE SPAN FOCUS -->
+      <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="carte-barre" style="background: #7c3aed;"></div>
+          <span class="etiquette" style="color: #7c3aed;">Live Web App · PWA</span>
+          <h3>Span Focus</h3>
+          <p>
+            Block-based execution timer with category tracking, keyboard shortcuts, swipe gestures, and real-time daily target feedback.
+          </p>
+        </div>
+        <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
+          <a class="bouton plein" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Launch App ↗</a>
+          <a class="bouton" href="https://github.com/ncgimenez/span-focus" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Source Code</a>
+        </div>
+      </div>
+
+      <!-- CARTE SPAN PLAN -->
+      <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="carte-barre" style="background: #0284c7;"></div>
+          <span class="etiquette" style="color: #0284c7;">Live Web App · Sync</span>
+          <h3>Span Plan</h3>
+          <p>
+            Contextual backlog and daily planning designed to feed directly into focus sessions with zero cognitive overload.
+          </p>
+        </div>
+        <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
+          <a class="bouton plein" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Launch App ↗</a>
+          <a class="bouton" href="https://github.com/ncgimenez/span-plan" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 : ÉTUDES DE CAS SYSTÈMES & ERP -->
+    <h2 id="systems" style="margin-top: 4rem;">Enterprise Systems &amp; Process Architecture</h2>
+    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+      Real-world implementations where process standardisation solved critical operational bottlenecks.
+    </p>
+
+    <div class="grille">
+      <a class="carte" href="/projects/projet-1.html">
+        <div class="carte-barre" style="background: #b4502d;"></div>
+        <span class="etiquette">SAP S/4HANA</span>
+        <h3>O2C Without the Chaos: Standardising SAP SD</h3>
+        <p>Mapping and repairing a broken order management process during a greenfield SAP implementation for a Nordic scale-up.</p>
       </a>
-      <a class="carte" href="blog/focus-sessions.html">
-        <div class="carte-barre" style="background:#7c3aed"></div>
-        <span class="etiquette" data-i18n="soon5.label">Product concept</span>
-        <h3 data-i18n="soon5.title">Focus Sessions Tied to Your Calendar</h3>
-        <p data-i18n="soon5.desc">A Pomodoro-style timer that knows which life category you're working in.</p>
-      </a>
-      <a class="carte" href="blog/public-data.html">
-        <div class="carte-barre" style="background:#4caf6b"></div>
-        <span class="etiquette" data-i18n="soon3.label">Data analysis</span>
-        <h3 data-i18n="soon3.title">Public Data → Actionable Recommendation</h3>
-        <p data-i18n="soon3.desc">An open dataset, a structured synthesis, a recommendation for a decision-maker.</p>
-      </a>
-      <a class="carte" href="blog/app-critique.html">
-        <div class="carte-barre" style="background:#4a86b4"></div>
-        <span class="etiquette" data-i18n="soon4.label">UX teardown</span>
-        <h3 data-i18n="soon4.title">Structured Critique of an App</h3>
-        <p data-i18n="soon4.desc">3 friction points identified, 1 detailed solution with hypothesis and success metrics.</p>
+      <a class="carte" href="/projects/projet-5.html">
+        <div class="carte-barre" style="background: #b4502d;"></div>
+        <span class="etiquette">Odoo ERP</span>
+        <h3>Three Disconnected Tools, One Coherent Flow</h3>
+        <p>Implementing Sales, Inventory and Accounting for a Belgian SME to eliminate over-committed stock and manual reconciliation.</p>
       </a>
     </div>
+
+    <!-- SECTION 3 : NOTES, ESSAIS & PHILOSOPHIE -->
+    <h2 style="margin-top: 4rem;">Notes, Teardowns &amp; Disassembly</h2>
+    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+      Observations on interaction models, friction, and taking complex systems apart.
+    </p>
+
+    <div class="grille">
+      <a class="carte" href="/blog/note-tools.html">
+        <div class="carte-barre" style="background: #7c3aed;"></div>
+        <span class="etiquette">Mindset</span>
+        <h3>I Take Things Apart</h3>
+        <p>On replacing phone batteries, tackling Logic Pro, and why the instinct to look inside applies to broken workflows.</p>
+      </a>
+      <a class="carte" href="/blog/app-critique.html">
+        <div class="carte-barre" style="background: #4a86b4;"></div>
+        <span class="etiquette">UX Teardown</span>
+        <h3>Structured Critique of an App</h3>
+        <p>3 friction points identified, 1 focused solution with measurable success hypotheses.</p>
+      </a>
+      <a class="carte" href="/blog/available-to-promise.html">
+        <div class="carte-barre" style="background: #b4502d;"></div>
+        <span class="etiquette">Systems Logic</span>
+        <h3>Available-to-Promise in Order-to-Cash</h3>
+        <p>Why confirming commitments without checking real-time stock creates an unbudgeted chaos tax.</p>
+      </a>
+      <a class="carte" href="/blog/focus-sessions.html">
+        <div class="carte-barre" style="background: #4caf6b;"></div>
+        <span class="etiquette">Product Concept</span>
+        <h3>Focus Sessions Tied to Your Calendar</h3>
+        <p>Connecting the time you plan with the time you actually protect.</p>
+      </a>
+    </div>
+
+    <p style="margin-top: 2rem;">
+      <a href="/blog/" style="font-weight: 600; text-decoration: none;">View all notes &amp; writings →</a>
+    </p>
   </main>

@@ -1,51 +1,74 @@
 ---
 layout: default
-title: Take Things Apart
+title: I Take Things Apart
 ---
 
   <main>
-    <span class="etiquette">Note</span>
+    <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Notes</a>
+
+    <span class="etiquette etiquette--violet">Mindset &amp; Craft</span>
     <h1>I Take Things Apart</h1>
     <p class="chapo">
-      On the instinct to open things up, understand what's inside, and not be put off by what you find.
+      On replacing glued smartphone batteries, demystifying signal flow in Logic Pro, and why looking under the surface reveals how systems actually tick.
     </p>
 
+    <dl class="meta">
+      <div><dt>Category</dt><dd>Personal Essay</dd></div>
+      <div><dt>Focus</dt><dd>Systems Thinking &amp; Curiosity</dd></div>
+      <div><dt>Reading time</dt><dd>4 min</dd></div>
+    </dl>
+
+    <h2>The Instinct to Pry</h2>
     <p>
-      I've replaced the battery in my phone myself. That probably sounds like a small thing — and
-      it is — but it requires opening something designed, very deliberately, not to be opened.
-      The screws are hidden. The adhesive is industrial. The instructions online are written by
-      people who assume you've already watched a 12-minute video that assumes you've already done
-      it once before.
+      There are two ways to encounter a broken or opaque object: you can accept the sealed enclosure, or you can pick up a heat gun, find the seam, and pull the adhesive apart.
     </p>
     <p>
-      Most people don't do it. They hand the phone to a shop or buy a new one. That's a perfectly
-      reasonable choice. But I wanted to understand what was inside before deciding I couldn't touch it.
+      The first time you open a modern smartphone to replace a degraded battery, everything in the industrial design tells you to turn back. Tiny pentalobe screws, hidden ribbon cables thin as tracing paper, and chemical pull-tabs that snap under tension. The device was engineered to be bought, depleted, and replaced. 
     </p>
     <p>
-      Logic Pro is the same thing at a different scale. The interface on first launch is genuinely
-      intimidating — mixer channels, routing options, plugin chains, automation lanes, a toolbar that
-      takes months to stop misreading. Every professional tool has a version of this: a surface that
-      says, implicitly, <em>maybe this isn't for you</em>. I'm learning it anyway. Slowly,
-      non-linearly, by doing things wrong and fixing them.
-    </p>
-    <p>
-      The reason this matters to me professionally is that I do the same thing with processes. When
-      a team tells me "this is just how we do it", I want to know what's under that. Not to change it
-      immediately — but to understand whether "just how we do it" is a deliberate choice, a forgotten
-      constraint, or a workaround that outlived the problem it was solving. Most of the time it's
-      the third one.
-    </p>
-    <p>
-      The instinct is the same whether I'm prying open a phone or sitting in a fit-gap workshop:
-      look at what's actually there, not what it's supposed to look like. The mess inside a
-      device is honest. The mess inside a process is usually honest too, once you're far enough
-      in for people to stop performing tidiness.
-    </p>
-    <p>
-      I don't think you need to enjoy disassembly to be good at analysis. But I do think it helps
-      to not be afraid of the moment when something comes apart and you're not sure you can put
-      it back together. That moment is almost always the beginning of understanding what it actually is.
+      Prying it open anyway is not just about saving hardware from a landfill; it is an act of cognitive demystification. Once you hold the lithium-ion pouch in your hand and trace the flex circuits to the board, the magic evaporates. In its place sits something far more interesting: a set of deliberate trade-offs made by engineers who were balancing thermal dissipation, space constraints, and manufacturing speed.
     </p>
 
-    <a class="retour" href="/blog/">← Back to notes</a>
+    <h2>Audio Signal Chains and Logic Pro</h2>
+    <p>
+      I had the exact same impulse entering music production with Logic Pro. 
+    </p>
+    <p>
+      Opening a modern Digital Audio Workstation without a roadmap feels like staring at an airplane cockpit. You can click around on default synthesizer presets, or you can dismantle the routing:
+    </p>
+    <ul class="liste">
+      <li>Why does sidechain compression allow the bass to breathe beneath the kick drum?</li>
+      <li>How does a stereo bus send preserve phase coherence compared to inserting four individual reverb plugins?</li>
+      <li>What happens when you route an auxiliary channel back into itself until the signal distorts?</li>
+    </ul>
+    <p>
+      Music production is system architecture wrapped in frequency. The moment you grasp the signal chain — from the raw oscillator to the envelope generator, through the filter cutoff, and into the mixer channel strip — software stops being a wall of arbitrary dials. It becomes an interactive circuit board.
+    </p>
+
+    <h2>The Link to Enterprise Software &amp; Product Engineering</h2>
+    <p>
+      When I audited broken Order-to-Cash processes in SAP S/4HANA or resolved stock allocation race conditions in Odoo, the mindset was identical.
+    </p>
+    <p>
+      When an enterprise user says <em>"the system is slow and nobody uses it"</em>, a superficial response is to schedule another training seminar. A disassembly mindset looks at what users are actually doing when nobody is watching:
+    </p>
+    <div class="bandeau">
+      They have three Excel tabs open because the ERP requires nine clicks to check inventory availability. They created a manual workaround because the official interface works against human short-term memory.
+    </div>
+    <p>
+      You cannot fix a user workflow without opening the enclosure, looking at the raw state transitions, and understanding which historical compromise created the friction.
+    </p>
+
+    <h2>Why I Build Today</h2>
+    <p>
+      This is why I build applications like the <strong><a href="/projects/span-suite.html" style="color: inherit; text-decoration: underline;">Span Suite</a></strong>. 
+    </p>
+    <p>
+      I don't build software just to add more items to an already noisy digital world. I build because I want to take apart the daily friction of planning, focusing, and working — stripping away the decorative chrome until only the tactile, honest core remains.
+    </p>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/blog/" style="margin: 0;">← Back to notes</a>
+      <a class="bouton plein" href="/projects/span-suite.html">See Span in Action →</a>
+    </div>
   </main>

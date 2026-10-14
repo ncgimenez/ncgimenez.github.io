@@ -1,49 +1,89 @@
 ---
 layout: default
-title: AtP in O2C
+title: Available-to-Promise in Order-to-Cash
+mermaid: true
 ---
 
   <main>
-    <span class="etiquette">SAP Concept</span>
-    <h1>Available-to-Promise in Order-to-Cash</h1>
+    <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Notes</a>
+
+    <span class="etiquette">Systems Logic · Supply Chain</span>
+    <h1>Available-to-Promise: The Cost of Blind Commitments</h1>
     <p class="chapo">
-      Why confirming a delivery date without checking available stock creates cascading problems —
-      and how SAP handles it.
+      Why confirming customer delivery dates without verifying real-time allocation locks creates an unbudgeted chaos tax across the entire enterprise.
     </p>
 
+    <dl class="meta">
+      <div><dt>Domain</dt><dd>Order-to-Cash &amp; Inventory Logic</dd></div>
+      <div><dt>Core Concept</dt><dd>ATP (Available-to-Promise)</dd></div>
+      <div><dt>Reading time</dt><dd>4 min</dd></div>
+    </dl>
+
+    <h2>The Illusion of "In Stock"</h2>
     <p>
-      The most expensive broken promise in B2B sales is a delivery date the warehouse can't keep.
+      In enterprise software and e-commerce architectures, "In Stock" is a dangerous simplification. 
     </p>
     <p>
-      Here's the sequence: sales confirms a delivery date. They didn't check stock. Manufacturing
-      is late. Warehouse has to prioritise — but there's already a commitment to the customer.
-      You're now backfilling, expediting, or eating the cost of late delivery. The customer sees
-      unreliability; you see a chaos tax nobody budgeted for.
+      If your database displays 100 units of an item in the warehouse, but 60 are physically committed to an outbound shipment scheduled for tomorrow and 45 are reserved in draft shopping carts, your actual available stock is not 100. It is <strong>minus five</strong>.
     </p>
     <p>
-      This is where Available-to-Promise (ATP) comes in. It's not inventory management — it's
-      the promise management layer that sits between sales and what's actually available. When a
-      sales rep enters an order in SAP, they don't see just stock on hand. They see what's
-      confirmed to ship, when it's confirmed to ship, and what's genuinely available for a
-      new delivery date.
-    </p>
-    <p>
-      The key friction: most teams don't implement it. Sales keeps making commitments without
-      checking, and you keep managing the fallout. The conversations are expensive and the data
-      lives in emails.
-    </p>
-    <p>
-      When you do implement it, the mechanism is simple. SAP calculates ATP by starting with
-      confirmed stock, subtracting already-committed orders (by delivery date), and showing
-      what's left as available. A sales rep checking availability on October 10 sees: "50 units
-      available for delivery by October 17; 30 units by October 24." They make the commitment
-      with their eyes open.
-    </p>
-    <p>
-      The benefit isn't just accuracy — it's speed. No more "let me check with warehouse." No more
-      promises made and broken in the same workflow. The sales team moves faster, and the warehouse
-      stops firefighting.
+      Confirming a sales order based on unreserved physical stock is like writing a check without checking your account balance. You are betting that fresh production will arrive before the truck departs. When that bet fails, the operational friction explodes.
     </p>
 
-    <a class="retour" href="/blog/">← Back to notes</a>
+    <div class="bandeau">
+      <strong>The Chaos Tax:</strong> Emergency split shipments, expedited air freight, inventory fire drills, and defensive meetings between sales and warehouse operations. All of it stems from a single failure in state management.
+    </div>
+
+    <h2>The Architectural Difference: Blind vs. Deterministic Commitments</h2>
+
+    <div class="bpmn-wrap">
+      <pre class="mermaid">
+flowchart TD
+  subgraph Fragile [Blind State: Hope-Based Scheduling]
+    A1[Customer Submits Order] --> B1[Read Static Stock Count: 100 Units]
+    B1 --> C1[Sales Confirms Delivery Date Instantly]
+    C1 --> D1[Warehouse Picks Batch: Only 40 Units Available]
+    D1 --> E1[Emergency Backorder & Rush Shipping Cost]
+  end
+
+  subgraph Deterministic [Deterministic ATP: Real-Time Allocation]
+    A2[Customer Submits Order] --> B2[Dynamic ATP Engine Checks Net Allocation]
+    B2 --> C2[Stock minus Existing Commitments + Confirmed Inbound POs]
+    C2 --> D2[Atomic Reservation Locked at Order Confirmation]
+    D2 --> E2[Guaranteed Delivery Schedule Confirmed]
+  end
+
+  style Fragile fill:#16141c,stroke:#b4502d,stroke-width:1px
+  style Deterministic fill:#16141c,stroke:#9d5cff,stroke-width:1px
+      </pre>
+    </div>
+    <p class="bpmn-note">State transition comparison between static stock reads and event-driven ATP checks.</p>
+
+    <h2>The Three Pillars of Robust ATP</h2>
+    <p>
+      To build a commitment engine that holds under peak load, the system must separate physical reality from temporal projection:
+    </p>
+
+    <ul class="liste">
+      <li><strong>Physical On-Hand Stock:</strong> What is sitting on the warehouse pallet at this exact second.</li>
+      <li><strong>Committed Demand:</strong> Units promised to confirmed sales orders, active picking waves, or manufacturing work orders.</li>
+      <li><strong>Confirmed Inbound Supply:</strong> Purchase orders or production runs with validated receipt windows and supplier reliability factors.</li>
+    </ul>
+
+    <div class="bandeau">
+      $$\text{ATP} = \text{Physical Stock} + \text{Planned Inbound} - \text{Committed Outbound}$$
+    </div>
+
+    <h2>Why This Matters for Software Interfaces</h2>
+    <p>
+      This is not just an ERP problem; it is a universal software pattern. 
+    </p>
+    <p>
+      Whether reserving seats on a high-speed train, scheduling focus blocks on a calendar in the <a href="/projects/span-suite.html">Span Suite</a>, or allocating warehouse inventory in <a href="/projects/odoo-inventory.html">Odoo</a>, the principle is identical: <strong>never expose an affirmative state to the user without reserving the underlying capacity</strong>.
+    </p>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/blog/" style="margin: 0;">← Back to all notes</a>
+      <a class="bouton plein" href="/blog/focus-sessions.html">Next: Focus Sessions &amp; Calendar Logic →</a>
+    </div>
   </main>

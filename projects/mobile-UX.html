@@ -1,0 +1,97 @@
+---
+layout: default
+title: SNCB Mobile UX Redesign
+---
+
+  <main>
+    <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
+
+    <span class="etiquette">Mobile UX · Transit Systems</span>
+    <h1>SNCB: Know Which Way to Run Before You Get There</h1>
+    <p class="chapo">
+      Rethinking transit mobile notifications for high-friction connections. Surfacing real-time arrival platforms and train exit door directions before reaching connecting hubs.
+    </p>
+
+    <dl class="meta">
+      <div><dt>App Context</dt><dd>SNCB / NMBS Official Mobile App</dd></div>
+      <div><dt>Focus</dt><dd>Spatial Awareness &amp; Friction Reduction</dd></div>
+      <div><dt>Role</dt><dd>Product &amp; Interaction Designer</dd></div>
+      <div><dt>Target Metric</dt><dd>Connection Miss Rate Reduction</dd></div>
+    </dl>
+
+    <h2>The Commuter's High-Stress Moment</h2>
+    <p>
+      In Belgian rail transit, a 4-minute connection between regional IC trains at Brussels-Midi or Liège-Guillemins is not rare. Commuters stand in crowded aisles, waiting for the train to halt before opening the official app to discover two things:
+    </p>
+    <ul class="liste">
+      <li>Which platform their connecting train is departing from.</li>
+      <li>Whether they need to take the stairs up, down, or navigate an underpass.</li>
+    </ul>
+    <p>
+      Default transit apps present this information as a static list of stops. They require 3 taps to view platform details while juggling luggage, coats, and cell signal drops in tunnels.
+    </p>
+
+    <div class="bandeau">
+      <strong>Core Interaction Hypothesis:</strong> Information is only useful if delivered at the moment of highest leverage. Displaying platform updates 3 minutes before arrival—coupled with exit side orientation—converts blind panic into prepared navigation.
+    </div>
+
+    <h2>The Interface Solution: Pre-Arrival Dynamic Island &amp; Notification</h2>
+
+    <figure>
+      <svg viewBox="0 0 620 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="SNCB Smart Transit Card UI Concept">
+        <!-- Container card -->
+        <rect width="620" height="320" fill="var(--fond-carte)" rx="12" stroke="var(--ligne)" stroke-width="1"/>
+        
+        <!-- Header status -->
+        <rect x="24" y="24" width="572" height="40" fill="var(--fond)" rx="8"/>
+        <circle cx="44" cy="44" r="6" fill="#38bdf8"/>
+        <text x="60" y="48" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="var(--texte)">APPROACHING LIÈGE-GUILLEMINS · ARRIVAL IN 3 MIN</text>
+        <text x="560" y="48" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="var(--texte-doux)">IC 512</text>
+
+        <!-- Transit Flow Cards -->
+        <!-- Step 1: Disembark -->
+        <rect x="24" y="80" width="276" height="150" fill="var(--fond)" rx="10" stroke="var(--ligne)" stroke-width="1"/>
+        <text x="44" y="106" font-family="system-ui,sans-serif" font-size="10" text-transform="uppercase" letter-spacing="0.08em" fill="var(--texte-doux)">Step 1 · Disembark</text>
+        <text x="44" y="136" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="var(--texte)">Track 4</text>
+        <rect x="44" y="152" width="112" height="22" fill="rgba(56, 189, 248, 0.15)" rx="4"/>
+        <text x="52" y="167" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#38bdf8">EXIT DOORS: LEFT</text>
+        <text x="44" y="202" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">Stairs down to corridor located mid-train.</text>
+
+        <!-- Arrow between steps -->
+        <text x="310" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="var(--accent)">→</text>
+
+        <!-- Step 2: Next Connection -->
+        <rect x="320" y="80" width="276" height="150" fill="var(--fond)" rx="10" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="340" y="106" font-family="system-ui,sans-serif" font-size="10" text-transform="uppercase" letter-spacing="0.08em" fill="var(--accent)">Step 2 · Transfer (4m walk)</text>
+        <text x="340" y="136" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="var(--accent)">Track 9</text>
+        <rect x="340" y="152" width="130" height="22" fill="rgba(240, 113, 75, 0.15)" rx="4"/>
+        <text x="348" y="167" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="var(--accent)">ON TIME · DEP 18:24</text>
+        <text x="340" y="202" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">IC 2114 to Namur / Charleroi</text>
+
+        <!-- Bottom Guidance Bar -->
+        <rect x="24" y="246" width="572" height="50" fill="rgba(157, 92, 255, 0.08)" rx="8" stroke="rgba(157, 92, 255, 0.25)" stroke-width="1"/>
+        <text x="44" y="276" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#c084fc">Navigation Tip:</text>
+        <text x="140" y="276" font-family="system-ui,sans-serif" font-size="11" fill="var(--texte)">Take underground passage toward North Gallery to reach Track 9 directly.</text>
+      </svg>
+      <figcaption>Context-sensitive lock-screen and in-app transit guidance card</figcaption>
+    </figure>
+
+    <h2>Key Architectural Decisions</h2>
+    <ul class="liste">
+      <li><strong>Pre-emptive Arrival Trigger:</strong> Push critical transfer data based on GPS / geo-fencing 3 minutes prior to arrival, bypassing spotty station Wi-Fi.</li>
+      <li><strong>Physical Car Orientation:</strong> Stating the train door release side (Left or Right) prevents commuters from queuing at the wrong side of crowded vestibules.</li>
+      <li><strong>Walk-Time Calibrated Feasibility:</strong> If a delay shrinks the connection time below the physical distance threshold between tracks, the interface immediately offers the next viable fallback connection rather than leaving passengers to run toward a closed departure.</li>
+    </ul>
+
+    <h2>Impact on Commuter Stress</h2>
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-val">3 Taps</span><span class="stat-lbl">Down to 0 (At-a-Glance)</span></div>
+      <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Pre-Door Awareness</span></div>
+      <div class="stat"><span class="stat-val">Friction</span><span class="stat-lbl">Eliminated in Transit</span></div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
+      <a class="bouton plein" href="/projects/pedagogical-system-design.html">Next: Pedagogical System Design →</a>
+    </div>
+  </main>

@@ -1,64 +1,55 @@
 ---
-layout: antechamber
-title: Field Notes & Observations
-permalink: /antechamber/notes/
+layout: default
+title: Notes d'Atelier | L'Antichambre
 ---
 
 <main>
-  <a class="fleche-section" href="{{ '/antechamber/' | relative_url }}">← The Antechamber</a>
+  <a class="retour" href="{{ '/antechamber/' | relative_url }}" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← Retour à l'Antichambre</a>
 
-  <span class="etiquette">Notebook</span>
-  <h1>Field Notes &amp; Observations</h1>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette etiquette--violet">Atelier &amp; Réflexion</span>
+    <span class="etiquette">Carnet de bord</span>
+  </div>
+
+  <h1>Notes d'Atelier &amp; Dissections</h1>
   <p class="chapo">
-    Working notes, raw interface observations, and fragments of product philosophy before they become polished concepts.
+    Fragments de pensée, explorations matérielles et principes d'ingénierie logicielle capturés entre deux sessions.
   </p>
 
-  <div class="liste-notes" style="margin-top: 3rem; display: flex; flex-direction: column; gap: 2.5rem;">
-
-    <!-- Note 1 -->
-    <article class="note-item" style="border-bottom: 1px solid var(--ligne); padding-bottom: 2rem;">
-      <div style="display: flex; gap: 1rem; align-items: baseline; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--texte-doux);">
-        <time datetime="2026-09-15">Sep 2026</time>
-        <span>•</span>
-        <span style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; color: var(--accent);">Interaction</span>
-      </div>
-      <h2 style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">
-        <a href="{{ '/blog/note-tools.html' | relative_url }}" style="text-decoration: none; color: inherit;">The myth of zero-friction interfaces</a>
-      </h2>
-      <p style="margin: 0; line-height: 1.6; color: var(--texte-doux);">
-        Why intentional resistance, tactile feedback, and deliberate pauses often lead to better human decision-making than mindless automation.
+  <div class="grille" style="margin-top: 36px;">
+    <!-- NOTE 01 : DISASSEMBLY -->
+    <a class="carte" href="{{ '/blog/disassembly.html' | relative_url }}">
+      <div class="carte-barre" style="background: #7c3aed;"></div>
+      <span class="etiquette etiquette--violet">Essai</span>
+      <h3>I Take Things Apart</h3>
+      <p>
+        Remplacer une batterie collée au pistolet thermique, router un bus dans Logic Pro, et refuser l'opacité des boîtes noires.
       </p>
-    </article>
+    </a>
 
-    <!-- Note 2 -->
-    <article class="note-item" style="border-bottom: 1px solid var(--ligne); padding-bottom: 2rem;">
-      <div style="display: flex; gap: 1rem; align-items: baseline; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--texte-doux);">
-        <time datetime="2026-08-04">Aug 2026</time>
-        <span>•</span>
-        <span style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; color: var(--accent);">Mental Models</span>
-      </div>
-      <h2 style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">
-        <span style="color: var(--texte);">Spatial metaphors in productivity software</span>
-      </h2>
-      <p style="margin: 0; line-height: 1.6; color: var(--texte-doux);">
-        How canvases, rooms, and chambers alter the psychological weight of everyday tasks compared to endless linear lists.
+    <!-- NOTE 02 : SPAN CONCEPT -->
+    <a class="carte" href="{{ '/projects/span-suite.html' | relative_url }}">
+      <div class="carte-barre" style="background: #0284c7;"></div>
+      <span class="etiquette etiquette--bleu">Architecture Produit</span>
+      <h3>Le Mythe de la To-Do List Infinie</h3>
+      <p>
+        Pourquoi sans cadre strict, toute liste de tâches devient anxiogène. La genèse fonctionnelle de la Suite Span.
       </p>
-    </article>
+    </a>
 
-    <!-- Note 3 -->
-    <article class="note-item" style="border-bottom: 1px solid var(--ligne); padding-bottom: 2rem;">
-      <div style="display: flex; gap: 1rem; align-items: baseline; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--texte-doux);">
-        <time datetime="2026-06-21">Jun 2026</time>
-        <span>•</span>
-        <span style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; color: var(--accent);">Micro-copy</span>
-      </div>
-      <h2 style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">
-        <span style="color: var(--texte);">Designing for the internal monologue</span>
-      </h2>
-      <p style="margin: 0; line-height: 1.6; color: var(--texte-doux);">
-        Aligning empty states, feedback banners, and button labels with what users actually tell themselves when an error occurs.
+    <!-- NOTE 03 : ATP & LOGIQUE FLUX -->
+    <a class="carte" href="{{ '/blog/available-to-promise.html' | relative_url }}">
+      <div class="carte-barre" style="background: #b4502d;"></div>
+      <span class="etiquette">Systèmes</span>
+      <h3>Available-to-Promise &amp; États Fantômes</h3>
+      <p>
+        Ce que les flux logistiques apprennent au design d'interfaces : ne jamais promettre un état sans verrou atomique.
       </p>
-    </article>
+    </a>
+  </div>
 
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a class="retour" href="{{ '/antechamber/' | relative_url }}" style="margin: 0;">← Retour à l'Antichambre</a>
+    <a class="bouton violet" href="{{ '/projects/span-suite.html' | relative_url }}">Explorer l'étude de cas Span →</a>
   </div>
 </main>

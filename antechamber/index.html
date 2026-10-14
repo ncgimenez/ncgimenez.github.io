@@ -1,75 +1,155 @@
 ---
-layout: antechamber
-title: The Antechamber
+layout: default
+title: L'Antichambre | Studio Expérimental
 ---
 
-  <main>
-    <span class="etiquette">The Sandbox</span>
-    <h1>The other room.</h1>
-    <p class="chapo">
-      The main portfolio displays what I ship and structure. The Antechamber is the workshop where things get disassembled, routed, and questioned.
+<main>
+  <a class="retour" href="{{ '/' | relative_url }}" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← Retour au site principal</a>
+
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette etiquette--violet">Laboratoire Créatif</span>
+    <span class="etiquette etiquette--bleu">Espace Feutré</span>
+  </div>
+
+  <h1>L'Antichambre</h1>
+  <p class="chapo">
+    Le sas d'expérimentation. Loin des grilles d'audit et des spécifications formelles, voici l'atelier où je démonte le matériel, explore les synthétiseurs audio et prototype des interactions brutes.
+  </p>
+
+  <!-- MODULE 1 : SYNTHÉ INTERACTIF WEB AUDIO -->
+  <div class="carte" style="margin: 36px 0; border: 1px solid rgba(157, 92, 255, 0.3); background: #13111a; position: relative; overflow: hidden;">
+    <div class="carte-barre" style="background: linear-gradient(90deg, #9d5cff, #f0714b);"></div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+      <span class="etiquette etiquette--violet">Banc d'Essai Web Audio</span>
+      <span style="font-size: 0.78rem; color: var(--texte-doux); letter-spacing: 0.05em; text-transform: uppercase;">Oscillateur Polyphonique</span>
+    </div>
+    
+    <h3 style="margin-top: 0;">Générateur Micro-Ondes &amp; Filtre Tactile</h3>
+    <p style="font-size: 0.92rem; color: var(--texte-doux); margin-bottom: 20px;">
+      Cliquez ou tapez sur les touches pour générer des fréquences pures avec enveloppe d'attaque et filtre passe-bas résonant.
     </p>
 
-    <p>
-      This space is an uncurated sandbox outside client metrics and delivery sprints. 
-      Some days that means sound synthesis, mixer routing, and plugin chains in Logic Pro; 
-      other days it means prying open hardware with industrial adhesive, or building speculative interaction concepts just to test an intuitive hypothesis.
-    </p>
-
-    <h2 id="sound-hardware">Audio &amp; Hardware Disassembly</h2>
-    <p style="color: var(--texte-doux); margin-bottom: 1.5rem; font-size: 0.95rem;">
-      Things I take apart to understand how they work under the hood.
-    </p>
-    <div class="grille">
-      <div class="carte">
-        <span class="etiquette">Audio Craft</span>
-        <h3>Logic Pro &amp; Sound Design</h3>
-        <p>Learning non-linearly through deliberate errors: signal flow, bus routing, sidechaining, and automation lanes. Understanding how sound architecture mirrors system architecture.</p>
-      </div>
-      <div class="carte">
-        <span class="etiquette">Hardware</span>
-        <h3>Things Not Meant to Be Opened</h3>
-        <p>Replacing smartphone batteries and modular electronics. Overcoming heat guns, prying picks, and hidden ribbon cables to demystify what lives inside closed enclosures.</p>
-      </div>
-      <div class="carte">
-        <span class="etiquette">Systems Instinct</span>
-        <h3>The Anatomy of Friction</h3>
-        <p>Taking apart why teams default to inefficient manual workarounds. Discovering whether a friction point is an engineered constraint or a forgotten historical accident.</p>
-      </div>
+    <!-- TOUCHES DU SYNTHÉ -->
+    <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 18px 0 24px;">
+      <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">C4</button>
+      <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">D4</button>
+      <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">E4</button>
+      <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">F4</button>
+      <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">G4</button>
+      <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">A4</button>
+      <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">B4</button>
     </div>
 
-    <h2 id="experiments" style="margin-top: 3.5rem;">Speculative Concepts &amp; Prototypes</h2>
-    <p style="color: var(--texte-doux); margin-bottom: 1.5rem; font-size: 0.95rem;">
-      Early interaction models and interface experiments.
-    </p>
-    <div class="grille">
-      <a class="carte" href="/antechamber/projects/calendar.html">
-        <div class="carte-barre" style="background: var(--accent);"></div>
-        <span class="etiquette">Interaction Model</span>
-        <h3>A Smart Calendar by Life Categories</h3>
-        <p>
-          Imposing a strict semantic color hierarchy across time blocks to reveal weekly balance at a glance without manual tagging.
-        </p>
-      </a>
-      <a class="carte" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener">
-        <div class="carte-barre" style="background: var(--accent);"></div>
-        <span class="etiquette">Live Prototype ↗</span>
-        <h3>Span Focus Laboratory</h3>
-        <p>Testing tactile gesture feedback, minimal keyboard shortcuts, and local browser persistence for distraction-free sprints.</p>
-      </a>
+    <!-- CONTROLES SYNTH -->
+    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--texte-doux); padding-top: 14px; border-top: 1px solid var(--ligne);">
+      <div>
+        <label for="synth-wave" style="margin-right: 6px; font-weight: 600;">Onde :</label>
+        <select id="synth-wave" style="background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 4px 8px; border-radius: 6px;">
+          <option value="sine">Sinus (Pure)</option>
+          <option value="triangle" selected>Triangle (Chaude)</option>
+          <option value="sawtooth">Dent de scie (Riche)</option>
+          <option value="square">Carrée (8-bit)</option>
+        </select>
+      </div>
+      <div>
+        <label for="synth-filter" style="margin-right: 6px; font-weight: 600;">Cutoff Filtre :</label>
+        <input type="range" id="synth-filter" min="200" max="4000" value="1800" style="vertical-align: middle;">
+      </div>
     </div>
+  </div>
 
-    <h2 style="margin-top: 3.5rem;">Currently Exploring</h2>
-    <ul class="liste" style="list-style: none; padding-left: 0;">
-      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 8px;">
-        <span style="position: absolute; left: 0; color: var(--accent);">→</span> Building interactive tactile sound controllers and web audio experiments.
-      </li>
-      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 8px;">
-        <span style="position: absolute; left: 0; color: var(--accent);">→</span> Exploring agentic design workflows: combining Figma tokens with real-time browser code generation.
-      </li>
-      <li style="padding-left: 1.5rem; position: relative;">
-        <span style="position: absolute; left: 0; color: var(--accent);">→</span> Dissecting modular hardware architectures and repairability ecosystems.
-      </li>
-    </ul>
+  <!-- MODULE 2 : SECTIONS EXPLORATOIRES -->
+  <h2>Explorations &amp; Recherches Latérales</h2>
+  <div class="grille">
+    <a class="carte" href="{{ '/antechamber/notes.html' | relative_url }}">
+      <div class="carte-barre" style="background: #9d5cff;"></div>
+      <span class="etiquette etiquette--violet">Écrits &amp; Carnet</span>
+      <h3>Notes d'Atelier</h3>
+      <p>
+        Fragments de pensée, curiosité matérielle, et liens entre le câblage de bus audio et la robustesse des flux de données.
+      </p>
+    </a>
 
-  </main>
+    <a class="carte" href="{{ '/blog/disassembly.html' | relative_url }}">
+      <div class="carte-barre" style="background: #f0714b;"></div>
+      <span class="etiquette">Manifeste</span>
+      <h3>I Take Things Apart</h3>
+      <p>
+        Pourquoi ouvrir les appareils collés et autopsier les processus invisibles est le seul moyen de concevoir des outils durables.
+      </p>
+    </a>
+
+    <a class="carte" href="{{ '/projects/span-suite.html' | relative_url }}">
+      <div class="carte-barre" style="background: #0284c7;"></div>
+      <span class="etiquette etiquette--bleu">Produit</span>
+      <h3>La Genèse de Span</h3>
+      <p>
+        Comment vaincre l'anxiété du backlog infini : le prototype de gestion du temps sans surcharge cognitive.
+      </p>
+    </a>
+  </div>
+</main>
+
+<script>
+  // Moteur Audio Web simple et réactif
+  let audioCtx = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
+  function playTone(freq) {
+    initAudio();
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+
+    const waveType = document.getElementById('synth-wave').value;
+    const filterVal = document.getElementById('synth-filter').value;
+
+    osc.type = waveType;
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(filterVal, audioCtx.currentTime);
+
+    // Enveloppe d'amplitude (ADSR doux)
+    const now = audioCtx.currentTime;
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(0.3, now + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(now);
+    osc.stop(now + 0.75);
+  }
+
+  document.querySelectorAll('.synth-key').forEach(key => {
+    key.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      const freq = parseFloat(key.getAttribute('data-freq'));
+      playTone(freq);
+      key.style.transform = 'translateY(2px)';
+      key.style.borderColor = 'var(--accent)';
+      key.style.background = 'rgba(157, 92, 255, 0.2)';
+    });
+
+    const resetKey = () => {
+      key.style.transform = 'none';
+      key.style.borderColor = 'var(--ligne)';
+      key.style.background = 'var(--fond-carte)';
+    };
+
+    key.addEventListener('pointerup', resetKey);
+    key.addEventListener('pointerleave', resetKey);
+  });
+</script>

@@ -1,45 +1,81 @@
 ---
 layout: default
-title: Focus Sessions
+title: Focus Sessions Tied to Your Calendar
+mermaid: true
 ---
 
   <main>
-    <span class="etiquette">Product Concept</span>
-    <h1>Focus Sessions Tied to Your Calendar</h1>
+    <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Notes</a>
+
+    <span class="etiquette etiquette--bleu">Product Architecture · Interaction Design</span>
+    <h1>Focus Sessions Tied to Your Calendar: Closing the Execution Gap</h1>
     <p class="chapo">
-      A Pomodoro-style timer that knows which life category you're working in —
-      and feeds back into your weekly balance.
+      Why calendar time-blocking alone fails without active execution boundaries, and how linking scheduling to dedicated focus containers restores cognitive flow.
     </p>
 
+    <dl class="meta">
+      <div><dt>Category</dt><dd>Product Concept</dd></div>
+      <div><dt>Core Engine</dt><dd>Temporal Anchoring</dd></div>
+      <div><dt>Reading time</dt><dd>4 min</dd></div>
+    </dl>
+
+    <h2>The Time-Blocking Paradox</h2>
     <p>
-      The gap between what you plan to do and what you actually do isn't always about discipline.
-      Sometimes it's about visibility.
+      Time-blocking is one of the most praised productivity habits, yet it routinely breaks down by 11:00 AM. 
     </p>
     <p>
-      You have a calendar that tells you you're in a "Work" block, a "Health" block, a "Personal" block.
-      But when you hit a 25-minute focus session, you have no connection between that timer and the
-      life category you're in. You just… sprint and stop.
+      A calendar slot labeled <em>"Deep Work: Architecture"</em> is merely a passive colored rectangle. When that time block arrives, the screen doesn't protect you: notifications slide in, five browser tabs are competing for attention, and the mental activation energy required to start remains entirely on the user.
     </p>
     <p>
-      The idea: a focus timer that reads your calendar. You start a session, and it already knows
-      what category of work you're doing — because it's looking at the calendar event you're currently in.
-      The timer runs; the session ends. Not as a standalone data point, but as a logged session in that
-      calendar event's category.
-    </p>
-    <p>
-      Over a week, that gives you a real picture: "I planned 3 health sessions and logged 2. I planned 2
-      personal and logged 0. Work expanded into those blocks." Not as criticism — as data. The kind you
-      can actually act on, because it's tied to decisions you made (or didn't make) about time allocation.
-    </p>
-    <p>
-      Module 2 of a calendar suite. Module 1 is the calendar itself — the one that structures your week
-      into life categories so you can see what kind of week you're having. Module 2 is the timer that
-      measures whether you're actually protecting those blocks when they matter.
-    </p>
-    <p>
-      The honest measure: not how many sessions you run, but whether the focused time you logged matches
-      the time you promised yourself.
+      The core failure is architectural: <strong>the tool that plans your time (the calendar) has zero communication with the tool that executes your time (the task environment)</strong>.
     </p>
 
-    <a class="retour" href="/blog/">← Back to notes</a>
+    <div class="bandeau">
+      <strong>The Execution Gap:</strong> A calendar reserves temporal real estate, but it cannot defend attention. Without an active, immersive container that takes over the interface, passive calendar slots get cannibalized by ad-hoc operational noise.
+    </div>
+
+    <h2>The Two-Layer Architecture: Calendar vs. Focus Engine</h2>
+
+    <div class="bpmn-wrap">
+      <pre class="mermaid">
+flowchart TD
+  subgraph PlanLayer [Macro Planning Layer: Span Plan / Calendar]
+    A[Weekly & Daily Backlog] --> B[Assign Tasks to Concrete Time Containers]
+    B --> C[Set Daily Cap: Max 3 Core Blocks]
+  end
+
+  subgraph TriggerLayer [Frictionless Transition]
+    C -->|One-Tap Handover| D[Launch Single-Task Execution Container]
+  end
+
+  subgraph ExecLayer [Micro Execution Layer: Span Focus]
+    D --> E[Full-Screen Tactile Timer]
+    E --> F[Background Sync & Category Time Tracking]
+    F --> G[Real-Time Progress & Automated Rollover]
+  end
+
+  style PlanLayer fill:#16141c,stroke:#38bdf8,stroke-width:1px
+  style TriggerLayer fill:#16141c,stroke:#f0714b,stroke-width:1px
+  style ExecLayer fill:#16141c,stroke:#9d5cff,stroke-width:1px
+      </pre>
+    </div>
+    <p class="bpmn-note">The architectural handover from macro planning to distraction-free micro execution.</p>
+
+    <h2>Three Principles for Resilient Focus Interfaces</h2>
+
+    <ul class="liste">
+      <li><strong>Atomic Handover:</strong> Moving from "what should I do next?" to "I am doing this now" must take exactly one keystroke or tap. Any modal, dropdown, or re-typing during this transition introduces drop-off friction.</li>
+      <li><strong>Defensive Defaults:</strong> Once a focus block starts, non-essential interface chrome should dissolve. The active task must become the sole visual anchor.</li>
+      <li><strong>Graceful Rollover Without Guilt:</strong> If a scheduled block is interrupted by an urgent real-world event, the system shouldn't leave broken red marks. It must automatically adjust subsequent boundaries or roll the item into tomorrow's queue.</li>
+    </ul>
+
+    <h2>From Essay to Live Software</h2>
+    <p>
+      This exact thesis sparked the development of the <strong><a href="/projects/span-suite.html" style="color: inherit; text-decoration: underline;">Span Suite</a></strong>. Instead of accepting the friction between calendar planning and actual execution, I engineered two dedicated tools designed to operate in tandem: <strong>Span Plan</strong> for macro boundaries, and <strong>Span Focus</strong> for tactile, zero-friction execution.
+    </p>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/blog/" style="margin: 0;">← Back to all notes</a>
+      <a class="bouton plein" href="/projects/span-suite.html">Read Span Suite Case Study →</a>
+    </div>
   </main>

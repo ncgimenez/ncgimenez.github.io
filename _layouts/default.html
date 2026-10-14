@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | Nadia Cañadas Giménez</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
 
   <header class="site">
     <div class="interieur">
-      <a class="marque" href="/">NCG</a>
+      <a class="marque" href="{{ '/' | relative_url }}">NCG</a>
       <nav aria-label="Main navigation">
         <ul>
-          <li><a href="/" data-i18n="nav.home">Home</a></li>
-          <li><a href="/projects/" data-i18n="nav.projects">Projects</a></li>
-          <li><a href="/blog/" data-i18n="nav.notes">Notes</a></li>
-          <li><a href="/about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Notes</a></li>
+          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
         </ul>
       </nav>
       <div class="controles-header">
@@ -30,23 +30,20 @@
     </div>
   </header>
 
-  <!-- Le contenu spécifique de chaque page viendra s'insérer ici automatiquement -->
+  <!-- Contenu injecté par les pages -->
   {{ content }}
-
 
   <footer>
     <p>© 2026 Nadia Cañadas Giménez ·
-      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/ncgimenez" target="_blank" rel="noopener">LinkedIn</a>
       · <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>
     </p>
-    {% if page.title == "About" %}
     <p style="margin-top: 0.75rem; text-align: center;">
-      <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Enter the antechamber" aria-label="Enter the antechamber">🗝</a>
+      <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Enter the antechamber & audio lab" aria-label="Enter the antechamber">🗝</a>
     </p>
-    {% endif %}
   </footer>
 
-   <!-- Script global toujours actif -->
+  <!-- Script global de thèmes et langue -->
   <script src="{{ '/assets/lang.js' | relative_url }}"></script>
 
   {% if page.mermaid %}

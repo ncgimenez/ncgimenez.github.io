@@ -1,54 +1,122 @@
 ---
 layout: default
-title: Projects
+title: Projects & Software
 ---
 
 <main>
-  <span class="etiquette" data-i18n="nav.projects">Projects</span>
-  <h1 data-i18n="section.projects">All Projects &amp; Case Studies</h1>
+  <span class="etiquette">Portfolio</span>
+  <h1>Built Software, Systems &amp; Teardowns</h1>
   <p class="chapo">
-    Real-world ERP implementations, system standardisation, and interaction teardowns designed to eliminate friction.
+    From end-to-end interactive web applications to mission-critical ERP implementations and interaction redesigns.
   </p>
 
-  <h2 style="margin-top: 3rem;">ERP &amp; Process Standardisation</h2>
+  <!-- BANDEAU SPECIAL ETUDE DE CAS SPAN -->
+  <div class="bandeau" style="border-left-color: var(--accent-alt); background: var(--fond-carte); margin-top: 2.5rem; margin-bottom: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <div>
+        <span class="etiquette etiquette--violet" style="margin-bottom: 6px;">Featured Case Study</span>
+        <h3 style="margin: 0 0 4px; font-size: 1.15rem;">The Span Suite: Planning Without Overwhelm</h3>
+        <p style="margin: 0; font-size: 0.92rem; color: var(--texte-doux);">
+          Why to-do lists collapse without an opinionated frame, and how a dual-engine architecture restores focus.
+        </p>
+      </div>
+      <a class="bouton violet" href="/projects/span-suite.html" style="padding: 7px 18px; font-size: 0.88rem;">Read Case Study →</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1 : VOS APPLICATIONS RÉELLES -->
+  <h2 style="margin-top: 3.5rem;">Interactive Applications: The Span Suite</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    Deployed software built with modern front-end tools, offline-first PWA features, and cloud synchronization.
+  </p>
+
   <div class="grille">
-    <a class="carte" href="{{ '/projects/projet-1.html' | relative_url }}">
-      <div class="carte-barre" style="background:#b4502d"></div>
-      <span class="etiquette" data-i18n="card1.label">Case study</span>
-      <h3 data-i18n="card1.title">O2C Without the Chaos: Standardising SAP SD for a B2B Team</h3>
-      <p data-i18n="card1.desc">Mapping and fixing a broken order management process during a greenfield SAP S/4HANA implementation.</p>
+    <!-- SPAN FOCUS -->
+    <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div class="carte-barre" style="background: #7c3aed;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="etiquette etiquette--violet">Live PWA</span>
+          <span style="font-size: 0.8rem; color: var(--texte-doux);">React / Vanilla · Supabase</span>
+        </div>
+        <h3>Span Focus</h3>
+        <p>
+          Execution timer with category tracking, keyboard-first navigation, tactile swipe shortcuts, and real-time daily progress bars.
+        </p>
+      </div>
+      <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
+        <a class="bouton plein" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Launch App ↗</a>
+        <a class="bouton" href="/projects/span-suite.html" style="padding: 7px 16px; font-size: 0.88rem;">Case Study</a>
+        <a class="bouton" href="https://github.com/ncgimenez/span-focus" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Code</a>
+      </div>
+    </div>
+
+    <!-- SPAN PLAN -->
+    <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div class="carte-barre" style="background: #0284c7;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="etiquette etiquette--bleu">Live Web App</span>
+          <span style="font-size: 0.8rem; color: var(--texte-doux);">Multi-Device Sync</span>
+        </div>
+        <h3>Span Plan</h3>
+        <p>
+          Contextual daily planning and backlog orchestrator designed with automated rollover to feed directly into focus sessions without cognitive friction.
+        </p>
+      </div>
+      <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
+        <a class="bouton plein" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Launch App ↗</a>
+        <a class="bouton" href="/projects/span-suite.html" style="padding: 7px 16px; font-size: 0.88rem;">Case Study</a>
+        <a class="bouton" href="https://github.com/ncgimenez/span-plan" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 : CONCEPTS UX & MODÈLES D'INTERACTION -->
+  <h2 style="margin-top: 4rem;">Interaction Models &amp; UX Teardowns</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    Rethinking default UI patterns to eliminate repetitive manual friction.
+  </p>
+
+  <div class="grille">
+    <a class="carte" href="/projects/projet-3.html">
+      <div class="carte-barre" style="background: #4a86b4;"></div>
+      <span class="etiquette">Interaction Redesign</span>
+      <h3>Google Calendar: Rethinking the Interaction Model</h3>
+      <p>Drag to select, click to create: bringing standard desktop marquee selection to calendar schedule changes.</p>
     </a>
-    <a class="carte" href="{{ '/projects/projet-5.html' | relative_url }}">
-      <div class="carte-barre" style="background:#b4502d"></div>
-      <span class="etiquette" data-i18n="card5.label">Case study</span>
-      <h3 data-i18n="card5.title">Odoo: Three Disconnected Tools, One Coherent Flow</h3>
-      <p data-i18n="card5.desc">Implementing Sales, Inventory and Accounting for a Belgian SME — and solving the over-committed stock problem.</p>
+    <a class="carte" href="/projects/projet-4.html">
+      <div class="carte-barre" style="background: #4a86b4;"></div>
+      <span class="etiquette">Mobile UX</span>
+      <h3>SNCB: Know Which Way to Run Before You Get There</h3>
+      <p>Surfacing real-time arrival platforms and train exit door directions before reaching connecting hubs.</p>
     </a>
   </div>
 
-  <h2 style="margin-top: 3.5rem;">User Experience &amp; Interaction Models</h2>
-  <div class="grille">
-    <a class="carte" href="{{ '/projects/projet-3.html' | relative_url }}">
-      <div class="carte-barre" style="background:#4a86b4"></div>
-      <span class="etiquette" data-i18n="card3.label">UX concept</span>
-      <h3 data-i18n="card3.title">Google Calendar: Rethinking the Interaction Model</h3>
-      <p data-i18n="card3.desc">Drag to select, click to create — applying standard desktop interaction to calendar planning.</p>
-    </a>
-    <a class="carte" href="{{ '/projects/projet-4.html' | relative_url }}">
-      <div class="carte-barre" style="background:#4a86b4"></div>
-      <span class="etiquette" data-i18n="card4.label">UX concept</span>
-      <h3 data-i18n="card4.title">SNCB: Know Which Way to Run Before You Get There</h3>
-      <p data-i18n="card4.desc">Surfacing real-time arrival platform and exit doors before reaching connecting stations.</p>
-    </a>
-  </div>
+  <!-- SECTION 3 : SYSTÈMES COMPLEXES & ARCHITECTURE FONCTIONNELLE -->
+  <h2 style="margin-top: 4rem;">Systems &amp; Process Architecture</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    Translating messy operational reality into robust, scalable digital workflows.
+  </p>
 
-  <h2 style="margin-top: 3.5rem;">Instructional Architecture</h2>
   <div class="grille">
-    <a class="carte" href="{{ '/projects/projet-6.html' | relative_url }}">
-      <div class="carte-barre" style="background:#4caf6b"></div>
-      <span class="etiquette" data-i18n="card6.label">Instructional design</span>
-      <h3 data-i18n="card6.title">From Expert to Teacher: Structuring a Language Course That Holds</h3>
-      <p data-i18n="card6.desc">Turning tacit knowledge into a modular, scalable course with prerequisite mapping.</p>
+    <a class="carte" href="/projects/projet-1.html">
+      <div class="carte-barre" style="background: #b4502d;"></div>
+      <span class="etiquette">SAP S/4HANA</span>
+      <h3>O2C Without the Chaos: Standardising SAP SD</h3>
+      <p>Mapping and repairing broken order management flows during a greenfield implementation for a Nordic scale-up.</p>
+    </a>
+    <a class="carte" href="/projects/projet-5.html">
+      <div class="carte-barre" style="background: #b4502d;"></div>
+      <span class="etiquette">Odoo ERP</span>
+      <h3>Three Disconnected Tools, One Coherent Flow</h3>
+      <p>Implementing Sales, Inventory and Accounting for a Belgian SME to solve critical inventory race conditions.</p>
+    </a>
+    <a class="carte" href="/projects/projet-6.html">
+      <div class="carte-barre" style="background: #4caf6b;"></div>
+      <span class="etiquette">Instructional Architecture</span>
+      <h3>Structuring a Language Course That Holds</h3>
+      <p>Turning tacit knowledge into a modular, scalable curriculum with diagnostic routing and prerequisite mapping.</p>
     </a>
   </div>
 </main>

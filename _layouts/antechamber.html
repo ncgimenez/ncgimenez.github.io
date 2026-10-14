@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | Nadia Cañadas Giménez</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <title>{{ page.title }} | The Antechamber</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 
-     <style>
+  <style>
     /* ============================================================
-       Antichambre : Sanctuarisation des couleurs (indépendant du site pro)
+       Antichambre : Sanctuarisation des couleurs (Atelier créatif)
        ============================================================ */
 
     /* 1. Mode sombre (PAR DÉFAUT) : Neon Workshop & Ultraviolet */
@@ -45,22 +45,17 @@
       transition: background-color 0.25s ease;
     }
   </style>
-
-
-
-
-
 </head>
 <body>
 
   <header class="site">
     <div class="interieur">
-      <a class="marque" href="/antechamber/">The Antechamber</a>
+      <a class="marque" href="{{ '/antechamber/' | relative_url }}">The Antechamber</a>
       <nav aria-label="Navigation de l'Antichambre">
         <ul>
-          <li><a href="{{ '/antechamber/projects/' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/antechamber/projects/' | relative_url }}">Lab</a></li>
           <li><a href="{{ '/antechamber/notes/' | relative_url }}">Notes</a></li>
-          <li><a href="{{ '/antechamber/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/antechamber/about/' | relative_url }}">Behind the Curtain</a></li>
         </ul>
       </nav>
       <div class="controles-header">
@@ -76,15 +71,15 @@
 
   {{ content }}
 
-    <footer>
+  <footer>
     <p>© 2026 Nadia Cañadas Giménez</p>
-    {% if page.title == "Behind the Curtain" %}
-    <p style="margin-top: 0.5rem; text-align: center;">
-      <a href="{{ '/' | relative_url }}" style="color: var(--texte-doux); text-decoration: none; font-size: 1.1rem;" title="Retour au portfolio" aria-label="Retour au portfolio">💼</a>
+    <p style="margin-top: 0.75rem; text-align: center;">
+      <a href="{{ '/' | relative_url }}" style="color: var(--texte-doux); text-decoration: none; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 6px;" title="Back to main portfolio" aria-label="Back to main portfolio">
+        <span>💼</span>
+        <span style="font-size: 0.85rem; font-family: -apple-system, sans-serif;">Exit to Main Portfolio</span>
+      </a>
     </p>
-    {% endif %}
   </footer>
-
 
   <script src="{{ '/assets/lang.js' | relative_url }}"></script>
 </body>

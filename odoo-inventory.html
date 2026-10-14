@@ -1,0 +1,89 @@
+---
+layout: default
+title: Odoo ERP Integration & Stock Synchronization
+mermaid: true
+---
+
+  <main>
+    <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
+
+    <span class="etiquette">Enterprise Systems · Odoo ERP</span>
+    <h1>Three Disconnected Tools, One Coherent Flow</h1>
+    <p class="chapo">
+      Architecting an end-to-end integration across Sales, Inventory, and Accounting for a Belgian SME — eliminating stock race conditions and manual reconciliation overhead.
+    </p>
+
+    <dl class="meta">
+      <div><dt>Platform</dt><dd>Odoo 17 (Enterprise)</dd></div>
+      <div><dt>Scope</dt><dd>Sales, Inventory (WMS), Invoicing</dd></div>
+      <div><dt>Role</dt><dd>Functional Analyst &amp; Solution Architect</dd></div>
+      <div><dt>Key Outcome</dt><dd>Zero over-commitment incidents</dd></div>
+    </dl>
+
+    <h2>The Systemic Bottleneck</h2>
+    <p>
+      A fast-growing distributor operated with three siloed software solutions: an e-commerce storefront, an unlinked warehouse management sheet, and desktop accounting software.
+    </p>
+    <p>
+      The critical flaw was asynchronous inventory state: the sales team regularly sold high-demand units that had physically departed the warehouse an hour earlier for another B2B client. These <strong>inventory race conditions</strong> led to emergency air-freight costs, backorders, and defensive email exchanges between sales reps and warehouse operators.
+    </p>
+
+    <div class="bandeau">
+      <strong>Core Insight:</strong> A physical warehouse is a state machine. If reservation events are not locked atomically at the quotation stage, your inventory database is merely a suggestion rather than a source of truth.
+    </div>
+
+    <h2>Integrated Flow Architecture</h2>
+    <p>
+      We unified the operations onto a single Odoo instance, replacing batch imports with automated reservation routes and automated ledger matching.
+    </p>
+
+    <div class="bpmn-wrap">
+      <pre class="mermaid">
+flowchart LR
+  subgraph Sales [Sales & Quotation]
+    SO[Sales Order Confirmed]
+  end
+
+  subgraph Stock [Automated Inventory Engine]
+    RES[Stock Reservation Rule Triggered]
+    PACK[Pick & Pack Slip Generated]
+    SHIP[Outgoing Delivery Validated]
+  end
+
+  subgraph Finance [Accounting Real-Time Sync]
+    INV[Draft Invoice Auto-Created]
+    JOURNAL[Stock Valuation Journal Entry]
+  end
+
+  SO --> RES
+  RES --> PACK
+  PACK --> SHIP
+  SHIP --> INV
+  SHIP --> JOURNAL
+
+  style Sales fill:#16141c,stroke:#38bdf8,stroke-width:1px
+  style Stock fill:#16141c,stroke:#9d5cff,stroke-width:1px
+  style Finance fill:#16141c,stroke:#f0714b,stroke-width:1px
+      </pre>
+    </div>
+    <p class="bpmn-note">Event-driven state transitions across Odoo modules.</p>
+
+    <h2>Key Technical Configurations</h2>
+    <ul class="liste">
+      <li><strong>Automated Reservation Rules:</strong> Configured strict FIFO reservation rules upon order confirmation, distinguishing <em>On Hand</em> physical quantities from <em>Forecasted</em> available stock in real time.</li>
+      <li><strong>Automated Landed Costs:</strong> Structured freight and customs cost absorption schemas to reflect accurate gross margins per product line.</li>
+      <li><strong>Automated Bank Synchronization &amp; Reconciliation:</strong> Replaced monthly manual matching with automated rule-based transaction reconciliation against Belgian bank statements.</li>
+    </ul>
+
+    <h2>Business Outcomes</h2>
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Stock Accuracy</span></div>
+      <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">Ghost Orders</span></div>
+      <div class="stat"><span class="stat-val">3 Days</span><span class="stat-lbl">Saved at Month-End</span></div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
+      <a class="bouton plein" href="/projects/mobile-UX.html">Next: Mobile Transit UX →</a>
+    </div>
+  </main>

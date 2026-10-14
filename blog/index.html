@@ -1,34 +1,74 @@
 ---
 layout: default
-title: Notes & Resources
+title: Notes & Writing
 ---
 
 <main>
-  <span class="etiquette" data-i18n="nav.notes">Notes</span>
-  <h1 data-i18n="section.notes.title">Notes & Resources</h1>
-  <p class="chapo" data-i18n="section.notes.sub">Thoughts on process design, ERP systems, UX, and building things.</p>
+  <span class="etiquette">Writing</span>
+  <h1>Notes, Systems &amp; Disassembly</h1>
+  <p class="chapo">
+    Thoughts on interaction friction, systems architecture, mental models, and the instinct to take things apart.
+  </p>
 
-  <h2 id="notes" style="margin-top: 3rem;">Articles</h2>
+  <h2 style="margin-top: 3.5rem;">Core Notes &amp; Mindset</h2>
   <div class="grille">
-    <a class="carte" href="{{ '/blog/available-to-promise.html' | relative_url }}">
-      <span class="etiquette" data-i18n="soon1.label">SAP Concept</span>
-      <h3 data-i18n="soon1.title">Available-to-Promise in Order-to-Cash</h3>
-      <p data-i18n="soon1.desc">Why confirming a delivery date without checking available stock creates cascading problems.</p>
+    <!-- NOTE PHARE -->
+    <a class="carte" href="{{ '/blog/note-tools.html' | relative_url }}">
+      <div class="carte-barre" style="background: #7c3aed;"></div>
+      <span class="etiquette" style="color: #7c3aed;">Mindset</span>
+      <h3>I Take Things Apart</h3>
+      <p>On replacing phone batteries, tackling Logic Pro, and why looking under the surface reveals how processes really work.</p>
     </a>
-    <a class="carte" href="{{ '/blog/focus-sessions.html' | relative_url }}">
-      <span class="etiquette" data-i18n="soon5.label">Product Concept</span>
-      <h3 data-i18n="soon5.title">Focus Sessions Tied to Your Calendar</h3>
-      <p data-i18n="soon5.desc">A Pomodoro-style timer that knows which life category you're working in.</p>
-    </a>
-    <a class="carte" href="{{ '/blog/public-data.html' | relative_url }}">
-      <span class="etiquette" data-i18n="soon3.label">Data Analysis</span>
-      <h3 data-i18n="soon3.title">Public Data → Actionable Recommendation</h3>
-      <p data-i18n="soon3.desc">An open dataset, a structured synthesis, a recommendation for a decision-maker.</p>
-    </a>
+
+    <!-- APP CRITIQUE -->
     <a class="carte" href="{{ '/blog/app-critique.html' | relative_url }}">
-      <span class="etiquette" data-i18n="soon4.label">UX Teardown</span>
-      <h3 data-i18n="soon4.title">Structured Critique of an App</h3>
-      <p data-i18n="soon4.desc">3 friction points identified, 1 detailed solution with hypothesis and success metrics.</p>
+      <div class="carte-barre" style="background: #4a86b4;"></div>
+      <span class="etiquette">UX Teardown</span>
+      <h3>Structured Critique of an App</h3>
+      <p>3 friction points identified, 1 focused solution with clear hypotheses and measurable success metrics.</p>
+    </a>
+
+    <!-- FOCUS SESSIONS -->
+    <a class="carte" href="{{ '/blog/focus-sessions.html' | relative_url }}">
+      <div class="carte-barre" style="background: #4caf6b;"></div>
+      <span class="etiquette">Product Concept</span>
+      <h3>Focus Sessions Tied to Your Calendar</h3>
+      <p>A Pomodoro-style timer that knows your life categories — and measures whether you actually protected that time.</p>
+    </a>
+
+    <!-- ATP IN O2C -->
+    <a class="carte" href="{{ '/blog/available-to-promise.html' | relative_url }}">
+      <div class="carte-barre" style="background: #b4502d;"></div>
+      <span class="etiquette">Systems Logic</span>
+      <h3>Available-to-Promise in Order-to-Cash</h3>
+      <p>Why confirming delivery dates without real-time stock checks creates an unbudgeted chaos tax across the business.</p>
+    </a>
+  </div>
+
+  <h2 style="margin-top: 4rem;">Field Observations &amp; Process Notes</h2>
+  <div class="grille">
+    <!-- USER = CONSULTANT -->
+    <a class="carte" href="{{ '/blog/note-sf.html' | relative_url }}">
+      <div class="carte-barre" style="background: #b4502d;"></div>
+      <span class="etiquette">Empathy</span>
+      <h3>When the Consultant Is Also the User</h3>
+      <p>Abandoning an application because of poor UX, and why remembering that feeling changes how you implement enterprise software.</p>
+    </a>
+
+    <!-- REQUIREMENTS -->
+    <a class="carte" href="{{ '/blog/note-rd.html' | relative_url }}">
+      <div class="carte-barre" style="background: #b4502d;"></div>
+      <span class="etiquette">Specification</span>
+      <h3>What Makes a Requirements Document Actually Useful</h3>
+      <p>On the gap between formal compliance templates and specs that developers actually read and use to solve the core problem.</p>
+    </a>
+
+    <!-- PUBLIC DATA -->
+    <a class="carte" href="{{ '/blog/public-data.html' | relative_url }}">
+      <div class="carte-barre" style="background: #4a86b4;"></div>
+      <span class="etiquette">Data Synthesis</span>
+      <h3>Public Data → Actionable Recommendation</h3>
+      <p>Bridging the gap between raw datasets and a single, concise paragraph a decision-maker can act on Monday morning.</p>
     </a>
   </div>
 </main>

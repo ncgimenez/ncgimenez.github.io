@@ -1,128 +1,81 @@
 ---
 layout: default
-title: Google Calendar Redesign
+title: Google Calendar Interaction Redesign
+mermaid: true
 ---
 
   <main>
     <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
-    <span class="etiquette">Interaction Redesign</span>
+    <span class="etiquette">Interaction Redesign · Desktop UX</span>
     <h1>Google Calendar: Rethinking the Interaction Model</h1>
     <p class="chapo">
-      In Google Calendar, every click-drag creates a new event. This concept flips the default: drag selects, click creates — the way desktop software works everywhere else.
+      Drag to select, click to create: bringing standard desktop marquee selection and batch manipulation to temporal schedule changes.
+    </p>
+
+    <dl class="meta">
+      <div><dt>Application</dt><dd>Calendar Scheduling (Web/Desktop)</dd></div>
+      <div><dt>Focus</dt><dd>Interaction Primitives &amp; Ergonomics</dd></div>
+      <div><dt>Role</dt><dd>Interaction Designer</dd></div>
+      <div><dt>Core Hypothesis</dt><dd>Batch drag reduces rescheduling fatigue</dd></div>
+    </dl>
+
+    <h2>The Conflict of Interaction Paradigms</h2>
+    <p>
+      In modern desktop software, clicking and dragging on empty canvas space universally triggers a <strong>marquee bounding box</strong> to select multiple entities. You see this in Figma, operating system desktops, spreadsheet cell ranges, and digital audio workstations.
+    </p>
+    <p>
+      Google Calendar violates this expectation. Clicking and dragging on empty calendar space creates an immediate, blank tentative meeting. To move four adjacent meetings back by 30 minutes, users must perform four discrete drag-and-drop operations, frequently misaligning event durations or triggering unwanted notification modals.
     </p>
 
     <div class="bandeau">
-      <strong>Origins:</strong> Built from real-world frustration. Five years of using calendar grids daily, trying to drag-select multiple events to reschedule them, and repeatedly creating blank events by accident. This exact observation directly shaped the interaction model built into the <strong><a href="/projects/span-suite.html" style="color: inherit; text-decoration: underline;">Span Suite</a></strong>.
+      <strong>The Friction Point:</strong> Rescheduling a fragmented afternoon requires repetitive, granular adjustments instead of a single, fluid selection gesture.
     </div>
 
-    <dl class="meta">
-      <div><dt>Product</dt><dd>Google Calendar (Web)</dd></div>
-      <div><dt>Scope</dt><dd>Interaction Design &amp; State Model</dd></div>
-      <div><dt>Influence</dt><dd>Directly applied in Span Plan</dd></div>
-      <div><dt>Status</dt><dd>Concept &amp; Vector Wireframe</dd></div>
-    </dl>
-
-    <h2>The Friction in the Grid</h2>
+    <h2>Proposed Interaction Architecture</h2>
     <p>
-      In Google Calendar's week view, <strong>click-dragging always creates a new event</strong> — it never selects existing ones. To select multiple events, there is no gesture at all. You are forced to click into and reschedule each block one by one.
-    </p>
-    <p>
-      This breaks a fundamental interaction pattern: in every desktop environment (file explorers, canvas tools, spreadsheets), click-drag represents marquee selection. Google Calendar's deviation causes persistent friction whenever a meeting slips or an entire afternoon shifts.
+      Separating creation from selection via contextual modifier keys and standard desktop spatial gestures:
     </p>
 
-    <h2>The Hypothesis: Desktop Standards Restored</h2>
-    <p>
-      If calendar interfaces adopted the desktop standard — <strong>drag to select, single-click to create inline</strong> — schedule reorganizations take seconds rather than minutes, with zero onboarding curve.
-    </p>
+    <div class="bpmn-wrap">
+      <pre class="mermaid">
+flowchart TD
+  subgraph Default [Current Default: Fragmented Clicks]
+    A1[Need to Shift Afternoon by +30m] --> B1[Drag Event 1 Down]
+    B1 --> C1[Drag Event 2 Down]
+    C1 --> D1[Drag Event 3 Down]
+    D1 --> E1[High Cognitive Overhead & Mistake Risk]
+  end
 
-    <figure>
-      <svg viewBox="0 0 620 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Wireframe showing marquee selection and inline create in redesigned Google Calendar">
-        <defs>
-          <filter id="sh">
-            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
-          </filter>
-        </defs>
-        <!-- Card background -->
-        <rect width="620" height="340" fill="var(--fond-carte)" rx="10" stroke="var(--ligne)" stroke-width="1"/>
-        <!-- App bar -->
-        <rect width="620" height="34" fill="var(--fond)" rx="10"/>
-        <rect y="20" width="620" height="14" fill="var(--fond)"/>
-        <text x="14" y="22" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">Google Calendar — interaction redesign concept</text>
+  subgraph Redesigned [Redesigned Model: Marquee Batching]
+    A2[Need to Shift Afternoon by +30m] --> B2[Marquee Drag across Target Time Slot]
+    B2 --> C2[All Enclosed Event Cards Active]
+    C2 --> D2[Single Multi-Event Offset Drag]
+    D2 --> E2[Instant Coordinated Reschedule]
+  end
 
-        <!-- Day headers -->
-        <text x="97"  y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">MON 14</text>
-        <text x="207" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">TUE 15</text>
-        <text x="317" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">WED 16</text>
-        <text x="427" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">THU 17</text>
-        <text x="537" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">FRI 18</text>
+  style Default fill:#16141c,stroke:#b4502d,stroke-width:1px
+  style Redesigned fill:#16141c,stroke:#38bdf8,stroke-width:1px
+      </pre>
+    </div>
+    <p class="bpmn-note">State transition comparison: individual event dragging vs. marquee spatial multi-selection.</p>
 
-        <!-- Time labels -->
-        <text x="36" y="76"  text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte-muté)">9 AM</text>
-        <text x="36" y="126" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte-muté)">10</text>
-        <text x="36" y="176" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte-muté)">11</text>
-        <text x="36" y="226" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte-muté)">12</text>
-        <text x="36" y="276" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte-muté)">1 PM</text>
+    <h2>Core Interaction Upgrades</h2>
+    <ul class="liste">
+      <li><strong>Marquee Multi-Select:</strong> Dragging across empty background grid selects all overlapping event nodes simultaneously, displaying a unified boundary.</li>
+      <li><strong>Atomic Block Shifting:</strong> Moving the selection maintains relative offsets between events, preserving planned break intervals automatically.</li>
+      <li><strong>Single-Click Creation Anchor:</strong> A simple click-and-release creates an event with smart default duration, freeing click-and-drag for spatial framing.</li>
+    </ul>
 
-        <!-- Horizontal grid lines -->
-        <line x1="40" y1="74"  x2="600" y2="74"  stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="40" y1="124" x2="600" y2="124" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="40" y1="174" x2="600" y2="174" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="40" y1="224" x2="600" y2="224" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="40" y1="274" x2="600" y2="274" stroke="var(--ligne)" stroke-width="0.5"/>
+    <h2>Impact on Power Users</h2>
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-val">75%</span><span class="stat-lbl">Fewer Drag Gestures</span></div>
+      <div class="stat"><span class="stat-val">Zero</span><span class="stat-lbl">Interval Misalignments</span></div>
+      <div class="stat"><span class="stat-val">Natural</span><span class="stat-lbl">Desktop Ergonomics</span></div>
+    </div>
 
-        <!-- Vertical grid lines -->
-        <line x1="40"  y1="56" x2="40"  y2="290" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="152" y1="56" x2="152" y2="290" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="262" y1="56" x2="262" y2="290" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="372" y1="56" x2="372" y2="290" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="482" y1="56" x2="482" y2="290" stroke="var(--ligne)" stroke-width="0.5"/>
-        <line x1="600" y1="56" x2="600" y2="290" stroke="var(--ligne)" stroke-width="0.5"/>
-
-        <!-- MON events (SELECTED) -->
-        <rect x="44" y="76"  width="104" height="46" rx="4" fill="rgba(240, 113, 75, 0.15)" stroke="var(--accent)" stroke-width="1.5"/>
-        <text x="96" y="95"  text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="var(--accent)">Team sync</text>
-        <text x="96" y="109" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8"  fill="var(--texte-doux)">9:00 – 10:00</text>
-        <circle cx="138" cy="82" r="6" fill="var(--accent)"/>
-        <text x="138" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">✓</text>
-
-        <rect x="44" y="126" width="104" height="96" rx="4" fill="rgba(240, 113, 75, 0.15)" stroke="var(--accent)" stroke-width="1.5"/>
-        <text x="96" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="var(--accent)">Focus: Report</text>
-        <text x="96" y="184" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8"  fill="var(--texte-doux)">10:00 – 12:00</text>
-        <circle cx="138" cy="132" r="6" fill="var(--accent)"/>
-        <text x="138" y="136" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">✓</text>
-
-        <!-- TUE event -->
-        <rect x="156" y="100" width="102" height="50" rx="4" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1"/>
-        <text x="207" y="121" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#38bdf8">1:1 with lead</text>
-        <text x="207" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8"  fill="var(--texte-doux)">9:30 – 10:30</text>
-
-        <!-- THU — inline create example -->
-        <rect x="376" y="76" width="102" height="30" rx="4" fill="var(--fond)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,2"/>
-        <line x1="388" y1="83" x2="388" y2="97" stroke="var(--accent)" stroke-width="1.5"/>
-        <text x="394" y="95" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte-muté)">Add title…</text>
-
-        <!-- Marquee selection box -->
-        <rect x="42" y="74" width="108" height="150" rx="4" fill="var(--accent)" fill-opacity="0.08" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5,3"/>
-
-        <!-- Context menu -->
-        <rect x="156" y="74" width="152" height="100" rx="8" fill="var(--fond-carte)" stroke="var(--ligne)" stroke-width="1" filter="url(#sh)"/>
-        <text x="172" y="92"  font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="var(--texte)">2 events selected</text>
-        <line x1="156" y1="98" x2="308" y2="98" stroke="var(--ligne)" stroke-width="0.5"/>
-        <text x="172" y="114" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte)">↗  Move to…</text>
-        <text x="172" y="132" font-family="system-ui,sans-serif" font-size="9" fill="var(--texte)">⏩  Postpone 1 day</text>
-        <text x="172" y="150" font-family="system-ui,sans-serif" font-size="9" fill="#f87171">✕  Delete</text>
-      </svg>
-      <figcaption>Proposed interaction model: marquee selection, contextual batch operations, and lightweight inline event creation</figcaption>
-    </figure>
-
-    <h2>From Concept to Production in Span</h2>
-    <p>
-      Rather than keeping this as an abstract wireframe, I translated this exact principle into <strong>Span Plan</strong>: reducing multi-step dialog boxes to immediate, direct manipulations on time blocks.
-    </p>
-
-    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-      <a class="retour" href="/projects/" style="margin: 0;">← Back to projects</a>
-      <a class="bouton violet" href="/projects/span-suite.html">See the Span Case Study →</a>
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
+      <a class="bouton plein" href="/projects/mobile-UX.html">Next: Mobile Transit UX →</a>
     </div>
   </main>

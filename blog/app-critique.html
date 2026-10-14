@@ -1,47 +1,68 @@
 ---
 layout: default
-title: App Critique
+title: Structured Critique of an App
 ---
 
   <main>
-    <span class="etiquette">UX Teardown</span>
-    <h1>Structured Critique of an App</h1>
+    <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Notes</a>
+
+    <span class="etiquette">UX Teardown · Interaction Model</span>
+    <h1>Structured Critique of an App: Deconstructing Friction</h1>
     <p class="chapo">
-      3 friction points identified, 1 detailed solution with hypothesis and success metrics.
+      Three friction points identified in daily mobile interfaces, with focused architectural solutions, core hypotheses, and measurable success metrics.
     </p>
 
+    <dl class="meta">
+      <div><dt>Category</dt><dd>UX Audit &amp; Teardown</dd></div>
+      <div><dt>Framework</dt><dd>Friction / Hypothesis / Metric</dd></div>
+      <div><dt>Reading time</dt><dd>3 min</dd></div>
+    </dl>
+
+    <h2>The Premise: Critique Is Engineering</h2>
     <p>
-      "The app is bad" doesn't help anyone. Neither does "here are 47 things I'd change."
+      Complaining about bad software is easy. Deconstructing <em>why</em> an interface fails under cognitive load—and proposing a deterministic solution—is engineering.
     </p>
     <p>
-      A useful critique does three things: it identifies the real friction, it prioritizes
-      ruthlessly, and it goes deep on one fix — not surface-level on many.
-    </p>
-    <p>
-      The structure: look at the app as a new user. Watch where you hesitate. Where do you
-      have to try twice? Where do you wonder if something is even possible? Write those down.
-      Three of them will capture most of the pain.
-    </p>
-    <p>
-      Now pick one. Not the most annoying — the one that, if fixed, would make the biggest
-      difference to how someone uses the app. This is your focus.
-    </p>
-    <p>
-      For that one friction point, go deep: Why does it happen? What's the underlying assumption
-      the designer made that doesn't match how people actually work? What would change if you
-      fixed it? And critically: how would you know the fix worked?
-    </p>
-    <p>
-      Example: an expense app that makes you classify every receipt immediately. Friction: people
-      don't have categories in mind the moment they capture a receipt — they just want to capture it.
-      Solution hypothesis: capture first, classify later, with a smart default (last-used category).
-      Success metric: time between receipt capture and app close drops by 60%.
-    </p>
-    <p>
-      That's a critique someone can actually act on. Not because it's kind — but because it's honest
-      about what the problem is and what solving it looks like.
+      When users struggle with a flow, the root cause is almost never visual styling. It is a breakdown in the underlying mental model: the software assumes one sequence of intent, while the human in the real world is operating under competing constraints.
     </p>
 
-    <a class="retour" href="/blog/">← Back to notes</a>
-    
+    <h2>Point 01: The Hidden Destination Platform</h2>
+    <div class="bandeau">
+      <strong>Observation:</strong> In transit apps, connecting train platform numbers are nested two levels deep behind tap targets, forcing anxious passengers to reload screens while walking down stairs.
+    </div>
+    <ul class="liste">
+      <li><strong>Friction:</strong> High motor load during moments of peak physical movement and poor cellular signal.</li>
+      <li><strong>Hypothesis:</strong> Surfacing arrival and departure tracks automatically within 5 minutes of terminal approach reduces in-app navigation time to zero.</li>
+      <li><strong>Measurable Metric:</strong> Drop in time-to-first-platform-view from 14s to &lt; 1s via ambient lock-screen widgets.</li>
+    </ul>
+
+    <h2>Point 02: Modal Dialogs That Steal Working Memory</h2>
+    <p>
+      In many productivity tools, adding a subtask opens a centered modal that covers the existing list. The moment the dialog obscures the surrounding tasks, the user loses their frame of reference:
+    </p>
+    <ul class="liste">
+      <li><strong>Friction:</strong> Context switching. The brain must hold the priority queue in memory while typing into a blank field.</li>
+      <li><strong>Hypothesis:</strong> Inline, keyboard-driven creation directly beneath the target item maintains visual anchor points and preserves flow.</li>
+      <li><strong>Measurable Metric:</strong> Task creation completion rate increases by 22%; cancellation rate drops to near zero.</li>
+    </ul>
+
+    <h2>Point 03: Passive Backlogs Without Capacity Checks</h2>
+    <p>
+      To-do lists that allow unlimited unchecked items without a temporal anchor create psychological debt. Users stop opening the tool once the backlog exceeds 30 tasks.
+    </p>
+    <ul class="liste">
+      <li><strong>Friction:</strong> Infinite scroll paralysis. Without boundaries, all tasks appear equally urgent.</li>
+      <li><strong>Hypothesis:</strong> Enforcing a structural cap (maximum 3 daily focal blocks with automated rollover) eliminates guilt and restores trust in the system.</li>
+      <li><strong>Measurable Metric:</strong> Daily retention at Day 30 and average completion ratio of committed items.</li>
+    </ul>
+
+    <h2>Applied in Real Projects</h2>
+    <p>
+      These observations are not hypothetical exercises. Point 01 directly formed the basis of the <a href="/projects/mobile-UX.html">SNCB Mobile UX concept</a>, while Points 02 and 03 established the architectural foundation for the <a href="/projects/span-suite.html">Span Suite</a>.
+    </p>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/blog/" style="margin: 0;">← Back to all notes</a>
+      <a class="bouton plein" href="/blog/available-to-promise.html">Next: Available-to-Promise Logic →</a>
+    </div>
   </main>

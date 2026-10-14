@@ -1,0 +1,114 @@
+---
+layout: default
+title: SAP S/4HANA O2C Standardization
+mermaid: true
+---
+
+  <main>
+    <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
+
+    <span class="etiquette">Enterprise Systems · SAP S/4HANA</span>
+    <h1>O2C Without the Chaos: Standardising SAP SD</h1>
+    <p class="chapo">
+      Mapping, debugging, and standardising a broken order-to-cash pipeline during a greenfield SAP S/4HANA Cloud rollout for a Nordic hardware scale-up.
+    </p>
+
+    <dl class="meta">
+      <div><dt>System</dt><dd>SAP S/4HANA Cloud (Public)</dd></div>
+      <div><dt>Scope</dt><dd>Order-to-Cash (SD, MM, FI-AR)</dd></div>
+      <div><dt>Role</dt><dd>Systems &amp; Business Analyst</dd></div>
+      <div><dt>Impact</dt><dd>85% reduction in manual pricing overrides</dd></div>
+    </dl>
+
+    <h2>The Core Friction</h2>
+    <p>
+      When hypergrowth outpaces operational architecture, sales teams invent workarounds. For this hardware scale-up expanding across 14 European markets, every sales representative maintained an independent spreadsheet with custom discount matrices, legacy SKU overrides, and manual delivery commitments.
+    </p>
+    <p>
+      Orders arrived in finance with incomplete tax codes, warehouse dispatches stalled due to missing shipping condition keys, and invoice reconciliation required up to four days per month-end cycle.
+    </p>
+
+    <div class="bandeau">
+      <strong>The Diagnosis:</strong> The problem wasn't human negligence; it was systemic friction. The legacy tool offered no guided path, making error-prone manual intervention the path of least resistance.
+    </div>
+
+    <h2>Process Architecture: Before &amp; After</h2>
+    <p>
+      Below is the operational flow transition: from fragmented spreadsheets to an automated, event-driven Order-to-Cash pipeline in S/4HANA.
+    </p>
+
+    <div class="bpmn-wrap">
+      <pre class="mermaid">
+flowchart TD
+  subgraph AS_IS [Legacy State: High Cognitive Load & Workarounds]
+    A1[Customer Order Received] --> B1[Manual Price Calculation via Excel]
+    B1 --> C1[Email to Logistics for Stock Check]
+    C1 --> D1[Manual Entry into Legacy Order Form]
+    D1 --> E1{Error during Invoicing?}
+    E1 -- Yes --> F1[Manual Credit Note & Recalculation]
+    E1 -- No --> G1[Order Settled]
+  end
+
+  subgraph TO_BE [Standardised S/4HANA Flow: Deterministic Rules]
+    A2[Electronic EDI / Portal Order] --> B2[Condition Technique PR00 + Automatic Discounts]
+    B2 --> C2[Real-Time ATP Check against Plant Stock]
+    C2 --> D2[Automatic Delivery Order Creation]
+    D2 --> E2[Automated Collective Billing Job]
+    E2 --> F2[Clean Ledger Posting in FI-AR]
+  end
+
+  style AS_IS fill:#16141c,stroke:#b4502d,stroke-width:1px
+  style TO_BE fill:#16141c,stroke:#9d5cff,stroke-width:1px
+      </pre>
+    </div>
+    <p class="bpmn-note">System transition flow diagram rendered via Mermaid.</p>
+
+    <h2>Fit-Gap Analysis &amp; Systemic Resolution</h2>
+    <table class="gap-table">
+      <thead>
+        <tr>
+          <th>Requirement</th>
+          <th>Standard SAP Behavior</th>
+          <th>Gap Identified</th>
+          <th>Engineered Resolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tiered Volume Pricing</strong></td>
+          <td>Standard Condition Technique (PR00, K004)</td>
+          <td>Complex rebate tiers based on quarterly rolling volume across customer subsidiaries.</td>
+          <td>Configured condition contract management with scale-based discount calculation schemas.</td>
+        </tr>
+        <tr>
+          <td><strong>Automated Credit Check</strong></td>
+          <td>SAP Credit Management (FSCM)</td>
+          <td>Blocking orders caused manual email loops during Nordic market peak hours.</td>
+          <td>Introduced dynamic credit checks tied to automated payment terms and pre-authorized thresholds.</td>
+        </tr>
+        <tr>
+          <td><strong>3PL Fulfillment Sync</strong></td>
+          <td>Standard Outbound Delivery</td>
+          <td>Warehouse partner required specialized shipping condition flags per transport lane.</td>
+          <td>Standardized partner determination procedures and automated delivery split parameters.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Operational Impact</h2>
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-val">85%</span><span class="stat-lbl">Pricing Override Drops</span></div>
+      <div class="stat"><span class="stat-val">Zero</span><span class="stat-lbl">Manual Invoice Audits</span></div>
+      <div class="stat"><span class="stat-val">&lt; 2h</span><span class="stat-lbl">Order to Dispatch</span></div>
+    </div>
+
+    <h2>Key Takeaway</h2>
+    <p>
+      An enterprise system succeeds when the intended business architecture matches the user's natural cognitive workflow. Standardising SAP SD was not an exercise in enforcing rigid corporate rules; it was about designing an engine so predictable and friction-free that nobody felt the need to open an Excel sheet ever again.
+    </p>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
+      <a class="bouton plein" href="/projects/odoo-inventory.html">Next: Odoo ERP Case Study →</a>
+    </div>
+  </main>

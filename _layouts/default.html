@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | Nadia Cañadas Giménez</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} · Nadia Cañadas Giménez{% else %}Nadia Cañadas Giménez · Product & Systems Engineer{% endif %}</title>
+  <meta name="description" content="Portfolio of Nadia Cañadas Giménez — Product Engineer & Systems Architect. ERP logic, tactile PWA interfaces, and interaction design.">
+  
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+
+  {% if page.mermaid %}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#16141c',
+        primaryColor: '#9d5cff',
+        primaryTextColor: '#f4f2f7',
+        primaryBorderColor: 'rgba(255,255,255,0.15)',
+        lineColor: '#f0714b',
+        secondaryColor: '#1c1924',
+        tertiaryColor: '#0e0d11'
+      }
+    });
+  </script>
+  {% endif %}
 </head>
 <body>
 
   <header class="site">
     <div class="interieur">
-      <a class="marque" href="{{ '/' | relative_url }}">NCG</a>
-      <nav aria-label="Main navigation">
+      <a class="marque" href="{{ '/' | relative_url }}">Nadia Cañadas Giménez</a>
+      
+      <nav aria-label="Navigation principale">
         <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Notes</a></li>
-          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}aria-current="page"{% endif %}>Work</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Notes</a></li>
+          <li><a href="{{ '/about.html' | relative_url }}" {% if page.url contains '/about' %}aria-current="page"{% endif %}>About</a></li>
         </ul>
       </nav>
+
       <div class="controles-header">
-        <button class="theme-toggle" aria-label="Switch theme"><span class="theme-icon">🌙</span></button>
-        <button class="lang-toggle" aria-label="Switch language">
-          <span class="lang-opt lang-opt--en">EN</span>
-          <span class="lang-sep">|</span>
-          <span class="lang-opt lang-opt--fr">FR</span>
-        </button>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
       </div>
     </div>
   </header>
 
-  <!-- Contenu injecté par les pages -->
   {{ content }}
 
   <footer>
-    <p>© 2026 Nadia Cañadas Giménez ·
-      <a href="https://www.linkedin.com/in/ncgimenez" target="_blank" rel="noopener">LinkedIn</a>
-      · <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>
-    </p>
-    <p style="margin-top: 0.75rem; text-align: center;">
-      <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Enter the antechamber & audio lab" aria-label="Enter the antechamber">🗝</a>
-    </p>
+    <div style="max-width: var(--largeur); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+      <p style="margin: 0; font-size: 0.88rem; color: var(--texte-muté);">
+        © {{ 'now' | date: "%Y" }} Nadia Cañadas Giménez · Engineered with tactile intent.
+      </p>
+      <div>
+        <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Entrer dans l'Antichambre" aria-label="Entrer dans l'Antichambre">🗝️</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Script global de thèmes et langue -->
-  <script src="{{ '/assets/lang.js' | relative_url }}"></script>
-
-  {% if page.mermaid %}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'base',
-      themeVariables: {
-        primaryColor: '#ffffff',
-        primaryTextColor: '#1f2430',
-        primaryBorderColor: '#e6dfd3',
-        lineColor: '#5b6272',
-        background: '#faf7f2',
-        fontSize: '13px'
-      }
-    });
-  </script>
-  {% endif %}
+    // Theme toggle persistence
+    const themeBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    if (currentTheme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+    }
 
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const isLight = root.getAttribute('data-theme') === 'light';
+        const nextTheme = isLight ? 'dark' : 'light';
+        root.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+      });
+    }
+  </script>
 </body>
 </html>

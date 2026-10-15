@@ -42,10 +42,12 @@
         </ul>
       </nav>
 
-      <div class="controles-header">
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
-      </div>
+    <div class="controles-header">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+        <span class="theme-icon">☀️</span>
+      </button>
     </div>
+
   </header>
 
   {{ content }}
@@ -82,5 +84,37 @@
       });
     }
   </script>
+
+  <script>
+    (function() {
+      const themeBtn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const themeIcon = document.querySelector('.theme-icon');
+      
+      const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
+      
+      function setTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        root.dataset.theme = theme;
+        localStorage.setItem('ncg-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (themeIcon) {
+          // Si on est en sombre, l'icône propose d'éclairer (☀️), sinon elle propose la nuit (🌙)
+          themeIcon.textContent = (theme === 'dark') ? '☀️' : '🌙';
+        }
+      }
+
+      // Initialisation immédiate
+      setTheme(currentTheme);
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function() {
+          const isDark = (root.getAttribute('data-theme') || root.dataset.theme) === 'dark';
+          setTheme(isDark ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+  
 </body>
 </html>

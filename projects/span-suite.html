@@ -37,6 +37,12 @@ mermaid: true
   <p>
     Most productivity tools fail because they treat human attention as infinite. They act as passive endless inventories: you dump forty items into a column, stare at the backlog every time you open the app, and carry a subconscious debt throughout the day.
   </p>
+  <p>
+    While traditional tools offer nested folders and project tags to sort this chaos, categorization often creates a false sense of progress. Endless sub-folders cause users to lose sight of urgent priorities: critical items get buried beneath deep hierarchies, only to be rediscovered weeks later when the damage is already done.
+  </p>
+  <p>
+    Furthermore, assigning arbitrary dates to everything is counter-productive. Tasks are rarely executed in an abstract vacuum; they happen within the shifting rhythm of real-world energy and unmoveable calendar commitments. When an unprioritized checklist attempts to dictate your schedule, cognitive fatigue takes over. The focus must be on <strong>the present moment</strong>. On Span Plan, the current day is always the center of gravity: you see what demands your attention right now, with immediate access to unassigned daily buffers without digging through menus.
+  </p>
 
   <div class="bandeau">
     <strong>Core Insight:</strong> Without an opinionated frame, every to-do list collapses into cognitive backlog debt. Real productivity does not happen by adding checkmarks; it happens by defending boundaries.
@@ -45,10 +51,12 @@ mermaid: true
   <p>
     Coming from an ERP and enterprise systems background, I observed the exact same dynamic: an organization cannot promise a customer delivery without first reserving warehouse capacity (Available-to-Promise). The human mind functions identically: you cannot execute a task without explicitly reserving mental bandwidth and dedicated temporal real estate for it.
   </p>
+  <p>
+    As modern software stacks accelerate, we underestimate how much cognitive energy is drained simply by managing the tools designed to organize us. Too many open choices, nested menus, and unbounded lists lead directly to analysis paralysis.
+  </p>
 
   <!-- EMPLACEMENT VISUEL 1 -->
   <figure>
-    <!-- Remplacer ce bloc par une balise <img src="/assets/span-plan-hero.png" alt="..."> dès que ta capture est prête -->
     <div style="background: var(--fond-carte); border: 2px dashed var(--ligne); border-radius: var(--rayon); padding: 36px; text-align: center; color: var(--texte-doux);">
       📸 <strong>[Capture 1 : Vue d'ensemble de Span Plan ou backlog épuré]</strong><br>
       <span style="font-size: 0.85rem;">(À déposer dans /assets/ et insérer ici via une balise img)</span>
@@ -70,7 +78,7 @@ flowchart LR
   end
 
   subgraph Handover [Frictionless Handover]
-    DayBuffer -->|One Tap / Instant Queue| ActiveSlot[Current Block Locked]
+    DayBuffer -->|Promote Top Priority| ActiveSlot[Current Block Locked]
   end
 
   subgraph FocusApp [Span Focus: Micro Execution]
@@ -133,7 +141,6 @@ flowchart LR
 
   <!-- EMPLACEMENT VISUEL 2 -->
   <figure>
-    <!-- Remplacer ce bloc par une balise <img src="/assets/span-focus-mobile.png" alt="..."> dès que ta capture est prête -->
     <div style="background: var(--fond-carte); border: 2px dashed var(--ligne); border-radius: var(--rayon); padding: 36px; text-align: center; color: var(--texte-doux);">
       📱 <strong>[Capture 2 : Span Focus en cours d'exécution sur smartphone]</strong><br>
       <span style="font-size: 0.85rem;">(À déposer dans /assets/ et insérer ici via une balise img)</span>
@@ -186,7 +193,7 @@ flowchart LR
 
   <h2>Next Iterations</h2>
   <ul class="liste">
-    <li><strong>Instant Cross-App Pipe:</strong> Bi-directional synchronization so dragging a task onto a calendar slot in Plan automatically reserves an execution block in Focus.</li>
+    <li><strong>Selective Promotion Pipeline:</strong> Fluid promotion of planned daily blocks from Span Plan directly into the active Span Focus queue, preserving ad-hoc micro sprints as standalone local tasks.</li>
     <li><strong>Haptic &amp; Auditory Feedback:</strong> Soft mechanical clicks synthesized via Web Audio API when completing blocks or starting focus sprints.</li>
   </ul>
 

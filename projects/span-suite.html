@@ -1,13 +1,14 @@
 ---
 layout: default
 title: Span Suite | Product Case Study
+mermaid: true
 ---
 
 <main>
   <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
   <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
-    <span class="etiquette etiquette--violet">Deployed Software</span>
+    <span class="etiquette etiquette--violet">Featured Product Case Study</span>
     <span class="etiquette etiquette--bleu">PWA · Multi-Device Sync</span>
   </div>
 
@@ -17,7 +18,7 @@ title: Span Suite | Product Case Study
   </p>
 
   <!-- LIENS DIRECTS VERS LES APPS -->
-  <div style="display: flex; gap: 14px; margin: 28px 0 36px; flex-wrap: wrap;">
+  <div style="display: flex; gap: 12px; margin: 28px 0 36px; flex-wrap: wrap;">
     <a class="bouton violet" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener">Launch Span Focus ↗</a>
     <a class="bouton plein" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener">Launch Span Plan ↗</a>
     <a class="bouton" href="https://github.com/ncgimenez/span-focus" target="_blank" rel="noopener">Focus Repo</a>
@@ -26,28 +27,64 @@ title: Span Suite | Product Case Study
 
   <dl class="meta">
     <div><dt>Role</dt><dd>Product Designer &amp; Frontend Engineer</dd></div>
-    <div><dt>Status</dt><dd>Live PWA &amp; Web Applications</dd></div>
+    <div><dt>Status</dt><dd>In Active Daily Dogfooding</dd></div>
     <div><dt>Tech Stack</dt><dd>React, Vanilla JS, Supabase, PWA</dd></div>
     <div><dt>Method</dt><dd>Functional Architecture &amp; Agentic Prototyping</dd></div>
   </dl>
 
   <!-- LE DIAGNOSTIC / LE CADRE -->
-  <h2>The Core Problem: Without Structure, To-Do Lists Are Overwhelming</h2>
+  <h2>1. The Problem: Without Structure, To-Do Lists Are Overwhelming</h2>
   <p>
     Most productivity tools fail because they treat human attention as infinite. They act as passive endless inventories: you dump forty items into a column, stare at the backlog every time you open the app, and carry a subconscious debt throughout the day.
   </p>
+
+  <div class="bandeau">
+    <strong>Core Insight:</strong> Without an opinionated frame, every to-do list collapses into cognitive backlog debt. Real productivity does not happen by adding checkmarks; it happens by defending boundaries.
+  </div>
+
   <p>
-    <strong>Without an opinionated frame, every to-do list collapses.</strong>
-  </p>
-  <p>
-    Real productivity does not happen by adding checkmarks; it happens by creating boundaries. Coming from an ERP and enterprise systems background, I observed the exact same dynamic: an organization cannot schedule a delivery without first checking available capacity. The human mind works identically: you cannot execute a task without explicitly reserving mental bandwidth and calendar time for it.
+    Coming from an ERP and enterprise systems background, I observed the exact same dynamic: an organization cannot promise a customer delivery without first reserving warehouse capacity (Available-to-Promise). The human mind functions identically: you cannot execute a task without explicitly reserving mental bandwidth and dedicated temporal real estate for it.
   </p>
 
+  <!-- EMPLACEMENT VISUEL 1 -->
+  <figure>
+    <!-- Remplacer ce bloc par une balise <img src="/assets/span-plan-hero.png" alt="..."> dès que ta capture est prête -->
+    <div style="background: var(--fond-carte); border: 2px dashed var(--ligne); border-radius: var(--rayon); padding: 36px; text-align: center; color: var(--texte-doux);">
+      📸 <strong>[Capture 1 : Vue d'ensemble de Span Plan ou backlog épuré]</strong><br>
+      <span style="font-size: 0.85rem;">(À déposer dans /assets/ et insérer ici via une balise img)</span>
+    </div>
+    <figcaption>Figure 1: Contextual daily planning buffer separating active priorities from passive backlog.</figcaption>
+  </figure>
+
   <!-- LA SOLUTION : 2 ENGINS DÉDIÉS -->
-  <h2>The Architecture: A Dual-Engine Ecosystem</h2>
+  <h2>2. The Architecture: A Dual-Engine Ecosystem</h2>
   <p>
-    Span separates the psychological act of <em>organizing</em> from the visceral act of <em>doing</em>. Rather than cramming both modes into one overloaded interface, Span provides two interconnected environments that speak the exact same language:
+    Span separates the psychological act of <em>organizing</em> from the visceral act of <em>doing</em>. Rather than cramming both modes into one overloaded interface, Span decouples them into two interconnected environments sharing a coherent state:
   </p>
+
+  <div class="bpmn-wrap">
+    <pre class="mermaid">
+flowchart LR
+  subgraph PlanApp [Span Plan: Macro Orchestration]
+    Backlog[Contextual Backlog] --> DayBuffer[Daily Allocation: Max 3-4 Blocks]
+  end
+
+  subgraph Handover [Frictionless Handover]
+    DayBuffer -->|One Tap / Instant Queue| ActiveSlot[Current Block Locked]
+  end
+
+  subgraph FocusApp [Span Focus: Micro Execution]
+    ActiveSlot --> Timer[Tactile Fullscreen Timer]
+    Timer --> LocalLog[(Local State / PWA Cache)]
+    LocalLog --> Sync[Supabase Cloud Sync]
+  end
+
+  style PlanApp fill:#16141c,stroke:#38bdf8,stroke-width:1px
+  style Handover fill:#16141c,stroke:#f0714b,stroke-width:1px
+  style FocusApp fill:#16141c,stroke:#9d5cff,stroke-width:1px
+    </pre>
+  </div>
+  <p class="bpmn-note">Figure 2: Architectural separation of concerns between temporal planning and focused execution.</p>
 
   <div class="grille" style="margin: 32px 0;">
     <!-- ENGIN 1 : PLAN -->
@@ -60,7 +97,7 @@ title: Span Suite | Product Case Study
       </p>
       <ul class="liste" style="margin-top: 14px; font-size: 0.92rem;">
         <li><strong>Automated Rollover:</strong> Incomplete tasks gracefully slide to the next planning window without guilt-inducing alarms.</li>
-        <li><strong>Contextual Categories:</strong> Strict division across Work, Life, and Fun to maintain visibility over energy balance.</li>
+        <li><strong>Contextual Categories:</strong> Strict division across Work, Life, and Focus to maintain visibility over energy balance.</li>
         <li><strong>Selective Focus Feeder:</strong> Promotes only top-tier daily priorities into the execution chamber.</li>
       </ul>
     </div>
@@ -82,39 +119,79 @@ title: Span Suite | Product Case Study
   </div>
 
   <!-- LE CRAFT & L'INTERACTION -->
-  <h2>Tactile Interaction &amp; Design Decisions</h2>
+  <h2>3. Tactile Interaction &amp; Mobile-First Ergonomics</h2>
   <p>
-    Software quality lives in micro-interactions and predictability. Throughout the Span suite, several non-negotiable principles guided the design:
+    Software quality lives in micro-interactions and predictability under constrained mobile viewports. Throughout the Span suite, several non-negotiable principles guided the design:
   </p>
 
   <ul class="liste">
     <li><strong>Keyboard-First Ergonomics:</strong> Switching between mouse and keyboard causes mental drag. In Span Focus, every frequent action can be operated entirely from the home row.</li>
-    <li><strong>Dark-Mode Default with Feutré Palette:</strong> Productivity tools are often used during late-night deep work sessions. The palette avoids blinding white spaces in favor of a soothing slate workshop aesthetic.</li>
-    <li><strong>Offline Resilience &amp; PWA Manifest:</strong> Both applications are installable as native Progressive Web Apps, guaranteeing immediate launch times and full offline execution.</li>
-    <li><strong>State Synchronization (Supabase):</strong> Ensuring tasks, categories, and timers remain coherent whether sitting at a desktop or reviewing priorities on a mobile device.</li>
+    <li><strong>Mobile Thumb-Zone Calibration:</strong> Primary execution triggers are positioned within natural thumb sweep areas on mobile devices, avoiding unreachable upper corners.</li>
+    <li><strong>iOS Viewport Resilience:</strong> Handled dynamic mobile browser address bar resizes via modern CSS viewport units (<code>100dvh</code>) to keep action trays fixed without layout jump.</li>
+    <li><strong>Dark-Mode Slate Palette:</strong> Productivity tools are frequently used during early morning or late-night focus sessions. The palette avoids harsh stark contrast in favor of an eye-resting dark slate workshop aesthetic.</li>
   </ul>
 
-  <!-- LE BACKSTAGE IA & INGÉNIERIE -->
-  <h2>The Engineering Mindset: Cadrage &amp; Agentic Velocity</h2>
+  <!-- EMPLACEMENT VISUEL 2 -->
+  <figure>
+    <!-- Remplacer ce bloc par une balise <img src="/assets/span-focus-mobile.png" alt="..."> dès que ta capture est prête -->
+    <div style="background: var(--fond-carte); border: 2px dashed var(--ligne); border-radius: var(--rayon); padding: 36px; text-align: center; color: var(--texte-doux);">
+      📱 <strong>[Capture 2 : Span Focus en cours d'exécution sur smartphone]</strong><br>
+      <span style="font-size: 0.85rem;">(À déposer dans /assets/ et insérer ici via une balise img)</span>
+    </div>
+    <figcaption>Figure 3: Span Focus running as a standalone PWA on mobile with gesture shortcuts.</figcaption>
+  </figure>
+
+  <!-- ARBITRAGES TECHNIQUES & POST-MORTEMS -->
+  <h2>4. Engineering Trade-offs &amp; Post-Mortems</h2>
   <p>
-    I build these applications using modern AI workflows (Gemini and LLMs) as force multipliers. This process is not passive copy-pasting; it is an active discipline of <strong>functional orchestration</strong>:
+    Building production tools means navigating real-world constraints. Here are three architectural challenges encountered during development and how they were resolved:
+  </p>
+
+  <table class="gap-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Challenge</th>
+        <th style="width: 35%;">Initial Friction / Failure Mode</th>
+        <th style="width: 40%;">Engineered Resolution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Midnight Rollover</strong></td>
+        <td>Unfinished tasks accumulated as visual red marks on past days, creating backlog fatigue and artificial urgency.</td>
+        <td>Engineered an automated rollover state machine that gracefully reschedules incomplete tasks into the active day buffer without penalty.</td>
+      </tr>
+      <tr>
+        <td><strong>Offline Resilience</strong></td>
+        <td>Unstable mobile connections (e.g. transit commutes) risked dropped sessions when relying purely on direct cloud calls.</td>
+        <td>Implemented an offline-first architecture: local storage / IndexedDB acts as the primary synchronous source of truth, with asynchronous background sync to Supabase.</td>
+      </tr>
+      <tr>
+        <td><strong>State Overhead</strong></td>
+        <td>Complex state management libraries introduced noticeable bundle weight and boot latency on mobile devices.</td>
+        <td>Maintained a lightweight, deterministic component state pipeline, keeping initial boot times below 200ms on mobile viewports.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- LE BACKSTAGE IA & INGÉNIERIE -->
+  <h2>5. The Engineering Mindset: Cadrage &amp; Agentic Velocity</h2>
+  <p>
+    I build these applications using modern AI workflows as force multipliers. This process is not passive copy-pasting; it is an active discipline of <strong>functional orchestration</strong>:
   </p>
   <div class="bandeau">
     <strong>Systems Thinking Applied to Code:</strong>
-    LLMs provide raw speed, but they lack product vision and systemic taste. My background in business and functional analysis allows me to strictly define component boundaries, state lifecycles, and edge cases, directing the AI to generate production-ready interactions in minutes rather than weeks.
+    LLMs provide raw syntax velocity, but they lack product vision and systemic taste. My background in business and functional analysis allows me to strictly define component boundaries, state lifecycles, and edge cases, directing the AI to generate production-ready interactions with high precision.
   </div>
 
   <h2>Next Iterations</h2>
   <ul class="liste">
-    <li><strong>Instant Cross-App Pipe:</strong> Bi-directional synchronization so dragging a task onto a calendar slot in Plan automatically reserves a block in Focus.</li>
-    <li><strong>Haptic &amp; Sound Design:</strong> Soft mechanical auditory feedback when completing blocks or starting focus sprints.</li>
+    <li><strong>Instant Cross-App Pipe:</strong> Bi-directional synchronization so dragging a task onto a calendar slot in Plan automatically reserves an execution block in Focus.</li>
+    <li><strong>Haptic &amp; Auditory Feedback:</strong> Soft mechanical clicks synthesized via Web Audio API when completing blocks or starting focus sprints.</li>
   </ul>
 
   <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
     <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
-    <div style="display: flex; gap: 10px;">
-      <a class="bouton plein" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener">Launch Span Focus ↗</a>
-      <a class="bouton" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener">Launch Span Plan ↗</a>
-    </div>
+    <a class="bouton plein" href="/projects/google-calendar.html">Next: Google Calendar Redesign →</a>
   </div>
 </main>

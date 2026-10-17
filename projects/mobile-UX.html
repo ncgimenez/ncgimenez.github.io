@@ -1,97 +1,346 @@
 ---
 layout: default
-title: SNCB Mobile UX Redesign
+title: SNCB Transit Mobile UX Redesign
 ---
 
-  <main>
-    <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
+<main>
+  <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
-    <span class="etiquette">Mobile UX · Transit Systems</span>
-    <h1>SNCB: Know Which Way to Run Before You Get There</h1>
-    <p class="chapo">
-      Rethinking transit mobile notifications for high-friction connections. Surfacing real-time arrival platforms and train exit door directions before reaching connecting hubs.
-    </p>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette etiquette--bleu">Mobile Product Design</span>
+    <span class="etiquette etiquette--violet">Spatial Information Architecture</span>
+  </div>
 
-    <dl class="meta">
-      <div><dt>App Context</dt><dd>SNCB / NMBS Official Mobile App</dd></div>
-      <div><dt>Focus</dt><dd>Spatial Awareness &amp; Friction Reduction</dd></div>
-      <div><dt>Role</dt><dd>Product &amp; Interaction Designer</dd></div>
-      <div><dt>Target Metric</dt><dd>Connection Miss Rate Reduction</dd></div>
-    </dl>
+  <h1>SNCB: Know Which Way to Run Before You Get There</h1>
+  <p class="chapo">
+    Rethinking transit mobile notifications for high-stress connections. Bridging the gap between raw track data and physical platform reality.
+  </p>
 
-    <h2>The Commuter's High-Stress Moment</h2>
+  <dl class="meta">
+    <div><dt>Application</dt><dd>SNCB / NMBS Mobile App</dd></div>
+    <div><dt>Focus</dt><dd>Spatial Awareness &amp; Friction Reduction</dd></div>
+    <div><dt>Role</dt><dd>Product &amp; Interaction Designer</dd></div>
+    <div><dt>Core Metric</dt><dd>Connection Miss Rate &amp; Cognitive Panic</dd></div>
+  </dl>
+
+  <!-- 1. LE PROBLÈME RÉEL DU TERRAIN -->
+  <h2>1. The Field Problem: When Track Numbers Lie to Passengers</h2>
+  <p>
+    During a tight 4-minute connection at a major hub (like Brussels-Midi or Liège-Guillemins), commuters stand in crowded vestibules with bags, bracing for the train to halt. The official app displays:
+  </p>
+
+  <div class="bandeau" style="border-left-color: #ffbd2e;">
+    <strong>The Current Interface:</strong> <em>« Arrivée Voie 3 · Départ Voie 4 »</em>
+  </div>
+
+  <p>
+    <strong>The user's mental model under stress:</strong> <em>"Voie 3 and Voie 4 are different numbers. I must rush down the crowded stairs, check the big departures board in the underground corridor, and run up another platform."</em>
+  </p>
+  <p>
+    <strong>The physical reality:</strong> In European rail architecture, <strong>Voie 3 and Voie 4 often share the exact same island platform</strong>. The passenger ran down a flight of stairs in a panic with heavy luggage, only to find out their connection was literally right behind them, 10 meters away on the same concrete slab.
+  </p>
+
+  <div class="bandeau">
+    <strong>Core Architectural Insight:</strong> A train station has two distinct layers:
+    <br>• <strong>The Rail Layer (Track / Voie):</strong> Technical ID of the steel rails used by dispatchers.
+    <br>• <strong>The Passenger Layer (Platform / Quai):</strong> The physical space where human feet walk.
+    <br>The current app exposes technical track numbers without translating them into physical spatial guidance.
+  </div>
+
+  <!-- 2. PROTOTYPE INTERACTIF DU COMPAGNON DE TRANSIT -->
+  <h2>2. Live Interactive Simulation: The Smart Transit Companion</h2>
+  <p>
+    Explore the proposed context-aware notification card. Switch between realistic commuter scenarios below to see how spatial translation eliminates unnecessary panic:
+  </p>
+
+  <div class="sncb-simulator" id="sncb-simulator">
+    <div class="sncb-scenario-bar" role="tablist" aria-label="Scénarios de correspondance">
+      <button type="button" class="sncb-scenario-btn is-active" data-scenario="same_platform" role="tab" aria-selected="true">
+        🟢 Same Platform (Voie 3 ➔ 4)
+      </button>
+      <button type="button" class="sncb-scenario-btn" data-scenario="change_platform" role="tab" aria-selected="false">
+        🟠 Platform Change (Voie 3 ➔ 8)
+      </button>
+      <button type="button" class="sncb-scenario-btn" data-scenario="short_platform" role="tab" aria-selected="false">
+        ⚠️ Short Platform Edge-Case (Gare d'Ans)
+      </button>
+    </div>
+
+    <!-- CARTE DYNAMIQUE LIVE ACTIVITY -->
+    <div class="sncb-card">
+      <div class="sncb-card-header">
+        <div class="sncb-card-title">Approaching Brussels-Midi · In 3 min</div>
+        <div class="sncb-card-train">IC 512 (Liège ➔ Bruxelles)</div>
+      </div>
+
+      <div class="sncb-card-body">
+        <div class="sncb-flow-grid">
+          <!-- Step 1: Disembark -->
+          <div class="sncb-step-box">
+            <div class="sncb-step-tag">Step 1 · Disembark</div>
+            <div class="sncb-step-track sncb-track-arr">Track 3</div>
+            <div class="sncb-exit-side">
+              <span>🚪</span>
+              <span class="sncb-exit-side-label">DOORS ON LEFT</span>
+            </div>
+            <div class="sncb-exit-subtext">In train direction of travel (➔)</div>
+          </div>
+
+          <div class="sncb-flow-arrow">➔</div>
+
+          <!-- Step 2: Next Connection -->
+          <div class="sncb-step-box" style="border-color: var(--accent);">
+            <div class="sncb-step-tag" style="color: var(--accent);">Step 2 · Next Connection</div>
+            <div class="sncb-step-track sncb-track-dep" style="color: var(--accent);">Track 4</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--texte);" class="sncb-dep-time">17:42 · Departs in 6 min</div>
+            <div class="sncb-exit-subtext sncb-dep-dest">IC 1938 to Ghent / Bruges</div>
+          </div>
+        </div>
+
+        <!-- SPATIAL PLATFORM BANNER -->
+        <div class="sncb-platform-banner sncb-banner--green">
+          <div class="sncb-banner-title">🟢 MÊME QUAI PHYSIQUE · AUCUN ESCALIER</div>
+          <div class="sncb-banner-desc">
+            Ne descendez pas dans le passage sous-voie ! Votre correspondance part directement de l’autre côté de ce quai. Traversez simplement la zone centrale (15 secondes).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCÈNE 1 : À BORD DU TRAIN (ORIENTATION SPATIALE & DÉBARQUEMENT) -->
+  <h2>3. Scene 1 : À Bord du Train — Préparer la Sortie Sans Panique</h2>
+  <p>
+    Quand on arrive dans une grande gare avec deux grosses valises ou une poussette, rien n'est plus stressant que de se lever à l'arrêt du train et de découvrir que les portes s'ouvrent du côté opposé, bloqué derrière 25 passagers debout dans le couloir.
+  </p>
+  <p>
+    Ce module interactif simule l'intérieur du vestibule en mouvement. Testez les deux côtés pour observer comment la notification de bord indique clairement où se positionner <strong>dans le sens de marche du train</strong> :
+  </p>
+
+  <div class="sncb-onboard-stage" id="sncb-onboard-stage">
+    <div class="sncb-onboard-toolbar">
+      <div class="sncb-train-motion-badge">
+        <span>🚆 Train IC 512 en approche</span>
+        <span class="sncb-motion-arrow">➔ ➔ ➔</span>
+        <span style="color: var(--texte-doux); font-weight: 400;">Sens de marche vers l'avant</span>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="sncb-onboard-btn is-active bouton" data-side="left" style="padding: 5px 12px; font-size: 0.8rem;">
+          ⬅️ Arrêt Portes à GAUCHE
+        </button>
+        <button type="button" class="sncb-onboard-btn bouton" data-side="right" style="padding: 5px 12px; font-size: 0.8rem;">
+          ➡️ Arrêt Portes à DROITE
+        </button>
+        <button type="button" class="sncb-chime-btn bouton" style="padding: 5px 10px; font-size: 0.8rem;" title="Écouter le carillon ferroviaire d'annonce">
+          🔊 Carillon SNCB
+        </button>
+      </div>
+    </div>
+
+    <div class="sncb-onboard-viewport">
+      <!-- Portes Gauche -->
+      <div class="sncb-train-door sncb-door--left is-active-exit" id="door-left">
+        <div class="door-window"></div>
+        <div class="door-title" style="color: #27c93f;">PORTES GAUCHE</div>
+        <div style="font-size: 0.75rem; color: var(--texte-doux);">Côté Quai · Voie 3</div>
+        <div class="door-status-pill door-status--left" style="background: rgba(39, 201, 63, 0.2); color: #27c93f; border: 1px solid #27c93f;">
+          🟢 SORTIE ICI
+        </div>
+        <div style="font-size: 0.68rem; color: var(--texte-muté); margin-top: 8px;">
+          Sens de la marche (➔)
+        </div>
+      </div>
+
+      <!-- Centre Vestibule : Voyageur & Écran Téléphone -->
+      <div class="sncb-vestibule-center">
+        <div style="font-size: 0.78rem; color: var(--texte-muté); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+          <span>🧭 Repère spatial :</span>
+          <strong style="color: var(--texte);">Sens de marche du train (➔)</strong>
+        </div>
+
+        <div class="commuter-phone-frame">
+          <div class="commuter-phone-notch"></div>
+          <div class="phone-live-activity">
+            <div class="phone-activity-header">
+              <span>SNCB · Live Activity</span>
+              <span style="color: var(--accent);">Dans 2 min</span>
+            </div>
+            <div style="font-weight: 700; font-size: 0.85rem; color: var(--texte); margin-bottom: 4px;" id="phone-station-name">
+              Arrivée Liège-Guillemins (dans 2 min)
+            </div>
+            <div class="phone-door-prompt" id="phone-door-text">
+              <span>⬅️</span>
+              <span>PORTES À GAUCHE</span>
+            </div>
+            <div class="phone-door-subtext" id="phone-door-subtext">
+              Dans le sens de marche du train. Vous pouvez déjà vous positionner le long de la porte gauche sans bousculade.
+            </div>
+          </div>
+        </div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté); margin-top: 12px;">
+          👤 Voyageur avec valise : se place du bon côté 3 minutes avant l'arrêt complet
+        </div>
+      </div>
+
+      <!-- Portes Droite -->
+      <div class="sncb-train-door sncb-door--right is-locked-side" id="door-right">
+        <div class="door-window"></div>
+        <div class="door-title" style="color: var(--texte-doux);">PORTES DROITE</div>
+        <div style="font-size: 0.75rem; color: var(--texte-muté);">Côté Voies · Danger</div>
+        <div class="door-status-pill door-status--right" style="background: rgba(255, 255, 255, 0.05); color: var(--texte-muté); border: 1px dashed var(--ligne);">
+          🔒 CONDAMNÉE
+        </div>
+        <div style="font-size: 0.68rem; color: var(--texte-muté); margin-top: 8px;">
+          Entrevoie sans quai
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCÈNE 2 : SUR LE QUAI (MÊME QUAI PHYSIQUE VS COULOIR SOUTERRAIN) -->
+  <h2>4. Scene 2 : Sur le Quai — Est-ce que je Dois Descendre ou Rester ?</h2>
+  <p>
+    En descendant d'un train, le réflexe immédiat quand on voit un numéro de voie différent (ex: arrivée Voie 3, correspondance Voie 4) est de courir vers l'escalier pour descendre dans le couloir souterrain.
+  </p>
+  <p>
+    Or, dans la quasi-totalité des gares belges, <strong>les voies 3 et 4 partagent exactement la même dalle physique en béton (Quai central)</strong>. Descendre dans le souterrain fait perdre 3 minutes d'effort inutile avec les valises. Testez ci-dessous la différence entre une correspondance sur le même quai et un vrai changement :
+  </p>
+
+  <div class="sncb-platform-stage" id="sncb-platform-stage">
+    <div class="platform-stage-toolbar">
+      <div style="font-weight: 700; font-size: 0.88rem; color: var(--texte); display: flex; align-items: center; gap: 8px;">
+        <span>🚉 Quai Central (Gare de Liège-Guillemins)</span>
+        <span style="font-size: 0.75rem; color: var(--texte-doux); font-weight: 400;">Correspondance à 17:42</span>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="sncb-platform-btn is-active bouton" data-mode="same" style="padding: 5px 12px; font-size: 0.8rem;">
+          🟢 Correspondance Voie 4 (Même quai)
+        </button>
+        <button type="button" class="sncb-platform-btn bouton" data-mode="diff" style="padding: 5px 12px; font-size: 0.8rem;">
+          🟠 Correspondance Voie 8 (Autre quai)
+        </button>
+        <button type="button" class="sncb-platform-btn bouton" data-mode="mistake" style="padding: 5px 12px; font-size: 0.8rem;">
+          🔴 Sans l'App (Le piège des escaliers)
+        </button>
+      </div>
+    </div>
+
+    <div class="platform-stage-view">
+      <div class="platform-layout-grid">
+        <!-- Zone Voie 3 (Train d'arrivée) -->
+        <div class="track-zone">
+          <div style="font-weight: 800; font-size: 0.95rem; color: #38bdf8;">VOIE 3</div>
+          <div style="font-size: 0.72rem; color: var(--texte-doux);">Votre train d'arrivée</div>
+          <div class="track-rails"></div>
+          <div style="font-size: 0.7rem; color: #4ade80; background: rgba(74, 222, 128, 0.1); padding: 4px; border-radius: 6px;">
+            🚆 IC 512 à quai
+          </div>
+        </div>
+
+        <!-- Le Quai Central Physique (Partagé entre Voie 3 et Voie 4) -->
+        <div class="platform-island-slab" id="platform-island-slab">
+          <!-- Écran de quai suspendu -->
+          <div class="platform-station-screen" id="platform-station-screen">
+            <div style="font-size: 0.68rem; color: var(--texte-muté); margin-bottom: 2px;">TÉLÉ-AFFICHAGE DE QUAI</div>
+            <div style="font-weight: 800; color: #38bdf8; font-size: 0.95rem;" id="screen-train-info">
+              VOIE 4 ➔ GAND-SAINT-PIERRE · 17:42
+            </div>
+            <div style="font-size: 0.7rem; color: var(--texte-doux);">Départ dans 6 min · Train à quai en face</div>
+          </div>
+
+          <!-- Tracé de déplacement visuel -->
+          <div class="platform-path-area" style="margin: 18px 0; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid var(--ligne);">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--texte-doux); margin-bottom: 6px;">
+              <span>Votre position (Voie 3)</span>
+              <span id="platform-path-label" style="font-weight: 700; color: #27c93f;">➔ Traversée directe à pied (12 mètres)</span>
+              <span id="platform-target-label">Train de correspondance (Voie 4)</span>
+            </div>
+            
+            <div class="platform-path-line" id="platform-path-line"></div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--texte-muté);">
+              <span>🚶 Marche à niveau</span>
+              <span id="platform-time-estimate" style="color: #27c93f; font-weight: 700;">⏱️ 15 secondes · 0 escalier</span>
+              <span>🚪 Embarquement immédiat</span>
+            </div>
+          </div>
+
+          <!-- Escaliers vers couloir sous-voies (Le piège à éviter) -->
+          <div class="platform-stairs-trap" id="platform-stairs-trap">
+            <div style="font-weight: 700; font-size: 0.8rem; color: #ff5f56; margin-bottom: 2px;" id="stairs-status-title">
+              🚫 NE PAS DESCENDRE DANS LE SOUTERRAIN !
+            </div>
+            <div style="font-size: 0.72rem; color: var(--texte-doux);" id="stairs-status-desc">
+              Les escaliers mènent au couloir souterrain. C’est inutile : votre train part juste de l'autre côté de ce quai central.
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone Voie 4 (Train de correspondance sur même quai) -->
+        <div class="track-zone" id="track-zone-right">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--accent);" id="track-right-number">VOIE 4</div>
+          <div style="font-size: 0.72rem; color: var(--texte-doux);" id="track-right-desc">Même dalle physique</div>
+          <div class="track-rails"></div>
+          <div style="font-size: 0.7rem; color: var(--accent); background: rgba(240, 113, 75, 0.15); padding: 4px; border-radius: 6px;" id="track-right-status">
+            🚆 IC 1938 à quai
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeau de statut spatial -->
+      <div class="platform-status-badge sncb-banner--green" id="platform-main-badge">
+        <span style="font-size: 1.4rem;">🟢</span>
+        <div>
+          <strong>Zéro escalier :</strong> Le voyageur traverse la dalle en 15 secondes. Il économise 3 minutes et évite de porter ses bagages dans les escaliers.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PRINCIPES D'ERGONOMIE TERRAIN -->
+  <h2>5. Ergonomic Principles &amp; Edge-Case Handling</h2>
+  <ul class="liste">
+    <li>
+      <strong>Exit Direction Relative to Travel:</strong> Stating <em>« Portes à GAUCHE dans le sens de la marche »</em> allows passengers with heavy luggage to line up at the correct door 3 minutes ahead, avoiding last-second scrambles through crowded vestibules.
+    </li>
+    <li>
+      <strong>Platform Length Edge-Cases (e.g. Gare d'Ans):</strong> In certain historical stations, platforms are physically shorter than long-distance IC trainsets. The interface warns passengers prior to arrival if their coach will overhang the platform, directing them to move to front cars (Voitures 1–4) before the train stops.
+    </li>
+    <li>
+      <strong>Fail-Safe Feasibility Window:</strong> If an inbound delay reduces transfer time below the calculated walking distance between platforms, the app does not let passengers sprint blindly toward closed doors; it proactively highlights the verified fallback train.
+    </li>
+  </ul>
+
+  <!-- 6. FIGMA SPECIFICATION & ARTEFACTS -->
+  <h2>6. Design Artefacts &amp; Component Variants in Figma</h2>
+  <p>
+    How this interface was designed and structured in Figma: isolating tokens, building accessible contrast states, and managing component variants.
+  </p>
+
+  <div class="figma-spec-box">
+    <div class="etiquette etiquette--violet" style="margin-bottom: 12px;">Figma Component Architecture</div>
+    <h4>Live Activity &amp; In-App Transit Card Spec</h4>
     <p>
-      In Belgian rail transit, a 4-minute connection between regional IC trains at Brussels-Midi or Liège-Guillemins is not rare. Commuters stand in crowded aisles, waiting for the train to halt before opening the official app to discover two things:
+      [Zone Figma : Déposez ici votre capture d'écran montrant l'arborescence des composants et leurs variantes (Même quai, Changement de quai, Quai court, Mode sombre/clair).]
     </p>
-    <ul class="liste">
-      <li>Which platform their connecting train is departing from.</li>
-      <li>Whether they need to take the stairs up, down, or navigate an underpass.</li>
-    </ul>
-    <p>
-      Default transit apps present this information as a static list of stops. They require 3 taps to view platform details while juggling luggage, coats, and cell signal drops in tunnels.
-    </p>
-
-    <div class="bandeau">
-      <strong>Core Interaction Hypothesis:</strong> Information is only useful if delivered at the moment of highest leverage. Displaying platform updates 3 minutes before arrival—coupled with exit side orientation—converts blind panic into prepared navigation.
+    <div style="display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center; font-size: 0.8rem; color: var(--texte-muté);">
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Variant: SamePlatform</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Variant: PlatformChange</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Variant: WarningShortPlatform</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Auto-Layout: Responsive</span>
     </div>
+  </div>
 
-    <h2>The Interface Solution: Pre-Arrival Dynamic Island &amp; Notification</h2>
+  <!-- 7. PRINCIPES RETENUS -->
+  <h2>7. Key Takeaways: What This Solves in the Real World</h2>
+  <div class="bandeau">
+    <strong>Bridging Data and Human Physical Reality:</strong> Rail APIs expose technical dispatcher data (track numbers, train composition). But commuters don't walk on track numbers—they walk on physical slabs of concrete with bags, strollers, and tight connection windows. Translating raw data into immediate spatial guidance (<em>"Same physical platform: do not take the stairs"</em>) transforms a high-stress bottleneck into a calm, effortless transfer.
+  </div>
 
-    <figure>
-      <svg viewBox="0 0 620 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="SNCB Smart Transit Card UI Concept">
-        <!-- Container card -->
-        <rect width="620" height="320" fill="var(--fond-carte)" rx="12" stroke="var(--ligne)" stroke-width="1"/>
-        
-        <!-- Header status -->
-        <rect x="24" y="24" width="572" height="40" fill="var(--fond)" rx="8"/>
-        <circle cx="44" cy="44" r="6" fill="#38bdf8"/>
-        <text x="60" y="48" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="var(--texte)">APPROACHING LIÈGE-GUILLEMINS · ARRIVAL IN 3 MIN</text>
-        <text x="560" y="48" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="var(--texte-doux)">IC 512</text>
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
+    <a class="bouton plein" href="/projects/span-suite.html">Featured Case Study: Span Suite →</a>
+  </div>
 
-        <!-- Transit Flow Cards -->
-        <!-- Step 1: Disembark -->
-        <rect x="24" y="80" width="276" height="150" fill="var(--fond)" rx="10" stroke="var(--ligne)" stroke-width="1"/>
-        <text x="44" y="106" font-family="system-ui,sans-serif" font-size="10" text-transform="uppercase" letter-spacing="0.08em" fill="var(--texte-doux)">Step 1 · Disembark</text>
-        <text x="44" y="136" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="var(--texte)">Track 4</text>
-        <rect x="44" y="152" width="112" height="22" fill="rgba(56, 189, 248, 0.15)" rx="4"/>
-        <text x="52" y="167" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#38bdf8">EXIT DOORS: LEFT</text>
-        <text x="44" y="202" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">Stairs down to corridor located mid-train.</text>
-
-        <!-- Arrow between steps -->
-        <text x="310" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="var(--accent)">→</text>
-
-        <!-- Step 2: Next Connection -->
-        <rect x="320" y="80" width="276" height="150" fill="var(--fond)" rx="10" stroke="var(--accent)" stroke-width="1.5"/>
-        <text x="340" y="106" font-family="system-ui,sans-serif" font-size="10" text-transform="uppercase" letter-spacing="0.08em" fill="var(--accent)">Step 2 · Transfer (4m walk)</text>
-        <text x="340" y="136" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="var(--accent)">Track 9</text>
-        <rect x="340" y="152" width="130" height="22" fill="rgba(240, 113, 75, 0.15)" rx="4"/>
-        <text x="348" y="167" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="var(--accent)">ON TIME · DEP 18:24</text>
-        <text x="340" y="202" font-family="system-ui,sans-serif" font-size="10" fill="var(--texte-doux)">IC 2114 to Namur / Charleroi</text>
-
-        <!-- Bottom Guidance Bar -->
-        <rect x="24" y="246" width="572" height="50" fill="rgba(157, 92, 255, 0.08)" rx="8" stroke="rgba(157, 92, 255, 0.25)" stroke-width="1"/>
-        <text x="44" y="276" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#c084fc">Navigation Tip:</text>
-        <text x="140" y="276" font-family="system-ui,sans-serif" font-size="11" fill="var(--texte)">Take underground passage toward North Gallery to reach Track 9 directly.</text>
-      </svg>
-      <figcaption>Context-sensitive lock-screen and in-app transit guidance card</figcaption>
-    </figure>
-
-    <h2>Key Architectural Decisions</h2>
-    <ul class="liste">
-      <li><strong>Pre-emptive Arrival Trigger:</strong> Push critical transfer data based on GPS / geo-fencing 3 minutes prior to arrival, bypassing spotty station Wi-Fi.</li>
-      <li><strong>Physical Car Orientation:</strong> Stating the train door release side (Left or Right) prevents commuters from queuing at the wrong side of crowded vestibules.</li>
-      <li><strong>Walk-Time Calibrated Feasibility:</strong> If a delay shrinks the connection time below the physical distance threshold between tracks, the interface immediately offers the next viable fallback connection rather than leaving passengers to run toward a closed departure.</li>
-    </ul>
-
-    <h2>Impact on Commuter Stress</h2>
-    <div class="stats-strip">
-      <div class="stat"><span class="stat-val">3 Taps</span><span class="stat-lbl">Down to 0 (At-a-Glance)</span></div>
-      <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Pre-Door Awareness</span></div>
-      <div class="stat"><span class="stat-val">Friction</span><span class="stat-lbl">Eliminated in Transit</span></div>
-    </div>
-
-    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
-      <a class="bouton plein" href="/projects/pedagogical-system-design.html">Next: Pedagogical System Design →</a>
-    </div>
-  </main>
+  <script src="{{ '/assets/sncb-prototype.js' | relative_url }}"></script>
+</main>

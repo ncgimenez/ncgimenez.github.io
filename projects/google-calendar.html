@@ -4,78 +4,143 @@ title: Google Calendar Interaction Redesign
 mermaid: true
 ---
 
-  <main>
-    <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
+<main>
+  <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
-    <span class="etiquette">Interaction Redesign · Desktop UX</span>
-    <h1>Google Calendar: Rethinking the Interaction Model</h1>
-    <p class="chapo">
-      Drag to select, click to create: bringing standard desktop marquee selection and batch manipulation to temporal schedule changes.
-    </p>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette etiquette--bleu">Interaction Design</span>
+    <span class="etiquette">Desktop Ergonomics</span>
+  </div>
 
-    <dl class="meta">
-      <div><dt>Application</dt><dd>Calendar Scheduling (Web/Desktop)</dd></div>
-      <div><dt>Focus</dt><dd>Interaction Primitives &amp; Ergonomics</dd></div>
-      <div><dt>Role</dt><dd>Interaction Designer</dd></div>
-      <div><dt>Core Hypothesis</dt><dd>Batch drag reduces rescheduling fatigue</dd></div>
-    </dl>
+  <h1>Google Calendar: Bringing the Selection Box to Schedule Changes</h1>
+  <p class="chapo">
+    Drag to select, click to create: why moving four meetings in Google Calendar requires four separate drags, and how a standard selection box makes rescheduling effortless.
+  </p>
 
-    <h2>The Conflict of Interaction Paradigms</h2>
-    <p>
-      In modern desktop software, clicking and dragging on empty canvas space universally triggers a <strong>marquee bounding box</strong> to select multiple entities. You see this in Figma, operating system desktops, spreadsheet cell ranges, and digital audio workstations.
-    </p>
-    <p>
-      Google Calendar violates this expectation. Clicking and dragging on empty calendar space creates an immediate, blank tentative meeting. To move four adjacent meetings back by 30 minutes, users must perform four discrete drag-and-drop operations, frequently misaligning event durations or triggering unwanted notification modals.
-    </p>
+  <dl class="meta">
+    <div><dt>Application</dt><dd>Google Calendar (Web / Desktop)</dd></div>
+    <div><dt>Focus</dt><dd>Interaction Ergonomics</dd></div>
+    <div><dt>Role</dt><dd>Product &amp; Interaction Designer</dd></div>
+    <div><dt>Core Hypothesis</dt><dd>Batch drag cuts rescheduling friction by 75%</dd></div>
+  </dl>
 
-    <div class="bandeau">
-      <strong>The Friction Point:</strong> Rescheduling a fragmented afternoon requires repetitive, granular adjustments instead of a single, fluid selection gesture.
-    </div>
+  <!-- LE PROBLÈME CONCRET -->
+  <h2>The Annoyance: Why Is Moving Meetings So Tedious?</h2>
+  <p>
+    In almost every desktop tool—Figma, your computer desktop, spreadsheets, audio software—clicking and dragging on empty space draws a <strong>selection box (marquee)</strong> to grab multiple items.
+  </p>
+  <p>
+    Google Calendar does the exact opposite: clicking and dragging creates a brand new blank meeting.
+  </p>
+  <p>
+    So when your morning runs late and you need to push four back-to-back meetings back by 30 minutes, you have to drag them <strong>one by one</strong>. It’s slow, tedious, and easy to accidentally mess up planned break intervals or meeting lengths.
+  </p>
 
-    <h2>Proposed Interaction Architecture</h2>
-    <p>
-      Separating creation from selection via contextual modifier keys and standard desktop spatial gestures:
-    </p>
+  <div class="bandeau">
+    <strong>The Core Problem:</strong> Rescheduling a busy afternoon shouldn't take 8 precise mouse drags. It should take one fluid selection gesture.
+  </div>
 
-    <div class="bpmn-wrap">
-      <pre class="mermaid">
+  <!-- LE WORKFLOW COMPARATIF -->
+  <h2>Current Pain vs. Proposed Interaction</h2>
+  <div class="bpmn-wrap">
+    <pre class="mermaid">
 flowchart TD
-  subgraph Default [Current Default: Fragmented Clicks]
-    A1[Need to Shift Afternoon by +30m] --> B1[Drag Event 1 Down]
-    B1 --> C1[Drag Event 2 Down]
-    C1 --> D1[Drag Event 3 Down]
-    D1 --> E1[High Cognitive Overhead & Mistake Risk]
+  subgraph Default [Today in Google Calendar: 4 Tedious Drags]
+    A1[Need to Shift Afternoon by +30m] --> B1[Drag Meeting 1 Down]
+    B1 --> C1[Drag Meeting 2 Down]
+    C1 --> D1[Drag Meeting 3 Down]
+    D1 --> E1[High Friction & Mistake Risk]
   end
 
-  subgraph Redesigned [Redesigned Model: Marquee Batching]
-    A2[Need to Shift Afternoon by +30m] --> B2[Marquee Drag across Target Time Slot]
-    B2 --> C2[All Enclosed Event Cards Active]
-    C2 --> D2[Single Multi-Event Offset Drag]
-    D2 --> E2[Instant Coordinated Reschedule]
+  subgraph Redesigned [Proposed: Select Box & Drag Batch]
+    A2[Need to Shift Afternoon by +30m] --> B2[Drag Selection Box Over Meetings]
+    B2 --> C2[All Meetings Highlighted Together]
+    C2 --> D2[Drag Once to Move the Entire Block]
+    D2 --> E2[Done in 2 Seconds, Spacing Preserved]
   end
 
   style Default fill:#16141c,stroke:#b4502d,stroke-width:1px
   style Redesigned fill:#16141c,stroke:#38bdf8,stroke-width:1px
-      </pre>
-    </div>
-    <p class="bpmn-note">State transition comparison: individual event dragging vs. marquee spatial multi-selection.</p>
+    </pre>
+  </div>
+  <p class="bpmn-note">Comparing current manual step-by-step drags with a single batch selection gesture.</p>
 
-    <h2>Core Interaction Upgrades</h2>
-    <ul class="liste">
-      <li><strong>Marquee Multi-Select:</strong> Dragging across empty background grid selects all overlapping event nodes simultaneously, displaying a unified boundary.</li>
-      <li><strong>Atomic Block Shifting:</strong> Moving the selection maintains relative offsets between events, preserving planned break intervals automatically.</li>
-      <li><strong>Single-Click Creation Anchor:</strong> A simple click-and-release creates an event with smart default duration, freeing click-and-drag for spatial framing.</li>
-    </ul>
+  <!-- LE PROTOTYPE INTERACTIF JOUABLE -->
+  <h2>Live Interactive Prototype: Try It Yourself</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    Try the gesture directly in the interactive sandbox below. Click and drag across the empty grid to select multiple meetings, then drag them together:
+  </p>
 
-    <h2>Impact on Power Users</h2>
-    <div class="stats-strip">
-      <div class="stat"><span class="stat-val">75%</span><span class="stat-lbl">Fewer Drag Gestures</span></div>
-      <div class="stat"><span class="stat-val">Zero</span><span class="stat-lbl">Interval Misalignments</span></div>
-      <div class="stat"><span class="stat-val">Natural</span><span class="stat-lbl">Desktop Ergonomics</span></div>
+  <div class="cal-sandbox" id="calendar-sandbox">
+    <div class="cal-top-bar">
+      <div class="cal-status-text">💡 <em>Click &amp; drag on empty grid</em> to draw a marquee rectangle.</div>
+      <button type="button" class="cal-reset-btn">Reset Positions ↺</button>
     </div>
 
-    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
-      <a class="bouton plein" href="/projects/mobile-UX.html">Next: Mobile Transit UX →</a>
+    <div class="cal-canvas">
+      <!-- Time grid lines -->
+      <div class="cal-time-slot" style="top: 0px;"><span class="cal-time-label">13:00</span></div>
+      <div class="cal-time-slot" style="top: 60px;"><span class="cal-time-label">14:00</span></div>
+      <div class="cal-time-slot" style="top: 120px;"><span class="cal-time-label">15:00</span></div>
+      <div class="cal-time-slot" style="top: 180px;"><span class="cal-time-label">16:00</span></div>
+      <div class="cal-time-slot" style="top: 240px;"><span class="cal-time-label">17:00</span></div>
+      <div class="cal-time-slot" style="top: 300px;"><span class="cal-time-label">18:00</span></div>
+
+      <!-- Marquee bounding box -->
+      <div class="cal-marquee"></div>
+
+      <!-- Events -->
+      <div class="cal-event" style="top: 30px; height: 50px; background: #6366f1;">
+        <div class="cal-event-title">Sprint Planning &amp; Prioritization</div>
+        <div class="cal-event-time">13:30 – 14:20 · Product Team</div>
+      </div>
+
+      <div class="cal-event" style="top: 100px; height: 60px; background: #0284c7;">
+        <div class="cal-event-title">Design Review: Span Plan Backlog</div>
+        <div class="cal-event-time">14:40 – 15:40 · Design System</div>
+      </div>
+
+      <div class="cal-event" style="top: 180px; height: 45px; background: #b4502d;">
+        <div class="cal-event-title">1:1 Sync with Sarah (UX Architect)</div>
+        <div class="cal-event-time">16:00 – 16:45 · 1-on-1</div>
+      </div>
     </div>
-  </main>
+  </div>
+
+  <!-- LES 3 RÈGLES SIMPLES -->
+  <h2>3 Simple Changes to Make It Work</h2>
+  <div class="bento-grid-3">
+    <div class="bento-card bento-card--blue">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">🖱️</div>
+      <span class="etiquette etiquette--bleu">Standard Gesture</span>
+      <h3>Drag to Select</h3>
+      <p>Clicking and dragging on empty grid space draws a selection box. All touching meetings get selected together.</p>
+    </div>
+
+    <div class="bento-card bento-card--terracotta">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">⏱️</div>
+      <span class="etiquette">Spacing Preserved</span>
+      <h3>Move as a Block</h3>
+      <p>Dragging any selected meeting moves the entire group down, keeping the break intervals between them untouched.</p>
+    </div>
+
+    <div class="bento-card bento-card--violet">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">✨</div>
+      <span class="etiquette etiquette--violet">Quick Creation</span>
+      <h3>Single Click to Create</h3>
+      <p>A simple single click on an empty slot creates a new 30-minute meeting instantly, freeing the drag gesture for selection.</p>
+    </div>
+  </div>
+
+  <h2>Why Hasn't Google Done This? (Design Trade-offs)</h2>
+  <div class="bandeau">
+    <strong>The Desktop vs. Touch Trade-off:</strong> On touchscreens, dragging is naturally reserved for scrolling. Google Calendar chose a single interaction model across devices, mapping drag to event creation. But on desktop computers with a mouse or trackpad, drawing a marquee box is the universal interaction pattern (Figma, desktop OS, spreadsheets). Distinguishing single-click creation from drag selection restores desktop muscle memory without adding visual clutter.
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
+    <a class="bouton plein" href="/projects/mobile-UX.html">Next: Mobile Transit UX →</a>
+  </div>
+
+  <script src="{{ '/assets/calendar-prototype.js' | relative_url }}"></script>
+</main>

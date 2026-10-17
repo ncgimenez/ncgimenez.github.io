@@ -16,45 +16,137 @@ title: L'Antichambre | Studio Expérimental
     Le sas d'expérimentation. Loin des grilles d'audit et des spécifications formelles, voici l'atelier où je démonte le matériel, explore les synthétiseurs audio et prototype des interactions brutes.
   </p>
 
-  <!-- MODULE 1 : SYNTHÉ INTERACTIF WEB AUDIO -->
-  <div class="carte" style="margin: 36px 0; border: 1px solid rgba(157, 92, 255, 0.3); background: #13111a; position: relative; overflow: hidden;">
+  <!-- MODULE 1 : SYNTHÉ INTERACTIF & CHAÎNE DE SIGNAL -->
+  <div class="carte" style="margin: 36px 0; border: 1px solid rgba(157, 92, 255, 0.35); background: #13111a; position: relative; overflow: hidden;">
     <div class="carte-barre" style="background: linear-gradient(90deg, #9d5cff, #f0714b);"></div>
-    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
       <span class="etiquette etiquette--violet">Banc d'Essai Web Audio</span>
-      <span style="font-size: 0.78rem; color: var(--texte-doux); letter-spacing: 0.05em; text-transform: uppercase;">Oscillateur Polyphonique</span>
+      <span style="font-size: 0.78rem; color: var(--texte-doux); letter-spacing: 0.05em; text-transform: uppercase;">Synthèse Soustractive en Temps Réel</span>
     </div>
     
-    <h3 style="margin-top: 0;">Générateur Micro-Ondes &amp; Filtre Tactile</h3>
-    <p style="font-size: 0.92rem; color: var(--texte-doux); margin-bottom: 20px;">
-      Cliquez ou tapez sur les touches pour générer des fréquences pures avec enveloppe d'attaque et filtre passe-bas résonant.
+    <h3 style="margin-top: 0; font-size: 1.35rem;">Laboratoire Audio : Du Signal Brut au Retour Haptique</h3>
+    <p style="font-size: 0.92rem; color: var(--texte-doux); margin-bottom: 20px; line-height: 1.6;">
+      Appuyez sur les touches ci-dessous pour déclencher l’oscillateur. Observez comment le signal traverse la chaîne de traitement en temps réel : de la forme d’onde brute jusqu’à la sortie audio.
     </p>
 
+    <!-- VISUALISATION DE LA CHAÎNE DE SIGNAL (SIGNAL FLOW) -->
+    <div class="synth-flow-pipeline" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 22px; padding: 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--ligne); border-radius: 12px;">
+      <div class="flow-stage flow-stage--osc" id="stage-osc" style="padding: 10px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.7rem; color: var(--texte-muté); text-transform: uppercase; font-weight: 700;">1. Source</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #c084fc; margin-top: 2px;">Oscillateur</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 4px;" id="flow-osc-label">Triangle (Hz)</div>
+      </div>
+
+      <div class="flow-stage flow-stage--filter" id="stage-filter" style="padding: 10px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.7rem; color: var(--texte-muté); text-transform: uppercase; font-weight: 700;">2. Sculpture</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #38bdf8; margin-top: 2px;">Filtre Cutoff</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 4px;" id="flow-filter-label">1800 Hz</div>
+      </div>
+
+      <div class="flow-stage flow-stage--env" id="stage-env" style="padding: 10px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.7rem; color: var(--texte-muté); text-transform: uppercase; font-weight: 700;">3. Dynamique</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #f0714b; margin-top: 2px;">Enveloppe ADSR</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 4px;">40ms / 700ms</div>
+      </div>
+
+      <div class="flow-stage flow-stage--out" id="stage-out" style="padding: 10px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.7rem; color: var(--texte-muté); text-transform: uppercase; font-weight: 700;">4. Rendu</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #4ade80; margin-top: 2px;">Sortie Audio</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 4px;">Haut-parleur</div>
+      </div>
+    </div>
+
     <!-- TOUCHES DU SYNTHÉ -->
-    <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 18px 0 24px;">
-      <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">C4</button>
-      <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">D4</button>
-      <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">E4</button>
-      <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">F4</button>
-      <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">G4</button>
-      <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">A4</button>
-      <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">B4</button>
+    <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 18px 0 20px;">
+      <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">C4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">261Hz</span></button>
+      <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">D4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">293Hz</span></button>
+      <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">E4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">329Hz</span></button>
+      <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">F4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">349Hz</span></button>
+      <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">G4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">392Hz</span></button>
+      <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">A4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">440Hz</span></button>
+      <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 22px 8px; color: var(--texte); font-weight: 700; cursor: pointer; transition: all 0.1s ease;">B4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-muté);">494Hz</span></button>
     </div>
 
     <!-- CONTROLES SYNTH -->
-    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--texte-doux); padding-top: 14px; border-top: 1px solid var(--ligne);">
+    <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--texte-doux); padding-top: 16px; border-top: 1px solid var(--ligne);">
       <div>
-        <label for="synth-wave" style="margin-right: 6px; font-weight: 600;">Onde :</label>
-        <select id="synth-wave" style="background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 4px 8px; border-radius: 6px;">
-          <option value="sine">Sinus (Pure)</option>
-          <option value="triangle" selected>Triangle (Chaude)</option>
-          <option value="sawtooth">Dent de scie (Riche)</option>
-          <option value="square">Carrée (8-bit)</option>
+        <label for="synth-wave" style="margin-right: 8px; font-weight: 600; color: var(--texte);">1. Forme d'Onde :</label>
+        <select id="synth-wave" style="background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 5px 10px; border-radius: 6px; font-family: inherit;">
+          <option value="triangle" selected>Triangle (Chaude &amp; douce)</option>
+          <option value="sine">Sinus (Onde pure, zéro harmonique)</option>
+          <option value="sawtooth">Dent de scie (Tranchante, riche)</option>
+          <option value="square">Carrée (8-bit vintage arcade)</option>
         </select>
       </div>
-      <div>
-        <label for="synth-filter" style="margin-right: 6px; font-weight: 600;">Cutoff Filtre :</label>
-        <input type="range" id="synth-filter" min="200" max="4000" value="1800" style="vertical-align: middle;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <label for="synth-filter" style="font-weight: 600; color: var(--texte);">2. Cutoff Filtre :</label>
+        <input type="range" id="synth-filter" min="200" max="4000" value="1800" style="vertical-align: middle; accent-color: var(--accent);">
+        <span id="synth-filter-display" style="font-family: monospace; font-size: 0.8rem; color: var(--texte-muté);">1800 Hz</span>
       </div>
+    </div>
+  </div>
+
+  <!-- MODULE PÉDAGOGIQUE : COMPRENDRE LA SYNTHÈSE SONORE -->
+  <h2>Comprendre la Synthèse Audio : Pourquoi ce Sujet ?</h2>
+  <p class="chapo" style="font-size: 1.05rem;">
+    On imagine souvent qu'un synthétiseur est un instrument réservé aux musiciens. En réalité, c'est l'un des modèles d'architecture de systèmes les plus élégants qui existent. Voici comment ça fonctionne, sans jargon obscur :
+  </p>
+
+  <div class="bento-grid" style="margin: 28px 0 44px;">
+    <!-- CARTE 1: LA PHYSIQUE DU SON -->
+    <div class="bento-card bento-card--violet">
+      <span class="etiquette etiquette--violet" style="align-self: flex-start; margin-bottom: 8px;">1. La Matière</span>
+      <h3>Qu'est-ce qu'un son, concrètement ?</h3>
+      <p>
+        Un son n'est rien d'autre qu'une <strong>vibration d'air</strong>. Dans la vraie vie, quand vous pincez une corde de guitare, elle va et vient 440 fois par seconde, ce qui crée une onde de pression que vos tympans captent : c’est la note "La" (440 Hz).
+      </p>
+      <p>
+        Dans un synthétiseur logiciel, il n'y a pas de corde. C’est le processeur qui calcule une équation mathématique créant cette vibration électrique, que la membrane de vos écouteurs va reproduire.
+      </p>
+    </div>
+
+    <!-- CARTE 2: LES 4 ÉTAPES DE LA CHAÎNE -->
+    <div class="bento-card bento-card--blue">
+      <span class="etiquette etiquette--bleu" style="align-self: flex-start; margin-bottom: 8px;">2. Le Pipeline</span>
+      <h3>La Chaîne de Traitement (Signal Flow)</h3>
+      <p>
+        Le son traverse un entonnoir précis à 4 étapes, exactement comme une donnée traverse un pipeline logiciel :
+      </p>
+      <ul class="liste--compact">
+        <li><strong>L'Oscillateur :</strong> Il fabrique la vibration brute (onde carrée piquante, triangle velouté, sinus pur).</li>
+        <li><strong>Le Filtre (Cutoff) :</strong> C'est la sculpture. En fermant le filtre, on coupe les aigus agressifs pour donner un son feutré ou sombre.</li>
+        <li><strong>L'Enveloppe ADSR :</strong> Elle donne de la vie dans le temps (attaque instantanée comme un piano vs montée lente comme une flûte).</li>
+        <li><strong>La Sortie :</strong> Le son final envoyé à vos écouteurs.</li>
+      </ul>
+    </div>
+
+    <!-- CARTE 3: LE LIEN AVEC LE PRODUCT DESIGN & ERP -->
+    <div class="bento-card bento-card--terracotta">
+      <span class="etiquette etiquette--terracotta" style="align-self: flex-start; margin-bottom: 8px;">3. La Connexion Métier</span>
+      <h3>Quel rapport avec le Design &amp; les ERP ?</h3>
+      <p>
+        Quand j'audite un flux de commande dans SAP ou un système de synchronisation dans Odoo, <strong>la logique est rigoureusement identique</strong> :
+      </p>
+      <ul class="liste--compact">
+        <li><strong>Entrée brute (Raw Input) :</strong> Une frappe utilisateur ou une onde brute.</li>
+        <li><strong>Filtre &amp; Règles métier :</strong> Éliminer le bruit, valider les contraintes de stock ou de fréquences.</li>
+        <li><strong>État temporel (State) :</strong> Gérer la latence, la durée de vie de la session (comme l'enveloppe ADSR).</li>
+      </ul>
+      <p>
+        Comprendre comment un signal se propage d'un composant A à un composant B sans distorsion rend infiniment meilleur pour concevoir des architectures d'applications fluides.
+      </p>
+    </div>
+
+    <!-- CARTE 4: LE DESIGN HAPTIQUE ZÉRO POIDS -->
+    <div class="bento-card bento-card--success">
+      <span class="etiquette etiquette--vert" style="align-self: flex-start; margin-bottom: 8px;">4. Craft Numérique</span>
+      <h3>Micro-interactions &amp; Audio Zéro-Poids</h3>
+      <p>
+        La plupart des sites web qui veulent faire un petit son de clic ou de confirmation téléchargent un fichier audio MP3 de 40 ko. Résultat : une requête réseau en plus, et un léger décalage (latence) quand l'utilisateur clique.
+      </p>
+      <p>
+        Grâce à la <strong>Web Audio API</strong> native des navigateurs, nous pouvons synthétiser nous-mêmes le bruitage mécanique d'un interrupteur ou le tintement d'une validation en <strong>0 kilooctet</strong> et avec <strong>0 milliseconde de retard</strong>. C'est du craft pur.
+      </p>
     </div>
   </div>
 
@@ -129,8 +221,67 @@ title: L'Antichambre | Studio Expérimental
     filter.connect(gain);
     gain.connect(audioCtx.destination);
 
+    // Pipeline stage visual feedback
+    const stageOsc = document.getElementById('stage-osc');
+    const stageFilter = document.getElementById('stage-filter');
+    const stageEnv = document.getElementById('stage-env');
+    const stageOut = document.getElementById('stage-out');
+
+    const waveSelect = document.getElementById('synth-wave');
+    const filterInput = document.getElementById('synth-filter');
+    const filterDisplay = document.getElementById('synth-filter-display');
+    const flowOscLabel = document.getElementById('flow-osc-label');
+    const flowFilterLabel = document.getElementById('flow-filter-label');
+
+    // Trigger visual pulse across stages
+    function pulseStage(el, color, delay) {
+      if (!el) return;
+      setTimeout(() => {
+        el.style.borderColor = color;
+        el.style.transform = 'translateY(-2px)';
+        el.style.boxShadow = `0 4px 12px ${color}33`;
+        setTimeout(() => {
+          el.style.borderColor = 'var(--ligne)';
+          el.style.transform = 'none';
+          el.style.boxShadow = 'none';
+        }, 320);
+      }, delay);
+    }
+
+    pulseStage(stageOsc, '#c084fc', 0);
+    pulseStage(stageFilter, '#38bdf8', 40);
+    pulseStage(stageEnv, '#f0714b', 80);
+    pulseStage(stageOut, '#4ade80', 120);
+
     osc.start(now);
     osc.stop(now + 0.75);
+  }
+
+  // Update labels dynamically
+  const waveSelect = document.getElementById('synth-wave');
+  const filterInput = document.getElementById('synth-filter');
+  const filterDisplay = document.getElementById('synth-filter-display');
+  const flowOscLabel = document.getElementById('flow-osc-label');
+  const flowFilterLabel = document.getElementById('flow-filter-label');
+
+  if (filterInput && filterDisplay && flowFilterLabel) {
+    filterInput.addEventListener('input', () => {
+      const val = filterInput.value;
+      filterDisplay.textContent = `${val} Hz`;
+      flowFilterLabel.textContent = `${val} Hz`;
+    });
+  }
+
+  if (waveSelect && flowOscLabel) {
+    waveSelect.addEventListener('change', () => {
+      const map = {
+        triangle: 'Triangle (Chaude)',
+        sine: 'Sinus (Pure)',
+        sawtooth: 'Dent de scie (Riche)',
+        square: 'Carrée (8-bit)'
+      };
+      flowOscLabel.textContent = map[waveSelect.value] || waveSelect.value;
+    });
   }
 
   document.querySelectorAll('.synth-key').forEach(key => {

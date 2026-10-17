@@ -43,8 +43,16 @@
       </nav>
 
     <div class="controles-header">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-        <span class="theme-icon">☀️</span>
+      <button type="button" class="cmd-k-trigger" id="cmd-k-trigger" aria-label="Open Command Palette (Cmd+K)">
+        <span>Search</span>
+        <kbd>⌘K</kbd>
+      </button>
+      <button type="button" class="theme-toggle-switch" id="theme-toggle" aria-label="Changer de thème" role="switch">
+        <span class="switch-indicators">
+          <span class="switch-indicator--sun">☀️</span>
+          <span class="switch-indicator--moon">🌙</span>
+        </span>
+        <span class="switch-lever"></span>
       </button>
     </div>
 
@@ -55,7 +63,7 @@
   <footer>
     <div style="max-width: var(--largeur); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
       <p style="margin: 0; font-size: 0.88rem; color: var(--texte-muté);">
-        © {{ 'now' | date: "%Y" }} Nadia Cañadas Giménez · Engineered with tactile intent.
+        © {{ 'now' | date: "%Y" }} Nadia Cañadas Giménez · Built with care in Belgium.
       </p>
       <div>
         <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Entrer dans l'Antichambre" aria-label="Entrer dans l'Antichambre">🗝️</a>
@@ -64,57 +72,53 @@
   </footer>
 
   <script>
-    // Theme toggle persistence
-    const themeBtn = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    if (currentTheme === 'light') {
-      root.setAttribute('data-theme', 'light');
-    } else {
-      root.setAttribute('data-theme', 'dark');
-    }
-
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        const isLight = root.getAttribute('data-theme') === 'light';
-        const nextTheme = isLight ? 'dark' : 'light';
-        root.setAttribute('data-theme', nextTheme);
-        localStorage.setItem('theme', nextTheme);
-      });
-    }
-  </script>
-
-  <script>
     (function() {
       const themeBtn = document.getElementById('theme-toggle');
       const root = document.documentElement;
-      const themeIcon = document.querySelector('.theme-icon');
       
       const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
       
+      function playMechanicalClick() {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContext) return;
+          const ctx = new AudioContext();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(160, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.03);
+          gain.gain.setValueAtTime(0.08, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.03);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.035);
+        } catch(e) {}
+      }
+
       function setTheme(theme) {
         root.setAttribute('data-theme', theme);
         root.dataset.theme = theme;
         localStorage.setItem('ncg-theme', theme);
         localStorage.setItem('theme', theme);
-        if (themeIcon) {
-          // Si on est en sombre, l'icône propose d'éclairer (☀️), sinon elle propose la nuit (🌙)
-          themeIcon.textContent = (theme === 'dark') ? '☀️' : '🌙';
+        if (themeBtn) {
+          themeBtn.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
         }
       }
 
-      // Initialisation immédiate
       setTheme(currentTheme);
 
       if (themeBtn) {
         themeBtn.addEventListener('click', function() {
           const isDark = (root.getAttribute('data-theme') || root.dataset.theme) === 'dark';
+          playMechanicalClick();
           setTheme(isDark ? 'light' : 'dark');
         });
       }
     })();
   </script>
   
+  <script src="{{ '/assets/cmd-k.js' | relative_url }}"></script>
 </body>
 </html>

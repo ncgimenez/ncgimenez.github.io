@@ -29,6 +29,62 @@ title: I Take Things Apart
       Prying it open anyway is not just about saving hardware from a landfill; it is an act of cognitive demystification. Once you hold the lithium-ion pouch in your hand and trace the flex circuits to the board, the magic evaporates. In its place sits something far more interesting: a set of deliberate trade-offs made by engineers who were balancing thermal dissipation, space constraints, and manufacturing speed.
     </p>
 
+    <!-- INTERACTIVE HARDWARE TEARDOWN SANDBOX -->
+    <div class="teardown-sandbox" id="teardown-sandbox">
+      <div class="teardown-top-bar">
+        <div class="teardown-status-text">🪛 <strong>Click the 4 corner pentalobe screws</strong> to loosen the enclosure.</div>
+        <div class="teardown-actions-bar">
+          <button type="button" class="bouton plein teardown-lift-btn" style="padding: 4px 12px; font-size: 0.78rem; display: none;">Lift Display Assembly ⏏</button>
+          <button type="button" class="bouton teardown-reset-btn" style="padding: 4px 10px; font-size: 0.78rem;">Reset ↺</button>
+        </div>
+      </div>
+
+      <div class="teardown-stage">
+        <!-- Internal Hardware Schematic (Under the hood) -->
+        <div class="teardown-interior">
+          <!-- Left: Battery Bay -->
+          <div class="teardown-battery-bay">
+            <div class="battery-spec-text">
+              <strong>LITHIUM-ION BATTERY</strong><br>
+              3.82V · 11.91Wh · 3110mAh<br>
+              <span style="color: #6d667a;">Caution: Puncture risk. Do not bend.</span>
+            </div>
+            <div class="flex-ribbon"></div>
+            <div class="battery-pull-tab">▲ PULL-TAB ADHESIVE (SNAPS UNDER TENSION)</div>
+          </div>
+
+          <!-- Right: Logic Board & Taptic -->
+          <div class="teardown-logic-board">
+            <div class="logic-shield">
+              <span style="color: #f4f2f7; font-weight: 700;">A-SERIES SILICON</span>
+              <span>EMI Copper Shielding</span>
+              <span>NAND Flash · 128GB</span>
+            </div>
+            <div class="flex-ribbon" style="background: linear-gradient(90deg, #d97706, #f59e0b);"></div>
+            <div class="taptic-engine">
+              <strong>TAPTIC LINEAR ACTUATOR</strong><br>
+              <span style="font-size: 0.65rem; color: var(--texte-doux);">Haptic feedback coil &amp; springs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Enclosure (Sealed Display Assembly) -->
+        <div class="teardown-top-plate" title="Click to lift when screws are removed">
+          <!-- 4 Corner Screws -->
+          <div class="teardown-screw screw--tl" title="Click to unscrew Pentalobe screw"></div>
+          <div class="teardown-screw screw--tr" title="Click to unscrew Pentalobe screw"></div>
+          <div class="teardown-screw screw--bl" title="Click to unscrew Pentalobe screw"></div>
+          <div class="teardown-screw screw--br" title="Click to unscrew Pentalobe screw"></div>
+
+          <div class="plate-screen-graphic">
+            <strong>The Sealed Glass Enclosure</strong>
+            <p>Sealed with waterproof adhesive &amp; 4 pentalobe screws.<br><span style="color: var(--accent); font-weight: 600;">Click all 4 screws to unlock the chassis.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Interactive Teardown: Unscrew the pentalobe screws to pry open the smartphone battery compartment.</p>
+
     <h2>Audio Signal Chains and Logic Pro</h2>
     <p>
       I had the exact same impulse entering music production with Logic Pro. 
@@ -71,4 +127,6 @@ title: I Take Things Apart
       <a class="retour" href="/blog/" style="margin: 0;">← Back to notes</a>
       <a class="bouton plein" href="/projects/span-suite.html">See Span in Action →</a>
     </div>
+
+    <script src="{{ '/assets/disassembly-prototype.js' | relative_url }}"></script>
   </main>

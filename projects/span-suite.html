@@ -8,17 +8,17 @@ mermaid: true
   <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
   <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
-    <span class="etiquette etiquette--violet">Featured Product Case Study</span>
-    <span class="etiquette etiquette--bleu">PWA · Multi-Device Sync</span>
+    <span class="etiquette etiquette--violet">Product Case Study</span>
+    <span class="etiquette etiquette--bleu">PWA · React &amp; Supabase</span>
   </div>
 
   <h1>The Span Suite: Planning Without Overwhelm, Executing Without Clutter</h1>
   <p class="chapo">
-    A dual-engine productivity ecosystem closing the gap between macro scheduling and single-task execution. Built with React, Supabase, and tactile offline-first interactions.
+    Two interconnected web apps I designed and built to fix how I organize my day: one to plan 3–4 realistic daily blocks, and one to focus on a single task without seeing the rest of the list.
   </p>
 
   <!-- LIENS DIRECTS VERS LES APPS -->
-  <div style="display: flex; gap: 12px; margin: 28px 0 36px; flex-wrap: wrap;">
+  <div style="display: flex; gap: 12px; margin: 24px 0 32px; flex-wrap: wrap;">
     <a class="bouton violet" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener">Launch Span Focus ↗</a>
     <a class="bouton plein" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener">Launch Span Plan ↗</a>
     <a class="bouton" href="https://github.com/ncgimenez/span-focus" target="_blank" rel="noopener">Focus Repo</a>
@@ -29,51 +29,121 @@ mermaid: true
     <div><dt>Role</dt><dd>Product Designer &amp; Frontend Engineer</dd></div>
     <div><dt>Status</dt><dd>In Active Daily Dogfooding</dd></div>
     <div><dt>Tech Stack</dt><dd>React, Vanilla JS, Supabase, PWA</dd></div>
-    <div><dt>Method</dt><dd>Functional Architecture &amp; Agentic Prototyping</dd></div>
+    <div><dt>Method</dt><dd>Personal Dogfooding &amp; Rapid Prototyping</dd></div>
   </dl>
 
-  <!-- LE DIAGNOSTIC / LE CADRE -->
-  <h2>1. The Problem: Without Structure, To-Do Lists Are Overwhelming</h2>
-  <p>
-    Most productivity tools fail because they treat human attention as infinite. They act as passive endless inventories: you dump forty items into a column, stare at the backlog every time you open the app, and carry a subconscious debt throughout the day.
-  </p>
-  <p>
-    While traditional tools offer nested folders and project tags to sort this chaos, categorization often creates a false sense of progress. Endless sub-folders cause users to lose sight of urgent priorities: critical items get buried beneath deep hierarchies, only to be rediscovered weeks later when the damage is already done.
-  </p>
-  <p>
-    Furthermore, assigning arbitrary dates to everything is counter-productive. Tasks are rarely executed in an abstract vacuum; they happen within the shifting rhythm of real-world energy and unmoveable calendar commitments. When an unprioritized checklist attempts to dictate your schedule, cognitive fatigue takes over. The focus must be on <strong>the present moment</strong>. On Span Plan, the current day is always the center of gravity: you see what demands your attention right now, with immediate access to unassigned daily buffers without digging through menus.
+  <!-- 1. LE DIAGNOSTIC COMPARATIF (BENTO GRID 2 CARTES) -->
+  <h2>1. The Problem: The Endless List Trap</h2>
+  <p class="chapo" style="font-size: 1.05rem; margin-bottom: 20px;">
+    Most to-do apps make it too easy to add 50 tasks. But staring at a giant list every morning doesn't make you productive—it just makes you anxious.
   </p>
 
-  <div class="bandeau">
-    <strong>Core Insight:</strong> Without an opinionated frame, every to-do list collapses into cognitive backlog debt. Real productivity does not happen by adding checkmarks; it happens by defending boundaries.
+  <div class="bento-grid-2">
+    <!-- Carte Problème -->
+    <div class="bento-card bento-card--danger">
+      <span class="etiquette" style="color: #ff5f56; background: rgba(255, 95, 86, 0.1); border-color: rgba(255, 95, 86, 0.3);">Traditional To-Do Apps</span>
+      <h3>The Infinite Inventory</h3>
+      <p>Dumping dozens of items into a vertical checklist turns your tools into a source of guilt rather than clarity.</p>
+      <ul class="liste--compact">
+        <li><strong>Morning Overwhelm:</strong> Waking up to 40 open tasks creates decision fatigue before you even open your laptop.</li>
+        <li><strong>Hiding in Sub-Folders:</strong> Organizing everything into nested tags feels productive, but urgent tasks end up buried out of sight.</li>
+        <li><strong>Overdue Shame:</strong> Yesterday's unfinished tasks turn into aggressive red badges that kill your motivation.</li>
+      </ul>
+    </div>
+
+    <!-- Carte Solution Span -->
+    <div class="bento-card bento-card--success">
+      <span class="etiquette" style="color: #27c93f; background: rgba(39, 201, 63, 0.1); border-color: rgba(39, 201, 63, 0.3);">What I Built Instead</span>
+      <h3>Protecting Real Calendar Time</h3>
+      <p>I separated planning from doing: you choose your battles in the morning, and execute in peace during the day.</p>
+      <ul class="liste--compact">
+        <li><strong>Daily Cap (Max 3–4 Blocks):</strong> You only schedule what can realistically fit in a day. The rest stays safely in the backlog.</li>
+        <li><strong>Automatic Rollover:</strong> What you didn't finish today moves quietly to tomorrow. No red alarms, no shame.</li>
+        <li><strong>Hidden Backlog during Sprints:</strong> When the 25-minute timer starts, the to-do list disappears. Only the active task is visible.</li>
+      </ul>
+    </div>
   </div>
 
-  <p>
-    Coming from an ERP and enterprise systems background, I observed the exact same dynamic: an organization cannot promise a customer delivery without first reserving warehouse capacity (Available-to-Promise). The human mind functions identically: you cannot execute a task without explicitly reserving mental bandwidth and dedicated temporal real estate for it.
-  </p>
-  <p>
-    As modern software stacks accelerate, we underestimate how much cognitive energy is drained simply by managing the tools designed to organize us. Too many open choices, nested menus, and unbounded lists lead directly to analysis paralysis.
-  </p>
-
-  <!-- EMPLACEMENT VISUEL 1 -->
-  <figure>
-    <div style="background: var(--fond-carte); border: 2px dashed var(--ligne); border-radius: var(--rayon); padding: 36px; text-align: center; color: var(--texte-doux);">
-      📸 <strong>[Capture 1 : Vue d'ensemble de Span Plan ou backlog épuré]</strong><br>
-      <span style="font-size: 0.85rem;">(À déposer dans /assets/ et insérer ici via une balise img)</span>
+  <!-- 2. LES 3 PILIERS SYSTÈME (BENTO GRID 3 CARTES) -->
+  <h2>2. Principles: Simple Rules Behind the System</h2>
+  <div class="bento-grid-3">
+    <!-- Pilier 1 -->
+    <div class="bento-card bento-card--terracotta">
+      <div style="font-size: 1.6rem; margin-bottom: 8px;">📦</div>
+      <span class="etiquette">From Supply Chain</span>
+      <h3>Available-to-Promise</h3>
+      <p>
+        In warehousing, you don't promise a delivery without checking physical stock. Time works the same way: you can't commit to 8 tasks if you only have 2 free hours.
+      </p>
     </div>
-    <figcaption>Figure 1: Contextual daily planning buffer separating active priorities from passive backlog.</figcaption>
-  </figure>
 
-  <!-- LA SOLUTION : 2 ENGINS DÉDIÉS -->
-  <h2>2. The Architecture: A Dual-Engine Ecosystem</h2>
-  <p>
-    Span separates the psychological act of <em>organizing</em> from the visceral act of <em>doing</em>. Rather than cramming both modes into one overloaded interface, Span decouples them into two interconnected environments sharing a coherent state:
+    <!-- Pilier 2 -->
+    <div class="bento-card bento-card--violet">
+      <div style="font-size: 1.6rem; margin-bottom: 8px;">⚡</div>
+      <span class="etiquette etiquette--violet">Ergonomics</span>
+      <h3>100% Keyboard Flow</h3>
+      <p>
+        Reaching for the mouse every 20 minutes breaks concentration. Every action works with simple keys: <code>Space</code> to pause, <code>Tab</code> to edit, <code>Enter</code> to finish.
+      </p>
+    </div>
+
+    <!-- Pilier 3 -->
+    <div class="bento-card bento-card--blue">
+      <div style="font-size: 1.6rem; margin-bottom: 8px;">📴</div>
+      <span class="etiquette etiquette--bleu">Real Life</span>
+      <h3>Offline by Default</h3>
+      <p>
+        When you're on a train going through a tunnel, the app shouldn't freeze. Changes save locally in 0ms, and sync quietly to the cloud when internet returns.
+      </p>
+    </div>
+  </div>
+
+  <!-- 3. INTERACTIVE MINI-TIMER SANDBOX -->
+  <h2>3. Live Interactive Demo: The Focus Timer</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    Try the 25-minute focus timer below (click to start or pause):
+  </p>
+
+  <div class="span-mini-timer-box" id="span-mini-timer">
+    <div class="span-mini-category">Interactive Demo · Focus Sprint</div>
+    <div class="span-mini-task">Deep Work: Design System Token Refactor</div>
+    <div class="span-mini-digits">25:00</div>
+    <div class="span-mini-progress">
+      <div class="span-mini-progress-bar"></div>
+    </div>
+    <div class="span-mini-controls">
+      <button type="button" class="bouton plein span-timer-toggle" style="padding: 8px 20px; font-size: 0.9rem;">Start Focus Block ▶</button>
+      <button type="button" class="bouton span-timer-reset" style="padding: 8px 16px; font-size: 0.9rem;">Reset ↺</button>
+    </div>
+  </div>
+
+  <!-- 4. VISUAL WALKTHROUGH : BROWSER MOCKUP -->
+  <h2>4. Desktop Overview: Span Plan</h2>
+  <div class="mockup-browser">
+    <div class="mockup-toolbar">
+      <div class="mockup-dots"><span></span><span></span><span></span></div>
+      <div class="mockup-address">https://ncgimenez.github.io/span-plan/</div>
+    </div>
+    <div class="mockup-content">
+      <div class="mockup-placeholder">
+        <span>📸</span>
+        <strong>Desktop Interface: Span Plan</strong>
+        <p>Drop your desktop screenshot or short looping MP4 video here showing the daily planning board and clean backlog.</p>
+      </div>
+    </div>
+  </div>
+  <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 1: Daily planning buffer separating active priorities from the general backlog.</p>
+
+  <!-- 5. ARCHITECTURE DÉCOUPLÉE : SCHEMA + 2 CARTES -->
+  <h2>5. How the Two Apps Work Together</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    Planning your week and actually doing the work require two totally different mindsets:
   </p>
 
   <div class="bpmn-wrap">
     <pre class="mermaid">
 flowchart LR
-  subgraph PlanApp [Span Plan: Macro Orchestration]
+  subgraph PlanApp [Span Plan: Morning Planning]
     Backlog[Contextual Backlog] --> DayBuffer[Daily Allocation: Max 3-4 Blocks]
   end
 
@@ -81,9 +151,9 @@ flowchart LR
     DayBuffer -->|Promote Top Priority| ActiveSlot[Current Block Locked]
   end
 
-  subgraph FocusApp [Span Focus: Micro Execution]
+  subgraph FocusApp [Span Focus: Single Task]
     ActiveSlot --> Timer[Tactile Fullscreen Timer]
-    Timer --> LocalLog[(Local State / PWA Cache)]
+    Timer --> LocalLog[(Local Storage / PWA)]
     LocalLog --> Sync[Supabase Cloud Sync]
   end
 
@@ -92,113 +162,141 @@ flowchart LR
   style FocusApp fill:#16141c,stroke:#9d5cff,stroke-width:1px
     </pre>
   </div>
-  <p class="bpmn-note">Figure 2: Architectural separation of concerns between temporal planning and focused execution.</p>
+  <p class="bpmn-note">Figure 2: Workflow from morning planning to single-task focus.</p>
 
-  <div class="grille" style="margin: 32px 0;">
+  <div class="bento-grid-2" style="margin-top: 24px;">
     <!-- ENGIN 1 : PLAN -->
-    <div class="carte" style="border-top: 3px solid #0284c7;">
-      <span class="etiquette etiquette--bleu">Engine 01 · Macro</span>
+    <div class="bento-card bento-card--blue">
+      <span class="etiquette etiquette--bleu">App 01 · Planning</span>
       <h3>Span Plan</h3>
-      <p style="margin-bottom: 12px; font-weight: 600; color: var(--texte);">The Structuring Frame</p>
-      <p>
-        Where intentions become commitments. A calendar-aware space where tasks are slotted into concrete timeframes (Today, Tomorrow, Later), preventing the cognitive exhaustion of a bottomless backlog.
-      </p>
-      <ul class="liste" style="margin-top: 14px; font-size: 0.92rem;">
-        <li><strong>Automated Rollover:</strong> Incomplete tasks gracefully slide to the next planning window without guilt-inducing alarms.</li>
-        <li><strong>Contextual Categories:</strong> Strict division across Work, Life, and Focus to maintain visibility over energy balance.</li>
-        <li><strong>Selective Focus Feeder:</strong> Promotes only top-tier daily priorities into the execution chamber.</li>
+      <p style="margin-bottom: 10px; font-weight: 600; color: var(--texte);">For the morning ritual</p>
+      <p>A quiet place to decide what you will realistically achieve today, and park the rest for later.</p>
+      <ul class="liste--compact">
+        <li><strong>Automatic Rollover:</strong> Incomplete tasks slide forward with no guilt.</li>
+        <li><strong>Clean Categories:</strong> Work, Personal, and Focus buckets.</li>
+        <li><strong>Focus Feeder:</strong> Sends your top task directly into the timer app.</li>
       </ul>
     </div>
 
     <!-- ENGIN 2 : FOCUS -->
-    <div class="carte" style="border-top: 3px solid #7c3aed;">
-      <span class="etiquette etiquette--violet">Engine 02 · Micro</span>
+    <div class="bento-card bento-card--violet">
+      <span class="etiquette etiquette--violet">App 02 · Execution</span>
       <h3>Span Focus</h3>
-      <p style="margin-bottom: 12px; font-weight: 600; color: var(--texte);">The Execution Chamber</p>
-      <p>
-        A hermetic, distraction-free environment designed for single-task immersion. The backlog is deliberately hidden; only the current sprint matters.
-      </p>
-      <ul class="liste" style="margin-top: 14px; font-size: 0.92rem;">
-        <li><strong>25-Minute Block Timer:</strong> Calibrated Pomodoro-style sprints with real-time target feedback and completion metrics.</li>
-        <li><strong>Keyboard &amp; Gesture Native:</strong> Swipe right to trigger focus, <code>Enter</code> to complete, <code>Tab</code> to edit, long-press to star. Zero mouse dependency.</li>
-        <li><strong>Daily Goal Tracking:</strong> Real-time progress bar reflecting actual dedicated time against daily intentions.</li>
+      <p style="margin-bottom: 10px; font-weight: 600; color: var(--texte);">For deep work sessions</p>
+      <p>A distraction-free timer for one task at a time. The backlog is hidden so you don't second-guess yourself.</p>
+      <ul class="liste--compact">
+        <li><strong>25-Minute Block Timer:</strong> Classic Pomodoro rhythm with visual progress.</li>
+        <li><strong>Keyboard-First:</strong> Start, pause, or complete tasks without touching your mouse.</li>
+        <li><strong>Daily Progress Bar:</strong> Shows how many focused hours you truly protected today.</li>
       </ul>
     </div>
   </div>
 
-  <!-- LE CRAFT & L'INTERACTION -->
-  <h2>3. Tactile Interaction &amp; Mobile-First Ergonomics</h2>
-  <p>
-    Software quality lives in micro-interactions and predictability under constrained mobile viewports. Throughout the Span suite, several non-negotiable principles guided the design:
-  </p>
-
-  <ul class="liste">
-    <li><strong>Keyboard-First Ergonomics:</strong> Switching between mouse and keyboard causes mental drag. In Span Focus, every frequent action can be operated entirely from the home row.</li>
-    <li><strong>Mobile Thumb-Zone Calibration:</strong> Primary execution triggers are positioned within natural thumb sweep areas on mobile devices, avoiding unreachable upper corners.</li>
-    <li><strong>iOS Viewport Resilience:</strong> Handled dynamic mobile browser address bar resizes via modern CSS viewport units (<code>100dvh</code>) to keep action trays fixed without layout jump.</li>
-    <li><strong>Dark-Mode Slate Palette:</strong> Productivity tools are frequently used during early morning or late-night focus sessions. The palette avoids harsh stark contrast in favor of an eye-resting dark slate workshop aesthetic.</li>
-  </ul>
-
-  <!-- EMPLACEMENT VISUEL 2 -->
-  <figure>
-    <div style="background: var(--fond-carte); border: 2px dashed var(--ligne); border-radius: var(--rayon); padding: 36px; text-align: center; color: var(--texte-doux);">
-      📱 <strong>[Capture 2 : Span Focus en cours d'exécution sur smartphone]</strong><br>
-      <span style="font-size: 0.85rem;">(À déposer dans /assets/ et insérer ici via une balise img)</span>
+  <!-- 6. MOBILE INTERACTION & MOCKUP -->
+  <h2>6. Mobile Experience &amp; Thumb Ergonomics</h2>
+  <div class="mockup-browser">
+    <div class="mockup-toolbar">
+      <div class="mockup-dots"><span></span><span></span><span></span></div>
+      <div class="mockup-address">https://ncgimenez.github.io/span-focus/ (Mobile PWA)</div>
     </div>
-    <figcaption>Figure 3: Span Focus running as a standalone PWA on mobile with gesture shortcuts.</figcaption>
-  </figure>
+    <div class="mockup-content">
+      <div class="mockup-placeholder">
+        <span>📱</span>
+        <strong>Mobile Interface &amp; Gestures</strong>
+        <p>Drop a mobile screen capture or looping swipe gesture clip here (e.g. recorded with Mac QuickTime or Kap).</p>
+      </div>
+    </div>
+  </div>
+  <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 3: Span Focus running as a standalone PWA with natural thumb-zone buttons.</p>
 
-  <!-- ARBITRAGES TECHNIQUES & POST-MORTEMS -->
-  <h2>4. Engineering Trade-offs &amp; Post-Mortems</h2>
-  <p>
-    Building production tools means navigating real-world constraints. Here are three architectural challenges encountered during development and how they were resolved:
+  <!-- 7. CARNET DE DOGFOODING RÉEL (3 CARTES) -->
+  <h2>7. Real-World Dogfooding Log: What I Learned Using My Own Apps</h2>
+  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    The best design decisions came from using both apps every single day to run my own work:
   </p>
 
+  <div class="dogfooding-card">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+      <strong>Week 1 · The 8:00 AM Guilt Checkmarks</strong>
+      <span style="font-size: 0.78rem; color: var(--texte-muté);">User Psychology</span>
+    </div>
+    <p style="margin: 0; font-size: 0.92rem; color: var(--texte-doux);">
+      <strong>What I noticed:</strong> Seeing red overdue marks from yesterday first thing in the morning made me feel like I was already behind schedule before even starting.
+      <br><strong>Design change:</strong> I removed all overdue penalties. Unfinished tasks now roll over automatically into today's list without red marks or guilt.
+    </p>
+  </div>
+
+  <div class="dogfooding-card">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+      <strong>Week 3 · Why I Stopped Touching the Mouse</strong>
+      <span style="font-size: 0.78rem; color: var(--texte-muté);">Micro-Interaction</span>
+    </div>
+    <p style="margin: 0; font-size: 0.92rem; color: var(--texte-doux);">
+      <strong>What I noticed:</strong> Having to grab the trackpad to start or pause the timer broke my concentration while writing or coding.
+      <br><strong>Design change:</strong> I mapped every key action to the keyboard: <code>Space</code> to start/pause, <code>Tab</code> to edit, <code>Enter</code> to mark done. You never have to leave the home row.
+    </p>
+  </div>
+
+  <div class="dogfooding-card">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+      <strong>Week 6 · Train Tunnels &amp; Spotty 4G</strong>
+      <span style="font-size: 0.78rem; color: var(--texte-muté);">Technical Resilience</span>
+    </div>
+    <p style="margin: 0; font-size: 0.92rem; color: var(--texte-doux);">
+      <strong>What I noticed:</strong> Losing connection on train commutes caused loading spinners to freeze the app when completing tasks.
+      <br><strong>Design change:</strong> Made the app save to local browser storage (IndexedDB) first. UI updates in 0ms; syncing to Supabase happens quietly in the background when signal returns.
+    </p>
+  </div>
+
+  <!-- 8. FIGMA SPECIFICATION & TOKENS -->
+  <h2>8. Design Tokens &amp; Figma Components</h2>
+  <div class="figma-spec-box">
+    <div class="etiquette etiquette--violet" style="margin-bottom: 12px;">Figma Component System</div>
+    <h4>Design Tokens &amp; Component Variants</h4>
+    <p>
+      [Zone Figma : Déposez ici votre capture d'écran Figma montrant vos couleurs de base (Slate, Neon Violet, Terracotta), vos espacements et les états de boutons (Default, Hover, Active).]
+    </p>
+    <div style="display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center; font-size: 0.8rem; color: var(--texte-muté);">
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Tokens: --fond-carte</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Tokens: --accent (Terracotta)</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Tokens: --accent-alt (Ultraviolet)</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">States: Default · Hover · Active · Focused</span>
+    </div>
+  </div>
+
+  <!-- 9. ARBITRAGES TECHNIQUES & POST-MORTEMS -->
+  <h2>9. Real-World Engineering Trade-offs</h2>
   <table class="gap-table">
     <thead>
       <tr>
         <th style="width: 25%;">Challenge</th>
-        <th style="width: 35%;">Initial Friction / Failure Mode</th>
-        <th style="width: 40%;">Engineered Resolution</th>
+        <th style="width: 35%;">The Real Problem</th>
+        <th style="width: 40%;">How I Solved It</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong>Midnight Rollover</strong></td>
-        <td>Unfinished tasks accumulated as visual red marks on past days, creating backlog fatigue and artificial urgency.</td>
-        <td>Engineered an automated rollover state machine that gracefully reschedules incomplete tasks into the active day buffer without penalty.</td>
+        <td>Unfinished tasks piled up as scary red overdue items, creating fatigue.</td>
+        <td>Built an automatic rollover so tasks gently move to the next day with zero penalty.</td>
       </tr>
       <tr>
-        <td><strong>Offline Resilience</strong></td>
-        <td>Unstable mobile connections (e.g. transit commutes) risked dropped sessions when relying purely on direct cloud calls.</td>
-        <td>Implemented an offline-first architecture: local storage / IndexedDB acts as the primary synchronous source of truth, with asynchronous background sync to Supabase.</td>
+        <td><strong>Spotty train Wi-Fi</strong></td>
+        <td>Loading spinners froze the app in tunnels when finishing tasks.</td>
+        <td>Saved everything to local storage first (0ms latency), syncing to cloud in the background.</td>
       </tr>
       <tr>
-        <td><strong>State Overhead</strong></td>
-        <td>Complex state management libraries introduced noticeable bundle weight and boot latency on mobile devices.</td>
-        <td>Maintained a lightweight, deterministic component state pipeline, keeping initial boot times below 200ms on mobile viewports.</td>
+        <td><strong>Mobile Load Time</strong></td>
+        <td>Heavy libraries made the app feel sluggish on older phones.</td>
+        <td>Kept the bundle lightweight so the PWA opens in under 200ms on any mobile browser.</td>
       </tr>
     </tbody>
   </table>
-
-  <!-- LE BACKSTAGE IA & INGÉNIERIE -->
-  <h2>5. The Engineering Mindset: Cadrage &amp; Agentic Velocity</h2>
-  <p>
-    I build these applications using modern AI workflows as force multipliers. This process is not passive copy-pasting; it is an active discipline of <strong>functional orchestration</strong>:
-  </p>
-  <div class="bandeau">
-    <strong>Systems Thinking Applied to Code:</strong>
-    LLMs provide raw syntax velocity, but they lack product vision and systemic taste. My background in business and functional analysis allows me to strictly define component boundaries, state lifecycles, and edge cases, directing the AI to generate production-ready interactions with high precision.
-  </div>
-
-  <h2>Next Iterations</h2>
-  <ul class="liste">
-    <li><strong>Selective Promotion Pipeline:</strong> Fluid promotion of planned daily blocks from Span Plan directly into the active Span Focus queue, preserving ad-hoc micro sprints as standalone local tasks.</li>
-    <li><strong>Haptic &amp; Auditory Feedback:</strong> Soft mechanical clicks synthesized via Web Audio API when completing blocks or starting focus sprints.</li>
-  </ul>
 
   <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
     <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
     <a class="bouton plein" href="/projects/google-calendar.html">Next: Google Calendar Redesign →</a>
   </div>
+
+  <script src="{{ '/assets/span-timer.js' | relative_url }}"></script>
 </main>

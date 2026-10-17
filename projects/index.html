@@ -10,8 +10,31 @@ title: Projects & Software
     From end-to-end interactive web applications to mission-critical ERP implementations and interaction redesigns.
   </p>
 
+  <!-- FILTRES INTERACTIFS -->
+  <div class="filter-bar" id="project-filter-bar" role="toolbar" aria-label="Filtrer les projets">
+    <div class="filter-group" role="tablist">
+      <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+        <span>All</span>
+        <span class="filter-pill">7</span>
+      </button>
+      <button type="button" class="filter-btn" data-filter="apps" role="tab" aria-selected="false">
+        <span>Live Web Apps</span>
+        <span class="filter-pill">2</span>
+      </button>
+      <button type="button" class="filter-btn" data-filter="ux" role="tab" aria-selected="false">
+        <span>UX &amp; Interaction</span>
+        <span class="filter-pill">2</span>
+      </button>
+      <button type="button" class="filter-btn" data-filter="systems" role="tab" aria-selected="false">
+        <span>Systems Architecture</span>
+        <span class="filter-pill">3</span>
+      </button>
+    </div>
+    <div class="filter-count" id="filter-count" aria-live="polite">7 projects</div>
+  </div>
+
   <!-- BANDEAU SPECIAL ETUDE DE CAS SPAN -->
-  <div class="bandeau" style="border-left-color: var(--accent-alt); background: var(--fond-carte); margin-top: 2.5rem; margin-bottom: 2rem;">
+  <div class="bandeau" style="border-left-color: var(--accent-alt); background: var(--fond-carte); margin-top: 1.5rem; margin-bottom: 2rem;">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
       <div>
         <span class="etiquette etiquette--violet" style="margin-bottom: 6px;">Featured Case Study</span>
@@ -25,14 +48,16 @@ title: Projects & Software
   </div>
 
   <!-- SECTION 1 : VOS APPLICATIONS RÉELLES -->
-  <h2 style="margin-top: 3.5rem;">Interactive Applications: The Span Suite</h2>
-  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
-    Deployed software built with modern front-end tools, offline-first PWA features, and cloud synchronization.
-  </p>
+  <div data-section-category="apps">
+    <h2 style="margin-top: 3.5rem;">Interactive Applications: The Span Suite</h2>
+    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+      Deployed software built with modern front-end tools, offline-first PWA features, and cloud synchronization.
+    </p>
+  </div>
 
   <div class="grille">
     <!-- SPAN FOCUS -->
-    <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="carte" data-category="apps" style="display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div class="carte-barre" style="background: #7c3aed;"></div>
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
@@ -41,7 +66,7 @@ title: Projects & Software
         </div>
         <h3>Span Focus</h3>
         <p>
-          Execution timer with category tracking, keyboard-first navigation, tactile swipe shortcuts, and real-time daily progress bars.
+          Block timer with category tracking, full keyboard navigation, mobile swipe shortcuts, and daily progress feedback.
         </p>
       </div>
       <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
@@ -52,7 +77,7 @@ title: Projects & Software
     </div>
 
     <!-- SPAN PLAN -->
-    <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="carte" data-category="apps" style="display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div class="carte-barre" style="background: #0284c7;"></div>
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
@@ -61,7 +86,7 @@ title: Projects & Software
         </div>
         <h3>Span Plan</h3>
         <p>
-          Contextual daily planning and backlog orchestrator designed with automated rollover to feed directly into focus sessions without cognitive friction.
+          Daily planning board with automatic task rollover, designed to feed your top priorities straight into focus sessions without clutter.
         </p>
       </div>
       <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
@@ -73,50 +98,56 @@ title: Projects & Software
   </div>
 
   <!-- SECTION 2 : CONCEPTS UX & MODÈLES D'INTERACTION -->
-  <h2 style="margin-top: 4rem;">Interaction Models &amp; UX Teardowns</h2>
-  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
-    Rethinking default UI patterns to eliminate repetitive manual friction.
-  </p>
+  <div data-section-category="ux">
+    <h2 style="margin-top: 4rem;">Interaction Redesigns &amp; UX Teardowns</h2>
+    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+      Fixing common everyday digital frictions with standard, intuitive interactions.
+    </p>
+  </div>
 
   <div class="grille">
-    <a class="carte" href="/projects/google-calendar.html">
+    <a class="carte" data-category="ux" href="/projects/google-calendar.html">
       <div class="carte-barre" style="background: #4a86b4;"></div>
       <span class="etiquette">Interaction Redesign</span>
-      <h3>Google Calendar: Rethinking the Interaction Model</h3>
-      <p>Drag to select, click to create: bringing standard desktop marquee selection to calendar schedule changes.</p>
+      <h3>Google Calendar: The Missing Selection Box</h3>
+      <p>A standard selection box to move multiple meetings at once instead of dragging them one by one.</p>
     </a>
-    <a class="carte" href="/projects/mobile-UX.html">
+    <a class="carte" data-category="ux" href="/projects/mobile-UX.html">
       <div class="carte-barre" style="background: #4a86b4;"></div>
       <span class="etiquette">Mobile UX</span>
       <h3>SNCB: Know Which Way to Run Before You Get There</h3>
-      <p>Surfacing real-time arrival platforms and train exit door directions before reaching connecting hubs.</p>
+      <p>Helping passengers know which platform to run to and which door to exit before the train stops.</p>
     </a>
   </div>
 
   <!-- SECTION 3 : SYSTÈMES COMPLEXES & ARCHITECTURE FONCTIONNELLE -->
-  <h2 style="margin-top: 4rem;">Systems &amp; Process Architecture</h2>
-  <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
-    Translating messy operational reality into robust, scalable digital workflows.
-  </p>
+  <div data-section-category="systems">
+    <h2 style="margin-top: 4rem;">Systems &amp; Process Architecture</h2>
+    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+      Translating messy operational reality into robust, scalable digital workflows.
+    </p>
+  </div>
 
   <div class="grille">
-    <a class="carte" href="/projects/sap-o2c-standardization.html">
+    <a class="carte" data-category="systems" href="/projects/sap-o2c-standardization.html">
       <div class="carte-barre" style="background: #b4502d;"></div>
       <span class="etiquette">SAP S/4HANA</span> 
       <h3>O2C Without the Chaos: Standardising SAP SD</h3>
       <p>Mapping and repairing broken order management flows during a greenfield implementation for a Nordic scale-up.</p>
     </a>
-    <a class="carte" href="/projects/odoo-inventory.html">
+    <a class="carte" data-category="systems" href="/projects/odoo-inventory.html">
       <div class="carte-barre" style="background: #b4502d;"></div>
       <span class="etiquette">Odoo ERP</span>
       <h3>Three Disconnected Tools, One Coherent Flow</h3>
       <p>Implementing Sales, Inventory and Accounting for a Belgian SME to solve critical inventory race conditions.</p>
     </a>
-    <a class="carte" href="/projects/pedagogical-system-design.html">
+    <a class="carte" data-category="systems" href="/projects/pedagogical-system-design.html">
       <div class="carte-barre" style="background: #4caf6b;"></div>
       <span class="etiquette">Instructional Architecture</span>
       <h3>Structuring a Language Course That Holds</h3>
       <p>Turning tacit knowledge into a modular, scalable curriculum with diagnostic routing and prerequisite mapping.</p>
     </a>
   </div>
+
+  <script src="{{ '/assets/project-filter.js' | relative_url }}"></script>
 </main>

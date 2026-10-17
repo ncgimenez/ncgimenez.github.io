@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | The Antechamber</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.2' | relative_url }}">
 
   <style>
     /* ============================================================
@@ -59,12 +59,8 @@
         </ul>
       </nav>
       <div class="controles-header">
-        <button type="button" class="theme-toggle-switch" id="theme-toggle" aria-label="Changer de thème" role="switch">
-          <span class="switch-indicators">
-            <span class="switch-indicator--sun">☀️</span>
-            <span class="switch-indicator--moon">🌙</span>
-          </span>
-          <span class="switch-lever"></span>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+          <span class="theme-icon">☀️</span>
         </button>
         <button class="lang-toggle" aria-label="Changer de langue">
           <span class="lang-opt lang-opt--en">EN</span>
@@ -89,6 +85,8 @@
     (function() {
       const themeBtn = document.getElementById('theme-toggle');
       const root = document.documentElement;
+      const themeIcon = document.querySelector('.theme-icon');
+      
       const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
       
       function playMechanicalClick() {
@@ -115,8 +113,8 @@
         root.dataset.theme = theme;
         localStorage.setItem('ncg-theme', theme);
         localStorage.setItem('theme', theme);
-        if (themeBtn) {
-          themeBtn.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+        if (themeIcon) {
+          themeIcon.textContent = (theme === 'dark') ? '☀️' : '🌙';
         }
       }
 

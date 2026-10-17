@@ -6,7 +6,7 @@
   <title>{% if page.title %}{{ page.title }} · Nadia Cañadas Giménez{% else %}Nadia Cañadas Giménez · Product & Systems Engineer{% endif %}</title>
   <meta name="description" content="Portfolio of Nadia Cañadas Giménez — Product Engineer & Systems Architect. ERP logic, tactile PWA interfaces, and interaction design.">
   
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.2' | relative_url }}">
 
   {% if page.mermaid %}
   <script type="module">
@@ -43,16 +43,8 @@
       </nav>
 
     <div class="controles-header">
-      <button type="button" class="cmd-k-trigger" id="cmd-k-trigger" aria-label="Open Command Palette (Cmd+K)">
-        <span>Search</span>
-        <kbd>⌘K</kbd>
-      </button>
-      <button type="button" class="theme-toggle-switch" id="theme-toggle" aria-label="Changer de thème" role="switch">
-        <span class="switch-indicators">
-          <span class="switch-indicator--sun">☀️</span>
-          <span class="switch-indicator--moon">🌙</span>
-        </span>
-        <span class="switch-lever"></span>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+        <span class="theme-icon">☀️</span>
       </button>
     </div>
 
@@ -75,6 +67,8 @@
     (function() {
       const themeBtn = document.getElementById('theme-toggle');
       const root = document.documentElement;
+      
+      const themeIcon = document.querySelector('.theme-icon');
       
       const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
       
@@ -102,8 +96,8 @@
         root.dataset.theme = theme;
         localStorage.setItem('ncg-theme', theme);
         localStorage.setItem('theme', theme);
-        if (themeBtn) {
-          themeBtn.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+        if (themeIcon) {
+          themeIcon.textContent = (theme === 'dark') ? '☀️' : '🌙';
         }
       }
 
@@ -118,7 +112,5 @@
       }
     })();
   </script>
-  
-  <script src="{{ '/assets/cmd-k.js' | relative_url }}"></script>
 </body>
 </html>

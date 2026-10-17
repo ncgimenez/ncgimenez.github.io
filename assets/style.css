@@ -584,6 +584,289 @@ footer {
 
 
 
+/* ---------- Quick Actions Palette (⌘K) ---------- */
+
+.cmd-k-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--fond-carte);
+  border: 1px solid var(--ligne);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: var(--texte-doux);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  line-height: 1;
+}
+
+.cmd-k-btn:hover {
+  border-color: var(--accent);
+  color: var(--texte);
+  background: var(--fond-carte-hover);
+}
+
+.cmd-k-btn-icon {
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.cmd-k-btn-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cmd-k-btn-kbd {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--ligne);
+  color: var(--texte);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.2;
+}
+
+/* Palette Backdrop & Container */
+.cmd-palette-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 14, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s ease, visibility 0.16s ease;
+}
+
+:root[data-theme="light"] .cmd-palette-backdrop {
+  background: rgba(30, 26, 36, 0.4);
+}
+
+.cmd-palette-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cmd-palette-modal {
+  position: fixed;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px) scale(0.98);
+  width: calc(100% - 32px);
+  max-width: 560px;
+  max-height: 72vh;
+  background: var(--fond-carte);
+  border: 1px solid var(--ligne-hover);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.16s ease, visibility 0.16s ease;
+  overflow: hidden;
+}
+
+.cmd-palette-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.cmd-palette-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--ligne);
+  background: var(--fond-carte);
+}
+
+.cmd-palette-search-icon {
+  color: var(--texte-doux);
+  flex-shrink: 0;
+}
+
+.cmd-palette-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.98rem;
+  font-family: inherit;
+  color: var(--texte);
+}
+
+.cmd-palette-input::placeholder {
+  color: var(--texte-muté);
+}
+
+.cmd-palette-close-kbd {
+  font-size: 0.68rem;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--ligne);
+  color: var(--texte-muté);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.cmd-palette-list {
+  overflow-y: auto;
+  padding: 8px;
+  max-height: 380px;
+  scrollbar-width: thin;
+}
+
+.cmd-palette-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texte-muté);
+  padding: 10px 10px 4px;
+}
+
+.cmd-palette-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  text-decoration: none;
+  color: inherit;
+  user-select: none;
+}
+
+.cmd-palette-row:hover,
+.cmd-palette-row.is-active {
+  background: var(--fond-carte-hover);
+}
+
+.cmd-palette-row.is-active {
+  outline: 1px solid var(--accent);
+}
+
+.cmd-palette-row-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cmd-palette-icon {
+  font-size: 1.15rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cmd-palette-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cmd-palette-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--texte);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmd-palette-sub {
+  font-size: 0.78rem;
+  color: var(--texte-doux);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmd-palette-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--ligne);
+  color: var(--texte-doux);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.cmd-palette-empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--texte-doux);
+}
+
+.cmd-palette-empty p {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texte);
+}
+
+.cmd-palette-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-top: 1px solid var(--ligne);
+  background: rgba(0, 0, 0, 0.12);
+  font-size: 0.75rem;
+  color: var(--texte-muté);
+}
+
+.cmd-palette-footer-keys {
+  display: flex;
+  gap: 12px;
+}
+
+.cmd-palette-footer-keys kbd {
+  font-family: inherit;
+  font-weight: 600;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--ligne);
+  color: var(--texte);
+}
+
+.cmd-palette-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #27c93f;
+  color: #0b2e10;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s;
+  z-index: 10000;
+}
+
+.cmd-palette-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ---------- Filtres interactifs des projets ---------- */
 
 .filter-bar {

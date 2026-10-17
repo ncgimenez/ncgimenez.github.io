@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | The Antechamber</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.2' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.5' | relative_url }}">
 
   <style>
     /* ============================================================
@@ -59,6 +59,11 @@
         </ul>
       </nav>
       <div class="controles-header">
+        <button type="button" class="cmd-k-btn" id="cmd-k-trigger" aria-label="Open Quick Actions (⌘K)" title="Quick Actions (⌘K)">
+          <span class="cmd-k-btn-icon">⚡</span>
+          <span class="cmd-k-btn-text">Actions</span>
+          <kbd class="cmd-k-btn-kbd">⌘K</kbd>
+        </button>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
           <span class="theme-icon">☀️</span>
         </button>
@@ -130,5 +135,6 @@
     })();
   </script>
   <script src="{{ '/assets/lang.js' | relative_url }}"></script>
+  <script src="{{ '/assets/quick-actions.js' | relative_url }}"></script>
 </body>
 </html>

@@ -29,12 +29,12 @@ mermaid: true
     </p>
 
     <div class="bandeau">
-      <strong>Core Insight:</strong> A physical warehouse is a state machine. If reservation events are not locked atomically at the quotation stage, your inventory database is merely a suggestion rather than a source of truth.
+      <strong>The Core Problem:</strong> Stock must be locked the moment an order is confirmed. Without real-time reservation, the inventory number on your screen is just a guess—leading to two sales reps accidentally promising the exact same pallet to different clients.
     </div>
 
     <h2>Integrated Flow Architecture</h2>
     <p>
-      We unified the operations onto a single Odoo instance, replacing batch imports with automated reservation routes and automated ledger matching.
+      We replaced three disconnected tools with a unified Odoo workflow, connecting sales confirmation directly to warehouse pick slips and instant accounting entries:
     </p>
 
     <div class="bpmn-wrap">
@@ -68,19 +68,34 @@ flowchart LR
     </div>
     <p class="bpmn-note">Event-driven state transitions across Odoo modules.</p>
 
-    <h2>Key Technical Configurations</h2>
+    <h2>3 Key Improvements We Put in Place</h2>
+
+    <!-- FIFO EXPLAINED SIMPLY -->
+    <div class="bandeau" style="border-left-color: var(--accent-alt); margin-bottom: 24px;">
+      <strong>Why FIFO (First In, First Out) instead of Average Cost (AVCO)?</strong>
+      <br>• <strong>In the warehouse:</strong> Odoo automatically reserves the oldest inventory lots first so goods don't sit forgotten on high shelves.
+      <br>• <strong>In accounting:</strong> If you buy Batch A at $10 in January and Batch B at $14 in February, FIFO calculates your true margin lot-by-lot, rather than blurring everything into an average. The finance team always knows the real profit margin on every shipment.
+    </div>
+
     <ul class="liste">
-      <li><strong>Automated Reservation Rules:</strong> Configured strict FIFO reservation rules upon order confirmation, distinguishing <em>On Hand</em> physical quantities from <em>Forecasted</em> available stock in real time.</li>
-      <li><strong>Automated Landed Costs:</strong> Structured freight and customs cost absorption schemas to reflect accurate gross margins per product line.</li>
-      <li><strong>Automated Bank Synchronization &amp; Reconciliation:</strong> Replaced monthly manual matching with automated rule-based transaction reconciliation against Belgian bank statements.</li>
+      <li>
+        <strong>Instant Stock Reservation (No Double-Selling):</strong> 
+        The moment a sales rep confirms a quote, Odoo locks the physical pallet in the warehouse. Sales reps can clearly see what is physically on the shelf (<em>On Hand</em>) versus what is already promised (<em>Forecasted</em>), ending emergency backorders.
+      </li>
+      <li>
+        <strong>Automated Landed Costs (True Margins on Day 1):</strong> 
+        When imported goods arrive, overseas shipping fees and customs taxes are automatically added to the product cost. Finance knows the true margin immediately, instead of discovering surprise carrier bills weeks later.
+      </li>
+      <li>
+        <strong>Automated Bank Reconciliation:</strong> 
+        Daily bank feeds match incoming payments directly against open customer invoices using simple matching rules, replacing manual month-end Excel reconciliations.
+      </li>
     </ul>
 
-    <h2>Operational Outcomes</h2>
-    <ul class="liste">
-      <li><strong>Atomic Stock Locking:</strong> Sales orders lock stock immediately upon confirmation, stopping sales reps from over-promising items that just left the warehouse.</li>
-      <li><strong>Accurate Landed Costs:</strong> Inbound freight and customs charges are apportioned directly across received lots, revealing true gross margins per product line.</li>
-      <li><strong>Daily Bank Reconciliation:</strong> Direct bank feed sync matched against open customer invoices replaced manual end-of-month accounting spreadsheets.</li>
-    </ul>
+    <h2>Key Takeaway: Operations as a Single Pipeline</h2>
+    <div class="bandeau">
+      <strong>Connecting the Dots:</strong> An ERP rollout succeeds when sales, warehousing, and accounting talk about the exact same physical box at the exact same second. When the software handles inventory locks automatically, sales reps and warehouse operators never have to argue about who promised what.
+    </div>
 
     <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
       <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>

@@ -10,6 +10,7 @@
     const cards = document.querySelectorAll('.carte[data-category]');
     const countDisplay = document.getElementById('filter-count');
     const sections = document.querySelectorAll('[data-section-category]');
+    const container = document.querySelector('.projects-container');
 
     function applyFilter(category) {
       let visibleCount = 0;
@@ -20,6 +21,10 @@
         btn.classList.toggle('is-active', isMatch);
         btn.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
       });
+
+      if (container) {
+        container.classList.toggle('is-filtered', category !== 'all');
+      }
 
       // Filter cards
       cards.forEach(card => {

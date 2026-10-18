@@ -970,6 +970,38 @@ footer {
   opacity: 1;
 }
 
+/* ---------- Structure et sections de projets ---------- */
+
+.projects-container {
+  width: 100%;
+}
+
+.project-section {
+  margin-top: 0;
+}
+
+.project-section h2 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.project-section .chapo {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* En mode "All" : respiration entre les 3 sections successives */
+.projects-container:not(.is-filtered) .project-section + .project-section {
+  margin-top: 3.5rem;
+}
+
+/* En mode filtré : aucune marge résiduelle, chaque section se cale exactement au même endroit */
+.projects-container.is-filtered .project-section {
+  margin-top: 0;
+}
+
 /* ---------- Prototype Interactif : Google Calendar Redesign ---------- */
 
 .cal-sandbox {

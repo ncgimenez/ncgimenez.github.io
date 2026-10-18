@@ -867,53 +867,52 @@ footer {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ---------- Filtres interactifs des projets ---------- */
+/* ---------- Filtres interactifs des projets (Segmented Control) ---------- */
 
 .filter-bar {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 32px 0 28px;
-  padding: 6px;
-  background: rgba(255, 255, 255, 0.02);
+  max-width: 100%;
+  margin: 24px 0 32px;
+  padding: 4px;
+  background: var(--fond-carte);
   border: 1px solid var(--ligne);
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .filter-group {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
 }
 
 .filter-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 7px;
   padding: 6px 14px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
   font-family: inherit;
   color: var(--texte-doux);
   cursor: pointer;
   transition: all 0.15s ease;
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
   color: var(--texte);
-  background: var(--fond-carte);
+  background: var(--fond-carte-hover);
 }
 
 .filter-btn.is-active {
   background: var(--accent);
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(240, 113, 75, 0.3);
+  box-shadow: 0 2px 8px rgba(240, 113, 75, 0.25);
 }
 
 .filter-pill {

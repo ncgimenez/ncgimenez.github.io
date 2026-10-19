@@ -14,7 +14,7 @@ mermaid: true
 
   <h1>The Span Suite: Planning Without Overwhelm, Executing Without Clutter</h1>
   <p class="chapo">
-    Two interconnected web apps I designed and built to fix how I organize my day: one to plan 3–4 realistic daily blocks, and one to focus on a single task without seeing the rest of the list.
+    Two interconnected web apps I designed and built to fix how I organize my day: one to schedule realistic tasks alongside fixed calendar events, and one to focus on a single block without seeing the rest of the list.
   </p>
 
   <!-- LIENS DIRECTS VERS LES APPS -->
@@ -57,7 +57,7 @@ mermaid: true
       <h3>Protecting Real Calendar Time</h3>
       <p>I separated planning from doing: you choose your battles in the morning, and execute in peace during the day.</p>
       <ul class="liste--compact">
-        <li><strong>Daily Cap (Max 3–4 Blocks):</strong> You only schedule what can realistically fit in a day. The rest stays safely in the backlog.</li>
+        <li><strong>Realistic Daily Capacity:</strong> Tasks are scheduled alongside your fixed calendar events so you only commit to what actually fits. The rest stays safely in the backlog.</li>
         <li><strong>Automatic Rollover:</strong> What you didn't finish today moves quietly to tomorrow. No red alarms, no shame.</li>
         <li><strong>Hidden Backlog during Sprints:</strong> When the 25-minute timer starts, the to-do list disappears. Only the active task is visible.</li>
       </ul>
@@ -125,14 +125,94 @@ mermaid: true
       <div class="mockup-address">https://ncgimenez.github.io/span-plan/</div>
     </div>
     <div class="mockup-content">
-      <div class="mockup-placeholder">
-        <span>📸</span>
-        <strong>Desktop Interface: Span Plan</strong>
-        <p>Drop your desktop screenshot or short looping MP4 video here showing the daily planning board and clean backlog.</p>
+      <div style="width: 100%; padding: 22px 20px; background: var(--fond); box-sizing: border-box;">
+        <!-- Top bar of Span Plan -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ligne); padding-bottom: 14px; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div style="font-size: 0.78rem; color: var(--texte-muté); text-transform: uppercase; letter-spacing: 0.05em;">Today's Schedule</div>
+            <div style="font-size: 1.12rem; font-weight: 700; color: var(--texte);">Daily Buffer: Fixed Events &amp; Focus Blocks</div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <span class="etiquette etiquette--bleu" style="font-size: 0.78rem;">Calendar Events Synced</span>
+            <span class="etiquette etiquette--violet" style="font-size: 0.78rem;">Rollover Active</span>
+          </div>
+        </div>
+
+        <!-- Two Column Simulation : Schedule & Backlog -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <!-- Left Column : Scheduled Day -->
+          <div>
+            <div style="font-size: 0.82rem; font-weight: 600; color: var(--texte-doux); margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>Allocated Day Buffer</span>
+              <span style="color: var(--accent);">3.5h Deep Work Protected</span>
+            </div>
+
+            <!-- Fixed Event 1 -->
+            <div style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.3); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: #38bdf8; font-weight: 600;">
+                <span>09:30 – 10:00 · Fixed Calendar Event</span>
+                <span>30m</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte); margin-top: 2px;">Cross-Functional Operations Standup</div>
+            </div>
+
+            <!-- Focus Block 1 -->
+            <div style="background: var(--fond-carte); border: 1px solid var(--accent); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; box-shadow: 0 0 10px rgba(240, 113, 75, 0.15);">
+              <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--accent); font-weight: 600;">
+                <span>10:15 – 11:45 · Top Priority (Promoted to Timer)</span>
+                <span>90m</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte); margin-top: 2px;">Design System Token Refactor &amp; Handoff</div>
+            </div>
+
+            <!-- Fixed Event 2 -->
+            <div style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.3); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: #38bdf8; font-weight: 600;">
+                <span>14:00 – 14:45 · Fixed Calendar Event</span>
+                <span>45m</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte); margin-top: 2px;">Warehouse Workflow User Research Review</div>
+            </div>
+
+            <!-- Focus Block 2 -->
+            <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--texte-doux); font-weight: 600;">
+                <span>15:00 – 16:30 · Queued Focus Sprint</span>
+                <span>90m</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte); margin-top: 2px;">SNCB Train Exit Door Visual Matrix Mapping</div>
+            </div>
+          </div>
+
+          <!-- Right Column : Contextual Backlog & Rollover Buffer -->
+          <div>
+            <div style="font-size: 0.82rem; font-weight: 600; color: var(--texte-doux); margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>Contextual Backlog &amp; Rollover</span>
+              <span style="color: var(--texte-muté);">Parked Safe</span>
+            </div>
+
+            <!-- Rollover Banner -->
+            <div style="background: rgba(157, 92, 255, 0.08); border: 1px dashed rgba(157, 92, 255, 0.4); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px;">
+              <div style="font-size: 0.76rem; color: var(--accent-alt); font-weight: 600;">Automated Rollover</div>
+              <div style="font-size: 0.85rem; color: var(--texte-doux); margin-top: 2px;">1 task gently slid from yesterday without red penalties or overdue guilt.</div>
+            </div>
+
+            <!-- Backlog Items -->
+            <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; opacity: 0.8;">
+              <div style="font-size: 0.76rem; color: var(--texte-muté);">Later This Week · Infrastructure</div>
+              <div style="font-size: 0.86rem; color: var(--texte); margin-top: 2px;">Supabase Real-Time Auth Token Rotation</div>
+            </div>
+
+            <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; opacity: 0.8;">
+              <div style="font-size: 0.76rem; color: var(--texte-muté);">Idea Pool · Systems</div>
+              <div style="font-size: 0.86rem; color: var(--texte); margin-top: 2px;">Draft Case Study Breakdown for Odoo FIFO costing</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 1: Daily planning buffer separating active priorities from the general backlog.</p>
+  <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 1: Daily planning buffer integrating fixed calendar events with focused task allocations.</p>
 
   <!-- 5. ARCHITECTURE DÉCOUPLÉE : SCHEMA + 2 CARTES -->
   <h2>5. How the Two Apps Work Together</h2>
@@ -144,10 +224,10 @@ mermaid: true
     <pre class="mermaid">
 flowchart LR
   subgraph PlanApp [Span Plan: Morning Planning]
-    Backlog[Contextual Backlog] --> DayBuffer[Daily Allocation: Max 3-4 Blocks]
+    Backlog[Contextual Backlog] --> DayBuffer[Daily Schedule: Tasks + Fixed Events]
   end
 
-  subgraph Handover [Frictionless Handover]
+  subgraph Handover [Direct Handoff]
     DayBuffer -->|Promote Top Priority| ActiveSlot[Current Block Locked]
   end
 
@@ -200,14 +280,49 @@ flowchart LR
       <div class="mockup-address">https://ncgimenez.github.io/span-focus/ (Mobile PWA)</div>
     </div>
     <div class="mockup-content">
-      <div class="mockup-placeholder">
-        <span>📱</span>
-        <strong>Mobile Interface &amp; Gestures</strong>
-        <p>Drop a mobile screen capture or looping swipe gesture clip here (e.g. recorded with Mac QuickTime or Kap).</p>
+      <div style="width: 100%; display: flex; justify-content: center; padding: 28px 16px; background: var(--fond); box-sizing: border-box;">
+        <div style="width: 300px; background: var(--fond-carte); border: 2px solid var(--ligne-hover); border-radius: 28px; padding: 20px 16px; box-shadow: 0 12px 36px rgba(0,0,0,0.4); text-align: center;">
+          <!-- Mobile Status Bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--texte-muté); padding: 0 6px 14px;">
+            <span>09:41</span>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <span>PWA · Offline</span>
+              <span>🔋</span>
+            </div>
+          </div>
+
+          <!-- Active Focus Pill -->
+          <div style="margin-bottom: 12px;">
+            <span class="etiquette etiquette--violet" style="font-size: 0.75rem;">Active Focus Sprint</span>
+          </div>
+
+          <!-- Task Name -->
+          <div style="font-size: 0.94rem; font-weight: 700; color: var(--texte); line-height: 1.35; margin-bottom: 18px;">
+            Design System Token Refactor &amp; Handoff
+          </div>
+
+          <!-- Timer Display -->
+          <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--ligne); border-radius: 16px; padding: 18px 12px; margin-bottom: 18px;">
+            <div style="font-size: 2.6rem; font-weight: 800; letter-spacing: -0.04em; color: var(--texte); font-family: monospace;">25:00</div>
+            <div style="height: 4px; background: var(--ligne); border-radius: 2px; margin: 10px 16px 0; overflow: hidden;">
+              <div style="height: 100%; width: 68%; background: var(--accent-alt); border-radius: 2px;"></div>
+            </div>
+          </div>
+
+          <!-- Thumb-Zone Gesture Guide -->
+          <div style="background: var(--fond); border: 1px dashed var(--ligne-hover); border-radius: 12px; padding: 10px 8px; font-size: 0.76rem;">
+            <div style="color: var(--texte-doux); font-weight: 600; margin-bottom: 4px;">Thumb-Zone Gestures</div>
+            <div style="display: flex; justify-content: space-between; color: var(--texte-muté); font-size: 0.72rem;">
+              <span>⟵ Swipe: Rollover</span>
+              <span style="color: var(--accent);">Tap: Pause</span>
+              <span>Done: Swipe ⟶</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 3: Span Focus running as a standalone PWA with natural thumb-zone buttons.</p>
+  <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 3: Span Focus running as a standalone PWA with natural thumb-zone buttons and swipe actions.</p>
 
   <!-- 7. CARNET DE DOGFOODING RÉEL (3 CARTES) -->
   <h2>7. Real-World Dogfooding Log: What I Learned Using My Own Apps</h2>
@@ -249,18 +364,59 @@ flowchart LR
   </div>
 
   <!-- 8. FIGMA SPECIFICATION & TOKENS -->
-  <h2>8. Design Tokens &amp; Figma Components</h2>
-  <div class="figma-spec-box">
-    <div class="etiquette etiquette--violet" style="margin-bottom: 12px;">Figma Component System</div>
-    <h4>Design Tokens &amp; Component Variants</h4>
-    <p>
-      [Zone Figma : Déposez ici votre capture d'écran Figma montrant vos couleurs de base (Slate, Neon Violet, Terracotta), vos espacements et les états de boutons (Default, Hover, Active).]
+  <h2>8. Design Tokens &amp; Component System</h2>
+  <div class="figma-spec-box" style="border-style: solid; border-color: var(--ligne); text-align: left; padding: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+      <span class="etiquette etiquette--violet">Figma Component System</span>
+      <span style="font-size: 0.8rem; color: var(--texte-muté);">1:1 Token Mapping · Figma ➔ CSS</span>
+    </div>
+    <h4 style="margin: 0 0 6px;">Design Tokens &amp; Component Variants</h4>
+    <p style="margin: 0 0 20px; font-size: 0.9rem; color: var(--texte-doux); max-width: 100%;">
+      Tokens defined in Figma and mapped directly to CSS custom properties to ensure full visual and ergonomic parity between design and production code:
     </p>
-    <div style="display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center; font-size: 0.8rem; color: var(--texte-muté);">
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Tokens: --fond-carte</span>
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Tokens: --accent (Terracotta)</span>
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Tokens: --accent-alt (Ultraviolet)</span>
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">States: Default · Hover · Active · Focused</span>
+
+    <!-- Color Swatches Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 24px;">
+      <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
+        <div style="width: 100%; height: 26px; background: #121016; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 6px;"></div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--fond</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#121016 · Canvas</div>
+      </div>
+
+      <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
+        <div style="width: 100%; height: 26px; background: #1c1924; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 6px;"></div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--fond-carte</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#1c1924 · Surface</div>
+      </div>
+
+      <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
+        <div style="width: 100%; height: 26px; background: #f0714b; border-radius: 4px; margin-bottom: 6px;"></div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#f0714b · Terracotta</div>
+      </div>
+
+      <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
+        <div style="width: 100%; height: 26px; background: #9d5cff; border-radius: 4px; margin-bottom: 6px;"></div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent-alt</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#9d5cff · Focus Violet</div>
+      </div>
+
+      <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
+        <div style="width: 100%; height: 26px; background: #0284c7; border-radius: 4px; margin-bottom: 6px;"></div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent-bleu</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#0284c7 · Plan Sky</div>
+      </div>
+    </div>
+
+    <!-- Component States Preview -->
+    <div style="border-top: 1px solid var(--ligne); padding-top: 16px;">
+      <div style="font-size: 0.8rem; color: var(--texte-doux); margin-bottom: 12px; font-weight: 600;">Button Component State Matrix</div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+        <span class="bouton" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Default</span>
+        <span class="bouton violet" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Primary Focus</span>
+        <span class="bouton plein" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Primary Action</span>
+        <span class="bouton" style="pointer-events: none; opacity: 0.4; border-style: dashed; padding: 6px 14px; font-size: 0.82rem;">Disabled</span>
+      </div>
     </div>
   </div>
 

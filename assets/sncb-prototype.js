@@ -4,9 +4,9 @@
 (function() {
   const SCENARIOS = {
     same_platform: {
-      badge: '🟢 Même Quai Physique (Voie 3 ➔ 4)',
+      badge: '🟢 Same Physical Platform (Tracks 3 ➔ 4)',
       title: 'Approaching Brussels-Midi · In 3 min',
-      trainNo: 'IC 512 (Liège ➔ Bruxelles)',
+      trainNo: 'IC 512 (Liège ➔ Brussels)',
       trackArr: 'Track 3',
       exitSide: 'DOORS ON LEFT',
       exitSubtext: 'In train direction of travel (➔)',
@@ -15,13 +15,13 @@
       depDest: 'IC 1938 to Ghent / Bruges',
       bannerClass: 'sncb-banner--green',
       bannerIcon: '🟢',
-      bannerTitle: 'MÊME QUAI PHYSIQUE · AUCUN ESCALIER',
-      bannerDesc: 'Ne descendez pas dans le passage sous-voie ! Votre correspondance part directement de l’autre côté de ce quai. Traversez simplement la zone centrale (15 secondes).'
+      bannerTitle: 'SAME PHYSICAL PLATFORM · NO STAIRS NEEDED',
+      bannerDesc: 'Do not go down into the underpass! Your connection departs directly from the other side of this same platform. Simply cross the central slab (15 seconds).'
     },
     change_platform: {
-      badge: '🟠 Changement de Quai (Voie 3 ➔ 8)',
+      badge: '🟠 Platform Change (Tracks 3 ➔ 8)',
       title: 'Approaching Brussels-Midi · In 3 min',
-      trainNo: 'IC 512 (Liège ➔ Bruxelles)',
+      trainNo: 'IC 512 (Liège ➔ Brussels)',
       trackArr: 'Track 3',
       exitSide: 'DOORS ON RIGHT',
       exitSubtext: 'In train direction of travel (➔)',
@@ -30,11 +30,11 @@
       depDest: 'IC 2115 to Namur / Luxembourg',
       bannerClass: 'sncb-banner--amber',
       bannerIcon: '🟠',
-      bannerTitle: 'CHANGEMENT DE QUAI NÉCESSAIRE',
-      bannerDesc: 'Descendez par les escalators centraux vers le couloir Sud. Suivez le fléchage Quai 8 (3 minutes de marche estimée avec bagages).'
+      bannerTitle: 'PLATFORM CHANGE REQUIRED',
+      bannerDesc: 'Take the central escalators down to the South underpass. Follow signs for Platform IV (Tracks 7–8). Approx. 3 minutes walking time with bags.'
     },
     short_platform: {
-      badge: '⚠️ Quai Court (Gare d\'Ans)',
+      badge: '⚠️ Short Platform Edge-Case (Gare d\'Ans)',
       title: 'Approaching Ans · In 2 min',
       trainNo: 'IC 418 (Welkenraedt ➔ Liège)',
       trackArr: 'Track 1',
@@ -42,11 +42,11 @@
       exitSubtext: 'In train direction of travel (➔)',
       trackDep: 'Exit Destination',
       depTime: 'Arrival 18:05 · Short stop (1 min)',
-      depDest: 'Terminus local Ans',
+      depDest: 'Local stop Ans',
       bannerClass: 'sncb-banner--red',
       bannerIcon: '⚠️',
-      bannerTitle: 'ATTENTION : QUAI TROP COURT (GARE D\'ANS)',
-      bannerDesc: 'Ce train est plus long que le quai. Les portes des voitures 5 à 8 resteront condamnées. Rejoignez immédiatement les voitures 1 à 4 pour descendre !'
+      bannerTitle: 'ATTENTION: SHORT PLATFORM (GARE D\'ANS)',
+      bannerDesc: 'This train is longer than the station platform. Doors in cars 5 to 8 will remain locked. Move forward immediately to cars 1 to 4 to disembark!'
     }
   };
 
@@ -167,7 +167,7 @@
 
         const pillL = doorLeft.querySelector('.door-status-pill');
         if (pillL) {
-          pillL.textContent = '🟢 SORTIE ICI';
+          pillL.textContent = '🟢 EXIT HERE';
           pillL.style.background = 'rgba(39, 201, 63, 0.2)';
           pillL.style.color = '#27c93f';
           pillL.style.borderColor = '#27c93f';
@@ -175,22 +175,22 @@
 
         const pillR = doorRight.querySelector('.door-status-pill');
         if (pillR) {
-          pillR.textContent = '🔒 CONDAMNÉE';
+          pillR.textContent = '🔒 LOCKED';
           pillR.style.background = 'rgba(255, 255, 255, 0.05)';
           pillR.style.color = 'var(--texte-muté)';
           pillR.style.borderColor = 'var(--ligne)';
         }
 
-        if (phoneStation) phoneStation.textContent = 'Arrivée Liège-Guillemins (dans 2 min)';
-        if (phoneDoorText) phoneDoorText.innerHTML = '<span>⬅️</span><span>PORTES À GAUCHE</span>';
-        if (phoneDoorSubtext) phoneDoorSubtext.textContent = 'Dans le sens de marche du train. Vous pouvez déjà vous positionner le long de la porte gauche sans bousculade.';
+        if (phoneStation) phoneStation.textContent = 'Approaching Liège-Guillemins (in 2 min)';
+        if (phoneDoorText) phoneDoorText.innerHTML = '<span>⬅️</span><span>DOORS ON LEFT</span>';
+        if (phoneDoorSubtext) phoneDoorSubtext.textContent = 'In train direction of travel. You can line up calmly at the left doors before the train halts.';
       } else {
         doorLeft.className = 'sncb-train-door sncb-door--left is-locked-side';
         doorRight.className = 'sncb-train-door sncb-door--right is-active-exit';
 
         const pillL = doorLeft.querySelector('.door-status-pill');
         if (pillL) {
-          pillL.textContent = '🔒 CONDAMNÉE';
+          pillL.textContent = '🔒 LOCKED';
           pillL.style.background = 'rgba(255, 255, 255, 0.05)';
           pillL.style.color = 'var(--texte-muté)';
           pillL.style.borderColor = 'var(--ligne)';
@@ -198,15 +198,15 @@
 
         const pillR = doorRight.querySelector('.door-status-pill');
         if (pillR) {
-          pillR.textContent = '🟢 SORTIE ICI';
+          pillR.textContent = '🟢 EXIT HERE';
           pillR.style.background = 'rgba(39, 201, 63, 0.2)';
           pillR.style.color = '#27c93f';
           pillR.style.borderColor = '#27c93f';
         }
 
-        if (phoneStation) phoneStation.textContent = 'Arrivée Bruxelles-Midi (dans 3 min)';
-        if (phoneDoorText) phoneDoorText.innerHTML = '<span>➡️</span><span>PORTES À DROITE</span>';
-        if (phoneDoorSubtext) phoneDoorSubtext.textContent = 'Dans le sens de marche du train. Préparez vos bagages du côté droit du vestibule.';
+        if (phoneStation) phoneStation.textContent = 'Approaching Brussels-Midi (in 3 min)';
+        if (phoneDoorText) phoneDoorText.innerHTML = '<span>➡️</span><span>DOORS ON RIGHT</span>';
+        if (phoneDoorSubtext) phoneDoorSubtext.textContent = 'In train direction of travel. Prepare your bags on the right side of the vestibule.';
       }
     }
 
@@ -246,9 +246,9 @@
 
       if (mode === 'same') {
         // Mode A: Same platform
-        if (screenInfo) screenInfo.textContent = 'VOIE 4 ➔ GAND-SAINT-PIERRE · 17:42';
+        if (screenInfo) screenInfo.textContent = 'TRACK 4 ➔ GHENT / BRUGES · 17:42';
         if (pathLabel) {
-          pathLabel.textContent = '➔ Traversée directe à pied (12 mètres)';
+          pathLabel.textContent = '➔ Direct walk across platform (12 meters)';
           pathLabel.style.color = '#27c93f';
         }
         if (pathLine) {
@@ -257,7 +257,7 @@
           pathLine.style.opacity = '1';
         }
         if (timeEstimate) {
-          timeEstimate.innerHTML = '⏱️ 15 secondes · 0 escalier';
+          timeEstimate.innerHTML = '⏱️ 15 seconds · 0 stairs';
           timeEstimate.style.color = '#27c93f';
         }
         if (stairsBox) {
@@ -265,30 +265,30 @@
           stairsBox.style.background = 'rgba(255, 95, 86, 0.08)';
         }
         if (stairsTitle) {
-          stairsTitle.textContent = '🚫 NE PAS DESCENDRE DANS LE SOUTERRAIN !';
+          stairsTitle.textContent = '🚫 DO NOT TAKE THE STAIRS!';
           stairsTitle.style.color = '#ff5f56';
         }
         if (stairsDesc) {
-          stairsDesc.textContent = 'Les escaliers mènent au couloir souterrain. C’est inutile : votre correspondance part juste de l\'autre côté de ce même quai central.';
+          stairsDesc.textContent = 'These stairs lead down to the underground tunnel. It is completely unnecessary: your connecting train departs right across this same central platform.';
         }
         if (trackRightNum) {
-          trackRightNum.textContent = 'VOIE 4';
+          trackRightNum.textContent = 'TRACK 4';
           trackRightNum.style.color = 'var(--accent)';
         }
-        if (trackRightDesc) trackRightDesc.textContent = 'Même dalle physique';
+        if (trackRightDesc) trackRightDesc.textContent = 'Same physical concrete slab';
         if (trackRightStatus) {
-          trackRightStatus.textContent = '🚆 IC 1938 à quai';
+          trackRightStatus.textContent = '🚆 IC 1938 at platform';
           trackRightStatus.style.display = 'block';
         }
         if (mainBadge) {
           mainBadge.className = 'platform-status-badge sncb-banner--green';
-          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🟢</span><div><strong>Zéro escalier :</strong> Le voyageur traverse la dalle en 15 secondes. Il économise 3 minutes et évite de porter ses bagages dans les escaliers.</div>';
+          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🟢</span><div><strong>Zero stairs needed:</strong> The passenger walks across the slab in 15 seconds, saving 3 minutes and avoiding carrying heavy bags down and up stairs.</div>';
         }
       } else if (mode === 'diff') {
-        // Mode B: Platform change (Voie 8)
-        if (screenInfo) screenInfo.textContent = 'VOIE 8 ➔ LUXEMBOURG · 17:44 (Descendre escaliers)';
+        // Mode B: Platform change (Track 8)
+        if (screenInfo) screenInfo.textContent = 'TRACK 8 ➔ LUXEMBOURG · 17:44 (Take stairs down)';
         if (pathLabel) {
-          pathLabel.textContent = '➔ Descente couloir souterrain vers Quai IV';
+          pathLabel.textContent = '➔ Walk down to underpass tunnel toward Platform IV';
           pathLabel.style.color = '#ffbd2e';
         }
         if (pathLine) {
@@ -297,7 +297,7 @@
           pathLine.style.opacity = '1';
         }
         if (timeEstimate) {
-          timeEstimate.innerHTML = '⏱️ 2 min 40s · Escaliers / Ascenseur B';
+          timeEstimate.innerHTML = '⏱️ 2 min 40s · Stairs / Elevator B';
           timeEstimate.style.color = '#ffbd2e';
         }
         if (stairsBox) {
@@ -305,30 +305,30 @@
           stairsBox.style.background = 'rgba(255, 189, 46, 0.12)';
         }
         if (stairsTitle) {
-          stairsTitle.textContent = '👇 EMPRUNTER LES ESCALIERS CENTRAUX';
+          stairsTitle.textContent = '👇 TAKE THE CENTRAL STAIRS / ELEVATOR';
           stairsTitle.style.color = '#ffbd2e';
         }
         if (stairsDesc) {
-          stairsDesc.textContent = 'Descendez au couloir Sud puis remontez vers le Quai IV (Voies 7-8). Ascenseur disponible sur votre droite.';
+          stairsDesc.textContent = 'Head down to the South underpass and walk toward Platform IV (Tracks 7–8). Elevator available on your right.';
         }
         if (trackRightNum) {
-          trackRightNum.textContent = 'VOIE 4';
+          trackRightNum.textContent = 'TRACK 4';
           trackRightNum.style.color = 'var(--texte-muté)';
         }
-        if (trackRightDesc) trackRightDesc.textContent = 'Autre train local';
+        if (trackRightDesc) trackRightDesc.textContent = 'Other local train';
         if (trackRightStatus) {
-          trackRightStatus.textContent = 'L 5082 vers Namur';
+          trackRightStatus.textContent = 'L 5082 to Namur';
           trackRightStatus.style.display = 'block';
         }
         if (mainBadge) {
           mainBadge.className = 'platform-status-badge sncb-banner--amber';
-          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🟠</span><div><strong>Changement guidé :</strong> Le voyageur sait immédiatement qu\'il doit descendre. L\'app affiche le repère de l\'ascenseur le plus proche pour éviter de porter des bagages lourds.</div>';
+          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🟠</span><div><strong>Guided platform transfer:</strong> The commuter knows immediately to go down. The app highlights the nearest elevator to avoid carrying heavy luggage down stairs.</div>';
         }
       } else {
         // Mode C: Commuter panic mistake (without app)
-        if (screenInfo) screenInfo.textContent = 'VOIE 4 · Écran invisible depuis le souterrain';
+        if (screenInfo) screenInfo.textContent = 'TRACK 4 · Display invisible from underground tunnel';
         if (pathLabel) {
-          pathLabel.textContent = '⚠️ Erreur : descente panique puis remontée';
+          pathLabel.textContent = '⚠️ Mistake: Panic stairs sprint down, then back up';
           pathLabel.style.color = '#ff5f56';
         }
         if (pathLine) {
@@ -336,7 +336,7 @@
           pathLine.style.boxShadow = 'none';
         }
         if (timeEstimate) {
-          timeEstimate.innerHTML = '⏱️ +3 minutes perdues · Fatigue & Essoufflement';
+          timeEstimate.innerHTML = '⏱️ +3 minutes lost · Fatigue & Panic';
           timeEstimate.style.color = '#ff5f56';
         }
         if (stairsBox) {
@@ -344,15 +344,15 @@
           stairsBox.style.background = 'rgba(255, 95, 86, 0.2)';
         }
         if (stairsTitle) {
-          stairsTitle.textContent = '⚠️ PIÈGE CLASSIQUE DU VOYAGEUR EN GARE';
+          stairsTitle.textContent = '⚠️ CLASSIC TRANSIT STATION TRAP';
           stairsTitle.style.color = '#ff5f56';
         }
         if (stairsDesc) {
-          stairsDesc.textContent = 'En voyant "Voie 4", le passager panique, descend en courant dans le tunnel avec sa valise pour regarder le grand tableau d\'affichage, et réalise que son train était juste en haut derrière lui !';
+          stairsDesc.textContent = 'Seeing "Track 4", the commuter panics, sprints down into the underpass with their suitcase to check the big departures board, only to realize their train was right upstairs behind them!';
         }
         if (mainBadge) {
           mainBadge.className = 'platform-status-badge sncb-banner--red';
-          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🔴</span><div><strong>Le coût du manque de clarté spatiale :</strong> Des passagers qui courent avec des valises, du stress inutile, et des correspondances ratées alors que le train était à 15 mètres.</div>';
+          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🔴</span><div><strong>The cost of missing spatial context:</strong> Running with heavy bags, unnecessary panic, and missed connections even though the train was 15 meters away.</div>';
         }
       }
     }

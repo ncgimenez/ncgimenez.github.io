@@ -54,12 +54,12 @@ title: SNCB Transit Mobile UX Redesign
   </p>
 
   <div class="sncb-simulator" id="sncb-simulator">
-    <div class="sncb-scenario-bar" role="tablist" aria-label="Scénarios de correspondance">
+    <div class="sncb-scenario-bar" role="tablist" aria-label="Transfer scenarios">
       <button type="button" class="sncb-scenario-btn is-active" data-scenario="same_platform" role="tab" aria-selected="true">
-        🟢 Same Platform (Voie 3 ➔ 4)
+        🟢 Same Platform (Tracks 3 ➔ 4)
       </button>
       <button type="button" class="sncb-scenario-btn" data-scenario="change_platform" role="tab" aria-selected="false">
-        🟠 Platform Change (Voie 3 ➔ 8)
+        🟠 Platform Change (Tracks 3 ➔ 8)
       </button>
       <button type="button" class="sncb-scenario-btn" data-scenario="short_platform" role="tab" aria-selected="false">
         ⚠️ Short Platform Edge-Case (Gare d'Ans)
@@ -70,7 +70,7 @@ title: SNCB Transit Mobile UX Redesign
     <div class="sncb-card">
       <div class="sncb-card-header">
         <div class="sncb-card-title">Approaching Brussels-Midi · In 3 min</div>
-        <div class="sncb-card-train">IC 512 (Liège ➔ Bruxelles)</div>
+        <div class="sncb-card-train">IC 512 (Liège ➔ Brussels)</div>
       </div>
 
       <div class="sncb-card-body">
@@ -99,9 +99,9 @@ title: SNCB Transit Mobile UX Redesign
 
         <!-- SPATIAL PLATFORM BANNER -->
         <div class="sncb-platform-banner sncb-banner--green">
-          <div class="sncb-banner-title">🟢 MÊME QUAI PHYSIQUE · AUCUN ESCALIER</div>
+          <div class="sncb-banner-title">🟢 SAME PHYSICAL PLATFORM · NO STAIRS NEEDED</div>
           <div class="sncb-banner-desc">
-            Ne descendez pas dans le passage sous-voie ! Votre correspondance part directement de l’autre côté de ce quai. Traversez simplement la zone centrale (15 secondes).
+            Do not go down into the underpass! Your connection departs directly from the other side of this same platform. Simply cross the central slab (15 seconds).
           </div>
         </div>
       </div>
@@ -109,30 +109,30 @@ title: SNCB Transit Mobile UX Redesign
   </div>
 
   <!-- SCÈNE 1 : À BORD DU TRAIN (ORIENTATION SPATIALE & DÉBARQUEMENT) -->
-  <h2>3. Scene 1 : À Bord du Train — Préparer la Sortie Sans Panique</h2>
+  <h2>3. Scene 1: Inside the Train — Preparing to Exit Without Panic</h2>
   <p>
-    Quand on arrive dans une grande gare avec deux grosses valises ou une poussette, rien n'est plus stressant que de se lever à l'arrêt du train et de découvrir que les portes s'ouvrent du côté opposé, bloqué derrière 25 passagers debout dans le couloir.
+    When arriving at a major junction with heavy suitcases or a stroller, nothing is more stressful than standing up as the train halts, only to discover the doors open on the opposite side while you're trapped behind 25 commuters in the narrow vestibule.
   </p>
   <p>
-    Ce module interactif simule l'intérieur du vestibule en mouvement. Testez les deux côtés pour observer comment la notification de bord indique clairement où se positionner <strong>dans le sens de marche du train</strong> :
+    This interactive module simulates the moving train vestibule. Toggle both sides below to observe how the onboard live activity indicates clearly where to line up <strong>relative to the train's direction of travel</strong>:
   </p>
 
   <div class="sncb-onboard-stage" id="sncb-onboard-stage">
     <div class="sncb-onboard-toolbar">
       <div class="sncb-train-motion-badge">
-        <span>🚆 Train IC 512 en approche</span>
+        <span>🚆 Inbound Train IC 512</span>
         <span class="sncb-motion-arrow">➔ ➔ ➔</span>
-        <span style="color: var(--texte-doux); font-weight: 400;">Sens de marche vers l'avant</span>
+        <span style="color: var(--texte-doux); font-weight: 400;">Forward direction of travel</span>
       </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         <button type="button" class="sncb-onboard-btn is-active bouton" data-side="left" style="padding: 5px 12px; font-size: 0.8rem;">
-          ⬅️ Arrêt Portes à GAUCHE
+          ⬅️ Exit Doors on LEFT
         </button>
         <button type="button" class="sncb-onboard-btn bouton" data-side="right" style="padding: 5px 12px; font-size: 0.8rem;">
-          ➡️ Arrêt Portes à DROITE
+          ➡️ Exit Doors on RIGHT
         </button>
-        <button type="button" class="sncb-chime-btn bouton" style="padding: 5px 10px; font-size: 0.8rem;" title="Écouter le carillon ferroviaire d'annonce">
-          🔊 Carillon SNCB
+        <button type="button" class="sncb-chime-btn bouton" style="padding: 5px 10px; font-size: 0.8rem;" title="Play SNCB chime feedback">
+          🔊 SNCB Transit Chime
         </button>
       </div>
     </div>
@@ -141,21 +141,21 @@ title: SNCB Transit Mobile UX Redesign
       <!-- Portes Gauche -->
       <div class="sncb-train-door sncb-door--left is-active-exit" id="door-left">
         <div class="door-window"></div>
-        <div class="door-title" style="color: #27c93f;">PORTES GAUCHE</div>
-        <div style="font-size: 0.75rem; color: var(--texte-doux);">Côté Quai · Voie 3</div>
+        <div class="door-title" style="color: #27c93f;">LEFT DOORS</div>
+        <div style="font-size: 0.75rem; color: var(--texte-doux);">Platform Side · Track 3</div>
         <div class="door-status-pill door-status--left" style="background: rgba(39, 201, 63, 0.2); color: #27c93f; border: 1px solid #27c93f;">
-          🟢 SORTIE ICI
+          🟢 EXIT HERE
         </div>
         <div style="font-size: 0.68rem; color: var(--texte-muté); margin-top: 8px;">
-          Sens de la marche (➔)
+          Direction of travel (➔)
         </div>
       </div>
 
       <!-- Centre Vestibule : Voyageur & Écran Téléphone -->
       <div class="sncb-vestibule-center">
         <div style="font-size: 0.78rem; color: var(--texte-muté); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-          <span>🧭 Repère spatial :</span>
-          <strong style="color: var(--texte);">Sens de marche du train (➔)</strong>
+          <span>🧭 Spatial orientation:</span>
+          <strong style="color: var(--texte);">Train forward motion (➔)</strong>
         </div>
 
         <div class="commuter-phone-frame">
@@ -163,135 +163,135 @@ title: SNCB Transit Mobile UX Redesign
           <div class="phone-live-activity">
             <div class="phone-activity-header">
               <span>SNCB · Live Activity</span>
-              <span style="color: var(--accent);">Dans 2 min</span>
+              <span style="color: var(--accent);">In 2 min</span>
             </div>
             <div style="font-weight: 700; font-size: 0.85rem; color: var(--texte); margin-bottom: 4px;" id="phone-station-name">
-              Arrivée Liège-Guillemins (dans 2 min)
+              Approaching Liège-Guillemins (in 2 min)
             </div>
             <div class="phone-door-prompt" id="phone-door-text">
               <span>⬅️</span>
-              <span>PORTES À GAUCHE</span>
+              <span>DOORS ON LEFT</span>
             </div>
             <div class="phone-door-subtext" id="phone-door-subtext">
-              Dans le sens de marche du train. Vous pouvez déjà vous positionner le long de la porte gauche sans bousculade.
+              In train direction of travel. You can line up calmly at the left doors before the train halts.
             </div>
           </div>
         </div>
         <div style="font-size: 0.72rem; color: var(--texte-muté); margin-top: 12px;">
-          👤 Voyageur avec valise : se place du bon côté 3 minutes avant l'arrêt complet
+          👤 Commuter with luggage: stands at the correct door 3 minutes before arrival
         </div>
       </div>
 
       <!-- Portes Droite -->
       <div class="sncb-train-door sncb-door--right is-locked-side" id="door-right">
         <div class="door-window"></div>
-        <div class="door-title" style="color: var(--texte-doux);">PORTES DROITE</div>
-        <div style="font-size: 0.75rem; color: var(--texte-muté);">Côté Voies · Danger</div>
+        <div class="door-title" style="color: var(--texte-doux);">RIGHT DOORS</div>
+        <div style="font-size: 0.75rem; color: var(--texte-muté);">Tracks · Rail Bed</div>
         <div class="door-status-pill door-status--right" style="background: rgba(255, 255, 255, 0.05); color: var(--texte-muté); border: 1px dashed var(--ligne);">
-          🔒 CONDAMNÉE
+          🔒 LOCKED
         </div>
         <div style="font-size: 0.68rem; color: var(--texte-muté); margin-top: 8px;">
-          Entrevoie sans quai
+          Between tracks with no platform
         </div>
       </div>
     </div>
   </div>
 
   <!-- SCÈNE 2 : SUR LE QUAI (MÊME QUAI PHYSIQUE VS COULOIR SOUTERRAIN) -->
-  <h2>4. Scene 2 : Sur le Quai — Est-ce que je Dois Descendre ou Rester ?</h2>
+  <h2>4. Scene 2: On the Platform — Should I Take the Stairs or Stay Put?</h2>
   <p>
-    En descendant d'un train, le réflexe immédiat quand on voit un numéro de voie différent (ex: arrivée Voie 3, correspondance Voie 4) est de courir vers l'escalier pour descendre dans le couloir souterrain.
+    Stepping off an arriving train, the immediate commuter reflex when seeing a different track number (e.g. arrival on Track 3, connection on Track 4) is to sprint toward the stairs and down into the underground tunnel.
   </p>
   <p>
-    Or, dans la quasi-totalité des gares belges, <strong>les voies 3 et 4 partagent exactement la même dalle physique en béton (Quai central)</strong>. Descendre dans le souterrain fait perdre 3 minutes d'effort inutile avec les valises. Testez ci-dessous la différence entre une correspondance sur le même quai et un vrai changement :
+    Yet in almost all Belgian and European stations, <strong>Tracks 3 and 4 share the exact same physical concrete slab (an island platform)</strong>. Taking the stairs wastes 3 minutes of exhausted sprinting with heavy bags. Test the difference below between a same-platform transfer, a real platform change, and the common stairs mistake:
   </p>
 
   <div class="sncb-platform-stage" id="sncb-platform-stage">
     <div class="platform-stage-toolbar">
       <div style="font-weight: 700; font-size: 0.88rem; color: var(--texte); display: flex; align-items: center; gap: 8px;">
-        <span>🚉 Quai Central (Gare de Liège-Guillemins)</span>
-        <span style="font-size: 0.75rem; color: var(--texte-doux); font-weight: 400;">Correspondance à 17:42</span>
+        <span>🚉 Central Island Platform (Liège-Guillemins)</span>
+        <span style="font-size: 0.75rem; color: var(--texte-doux); font-weight: 400;">Connection at 17:42</span>
       </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         <button type="button" class="sncb-platform-btn is-active bouton" data-mode="same" style="padding: 5px 12px; font-size: 0.8rem;">
-          🟢 Correspondance Voie 4 (Même quai)
+          🟢 Track 4 (Same Platform)
         </button>
         <button type="button" class="sncb-platform-btn bouton" data-mode="diff" style="padding: 5px 12px; font-size: 0.8rem;">
-          🟠 Correspondance Voie 8 (Autre quai)
+          🟠 Track 8 (Cross to Another Platform)
         </button>
         <button type="button" class="sncb-platform-btn bouton" data-mode="mistake" style="padding: 5px 12px; font-size: 0.8rem;">
-          🔴 Sans l'App (Le piège des escaliers)
+          🔴 Without the App (The Stairs Trap)
         </button>
       </div>
     </div>
 
     <div class="platform-stage-view">
       <div class="platform-layout-grid">
-        <!-- Zone Voie 3 (Train d'arrivée) -->
+        <!-- Zone Track 3 (Inbound Train) -->
         <div class="track-zone">
-          <div style="font-weight: 800; font-size: 0.95rem; color: #38bdf8;">VOIE 3</div>
-          <div style="font-size: 0.72rem; color: var(--texte-doux);">Votre train d'arrivée</div>
+          <div style="font-weight: 800; font-size: 0.95rem; color: #38bdf8;">TRACK 3</div>
+          <div style="font-size: 0.72rem; color: var(--texte-doux);">Your inbound train</div>
           <div class="track-rails"></div>
           <div style="font-size: 0.7rem; color: #4ade80; background: rgba(74, 222, 128, 0.1); padding: 4px; border-radius: 6px;">
-            🚆 IC 512 à quai
+            🚆 IC 512 at platform
           </div>
         </div>
 
-        <!-- Le Quai Central Physique (Partagé entre Voie 3 et Voie 4) -->
+        <!-- Central Island Platform Slab (Shared between Track 3 and Track 4) -->
         <div class="platform-island-slab" id="platform-island-slab">
-          <!-- Écran de quai suspendu -->
+          <!-- Overhead Platform Display -->
           <div class="platform-station-screen" id="platform-station-screen">
-            <div style="font-size: 0.68rem; color: var(--texte-muté); margin-bottom: 2px;">TÉLÉ-AFFICHAGE DE QUAI</div>
+            <div style="font-size: 0.68rem; color: var(--texte-muté); margin-bottom: 2px;">OVERHEAD PLATFORM DISPLAY</div>
             <div style="font-weight: 800; color: #38bdf8; font-size: 0.95rem;" id="screen-train-info">
-              VOIE 4 ➔ GAND-SAINT-PIERRE · 17:42
+              TRACK 4 ➔ GHENT / BRUGES · 17:42
             </div>
-            <div style="font-size: 0.7rem; color: var(--texte-doux);">Départ dans 6 min · Train à quai en face</div>
+            <div style="font-size: 0.7rem; color: var(--texte-doux);">Departs in 6 min · Train waiting across platform</div>
           </div>
 
-          <!-- Tracé de déplacement visuel -->
+          <!-- Visual Walking Path Line -->
           <div class="platform-path-area" style="margin: 18px 0; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid var(--ligne);">
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--texte-doux); margin-bottom: 6px;">
-              <span>Votre position (Voie 3)</span>
-              <span id="platform-path-label" style="font-weight: 700; color: #27c93f;">➔ Traversée directe à pied (12 mètres)</span>
-              <span id="platform-target-label">Train de correspondance (Voie 4)</span>
+              <span>Your position (Track 3)</span>
+              <span id="platform-path-label" style="font-weight: 700; color: #27c93f;">➔ Direct walk across platform (12 meters)</span>
+              <span id="platform-target-label">Connecting train (Track 4)</span>
             </div>
             
             <div class="platform-path-line" id="platform-path-line"></div>
             
             <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--texte-muté);">
-              <span>🚶 Marche à niveau</span>
-              <span id="platform-time-estimate" style="color: #27c93f; font-weight: 700;">⏱️ 15 secondes · 0 escalier</span>
-              <span>🚪 Embarquement immédiat</span>
+              <span>🚶 Level walk</span>
+              <span id="platform-time-estimate" style="color: #27c93f; font-weight: 700;">⏱️ 15 seconds · 0 stairs</span>
+              <span>🚪 Immediate boarding</span>
             </div>
           </div>
 
-          <!-- Escaliers vers couloir sous-voies (Le piège à éviter) -->
+          <!-- Stairs to Underground Tunnel (The trap to avoid) -->
           <div class="platform-stairs-trap" id="platform-stairs-trap">
             <div style="font-weight: 700; font-size: 0.8rem; color: #ff5f56; margin-bottom: 2px;" id="stairs-status-title">
-              🚫 NE PAS DESCENDRE DANS LE SOUTERRAIN !
+              🚫 DO NOT TAKE THE STAIRS!
             </div>
             <div style="font-size: 0.72rem; color: var(--texte-doux);" id="stairs-status-desc">
-              Les escaliers mènent au couloir souterrain. C’est inutile : votre train part juste de l'autre côté de ce quai central.
+              These stairs lead down to the underground tunnel. It is completely unnecessary: your connecting train is right behind you across this central platform.
             </div>
           </div>
         </div>
 
-        <!-- Zone Voie 4 (Train de correspondance sur même quai) -->
+        <!-- Zone Track 4 (Connecting train on same physical platform) -->
         <div class="track-zone" id="track-zone-right">
-          <div style="font-weight: 800; font-size: 0.95rem; color: var(--accent);" id="track-right-number">VOIE 4</div>
-          <div style="font-size: 0.72rem; color: var(--texte-doux);" id="track-right-desc">Même dalle physique</div>
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--accent);" id="track-right-number">TRACK 4</div>
+          <div style="font-size: 0.72rem; color: var(--texte-doux);" id="track-right-desc">Same physical concrete slab</div>
           <div class="track-rails"></div>
           <div style="font-size: 0.7rem; color: var(--accent); background: rgba(240, 113, 75, 0.15); padding: 4px; border-radius: 6px;" id="track-right-status">
-            🚆 IC 1938 à quai
+            🚆 IC 1938 at platform
           </div>
         </div>
       </div>
 
-      <!-- Bandeau de statut spatial -->
+      <!-- Spatial Status Badge -->
       <div class="platform-status-badge sncb-banner--green" id="platform-main-badge">
         <span style="font-size: 1.4rem;">🟢</span>
         <div>
-          <strong>Zéro escalier :</strong> Le voyageur traverse la dalle en 15 secondes. Il économise 3 minutes et évite de porter ses bagages dans les escaliers.
+          <strong>Zero stairs needed:</strong> The passenger walks across the slab in 15 seconds, saving 3 minutes and avoiding carrying heavy bags down and up stairs.
         </div>
       </div>
     </div>
@@ -301,10 +301,10 @@ title: SNCB Transit Mobile UX Redesign
   <h2>5. Ergonomic Principles &amp; Edge-Case Handling</h2>
   <ul class="liste">
     <li>
-      <strong>Exit Direction Relative to Travel:</strong> Stating <em>« Portes à GAUCHE dans le sens de la marche »</em> allows passengers with heavy luggage to line up at the correct door 3 minutes ahead, avoiding last-second scrambles through crowded vestibules.
+      <strong>Exit Direction Relative to Travel:</strong> Stating <em>« Doors on LEFT in direction of travel »</em> allows passengers with heavy luggage to line up at the correct door 3 minutes ahead, avoiding last-second scrambles through crowded vestibules.
     </li>
     <li>
-      <strong>Platform Length Edge-Cases (e.g. Gare d'Ans):</strong> In certain historical stations, platforms are physically shorter than long-distance IC trainsets. The interface warns passengers prior to arrival if their coach will overhang the platform, directing them to move to front cars (Voitures 1–4) before the train stops.
+      <strong>Platform Length Edge-Cases (e.g. Gare d'Ans):</strong> In certain historical stations, platforms are physically shorter than long-distance IC trainsets. The interface warns passengers prior to arrival if their coach will overhang the platform, directing them to move forward to front cars (Cars 1–4) before the train stops.
     </li>
     <li>
       <strong>Fail-Safe Feasibility Window:</strong> If an inbound delay reduces transfer time below the calculated walking distance between platforms, the app does not let passengers sprint blindly toward closed doors; it proactively highlights the verified fallback train.
@@ -312,22 +312,58 @@ title: SNCB Transit Mobile UX Redesign
   </ul>
 
   <!-- 6. FIGMA SPECIFICATION & ARTEFACTS -->
-  <h2>6. Design Artefacts &amp; Component Variants in Figma</h2>
+  <h2>6. Design Tokens &amp; Component Variants in Figma</h2>
   <p>
-    How this interface was designed and structured in Figma: isolating tokens, building accessible contrast states, and managing component variants.
+    How this interface was structured into a modular design system: isolating tokens, building accessible contrast states, and managing contextual component variants:
   </p>
 
-  <div class="figma-spec-box">
-    <div class="etiquette etiquette--violet" style="margin-bottom: 12px;">Figma Component Architecture</div>
-    <h4>Live Activity &amp; In-App Transit Card Spec</h4>
-    <p>
-      [Zone Figma : Déposez ici votre capture d'écran montrant l'arborescence des composants et leurs variantes (Même quai, Changement de quai, Quai court, Mode sombre/clair).]
+  <div class="figma-spec-box" style="border-style: solid; border-color: var(--ligne); text-align: left; padding: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+      <span class="etiquette etiquette--violet">Figma Component Architecture</span>
+      <span style="font-size: 0.8rem; color: var(--texte-muté);">Dynamic Island &amp; Lock-Screen Live Activities</span>
+    </div>
+    <h4 style="margin: 0 0 6px;">Contextual Notification Variants</h4>
+    <p style="margin: 0 0 20px; font-size: 0.9rem; color: var(--texte-doux); max-width: 100%;">
+      Each notification state uses distinct semantic color tokens, typography scales, and visual metaphors to communicate physical reality in 1 second:
     </p>
-    <div style="display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center; font-size: 0.8rem; color: var(--texte-muté);">
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Variant: SamePlatform</span>
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Variant: PlatformChange</span>
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Variant: WarningShortPlatform</span>
-      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Auto-Layout: Responsive</span>
+
+    <!-- Component Variant Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 20px;">
+      <!-- Variant 1: Same Platform -->
+      <div style="background: var(--fond); border: 1px solid rgba(39, 201, 63, 0.3); border-radius: 8px; padding: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #27c93f;">Variant · SamePlatform</span>
+          <span style="font-size: 0.7rem; color: var(--texte-muté);">High Confidence</span>
+        </div>
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">🟢 Direct Cross-Walk (15s)</div>
+        <div style="font-size: 0.8rem; color: var(--texte-doux); margin-top: 4px;">Disables stairs warnings; emphasizes that connecting train is on the opposite face of the same island platform.</div>
+      </div>
+
+      <!-- Variant 2: Platform Change -->
+      <div style="background: var(--fond); border: 1px solid rgba(255, 189, 46, 0.3); border-radius: 8px; padding: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #ffbd2e;">Variant · PlatformChange</span>
+          <span style="font-size: 0.7rem; color: var(--texte-muté);">Tunnel Required</span>
+        </div>
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">🟠 Underpass Transfer (3 min)</div>
+        <div style="font-size: 0.8rem; color: var(--texte-doux); margin-top: 4px;">Activates directional escalator guidance and highlights elevator access for passengers carrying heavy luggage.</div>
+      </div>
+
+      <!-- Variant 3: Short Platform -->
+      <div style="background: var(--fond); border: 1px solid rgba(255, 95, 86, 0.3); border-radius: 8px; padding: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #ff5f56;">Variant · ShortPlatformWarning</span>
+          <span style="font-size: 0.7rem; color: var(--texte-muté);">Critical Edge-Case</span>
+        </div>
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">⚠️ Train Overhang Alert</div>
+        <div style="font-size: 0.8rem; color: var(--texte-doux); margin-top: 4px;">Warns passengers before arrival that rear cars will not align with the platform, routing them forward to Cars 1–4.</div>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid var(--ligne); padding-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.78rem; color: var(--texte-muté);">
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Auto-Layout 5.0</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">WCAG AAA Contrast</span>
+      <span style="background: var(--ligne); padding: 4px 10px; border-radius: 6px;">Live Activity Safe Area Tokens</span>
     </div>
   </div>
 

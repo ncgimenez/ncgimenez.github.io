@@ -1,56 +1,119 @@
 ---
 layout: antechamber
-title: Notes d'Atelier | L'Antichambre
-permalink: /antechamber/notes/
+title: Reading Shelf & Notes | The Antechamber
+permalink: /antechamber/notes.html
 ---
 
-<main>
-  <a class="retour" href="{{ '/antechamber/' | relative_url }}" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← Retour à l'Antichambre</a>
+<div class="art-poster-canvas">
 
-  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
-    <span class="etiquette etiquette--violet">Atelier &amp; Réflexion</span>
-    <span class="etiquette">Carnet de bord</span>
+  <!-- CORNER REGISTRATION MARKS -->
+  <span class="corner-mark corner-tl">+</span>
+  <span class="corner-mark corner-tr">+</span>
+  <span class="corner-mark corner-bl">+</span>
+  <span class="corner-mark corner-br">+</span>
+
+  <!-- TOP HEADER STRIP -->
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ligne); padding-bottom: 1rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="{{ '/antechamber/' | relative_url }}" style="color: var(--accent-fonce); text-decoration: none;">← Foyer</a>
+      <span style="color: var(--ligne);">/</span>
+      <span>ROOM 03 // READING &amp; NOTES</span>
+    </div>
+    <div>
+      <span>COMPULSIVE READING &amp; FRAGMENTS</span>
+    </div>
   </div>
 
-  <h1>Notes d'Atelier &amp; Dissections</h1>
-  <p class="chapo">
-    Fragments de pensée, explorations matérielles et principes d'ingénierie logicielle capturés entre deux sessions.
-  </p>
+  <header style="margin-bottom: 2rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px;">
+      LITERATURE, BOOKS &amp; THOUGHT FRAGMENTS
+    </div>
+    <h1 style="font-family: var(--font-poster-sans); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; text-transform: uppercase; margin: 0 0 0.5rem; color: var(--texte);">
+      Reading Shelf &amp; Notes
+    </h1>
+    <p style="font-family: var(--font-poster-serif); font-size: 1.3rem; font-style: italic; color: var(--texte-doux); margin: 0; line-height: 1.4; max-width: 640px;">
+      “When I dive into a book, I cannot pull myself away. Reading and taking notes is how mental models collide before they ever turn into software.”
+    </p>
+  </header>
 
-  <div class="grille" style="margin-top: 36px;">
-    <!-- NOTE 01 : DISASSEMBLY -->
-    <a class="carte" href="{{ '/blog/disassembly.html' | relative_url }}">
-      <div class="carte-barre" style="background: #7c3aed;"></div>
-      <span class="etiquette etiquette--violet">Essai</span>
-      <h3>I Take Things Apart</h3>
-      <p>
-        Remplacer une batterie collée au pistolet thermique, router un bus dans Logic Pro, et refuser l'opacité des boîtes noires.
-      </p>
+  <!-- SECTION 1: THE READING SHELF (BOOKS & OBSESSIONS) -->
+  <section style="margin-bottom: 3rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+      <span>📚</span>
+      <span>On the Nightstand &amp; In Mind</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.5rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #f59e0b; text-transform: uppercase;">Architecture &amp; Human Craft</span>
+        <h3 style="font-family: var(--font-poster-sans); font-size: 1.15rem; margin: 6px 0 8px; color: var(--texte);">
+          Form, Function &amp; Tactile Objects
+        </h3>
+        <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.55; margin: 0 0 12px;">
+          Books exploring why physical tools feel balanced in the hand. The transition from industrial design and architectural honesty into digital software.
+        </p>
+        <div style="font-family: var(--font-poster-serif); font-style: italic; font-size: 0.95rem; color: var(--texte); border-left: 2px solid var(--accent); padding-left: 10px;">
+          “Good design is as little design as possible.” — Dieter Rams
+        </div>
+      </div>
+
+      <div style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.5rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #38bdf8; text-transform: uppercase;">Cognitive Systems &amp; Focus</span>
+        <h3 style="font-family: var(--font-poster-sans); font-size: 1.15rem; margin: 6px 0 8px; color: var(--texte);">
+          Attention &amp; Frictionless Tools
+        </h3>
+        <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.55; margin: 0 0 12px;">
+          Essays on cognitive offloading, eliminating micro-interruptions, and the psychology behind why modern notification-heavy software induces anxiety.
+        </p>
+        <div style="font-family: var(--font-poster-serif); font-style: italic; font-size: 0.95rem; color: var(--texte); border-left: 2px solid var(--accent); padding-left: 10px;">
+          “A calm interface respects human attention instead of extracting it.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FIELD WRITINGS & ESSAYS -->
+  <section style="margin-bottom: 2rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+      <span>📓</span>
+      <span>Workshop Field Notes</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <a href="{{ '/blog/disassembly.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; transition: all 0.15s ease;" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--ligne)';">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-fonce); text-transform: uppercase;">Essay // Manifesto</span>
+          <h4 style="font-family: var(--font-poster-sans); font-size: 1.15rem; margin: 2px 0 4px; color: var(--texte);">
+            I Take Things Apart
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); margin: 0;">
+            Why prying open glued hardware and repairing smartphone batteries is the antidote to disposable software design.
+          </p>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); font-weight: 600;">Read Essay →</span>
+      </a>
+
+      <a href="{{ '/blog/available-to-promise.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; transition: all 0.15s ease;" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--ligne)';">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #b4502d; text-transform: uppercase;">Systems Note</span>
+          <h4 style="font-family: var(--font-poster-sans); font-size: 1.15rem; margin: 2px 0 4px; color: var(--texte);">
+            Available-to-Promise &amp; Phantom States
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); margin: 0;">
+            What physical supply chain logistics teach interface designers: never promise a state without atomic locks.
+          </p>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); font-weight: 600;">Read Note →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ligne); padding-top: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <span>ROOM 03 // READING &amp; NOTES · NCG-2026</span>
+    <a href="{{ '/antechamber/about.html' | relative_url }}" style="color: var(--accent); text-decoration: none; font-weight: 600;">
+      Next: Room 04 — Behind the Curtain →
     </a>
+  </footer>
 
-    <!-- NOTE 02 : SPAN CONCEPT -->
-    <a class="carte" href="{{ '/projects/span-suite.html' | relative_url }}">
-      <div class="carte-barre" style="background: #0284c7;"></div>
-      <span class="etiquette etiquette--bleu">Architecture Produit</span>
-      <h3>Le Mythe de la To-Do List Infinie</h3>
-      <p>
-        Pourquoi sans cadre strict, toute liste de tâches devient anxiogène. La genèse fonctionnelle de la Suite Span.
-      </p>
-    </a>
-
-    <!-- NOTE 03 : ATP & LOGIQUE FLUX -->
-    <a class="carte" href="{{ '/blog/available-to-promise.html' | relative_url }}">
-      <div class="carte-barre" style="background: #b4502d;"></div>
-      <span class="etiquette">Systèmes</span>
-      <h3>Available-to-Promise &amp; États Fantômes</h3>
-      <p>
-        Ce que les flux logistiques apprennent au design d'interfaces : ne jamais promettre un état sans verrou atomique.
-      </p>
-    </a>
-  </div>
-
-  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-    <a class="retour" href="{{ '/antechamber/' | relative_url }}" style="margin: 0;">← Retour à l'Antichambre</a>
-    <a class="bouton violet" href="{{ '/projects/span-suite.html' | relative_url }}">Explorer l'étude de cas Span →</a>
-  </div>
-</main>
+</div>

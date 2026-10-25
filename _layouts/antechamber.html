@@ -7,14 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.8' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.9' | relative_url }}">
 
   <style>
     /* ============================================================
-       Antichambre : Sanctuarisation des couleurs (Atelier créatif & Poster Gallery)
+       Antichambre : Sanctuarisation des couleurs & Design Éditorial
        ============================================================ */
 
-    /* 1. Mode sombre (PAR DÉFAUT) : Neon Workshop & Ultraviolet Noir */
+    /* 1. Mode sombre (PAR DÉFAUT) */
     :root,
     :root[data-theme="dark"] {
       --fond: #0b0912 !important;
@@ -39,7 +39,7 @@
       --font-mono: 'JetBrains Mono', monospace;
     }
 
-    /* 2. Mode clair adouci : Grège d'Atelier & Myrtille Sombre */
+    /* 2. Mode clair adouci */
     :root[data-theme="light"] {
       --fond: #f2edf7 !important;
       --fond-carte: #ffffff !important;
@@ -60,7 +60,7 @@
       --stage-mat-bg: #130f1d;
     }
 
-    /* Halo lumineux d'ambiance et grain */
+    /* Halo lumineux d'ambiance */
     body {
       background-color: var(--fond) !important;
       background-image: 
@@ -69,31 +69,287 @@
       background-repeat: no-repeat !important;
       transition: background-color 0.25s ease, color 0.25s ease;
       color: var(--texte) !important;
+      min-height: 100vh;
+      margin: 0;
     }
 
     /* ============================================================
-       ART POSTER CANVAS & MULTI-DIRECTIONAL EDITORIAL TYPOGRAPHY
+       LAYOUT : MAIN CONTENT + RIGHT VERTICAL SIDEBAR
        ============================================================ */
+    .antechamber-layout {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .antechamber-main-viewport {
+      flex: 1;
+      min-width: 0;
+      padding: 2.5rem 3rem 5rem;
+    }
+
+    @media (min-width: 901px) {
+      .antechamber-main-viewport {
+        margin-right: 270px;
+        padding: 3rem 4rem 6rem;
+      }
+    }
+
+    /* RIGHT VERTICAL SIDEBAR (DESKTOP) */
+    .antechamber-sidebar-right {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 270px;
+      height: 100vh;
+      background: var(--canvas-bg);
+      border-left: 1px solid var(--ligne);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem 1.5rem;
+      z-index: 100;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    /* TOP LOGO & COORDINATES IN SIDEBAR */
+    .sidebar-brand-block {
+      border-bottom: 1px solid var(--ligne);
+      padding-bottom: 1.25rem;
+    }
+
+    .sidebar-brand-title {
+      font-family: var(--font-poster-sans);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--texte);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .sidebar-brand-title span {
+      color: var(--accent);
+    }
+
+    .sidebar-coords {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--texte-mute);
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+    }
+
+    /* ROOM NAVIGATION LINKS */
+    .sidebar-nav {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--texte-doux);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-nav-item:hover {
+      background: rgba(168, 85, 247, 0.08);
+      color: var(--texte);
+      border-color: var(--ligne-fine);
+      transform: translateX(-2px);
+    }
+
+    .sidebar-nav-item.is-active {
+      background: rgba(168, 85, 247, 0.15);
+      border-color: var(--accent);
+      color: var(--accent-fonce);
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+    }
+
+    .sidebar-nav-num {
+      font-size: 0.68rem;
+      color: var(--texte-mute);
+      font-weight: 400;
+    }
+
+    .sidebar-nav-item.is-active .sidebar-nav-num {
+      color: var(--accent-fonce);
+    }
+
+    /* SIDEBAR BOTTOM CONTROLS */
+    .sidebar-controls-block {
+      border-top: 1px solid var(--ligne);
+      padding-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-action-btn-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-cmd-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      background: var(--fond-carte);
+      border: 1px solid var(--ligne);
+      color: var(--texte);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-cmd-btn:hover {
+      border-color: var(--accent);
+      background: var(--fond-carte-hover);
+    }
+
+    .sidebar-theme-btn {
+      width: 36px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: var(--fond-carte);
+      border: 1px solid var(--ligne);
+      color: var(--texte);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-theme-btn:hover {
+      border-color: var(--accent);
+    }
+
+    .sidebar-exit-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: rgba(168, 85, 247, 0.05);
+      border: 1px dashed var(--ligne);
+      text-decoration: none;
+      color: var(--texte-doux);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-exit-link:hover {
+      color: var(--texte);
+      border-color: var(--accent);
+      background: rgba(168, 85, 247, 0.1);
+    }
+
+    /* RESPONSIVE MOBILE BAR (@media max-width: 900px) */
+    .antechamber-mobile-header {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .antechamber-sidebar-right {
+        display: none;
+      }
+
+      .antechamber-main-viewport {
+        padding: 1.25rem 1.25rem 4rem;
+        margin-right: 0;
+      }
+
+      .antechamber-mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        background: var(--canvas-bg);
+        border-bottom: 1px solid var(--ligne);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .mobile-rooms-drawer {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 10px 1.25rem;
+        background: var(--fond);
+        border-bottom: 1px solid var(--ligne);
+        white-space: nowrap;
+      }
+
+      .mobile-room-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--fond-carte);
+        border: 1px solid var(--ligne);
+        text-decoration: none;
+        color: var(--texte-doux);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+      }
+
+      .mobile-room-pill.is-active {
+        background: rgba(168, 85, 247, 0.15);
+        border-color: var(--accent);
+        color: var(--accent-fonce);
+        font-weight: 600;
+      }
+    }
+
+    /* POSTER AESTHETICS */
     .art-poster-canvas {
-      max-width: 1240px;
-      margin: 1.5rem auto 4rem;
-      padding: 2rem 2.5rem;
+      max-width: 1060px;
+      margin: 0 auto;
       border: 1px solid var(--ligne) !important;
       background: var(--canvas-bg) !important;
       position: relative;
       box-shadow: var(--shadow-poster) !important;
       border-radius: 6px;
+      padding: 2.5rem 3rem;
       transition: background-color 0.25s ease, border-color 0.25s ease;
     }
 
     @media (max-width: 768px) {
       .art-poster-canvas {
-        padding: 1.25rem;
-        margin: 0.75rem auto 2.5rem;
+        padding: 1.5rem 1.25rem;
       }
     }
 
-    /* Corner Registration Crosshairs */
+    /* Registration marks */
     .corner-mark {
       position: absolute;
       font-family: var(--font-mono);
@@ -108,104 +364,18 @@
     .corner-bl { bottom: 8px; left: 10px; }
     .corner-br { bottom: 8px; right: 10px; }
 
-    /* Vertical Text Columns on Poster Edges */
-    .poster-spine-left {
-      position: absolute;
-      left: 8px;
-      top: 50%;
-      transform: translateY(-50%) rotate(180deg);
-      writing-mode: vertical-rl;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--texte-mute);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    .poster-spine-right {
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      writing-mode: vertical-rl;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--texte-mute);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 900px) {
-      .poster-spine-left,
-      .poster-spine-right {
-        display: none;
-      }
-    }
-
-    /* Top Masthead Row */
-    .poster-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      border-bottom: 1px solid var(--ligne);
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--texte-mute);
-    }
-
-    .poster-secret-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: rgba(168, 85, 247, 0.12);
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      color: var(--accent-fonce);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-
-    /* Hero Headline & Interlocked Title */
-    .poster-hero-interlock {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: flex-end;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--ligne);
-    }
-
-    @media (max-width: 768px) {
-      .poster-hero-interlock {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-    }
-
+    /* Headline Title */
     .poster-main-title {
       font-family: var(--font-poster-sans);
-      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+      font-size: clamp(2.4rem, 5.5vw, 4.6rem);
       font-weight: 800;
-      line-height: 0.88;
+      line-height: 0.9;
       letter-spacing: -0.04em;
       text-transform: uppercase;
       color: var(--texte);
-      margin: 0;
+      margin: 0 0 1rem;
     }
 
-    /* "THE" in small uppercase matching the same font */
     .poster-the-small {
       font-family: inherit;
       font-size: 0.38em;
@@ -214,7 +384,7 @@
       text-transform: uppercase;
       color: var(--accent-fonce);
       display: inline-block;
-      vertical-align: 0.22em;
+      vertical-align: 0.2em;
       margin-right: 0.45rem;
     }
 
@@ -222,220 +392,110 @@
       color: var(--accent);
       text-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
     }
-
-    .poster-curator-statement {
-      font-family: var(--font-poster-serif);
-      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-      font-style: italic;
-      color: var(--texte-doux);
-      line-height: 1.35;
-      margin: 0;
-      border-left: 2px solid var(--accent);
-      padding-left: 1.25rem;
-    }
-
-    /* Asymmetric Exhibition Center */
-    .poster-center-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: stretch;
-      margin-bottom: 2rem;
-    }
-
-    @media (max-width: 960px) {
-      .poster-center-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Exhibition Frame (The Lens & Filmstrip) */
-    .exhibition-view-card {
-      background: var(--sub-card-bg) !important;
-      border: 1px solid var(--ligne) !important;
-      border-radius: 8px;
-      padding: 1.25rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background-color 0.25s ease;
-    }
-
-    .exhibition-frame-stage {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: var(--stage-mat-bg) !important;
-      border: 1px solid var(--ligne-fine);
-      border-radius: 6px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Filmstrip Selector */
-    .filmstrip-selector {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .filmstrip-thumb {
-      background: var(--fond-carte) !important;
-      border: 1px solid var(--ligne) !important;
-      border-radius: 4px;
-      padding: 6px;
-      cursor: pointer;
-      text-align: left;
-      transition: all 0.15s ease;
-      color: var(--texte-doux);
-    }
-
-    .filmstrip-thumb:hover,
-    .filmstrip-thumb.active {
-      border-color: var(--accent) !important;
-      background: rgba(168, 85, 247, 0.14) !important;
-      color: var(--texte);
-    }
-
-    .filmstrip-thumb.active {
-      box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
-    }
-
-    .filmstrip-thumb-num {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      color: var(--accent-fonce);
-    }
-
-    .filmstrip-thumb-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-top: 2px;
-    }
-
-    /* Interactive Audio Bench */
-    .audio-bench-card {
-      background: var(--sub-card-bg) !important;
-      border: 1px solid var(--ligne) !important;
-      border-radius: 8px;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      transition: background-color 0.25s ease;
-    }
-
-    .audio-vertical-stamp {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      writing-mode: vertical-rl;
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      color: var(--texte-mute);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    /* Poster Bottom Bar & Barcode */
-    .poster-bottom-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      border-top: 1px solid var(--ligne);
-      padding-top: 1.25rem;
-      margin-top: 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--texte-mute);
-    }
-
-    .poster-links-row {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-
-    .poster-link-item {
-      color: var(--texte-doux);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-      transition: color 0.15s ease;
-    }
-
-    .poster-link-item:hover {
-      color: var(--accent-fonce);
-    }
   </style>
 </head>
 <body>
 
-  <header class="site">
-    <div class="interieur">
-      <a class="marque" href="{{ '/antechamber/' | relative_url }}" style="font-family: var(--font-poster-sans); font-weight: 800; letter-spacing: -0.01em;">The Antechamber</a>
-      <nav aria-label="Navigation de l'Antichambre">
-        <ul>
-          <li><a href="{{ '/antechamber/' | relative_url }}" aria-current="page">Poster &amp; Lab</a></li>
-          <li><a href="{{ '/antechamber/notes.html' | relative_url }}">Notes</a></li>
-          <li><a href="{{ '/antechamber/about/' | relative_url }}">Behind the Curtain</a></li>
-        </ul>
-      </nav>
-      <div class="controles-header">
-        <button type="button" class="cmd-k-btn" id="cmd-k-trigger" aria-label="Open Quick Actions (⌘K)" title="Quick Actions (⌘K)">
-          <span class="cmd-k-btn-icon">⚡</span>
-          <span class="cmd-k-btn-text">Actions</span>
-          <kbd class="cmd-k-btn-kbd">⌘K</kbd>
-        </button>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-          <span class="theme-icon">☀️</span>
-        </button>
-        <button class="lang-toggle" aria-label="Changer de langue">
-          <span class="lang-opt lang-opt--en">EN</span>
-          <span class="lang-sep">|</span>
-          <span class="lang-opt lang-opt--fr">FR</span> 
-        </button>
-      </div>
+  <!-- MOBILE NAVIGATION HEADER (@media max-width: 900px) -->
+  <header class="antechamber-mobile-header">
+    <a href="{{ '/antechamber/' | relative_url }}" style="font-family: var(--font-poster-sans); font-weight: 800; text-decoration: none; color: var(--texte); font-size: 1rem;">
+      THE ANTI<span style="color: var(--accent);">CHAMBER</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button type="button" class="sidebar-theme-btn theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">☀️</span>
+      </button>
+      <a href="{{ '/' | relative_url }}" class="sidebar-theme-btn" title="Exit to Portfolio" style="text-decoration: none;">
+        <span>💼</span>
+      </a>
     </div>
   </header>
 
-  {{ content }}
+  <nav class="mobile-rooms-drawer" aria-label="Mobile Navigation">
+    <a href="{{ '/antechamber/' | relative_url }}" class="mobile-room-pill {% if page.url == '/antechamber/' %}is-active{% endif %}">00 Foyer</a>
+    <a href="{{ '/antechamber/lens.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'lens' %}is-active{% endif %}">01 The Lens</a>
+    <a href="{{ '/antechamber/sound.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'sound' %}is-active{% endif %}">02 Sound Lab</a>
+    <a href="{{ '/antechamber/notes.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'notes' %}is-active{% endif %}">03 Reading &amp; Notes</a>
+    <a href="{{ '/antechamber/about.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'about' %}is-active{% endif %}">04 Behind the Curtain</a>
+  </nav>
 
-  <footer>
-    <p>© 2026 Nadia Cañadas Giménez · The Antechamber</p>
-    <p style="margin-top: 0.75rem; text-align: center;">
-      <a href="{{ '/' | relative_url }}" style="color: var(--texte-doux); text-decoration: none; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 8px;" title="Back to main portfolio" aria-label="Back to main portfolio">
-        <span>💼</span>
-        <span style="font-size: 0.85rem; font-family: -apple-system, sans-serif;">Exit to Main Portfolio</span>
-      </a>
-    </p>
-  </footer>
+  <!-- MAIN TWO-COLUMN CONTAINER -->
+  <div class="antechamber-layout">
 
+    <!-- LEFT / CENTER: ACTIVE VIEWPORT -->
+    <main class="antechamber-main-viewport">
+      {{ content }}
+    </main>
+
+    <!-- RIGHT: FIXED VERTICAL SIDEBAR (DESKTOP) -->
+    <aside class="antechamber-sidebar-right" aria-label="Sidebar Navigation">
+      
+      <!-- TOP: BRAND & COORDINATES -->
+      <div class="sidebar-brand-block">
+        <a href="{{ '/antechamber/' | relative_url }}" class="sidebar-brand-title">
+          THE ANTI<br><span>CHAMBER</span>
+        </a>
+        <div class="sidebar-coords">
+          <span>ATELIER 2026</span>
+          <span>50°50'N 4°21'E</span>
+        </div>
+      </div>
+
+      <!-- MIDDLE: ROOMS NAVIGATION (SEPARATE SUBJECTS) -->
+      <nav class="sidebar-nav">
+        <a href="{{ '/antechamber/' | relative_url }}" class="sidebar-nav-item {% if page.url == '/antechamber/' %}is-active{% endif %}">
+          <span class="sidebar-nav-num">00</span>
+          <span>Foyer (Index)</span>
+        </a>
+
+        <a href="{{ '/antechamber/lens.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'lens' %}is-active{% endif %}">
+          <span class="sidebar-nav-num">01</span>
+          <span>The Lens 📸</span>
+        </a>
+
+        <a href="{{ '/antechamber/sound.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'sound' %}is-active{% endif %}">
+          <span class="sidebar-nav-num">02</span>
+          <span>Sound Lab 🎹</span>
+        </a>
+
+        <a href="{{ '/antechamber/notes.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'notes' %}is-active{% endif %}">
+          <span class="sidebar-nav-num">03</span>
+          <span>Reading &amp; Notes 📚</span>
+        </a>
+
+        <a href="{{ '/antechamber/about.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'about' %}is-active{% endif %}">
+          <span class="sidebar-nav-num">04</span>
+          <span>Behind Curtain 🎭</span>
+        </a>
+      </nav>
+
+      <!-- BOTTOM: ACTIONS, THEME TOGGLE, EXIT -->
+      <div class="sidebar-controls-block">
+        <div class="sidebar-action-btn-row">
+          <button type="button" class="sidebar-cmd-btn" id="cmd-k-trigger" aria-label="Open Quick Actions (⌘K)" title="Quick Actions (⌘K)">
+            <span>⚡ Actions</span>
+            <kbd style="font-size: 0.65rem; background: rgba(168,85,247,0.15); padding: 2px 4px; border-radius: 4px;">⌘K</kbd>
+          </button>
+          <button type="button" class="sidebar-theme-btn theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+            <span class="theme-icon">☀️</span>
+          </button>
+        </div>
+
+        <a href="{{ '/' | relative_url }}" class="sidebar-exit-link" title="Exit to professional engineering portfolio">
+          <span>💼 Portfolio Pro</span>
+          <span>→</span>
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- THEME TOGGLE & MECHANICAL CLICK SCRIPT -->
   <script>
     (function() {
-      const themeBtn = document.getElementById('theme-toggle');
+      const themeBtns = document.querySelectorAll('.theme-toggle');
       const root = document.documentElement;
-      const themeIcon = document.querySelector('.theme-icon');
       
       const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
       
@@ -463,22 +523,22 @@
         root.dataset.theme = theme;
         localStorage.setItem('ncg-theme', theme);
         localStorage.setItem('theme', theme);
-        if (themeIcon) {
-          themeIcon.textContent = (theme === 'dark') ? '☀️' : '🌙';
-        }
+        document.querySelectorAll('.theme-icon').forEach(icon => {
+          icon.textContent = (theme === 'dark') ? '☀️' : '🌙';
+        });
       }
 
       setTheme(currentTheme);
 
-      if (themeBtn) {
-        themeBtn.addEventListener('click', function(e) {
+      themeBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
           e.preventDefault();
           const current = root.getAttribute('data-theme') || root.dataset.theme || 'dark';
           const newTheme = (current === 'dark') ? 'light' : 'dark';
           playMechanicalClick();
           setTheme(newTheme);
         });
-      }
+      });
     })();
   </script>
   <script src="{{ '/assets/lang.js' | relative_url }}"></script>

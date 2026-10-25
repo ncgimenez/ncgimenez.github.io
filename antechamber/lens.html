@@ -1,0 +1,164 @@
+---
+layout: antechamber
+title: The Lens · Photographic Studies | The Antechamber
+permalink: /antechamber/lens.html
+---
+
+<div class="art-poster-canvas">
+
+  <!-- CORNER REGISTRATION MARKS -->
+  <span class="corner-mark corner-tl">+</span>
+  <span class="corner-mark corner-tr">+</span>
+  <span class="corner-mark corner-bl">+</span>
+  <span class="corner-mark corner-br">+</span>
+
+  <!-- TOP HEADER STRIP -->
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ligne); padding-bottom: 1rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="{{ '/antechamber/' | relative_url }}" style="color: var(--accent-fonce); text-decoration: none;">← Foyer</a>
+      <span style="color: var(--ligne);">/</span>
+      <span>ROOM 01 // THE LENS</span>
+    </div>
+    <div>
+      <span>4 ARCHITECTURAL PLATES</span>
+    </div>
+  </div>
+
+  <header style="margin-bottom: 2rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px;">
+      VISUAL FIELD NOTES &amp; COMPOSITION
+    </div>
+    <h1 style="font-family: var(--font-poster-sans); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; text-transform: uppercase; margin: 0 0 0.5rem; color: var(--texte);">
+      The Lens
+    </h1>
+    <p style="font-family: var(--font-poster-serif); font-size: 1.3rem; font-style: italic; color: var(--texte-doux); margin: 0; line-height: 1.4; max-width: 640px;">
+      “A designer’s eye is calibrated in the physical world. Architectural facades, geometric planes, tinted glass, and natural light interactions.”
+    </p>
+  </header>
+
+  <!-- MAIN GALLERY STAGE -->
+  <div class="exhibition-view-card" style="margin-bottom: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-family: var(--font-mono); font-size: 0.72rem;">
+      <div style="color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px;">
+        <span>📸</span>
+        <span id="active-plate-badge">FRAME 01 // ARCHITECTURAL FORM</span>
+      </div>
+      <div style="color: var(--texte-mute);">
+        CLICK A THUMBNAIL BELOW TO SWITCH
+      </div>
+    </div>
+
+    <!-- MAIN PHOTOGRAPH DISPLAY WITH PASS-PARTOUT MAT -->
+    <div class="exhibition-frame-stage" id="exhibition-stage" style="aspect-ratio: 16/10; max-height: 540px; background: #08060e; position: relative;">
+      <img id="plate-img-01" src="{{ '/assets/photography/img-0546.jpg' | relative_url }}" alt="Glass reflections and clouds by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+      <img id="plate-img-02" src="{{ '/assets/photography/img-0410.jpg' | relative_url }}" alt="Palm silhouettes and balconies by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+      <img id="plate-img-03" src="{{ '/assets/photography/img-0069.jpg' | relative_url }}" alt="Transit platform slab by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+      <img id="plate-img-04" src="{{ '/assets/photography/img-0278.jpg' | relative_url }}" alt="Skyline and star structure by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+    </div>
+
+    <!-- METADATA & OBSERVATION CAPTION -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; border-top: 1px solid var(--ligne); padding-top: 14px; flex-wrap: wrap;">
+      <div>
+        <h3 id="active-plate-title" style="font-family: var(--font-poster-sans); font-size: 1.3rem; margin: 0 0 6px; color: var(--texte);">
+          Glass Reflections &amp; Pale Sky
+        </h3>
+        <p id="active-plate-desc" style="font-size: 0.9rem; color: var(--texte-doux); margin: 0; line-height: 1.55; max-width: 580px;">
+          Towering cumulus clouds meeting modern glass facades. Exploring how clean structural geometry and tinted glass dialogue with open atmospheric light.
+        </p>
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute); text-align: right; min-width: 160px;">
+        <div id="active-plate-lens" style="color: var(--accent-fonce); font-weight: 600;">PHOTO BY NADIA</div>
+        <div id="active-plate-subject" style="margin-top: 3px;">URBAN FACADES</div>
+      </div>
+    </div>
+
+    <!-- FILMSTRIP SELECTOR -->
+    <div class="filmstrip-selector" style="margin-top: 1.25rem;">
+      <button type="button" class="filmstrip-thumb active" data-plate="01">
+        <div class="filmstrip-thumb-num">NO. 01</div>
+        <div class="filmstrip-thumb-title">Glass &amp; Clouds</div>
+      </button>
+      <button type="button" class="filmstrip-thumb" data-plate="02">
+        <div class="filmstrip-thumb-num">NO. 02</div>
+        <div class="filmstrip-thumb-title">Palm &amp; Balconies</div>
+      </button>
+      <button type="button" class="filmstrip-thumb" data-plate="03">
+        <div class="filmstrip-thumb-num">NO. 03</div>
+        <div class="filmstrip-thumb-title">Platform Slab</div>
+      </button>
+      <button type="button" class="filmstrip-thumb" data-plate="04">
+        <div class="filmstrip-thumb-num">NO. 04</div>
+        <div class="filmstrip-thumb-title">Star &amp; Sunset</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- GALLERY FOOTER -->
+  <footer style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ligne); padding-top: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <span>ROOM 01 // THE LENS · NCG-2026</span>
+    <a href="{{ '/antechamber/sound.html' | relative_url }}" style="color: var(--accent); text-decoration: none; font-weight: 600;">
+      Next: Room 02 — Sound Lab →
+    </a>
+  </footer>
+
+</div>
+
+<!-- INTERACTIVE FILMSTRIP SWITCHER -->
+<script>
+  const platesData = {
+    '01': {
+      badge: 'FRAME 01 // ARCHITECTURAL FORM',
+      title: 'Glass Reflections & Pale Sky',
+      desc: 'Towering cumulus clouds meeting modern glass facades. Exploring how clean structural geometry and tinted glass dialogue with open atmospheric light.',
+      lens: 'PHOTO BY NADIA',
+      subject: 'URBAN FACADES',
+      imgId: 'plate-img-01'
+    },
+    '02': {
+      badge: 'FRAME 02 // ORGANIC & RIGID',
+      title: 'Palm Silhouettes & Balcony Grids',
+      desc: 'A sharp natural silhouette cutting through the repetitive geometric grid of residential balconies and air conditioning units.',
+      lens: 'PHOTO BY NADIA',
+      subject: 'FOREGROUND DEPTH',
+      imgId: 'plate-img-02'
+    },
+    '03': {
+      badge: 'FRAME 03 // TRANSIT GEOMETRY',
+      title: 'Concrete Slab & Glazed Reflections',
+      desc: 'Vanishing perspective across a transit platform. Cold concrete joints intersecting with crisp glass banister reflections.',
+      lens: 'PHOTO BY NADIA',
+      subject: 'TRANSIT INFRASTRUCTURE',
+      imgId: 'plate-img-03'
+    },
+    '04': {
+      badge: 'FRAME 04 // SKYLINE & STAR STRUCTURE',
+      title: 'The Wireframe Star & Sunset',
+      desc: 'A geometric star sculpture floating above urban apartment blocks against an intense warm ochre sky gradient.',
+      lens: 'PHOTO BY NADIA',
+      subject: 'SKYLINE & GEOMETRY',
+      imgId: 'plate-img-04'
+    }
+  };
+
+  document.querySelectorAll('.filmstrip-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const plateKey = thumb.getAttribute('data-plate');
+      const data = platesData[plateKey];
+      if (!data) return;
+
+      document.querySelectorAll('.filmstrip-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+
+      document.getElementById('active-plate-badge').textContent = data.badge;
+      document.getElementById('active-plate-title').textContent = data.title;
+      document.getElementById('active-plate-desc').textContent = data.desc;
+      document.getElementById('active-plate-lens').textContent = data.lens;
+      document.getElementById('active-plate-subject').textContent = data.subject;
+
+      ['plate-img-01', 'plate-img-02', 'plate-img-03', 'plate-img-04'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = (id === data.imgId) ? 'block' : 'none';
+      });
+    });
+  });
+</script>

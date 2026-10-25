@@ -55,8 +55,8 @@
       sub: 'Trigger real-time acoustic waves from pure CPU math (0 kB payload)',
       icon: '🎹',
       badge: 'Web Audio',
-      url: '/antechamber/#synth-keyboard',
-      keywords: 'synth keyboard sound audio music oscillator'
+      url: '/antechamber/sound.html',
+      keywords: 'synth keyboard sound audio music oscillator sound lab'
     },
     {
       group: 'Sound & Atelier Bench',
@@ -69,21 +69,21 @@
     },
     {
       group: 'Sound & Atelier Bench',
-      title: 'Workshop Notebook & Signal Routing',
-      sub: 'Analog bus wiring, mental models, and software craft',
+      title: 'Reading Shelf & Workshop Notes',
+      sub: 'Analog bus wiring, books, and software craft',
       icon: '📓',
       badge: 'Notes',
       url: '/antechamber/notes.html',
-      keywords: 'notes workshop notebook audio bus wiring routing'
+      keywords: 'notes workshop notebook audio bus wiring routing books reading'
     },
     {
       group: 'Sound & Atelier Bench',
       title: 'Behind the Curtain',
-      sub: 'Why this sanctuary exists outside client deadlines & metrics',
+      sub: 'Making tedious tasks effortless & the craft of disassembly',
       icon: '🎭',
-      badge: 'About',
-      url: '/antechamber/about/',
-      keywords: 'behind curtain atelier workshop philosophy'
+      badge: 'Manifesto',
+      url: '/antechamber/about.html',
+      keywords: 'behind curtain atelier workshop philosophy manifesto'
     },
 
     // Quick Studio Actions
@@ -453,13 +453,13 @@
     // 1. Photography plate switcher (Antechamber)
     if (item.action && item.action.startsWith('select-plate-')) {
       const plateNum = item.action.replace('select-plate-', '');
-      const thumb = document.querySelector(`.filmstrip-thumb[data-plate="${plateNum}"]`);
-      if (thumb) {
-        thumb.click();
-      }
-      const stage = document.getElementById('exhibition-stage');
-      if (stage) {
-        stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (window.location.pathname.includes('lens')) {
+        const thumb = document.querySelector(`.filmstrip-thumb[data-plate="${plateNum}"]`);
+        if (thumb) thumb.click();
+        const stage = document.getElementById('exhibition-stage');
+        if (stage) stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        window.location.href = `/antechamber/lens.html`;
       }
       return;
     }

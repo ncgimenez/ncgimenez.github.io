@@ -1,436 +1,168 @@
 ---
 layout: antechamber
-title: The Antechamber | Editorial Art Poster & Personal Studio
+title: Foyer | The Antechamber
 ---
 
 <div class="art-poster-canvas">
 
-  <!-- CORNER REGISTRATION CROSSHAIRS -->
+  <!-- CORNER REGISTRATION MARKS -->
   <span class="corner-mark corner-tl">+</span>
   <span class="corner-mark corner-tr">+</span>
   <span class="corner-mark corner-bl">+</span>
   <span class="corner-mark corner-br">+</span>
 
-  <!-- VERTICAL TYPOGRAPHY SPINES (MULTI-DIRECTIONAL WRITING MODES) -->
-  <aside class="poster-spine-left">
-    PHOTOGRAPHIC STUDIES · ART &amp; SOUND ATELIER · STUDIO OF NADIA CAÑADAS GIMÉNEZ
-  </aside>
-  <aside class="poster-spine-right">
-    AUDIO ENGINE: 48000 HZ · ZERO-LATENCY SYNTHESIS · 50°50'48"N 4°21'09"E · ARCHIVE REF 0x9D5C
-  </aside>
-
-  <!-- TOP MASTHEAD ROW -->
-  <header class="poster-top-row">
-    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <span class="poster-secret-pill">🗝️ Dear curious mind — sneaky key unlocked</span>
-      <span style="font-family: var(--font-mono); color: var(--texte-mute);">PERSONAL ATELIER · 2026</span>
+  <!-- TOP MASTHEAD STRIP -->
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ligne); padding-bottom: 1rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.35); color: var(--accent-fonce); font-weight: 600;">
+        🗝️ Dear curious mind — key access granted
+      </span>
+      <span>ENTRY SPEC // 00</span>
     </div>
-    <div style="display: flex; align-items: center; gap: 16px;">
-      <span>50°50'48"N 4°21'09"E</span>
-      <span style="color: var(--accent-fonce);">CURATED BY NADIA CAÑADAS GIMÉNEZ</span>
+    <div>
+      <span>CURATED BY NADIA CAÑADAS GIMÉNEZ</span>
     </div>
-  </header>
+  </div>
 
-  <!-- HERO TYPOGRAPHY: SPLIT GRAPHIC TITLE + MANIFESTO STATEMENT -->
-  <div class="poster-hero-interlock">
+  <!-- HERO GRAPHIC TYPOGRAPHY -->
+  <header style="margin-bottom: 2.75rem; border-bottom: 1px solid var(--ligne); padding-bottom: 2.25rem;">
     <h1 class="poster-main-title">
       <span class="poster-the-small">THE</span> ANTI-<br>
       <span class="poster-title-highlight">CHAMBER</span>
     </h1>
 
-    <div class="poster-curator-statement">
-      “Behind the enterprise ERP architectures and client deliverables — a personal space for photographic observation, sound exploration, deep reading, and crafting tools that make tedious tasks effortless.”
-    </div>
-  </div>
+    <p style="font-family: var(--font-poster-serif); font-size: clamp(1.25rem, 2.4vw, 1.75rem); font-style: italic; color: var(--texte-doux); line-height: 1.35; margin: 0; max-width: 680px; border-left: 2px solid var(--accent); padding-left: 1.25rem;">
+      “Welcome to the personal sanctuary. Behind the enterprise ERP architectures and client deliverables — an experimental foyer leading to photographic studies, acoustic physics, deep reading, and crafting tools that make tedious tasks effortless.”
+    </p>
+  </header>
 
-  <!-- CENTER EXHIBITION SPREAD: PHOTOGRAPHY VIEWFINDER + LIVE AUDIO MODULE -->
-  <div class="poster-center-grid">
-
-    <!-- LEFT / CENTER: NADIA'S REAL PHOTOGRAPHY EXHIBITION -->
-    <div class="exhibition-view-card">
-      <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px;">
-            <span>📸</span>
-            <span id="active-plate-badge">FRAME 01 // ARCHITECTURAL FORM</span>
-          </div>
-          <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute); text-transform: uppercase;">
-            PHOTOGRAPHY &amp; COMPOSITION
-          </div>
-        </div>
-
-        <!-- MAIN EXHIBITION STAGE (DISPLAYS REAL PHOTOS WITH MUSEUM MATTING) -->
-        <div class="exhibition-frame-stage" id="exhibition-stage" style="background: #08060e; position: relative;">
-          <img id="plate-img-01" src="{{ '/assets/photography/img-0546.jpg' | relative_url }}" alt="Glass reflections and clouds by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-          <img id="plate-img-02" src="{{ '/assets/photography/img-0410.jpg' | relative_url }}" alt="Palm silhouettes and balconies by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: none;">
-          <img id="plate-img-03" src="{{ '/assets/photography/img-0069.jpg' | relative_url }}" alt="Transit platform slab by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: none;">
-          <img id="plate-img-04" src="{{ '/assets/photography/img-0278.jpg' | relative_url }}" alt="Skyline and star structure by Nadia" style="width: 100%; height: 100%; object-fit: contain; display: none;">
-        </div>
-
-        <!-- PLATE CAPTION & NOTES -->
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-top: 1px solid var(--ligne); padding-top: 10px;">
-          <div>
-            <h3 id="active-plate-title" style="font-family: var(--font-poster-sans); font-size: 1.15rem; margin: 0 0 4px; color: var(--texte);">
-              Glass Reflections &amp; Pale Sky
-            </h3>
-            <p id="active-plate-desc" style="font-size: 0.85rem; color: var(--texte-doux); margin: 0; line-height: 1.5; max-width: 480px;">
-              Towering clouds meeting modern glass facades. Exploring how crisp architectural geometry and tinted glass dialogue with open atmospheric light.
-            </p>
-          </div>
-          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); text-align: right; white-space: nowrap;">
-            <div id="active-plate-lens" style="color: var(--accent-fonce);">PHOTO BY NADIA</div>
-            <div id="active-plate-subject">URBAN FACADES</div>
-          </div>
-        </div>
-
-        <!-- INTERACTIVE FILMSTRIP / CONTACT SHEET -->
-        <div class="filmstrip-selector">
-          <button type="button" class="filmstrip-thumb active" data-plate="01">
-            <div class="filmstrip-thumb-num">NO. 01</div>
-            <div class="filmstrip-thumb-title">Glass &amp; Clouds</div>
-          </button>
-          <button type="button" class="filmstrip-thumb" data-plate="02">
-            <div class="filmstrip-thumb-num">NO. 02</div>
-            <div class="filmstrip-thumb-title">Palm &amp; Balconies</div>
-          </button>
-          <button type="button" class="filmstrip-thumb" data-plate="03">
-            <div class="filmstrip-thumb-num">NO. 03</div>
-            <div class="filmstrip-thumb-title">Platform Slab</div>
-          </button>
-          <button type="button" class="filmstrip-thumb" data-plate="04">
-            <div class="filmstrip-thumb-num">NO. 04</div>
-            <div class="filmstrip-thumb-title">Star &amp; Sunset</div>
-          </button>
-        </div>
+  <!-- SNEAK PEEK : 4 SEPARATE ROOM PORTALS (ROOMS OF THE ATELIER) -->
+  <section>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 8px;">
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-fonce); letter-spacing: 0.1em; text-transform: uppercase;">
+        ATELIER ROOMS · SNEAK PEEK
       </div>
-
-      <div style="margin-top: 12px; font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute); display: flex; justify-content: space-between;">
-        <span>GALLERY SERIES · EYE FOR COMPOSITION</span>
-        <span>INDEX: NCG-PHOTO-2026</span>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute);">
+        4 DEDICATED SPACES
       </div>
     </div>
 
-    <!-- RIGHT: THE LIVE AUDIO SYNTHESIZER & PASSIONS -->
-    <div class="audio-bench-card">
-      <aside class="audio-vertical-stamp">
-        AUDIO BUS · 48KHZ · ZERO LATENCY
-      </aside>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
 
-      <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.7rem; color: #c084fc; text-transform: uppercase; letter-spacing: 0.08em;">
-            <span style="width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 8px #4ade80;"></span>
-            LIVE WEB AUDIO BENCH
-          </span>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute); text-transform: uppercase;">
-            0 kB Payload
-          </span>
-        </div>
-
-        <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; margin: 0 0 0.4rem; color: var(--texte);">
-          Sound &amp; Acoustic Physics
-        </h3>
-        <p style="font-size: 0.85rem; color: var(--texte-doux); margin: 0 0 1rem; line-height: 1.5;">
-          Touch any key below to synthesize real acoustic air pressure straight from CPU equations:
-        </p>
-
-        <!-- SIGNAL PIPELINE STAGES -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 1rem; padding: 8px; background: rgba(0,0,0,0.4); border-radius: 6px; border: 1px solid var(--ligne);">
-          <div id="stage-osc" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 4px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.58rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">1. Osc</div>
-            <div style="font-size: 0.75rem; font-weight: 700; color: #c084fc;">Wave</div>
-            <div style="font-size: 0.6rem; color: var(--texte-doux);" id="flow-osc-label">Triangle</div>
+      <!-- ROOM 01: THE LENS -->
+      <a href="{{ '/antechamber/lens.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--ligne)'; this.style.transform='none';">
+        <div>
+          <div style="width: 100%; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; background: #08060e; margin-bottom: 1rem; border: 1px solid var(--ligne-fine);">
+            <img src="{{ '/assets/photography/img-0546.jpg' | relative_url }}" alt="Glass reflections sneak peek" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9;">
           </div>
-          <div id="stage-filter" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 4px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.58rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">2. Cutoff</div>
-            <div style="font-size: 0.75rem; font-weight: 700; color: #38bdf8;">Filter</div>
-            <div style="font-size: 0.6rem; color: var(--texte-doux);" id="flow-filter-label">1800 Hz</div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-fonce); text-transform: uppercase; margin-bottom: 4px;">
+            ROOM 01 // EXHIBITION
           </div>
-          <div id="stage-env" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 4px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.58rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">3. Env</div>
-            <div style="font-size: 0.75rem; font-weight: 700; color: #f0714b;">ADSR</div>
-            <div style="font-size: 0.6rem; color: var(--texte-doux);">40/700ms</div>
-          </div>
-          <div id="stage-out" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 4px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.58rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">4. DAC</div>
-            <div style="font-size: 0.75rem; font-weight: 700; color: #4ade80;">Out</div>
-            <div style="font-size: 0.6rem; color: var(--texte-doux);">Speakers</div>
-          </div>
+          <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; color: var(--texte); margin: 0 0 6px;">
+            The Lens: Visual Notes
+          </h3>
+          <p style="font-size: 0.84rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 1rem;">
+            Real architectural photographs, facade geometry, and natural light interactions captured in Brussels and beyond.
+          </p>
         </div>
-
-        <!-- KEYBOARD KEYS -->
-        <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 1rem;">
-          <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">C4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">261</span></button>
-          <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">D4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">293</span></button>
-          <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">E4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">329</span></button>
-          <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">F4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">349</span></button>
-          <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">G4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">392</span></button>
-          <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">A4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">440</span></button>
-          <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">B4<br><span style="font-size: 0.6rem; font-weight: 400; color: var(--texte-mute);">494</span></button>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--ligne); padding-top: 8px;">
+          <span>Enter Photo Gallery</span>
+          <span>→</span>
         </div>
-
-        <!-- CONTROLS -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.78rem; color: var(--texte-doux); padding-top: 10px; border-top: 1px solid var(--ligne);">
-          <div>
-            <label for="synth-wave" style="display: block; margin-bottom: 3px; font-weight: 600; color: var(--texte);">Shape</label>
-            <select id="synth-wave" style="width: 100%; background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 5px 6px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem;">
-              <option value="triangle" selected>Triangle</option>
-              <option value="sine">Sine</option>
-              <option value="sawtooth">Sawtooth</option>
-              <option value="square">Square</option>
-            </select>
-          </div>
-          <div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-              <label for="synth-filter" style="font-weight: 600; color: var(--texte);">Cutoff</label>
-              <span id="synth-filter-display" style="font-family: var(--font-mono); font-size: 0.72rem; color: #38bdf8;">1800 Hz</span>
-            </div>
-            <input type="range" id="synth-filter" min="200" max="4000" value="1800" style="width: 100%; vertical-align: middle; accent-color: var(--accent);">
-          </div>
-        </div>
-      </div>
-
-      <!-- PERSONAL PHILOSOPHY: MAKING TEDIOUS TASKS EFFORTLESS -->
-      <div style="border-top: 1px dashed var(--ligne); padding-top: 12px; margin-top: 14px;">
-        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-fonce); text-transform: uppercase; margin-bottom: 6px;">
-          CRAFT &amp; LATERAL INTERESTS
-        </div>
-        <p style="font-size: 0.82rem; color: var(--texte-doux); line-height: 1.5; margin: 0 0 10px;">
-          What drives my engineering work is simple: <em>taking tedious, clunky tasks and transforming them into seamless, effortless interactions.</em> When not building systems, I immerse myself in art, compulsive reading, acoustic synthesis, and taking things apart.
-        </p>
-        <div style="display: flex; flex-direction: column; gap: 6px;">
-          <a href="{{ '/blog/disassembly.html' | relative_url }}" style="font-size: 0.84rem; color: var(--texte); text-decoration: none; display: flex; justify-content: space-between;">
-            <span>→ I Take Things Apart (Manifesto)</span>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">READ</span>
-          </a>
-          <a href="{{ '/antechamber/notes.html' | relative_url }}" style="font-size: 0.84rem; color: var(--texte); text-decoration: none; display: flex; justify-content: space-between;">
-            <span>→ Workshop Notebook &amp; Books</span>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">NOTES</span>
-          </a>
-          <a href="{{ '/antechamber/about/' | relative_url }}" style="font-size: 0.84rem; color: var(--texte); text-decoration: none; display: flex; justify-content: space-between;">
-            <span>→ Behind the Curtain</span>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">ABOUT</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- POSTER BOTTOM BAR (BARCODE, METRICS & EXIT) -->
-  <footer class="poster-bottom-bar">
-    <div style="display: flex; align-items: center; gap: 16px;">
-      <!-- Vector Barcode -->
-      <svg width="120" height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.7;">
-        <rect x="0" width="3" height="28" fill="#a855f7" />
-        <rect x="6" width="2" height="28" fill="#a855f7" />
-        <rect x="11" width="4" height="28" fill="#a855f7" />
-        <rect x="18" width="1" height="28" fill="#a855f7" />
-        <rect x="22" width="5" height="28" fill="#a855f7" />
-        <rect x="30" width="2" height="28" fill="#a855f7" />
-        <rect x="35" width="3" height="28" fill="#a855f7" />
-        <rect x="42" width="2" height="28" fill="#a855f7" />
-        <rect x="47" width="4" height="28" fill="#a855f7" />
-        <rect x="54" width="1" height="28" fill="#a855f7" />
-        <rect x="58" width="6" height="28" fill="#a855f7" />
-        <rect x="67" width="2" height="28" fill="#a855f7" />
-        <rect x="72" width="4" height="28" fill="#a855f7" />
-        <rect x="79" width="3" height="28" fill="#a855f7" />
-        <rect x="85" width="2" height="28" fill="#a855f7" />
-        <rect x="90" width="5" height="28" fill="#a855f7" />
-        <rect x="98" width="2" height="28" fill="#a855f7" />
-        <rect x="103" width="3" height="28" fill="#a855f7" />
-        <rect x="109" width="1" height="28" fill="#a855f7" />
-        <rect x="113" width="4" height="28" fill="#a855f7" />
-      </svg>
-      <span>CATALOGUE ED. 02 // NCG-POSTER</span>
-    </div>
-
-    <div class="poster-links-row">
-      <a href="{{ '/' | relative_url }}" class="poster-link-item">
-        <span>💼</span>
-        <span>EXIT TO MAIN PORTFOLIO</span>
       </a>
-      <span style="color: var(--ligne);">|</span>
-      <span>© 2026 NADIA CAÑADAS GIMÉNEZ</span>
+
+      <!-- ROOM 02: SOUND LAB -->
+      <a href="{{ '/antechamber/sound.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--ligne)'; this.style.transform='none';">
+        <div>
+          <div style="width: 100%; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; background: #0a0814; margin-bottom: 1rem; border: 1px solid var(--ligne-fine); display: flex; align-items: center; justify-content: center; position: relative;">
+            <svg width="100%" height="100%" viewBox="0 0 240 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 20 75 Q 50 20, 80 75 T 140 75 T 200 75" stroke="#a855f7" stroke-width="2.5" fill="none" />
+              <circle cx="80" cy="75" r="4" fill="#38bdf8" />
+              <circle cx="140" cy="75" r="4" fill="#f0714b" />
+              <text x="120" y="125" fill="#6b5f88" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle">WEB AUDIO OSCILLOSCOPE</text>
+            </svg>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #38bdf8; text-transform: uppercase; margin-bottom: 4px;">
+            ROOM 02 // HARDWARE &amp; AUDIO
+          </div>
+          <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; color: var(--texte); margin: 0 0 6px;">
+            Sound Lab &amp; Signals
+          </h3>
+          <p style="font-size: 0.84rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 1rem;">
+            Playable Web Audio subtractive synthesizer, ADSR envelope shaping, and acoustic physics with zero payload.
+          </p>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--ligne); padding-top: 8px;">
+          <span>Open Audio Bench</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- ROOM 03: READING & NOTES -->
+      <a href="{{ '/antechamber/notes.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--ligne)'; this.style.transform='none';">
+        <div>
+          <div style="width: 100%; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; background: #0c0915; margin-bottom: 1rem; border: 1px solid var(--ligne-fine); display: flex; flex-direction: column; justify-content: center; padding: 16px;">
+            <div style="font-family: var(--font-poster-serif); font-style: italic; font-size: 1.05rem; color: var(--texte); line-height: 1.35; margin-bottom: 6px;">
+              “When I dive into a book, I cannot pull myself away.”
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-fonce);">
+              CURATED READING SHELF &amp; THOUGHTS
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #f59e0b; text-transform: uppercase; margin-bottom: 4px;">
+            ROOM 03 // WRITING &amp; BOOKS
+          </div>
+          <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; color: var(--texte); margin: 0 0 6px;">
+            Reading Shelf &amp; Notes
+          </h3>
+          <p style="font-size: 0.84rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 1rem;">
+            A personal bookshelf of works that leave an imprint, plus field notes on interaction models and systems.
+          </p>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--ligne); padding-top: 8px;">
+          <span>Browse Shelf</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- ROOM 04: BEHIND THE CURTAIN -->
+      <a href="{{ '/antechamber/about.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--ligne)'; this.style.transform='none';">
+        <div>
+          <div style="width: 100%; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; background: #0c0915; margin-bottom: 1rem; border: 1px solid var(--ligne-fine); display: flex; flex-direction: column; justify-content: center; padding: 16px;">
+            <div style="font-family: var(--font-poster-sans); font-size: 1.1rem; font-weight: 800; color: #f4eeff; margin-bottom: 4px;">
+              MAKING TEDIOUS TASKS EFFORTLESS
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute);">
+              CRAFT &amp; DISASSEMBLY PHILOSOPHY
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #4ade80; text-transform: uppercase; margin-bottom: 4px;">
+            ROOM 04 // PERSONAL MANIFESTO
+          </div>
+          <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; color: var(--texte); margin: 0 0 6px;">
+            Behind the Curtain
+          </h3>
+          <p style="font-size: 0.84rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 1rem;">
+            Why I take physical objects apart, refuse black-box friction, and obsess over turning boring tasks into calm flows.
+          </p>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--ligne); padding-top: 8px;">
+          <span>Read Manifesto</span>
+          <span>→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM METRICS & EXIT BAR -->
+  <footer style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ligne); padding-top: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <div>
+      <span>THE ANTECHAMBER · FOYER // VOL. 02</span>
+    </div>
+    <div>
+      <a href="{{ '/' | relative_url }}" style="color: var(--texte-doux); text-decoration: none;">Exit to Main Portfolio →</a>
     </div>
   </footer>
 
 </div>
-
-<!-- INTERACTIVE SCRIPTS: FILMSTRIP SWITCHER & WEB AUDIO -->
-<script>
-  // 1. Interactive Filmstrip Plate Switcher for Nadia's Real Photos
-  const platesData = {
-    '01': {
-      badge: 'FRAME 01 // ARCHITECTURAL FORM',
-      title: 'Glass Reflections & Pale Sky',
-      desc: 'Towering clouds meeting modern glass facades. Exploring how crisp architectural geometry and tinted glass dialogue with open atmospheric light.',
-      lens: 'PHOTO BY NADIA',
-      subject: 'URBAN FACADES',
-      imgId: 'plate-img-01'
-    },
-    '02': {
-      badge: 'FRAME 02 // ORGANIC & RIGID',
-      title: 'Palm Silhouettes & Balcony Grids',
-      desc: 'A sharp natural silhouette cutting through the repetitive geometric grid of residential balconies and air conditioning units.',
-      lens: 'PHOTO BY NADIA',
-      subject: 'FOREGROUND DEPTH',
-      imgId: 'plate-img-02'
-    },
-    '03': {
-      badge: 'FRAME 03 // TRANSIT GEOMETRY',
-      title: 'Concrete Slab & Glazed Reflections',
-      desc: 'Vanishing perspective across a transit platform. Cold concrete joints intersecting with crisp glass banister reflections.',
-      lens: 'PHOTO BY NADIA',
-      subject: 'TRANSIT INFRASTRUCTURE',
-      imgId: 'plate-img-03'
-    },
-    '04': {
-      badge: 'FRAME 04 // SKYLINE & STAR STRUCTURE',
-      title: 'The Wireframe Star & Sunset',
-      desc: 'A geometric star sculpture floating above urban apartment blocks against an intense warm ochre sky gradient.',
-      lens: 'PHOTO BY NADIA',
-      subject: 'SKYLINE & GEOMETRY',
-      imgId: 'plate-img-04'
-    }
-  };
-
-  document.querySelectorAll('.filmstrip-thumb').forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      const plateKey = thumb.getAttribute('data-plate');
-      const data = platesData[plateKey];
-      if (!data) return;
-
-      // Update active thumb
-      document.querySelectorAll('.filmstrip-thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-
-      // Update text
-      document.getElementById('active-plate-badge').textContent = data.badge;
-      document.getElementById('active-plate-title').textContent = data.title;
-      document.getElementById('active-plate-desc').textContent = data.desc;
-      document.getElementById('active-plate-lens').textContent = data.lens;
-      document.getElementById('active-plate-subject').textContent = data.subject;
-
-      // Switch Photo
-      ['plate-img-01', 'plate-img-02', 'plate-img-03', 'plate-img-04'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = (id === data.imgId) ? 'block' : 'none';
-      });
-    });
-  });
-
-  // 2. Web Audio Synthesizer
-  let audioCtx = null;
-
-  function initAudio() {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-  }
-
-  function playTone(freq) {
-    initAudio();
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    const filter = audioCtx.createBiquadFilter();
-
-    const waveType = document.getElementById('synth-wave').value;
-    const filterVal = document.getElementById('synth-filter').value;
-
-    osc.type = waveType;
-    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-
-    filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(filterVal, audioCtx.currentTime);
-
-    // ADSR Envelope
-    const now = audioCtx.currentTime;
-    gain.gain.setValueAtTime(0, now);
-    gain.gain.linearRampToValueAtTime(0.25, now + 0.03);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.65);
-
-    osc.connect(filter);
-    filter.connect(gain);
-    gain.connect(audioCtx.destination);
-
-    // Visual pulse across stages
-    const stageOsc = document.getElementById('stage-osc');
-    const stageFilter = document.getElementById('stage-filter');
-    const stageEnv = document.getElementById('stage-env');
-    const stageOut = document.getElementById('stage-out');
-
-    function pulseStage(el, color, delay) {
-      if (!el) return;
-      setTimeout(() => {
-        el.style.borderColor = color;
-        el.style.transform = 'translateY(-2px)';
-        el.style.boxShadow = `0 4px 12px ${color}33`;
-        setTimeout(() => {
-          el.style.borderColor = 'var(--ligne)';
-          el.style.transform = 'none';
-          el.style.boxShadow = 'none';
-        }, 280);
-      }, delay);
-    }
-
-    pulseStage(stageOsc, '#c084fc', 0);
-    pulseStage(stageFilter, '#38bdf8', 35);
-    pulseStage(stageEnv, '#f0714b', 70);
-    pulseStage(stageOut, '#4ade80', 105);
-
-    osc.start(now);
-    osc.stop(now + 0.7);
-  }
-
-  const waveSelect = document.getElementById('synth-wave');
-  const filterInput = document.getElementById('synth-filter');
-  const filterDisplay = document.getElementById('synth-filter-display');
-  const flowOscLabel = document.getElementById('flow-osc-label');
-  const flowFilterLabel = document.getElementById('flow-filter-label');
-
-  if (filterInput && filterDisplay && flowFilterLabel) {
-    filterInput.addEventListener('input', () => {
-      const val = filterInput.value;
-      filterDisplay.textContent = `${val} Hz`;
-      flowFilterLabel.textContent = `${val} Hz`;
-    });
-  }
-
-  if (waveSelect && flowOscLabel) {
-    waveSelect.addEventListener('change', () => {
-      const map = {
-        triangle: 'Triangle',
-        sine: 'Sine',
-        sawtooth: 'Sawtooth',
-        square: 'Square'
-      };
-      flowOscLabel.textContent = map[waveSelect.value] || waveSelect.value;
-    });
-  }
-
-  document.querySelectorAll('.synth-key').forEach(key => {
-    key.addEventListener('pointerdown', (e) => {
-      e.preventDefault();
-      const freq = parseFloat(key.getAttribute('data-freq'));
-      playTone(freq);
-      key.style.transform = 'translateY(2px)';
-      key.style.borderColor = 'var(--accent)';
-      key.style.background = 'rgba(168, 85, 247, 0.25)';
-    });
-
-    const resetKey = () => {
-      key.style.transform = 'none';
-      key.style.borderColor = 'var(--ligne)';
-      key.style.background = 'var(--fond-carte)';
-    };
-
-    key.addEventListener('pointerup', resetKey);
-    key.addEventListener('pointerleave', resetKey);
-  });
-</script>

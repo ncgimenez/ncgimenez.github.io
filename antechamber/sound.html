@@ -1,0 +1,241 @@
+---
+layout: antechamber
+title: Sound Lab · Web Audio & Signals | The Antechamber
+permalink: /antechamber/sound.html
+---
+
+<div class="art-poster-canvas">
+
+  <!-- CORNER REGISTRATION MARKS -->
+  <span class="corner-mark corner-tl">+</span>
+  <span class="corner-mark corner-tr">+</span>
+  <span class="corner-mark corner-bl">+</span>
+  <span class="corner-mark corner-br">+</span>
+
+  <!-- TOP HEADER STRIP -->
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ligne); padding-bottom: 1rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="{{ '/antechamber/' | relative_url }}" style="color: var(--accent-fonce); text-decoration: none;">← Foyer</a>
+      <span style="color: var(--ligne);">/</span>
+      <span>ROOM 02 // SOUND LAB</span>
+    </div>
+    <div>
+      <span>AUDIO ENGINE: 48000 HZ · ZERO-LATENCY</span>
+    </div>
+  </div>
+
+  <header style="margin-bottom: 2rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px;">
+      ACOUSTIC LOGIC &amp; SUBTRACTIVE SYNTHESIS
+    </div>
+    <h1 style="font-family: var(--font-poster-sans); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; text-transform: uppercase; margin: 0 0 0.5rem; color: var(--texte);">
+      Sound Lab
+    </h1>
+    <p style="font-family: var(--font-poster-serif); font-size: 1.3rem; font-style: italic; color: var(--texte-doux); margin: 0; line-height: 1.4; max-width: 640px;">
+      “Sound is not recorded; it is computed. Generating tactile acoustic air pressure straight from CPU equations inside the browser with 0 kB payload.”
+    </p>
+  </header>
+
+  <!-- LIVE SYNTHESIZER BENCH -->
+  <div class="audio-bench-card" style="margin-bottom: 2rem; padding: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 10px;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.75rem; color: #c084fc; text-transform: uppercase; letter-spacing: 0.08em;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 10px #4ade80;"></span>
+        HARDWARE BENCH // SUBTRACTIVE CHAIN
+      </span>
+      <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); text-transform: uppercase;">
+        Native Web Audio API · 0ms Latency
+      </span>
+    </div>
+
+    <!-- SIGNAL PIPELINE STAGES -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.5rem; padding: 12px; background: rgba(0,0,0,0.25); border-radius: 8px; border: 1px solid var(--ligne);">
+      <div id="stage-osc" style="padding: 10px 6px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.65rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">1. Source</div>
+        <div style="font-size: 0.88rem; font-weight: 700; color: #c084fc; margin-top: 2px;">Oscillator</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 2px;" id="flow-osc-label">Triangle</div>
+      </div>
+      <div id="stage-filter" style="padding: 10px 6px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.65rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">2. Sculpture</div>
+        <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-top: 2px;">Biquad Filter</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 2px;" id="flow-filter-label">1800 Hz</div>
+      </div>
+      <div id="stage-env" style="padding: 10px 6px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.65rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">3. Dynamics</div>
+        <div style="font-size: 0.88rem; font-weight: 700; color: #f0714b; margin-top: 2px;">ADSR Envelope</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 2px;">40ms / 700ms</div>
+      </div>
+      <div id="stage-out" style="padding: 10px 6px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-size: 0.65rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">4. Rendering</div>
+        <div style="font-size: 0.88rem; font-weight: 700; color: #4ade80; margin-top: 2px;">DAC Out</div>
+        <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 2px;">Speakers / Headphones</div>
+      </div>
+    </div>
+
+    <!-- SYNTHESIZER KEYBOARD -->
+    <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 1.75rem;">
+      <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">C4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">261 Hz</span></button>
+      <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">D4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">293 Hz</span></button>
+      <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">E4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">329 Hz</span></button>
+      <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">F4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">349 Hz</span></button>
+      <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">G4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">392 Hz</span></button>
+      <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">A4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">440 Hz</span></button>
+      <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 22px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">B4<br><span style="font-size: 0.68rem; font-weight: 400; color: var(--texte-mute);">494 Hz</span></button>
+    </div>
+
+    <!-- PRECISION CONTROLS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--ligne);">
+      <div>
+        <label for="synth-wave" style="display: block; margin-bottom: 6px; font-weight: 600; font-family: var(--font-mono); font-size: 0.78rem; color: var(--texte);">1. Waveform Shape</label>
+        <select id="synth-wave" style="width: 100%; background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 8px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem;">
+          <option value="triangle" selected>Triangle (Warm &amp; mellow)</option>
+          <option value="sine">Sine (Pure fundamental, 0 harmonics)</option>
+          <option value="sawtooth">Sawtooth (Sharp &amp; harmonic-rich)</option>
+          <option value="square">Square (Vintage 8-bit pulse)</option>
+        </select>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <label for="synth-filter" style="font-weight: 600; font-family: var(--font-mono); font-size: 0.78rem; color: var(--texte);">2. Cutoff Frequency</label>
+          <span id="synth-filter-display" style="font-family: var(--font-mono); font-size: 0.78rem; color: #38bdf8;">1800 Hz</span>
+        </div>
+        <input type="range" id="synth-filter" min="200" max="4000" value="1800" style="width: 100%; vertical-align: middle; accent-color: var(--accent);">
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEMS & CRAFT CORRELATION -->
+  <div style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-fonce); text-transform: uppercase; margin-bottom: 4px;">
+      CROSS-DISCIPLINARY ARCHITECTURE
+    </div>
+    <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; margin: 0 0 8px; color: var(--texte);">
+      Why Audio DSP Matters to Software Engineering
+    </h3>
+    <p style="font-size: 0.9rem; color: var(--texte-doux); line-height: 1.6; margin: 0;">
+      A synthesizer chain and an enterprise order pipeline operate on the exact same mathematical principle: <em>continuous transformation without data loss.</em> In an audio bus, raw voltage is filtered and shaped across discreet stages. In software design, raw user intent is validated, buffered, and projected without lag or redundant network fetches.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ligne); padding-top: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
+    <span>ROOM 02 // SOUND LAB · NCG-2026</span>
+    <a href="{{ '/antechamber/notes.html' | relative_url }}" style="color: var(--accent); text-decoration: none; font-weight: 600;">
+      Next: Room 03 — Reading &amp; Notes →
+    </a>
+  </footer>
+
+</div>
+
+<!-- WEB AUDIO SCRIPT -->
+<script>
+  let audioCtx = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
+  function playTone(freq) {
+    initAudio();
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+
+    const waveType = document.getElementById('synth-wave').value;
+    const filterVal = document.getElementById('synth-filter').value;
+
+    osc.type = waveType;
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(filterVal, audioCtx.currentTime);
+
+    const now = audioCtx.currentTime;
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(0.28, now + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    const stageOsc = document.getElementById('stage-osc');
+    const stageFilter = document.getElementById('stage-filter');
+    const stageEnv = document.getElementById('stage-env');
+    const stageOut = document.getElementById('stage-out');
+
+    function pulseStage(el, color, delay) {
+      if (!el) return;
+      setTimeout(() => {
+        el.style.borderColor = color;
+        el.style.transform = 'translateY(-2px)';
+        el.style.boxShadow = `0 4px 12px ${color}33`;
+        setTimeout(() => {
+          el.style.borderColor = 'var(--ligne)';
+          el.style.transform = 'none';
+          el.style.boxShadow = 'none';
+        }, 300);
+      }, delay);
+    }
+
+    pulseStage(stageOsc, '#c084fc', 0);
+    pulseStage(stageFilter, '#38bdf8', 40);
+    pulseStage(stageEnv, '#f0714b', 80);
+    pulseStage(stageOut, '#4ade80', 120);
+
+    osc.start(now);
+    osc.stop(now + 0.75);
+  }
+
+  const waveSelect = document.getElementById('synth-wave');
+  const filterInput = document.getElementById('synth-filter');
+  const filterDisplay = document.getElementById('synth-filter-display');
+  const flowOscLabel = document.getElementById('flow-osc-label');
+  const flowFilterLabel = document.getElementById('flow-filter-label');
+
+  if (filterInput && filterDisplay && flowFilterLabel) {
+    filterInput.addEventListener('input', () => {
+      const val = filterInput.value;
+      filterDisplay.textContent = `${val} Hz`;
+      flowFilterLabel.textContent = `${val} Hz`;
+    });
+  }
+
+  if (waveSelect && flowOscLabel) {
+    waveSelect.addEventListener('change', () => {
+      const map = {
+        triangle: 'Triangle',
+        sine: 'Sine',
+        sawtooth: 'Sawtooth',
+        square: 'Square'
+      };
+      flowOscLabel.textContent = map[waveSelect.value] || waveSelect.value;
+    });
+  }
+
+  document.querySelectorAll('.synth-key').forEach(key => {
+    key.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      const freq = parseFloat(key.getAttribute('data-freq'));
+      playTone(freq);
+      key.style.transform = 'translateY(2px)';
+      key.style.borderColor = 'var(--accent)';
+      key.style.background = 'rgba(168, 85, 247, 0.25)';
+    });
+
+    const resetKey = () => {
+      key.style.transform = 'none';
+      key.style.borderColor = 'var(--ligne)';
+      key.style.background = 'var(--fond-carte)';
+    };
+
+    key.addEventListener('pointerup', resetKey);
+    key.addEventListener('pointerleave', resetKey);
+  });
+</script>

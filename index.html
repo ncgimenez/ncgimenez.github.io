@@ -6,20 +6,20 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
 <div class="open-canvas-container">
 
   <!-- ============================================================
-       HERO : AIRY, DIRECT, UNBOXED (PERRY WANG / BRADLEY ZIFFER)
+       HERO : AIRY, DIRECT, MONOCHROME (PERRY WANG / BRADLEY ZIFFER)
        ============================================================ -->
-  <header style="padding: 5rem 0 5rem; max-width: 860px;">
-    <h1 style="font-size: clamp(2.5rem, 5.8vw, 4.2rem); line-height: 1.08; letter-spacing: -0.04em; font-weight: 800; margin: 0 0 1.5rem; color: var(--texte);">
+  <header style="padding: 5.5rem 0 5rem; max-width: 860px;">
+    <h1 style="font-size: clamp(2.6rem, 5.8vw, 4.2rem); line-height: 1.08; letter-spacing: -0.04em; font-weight: 800; margin: 0 0 1.5rem; color: var(--texte);">
       Product Designer &amp;<br>
       <span style="color: var(--texte-doux); font-weight: 500;">Design Engineer.</span>
     </h1>
 
-    <p style="font-size: clamp(1.15rem, 2.2vw, 1.35rem); line-height: 1.55; color: var(--texte); margin: 0 0 2.25rem; max-width: 720px; opacity: 0.92;">
+    <p style="font-size: clamp(1.15rem, 2.2vw, 1.35rem); line-height: 1.6; color: var(--texte); margin: 0 0 2.25rem; max-width: 720px; opacity: 0.92;">
       I spent years inside the mechanics of SAP and Odoo architectures, where one rigid interface forces entire teams onto fragile spreadsheets. Today, I bridge that gap: engineering fast, opinionated web applications that turn heavy data flows into obvious, effortless interactions.
     </p>
 
     <div style="display: flex; gap: 20px; font-family: var(--font-mono); font-size: 0.85rem; flex-wrap: wrap;">
-      <a href="#work" style="color: var(--accent); text-decoration: none; font-weight: 600;">Selected Work ↓</a>
+      <a href="#work" style="color: var(--texte); text-decoration: none; font-weight: 600; border-bottom: 1.5px solid var(--texte); padding-bottom: 2px;">Selected Work ↓</a>
       <span style="color: var(--texte-muté);">·</span>
       <a href="{{ '/about.html' | relative_url }}" style="color: var(--texte-doux); text-decoration: none;">Background &amp; Story →</a>
       <span style="color: var(--texte-muté);">·</span>
@@ -36,12 +36,12 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
     <article class="open-project-spread">
       <div class="open-project-header">
         <div class="open-project-meta">
-          <span>01 / 03 · SHIPPED SOFTWARE</span>
+          <span>01 / 03 · SHIPPED PRODUCTION SOFTWARE</span>
           <span>SPAN SUITE // 2025</span>
         </div>
         <h2 class="open-project-title">Span Focus &amp; Span Plan</h2>
         <p class="open-project-summary">
-          A two-part execution &amp; scheduling suite built to break the endless to-do list trap. Separating high-level morning scheduling from single-task execution blocks, with zero backlog guilt.
+          A two-part execution &amp; scheduling suite built to break the endless to-do list trap. Decoupling high-level morning scheduling from single-task execution blocks, with zero backlog guilt.
         </p>
         <div class="open-project-actions">
           <a class="open-action-link" href="{{ '/projects/span-suite.html' | relative_url }}">
@@ -59,77 +59,114 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
         </div>
       </div>
 
-      <!-- IMMERSIVE VISUAL STAGE (MIKE MATAS STYLE : DUAL LIVING WORKBENCH) -->
+      <!-- IMMERSIVE VISUAL STAGE : DUAL DESKTOP & MOBILE HARDWARE FRAME -->
       <div class="open-stage-frame">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2.5rem; align-items: stretch;">
+        <div style="display: grid; grid-template-columns: 1.4fr 0.85fr; gap: 3rem; align-items: center;">
 
-          <!-- STAGE LEFT : SPAN FOCUS LIVE INTERACTIVE TIMER -->
-          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #08060f; border: 1px solid rgba(157, 92, 255, 0.25); border-radius: 12px; padding: 2.25rem 1.5rem;">
-            <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #a855f7; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; display: flex; align-items: center; gap: 6px;">
-              <span style="width: 7px; height: 7px; border-radius: 50%; background: #4ade80;"></span>
-              <span>SPAN FOCUS · LIVE SPECIMEN</span>
-            </div>
-
-            <!-- Living circular timer SVG -->
-            <div style="position: relative; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center;">
-              <svg width="150" height="150" viewBox="0 0 150 150">
-                <circle cx="75" cy="75" r="62" stroke="rgba(255,255,255,0.08)" stroke-width="6" fill="none" />
-                <circle id="home-timer-ring" cx="75" cy="75" r="62" stroke="#9d5cff" stroke-width="6" stroke-dasharray="390" stroke-dashoffset="0" stroke-linecap="round" fill="none" style="transition: stroke-dashoffset 0.5s ease; filter: drop-shadow(0 0 10px rgba(157, 92, 255, 0.6));" />
-              </svg>
-              <div style="position: absolute; text-align: center;">
-                <div id="home-timer-digits" style="font-family: var(--font-mono); font-size: 1.9rem; font-weight: 800; color: #f4f2f7; line-height: 1;">25:00</div>
-                <div id="home-timer-label" style="font-size: 0.65rem; color: #9d96aa; text-transform: uppercase; margin-top: 4px; font-family: var(--font-mono);">Focus Block</div>
+          <!-- DESKTOP MOCKUP FRAME (SPAN PLAN DAILY BUFFER) -->
+          <div style="background: #0d0d11; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6); overflow: hidden;">
+            <!-- Browser / App Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid rgba(255, 255, 255, 0.07); font-family: var(--font-mono); font-size: 0.68rem; color: #71717a;">
+              <div style="display: flex; gap: 6px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #27272a;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #27272a;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #27272a;"></span>
               </div>
+              <span style="color: #a1a1aa; letter-spacing: 0.05em;">SPAN PLAN · DESKTOP WORKSPACE</span>
+              <span style="color: #4ade80;">● LOCAL-FIRST</span>
             </div>
 
-            <button type="button" id="home-timer-toggle-btn" class="interactive-dial-btn" style="margin-top: 18px;">
-              <span>▶ Start Sprint</span>
-            </button>
-            <div style="font-family: var(--font-mono); font-size: 0.66rem; color: #6d667a; margin-top: 10px;">
-              Press <kbd style="background: rgba(255,255,255,0.1); padding: 1px 4px; border-radius: 3px;">Space</kbd> or click to feel Web Audio latch
+            <!-- Schedule Canvas Body -->
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #fafafa; font-weight: 600;">THURSDAY · OCTOBER 25</span>
+                <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #a1a1aa;">4.5H COMMITTED // 2.5H PROTECTED BUFFER</span>
+              </div>
+
+              <!-- Calendar Event 1 -->
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: rgba(255, 255, 255, 0.03); border-left: 3px solid #71717a; border-radius: 6px;">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 600; color: #fafafa;">09:30 · Systems Architecture Sync</div>
+                  <div style="font-size: 0.68rem; color: #71717a; font-family: var(--font-mono);">Fixed Calendar Event (45m)</div>
+                </div>
+                <span style="font-size: 0.75rem; color: #71717a; font-family: var(--font-mono);">LOCKED</span>
+              </div>
+
+              <!-- Calendar Event 2 (Focus Buffer) -->
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: rgba(168, 85, 247, 0.08); border-left: 3px solid #a855f7; border-radius: 6px;">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 700; color: #fafafa;">11:00 · S/4HANA Condition Pricing Spec</div>
+                  <div style="font-size: 0.68rem; color: #c084fc; font-family: var(--font-mono);">Protected Deep Work Sprint (90m)</div>
+                </div>
+                <span style="padding: 3px 8px; border-radius: 4px; background: rgba(168, 85, 247, 0.2); font-family: var(--font-mono); font-size: 0.68rem; color: #c084fc;">ACTIVE SPRINT</span>
+              </div>
+
+              <!-- Calendar Event 3 -->
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: rgba(255, 255, 255, 0.03); border-left: 3px solid #71717a; border-radius: 6px;">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 600; color: #fafafa;">14:00 · Odoo Inventory Locking Review</div>
+                  <div style="font-size: 0.68rem; color: #71717a; font-family: var(--font-mono);">Fixed Operational Review (60m)</div>
+                </div>
+                <span style="font-size: 0.75rem; color: #71717a; font-family: var(--font-mono);">LOCKED</span>
+              </div>
+
+              <!-- Guilt-Free Rollover Pill -->
+              <div style="margin-top: 6px; padding: 10px 14px; border-radius: 6px; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.12); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #a1a1aa;">1 Task Rolled Over Automatically to Tomorrow</span>
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #4ade80; font-weight: 600;">No Red Alarms →</span>
+              </div>
             </div>
           </div>
 
-          <!-- STAGE RIGHT : SPAN PLAN BUFFER TIMELINE -->
-          <div style="display: flex; flex-direction: column; gap: 10px; background: #080b12; border: 1px solid rgba(2, 132, 199, 0.25); border-radius: 12px; padding: 1.75rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.08em;">
-                SPAN PLAN · DAILY BUFFER &amp; ROLLOVER
-              </span>
-              <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #4ade80;">CALM STATE</span>
-            </div>
-
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8; border-radius: 6px;">
-              <div>
-                <div style="font-size: 0.82rem; font-weight: 700; color: #f4f2f7;">09:30 · Systems Architecture Sync</div>
-                <div style="font-size: 0.68rem; color: #38bdf8; font-family: var(--font-mono);">Fixed Calendar Block (45m)</div>
+          <!-- MOBILE HANDSET FRAME (SPAN FOCUS INTERACTIVE TIMER DIAL) -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 250px; background: #000000; border: 2.5px solid #27272a; border-radius: 36px; padding: 16px 14px 22px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.03); position: relative;">
+              <!-- Dynamic Island Notch -->
+              <div style="width: 72px; height: 16px; background: #18181b; border-radius: 999px; margin: 0 auto 18px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px;">
+                <span style="width: 5px; height: 5px; border-radius: 50%; background: #27272a;"></span>
               </div>
-              <span style="font-size: 0.85rem;">🔒</span>
-            </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: rgba(157, 92, 255, 0.1); border-left: 3px solid #9d5cff; border-radius: 6px;">
-              <div>
-                <div style="font-size: 0.82rem; font-weight: 700; color: #f4f2f7;">11:00 · S/4HANA O2C Flow Audit</div>
-                <div style="font-size: 0.68rem; color: #c084fc; font-family: var(--font-mono);">Protected Focus Block (90m)</div>
+              <!-- Focus Title inside phone -->
+              <div style="text-align: center; margin-bottom: 14px;">
+                <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.08em;">SPAN FOCUS</div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #fafafa; margin-top: 2px;">Deep Work Sprint</div>
               </div>
-              <span style="font-size: 0.85rem;">⚡</span>
-            </div>
 
-            <div style="padding: 10px 14px; border-radius: 6px; background: rgba(255, 255, 255, 0.03); border: 1px dashed rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
-              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">1 Rolled Over Task</span>
-              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #4ade80; font-weight: 600;">No Red Badges →</span>
+              <!-- Circular Progress SVG inside phone -->
+              <div style="position: relative; width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                <svg width="140" height="140" viewBox="0 0 140 140">
+                  <circle cx="70" cy="70" r="56" stroke="rgba(255,255,255,0.06)" stroke-width="5" fill="none" />
+                  <circle id="home-timer-ring" cx="70" cy="70" r="56" stroke="#ffffff" stroke-width="5" stroke-dasharray="352" stroke-dashoffset="0" stroke-linecap="round" fill="none" style="transition: stroke-dashoffset 0.5s ease; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));" />
+                </svg>
+                <div style="position: absolute; text-align: center;">
+                  <div id="home-timer-digits" style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 800; color: #ffffff; line-height: 1;">25:00</div>
+                  <div id="home-timer-label" style="font-size: 0.6rem; color: #71717a; text-transform: uppercase; margin-top: 4px; font-family: var(--font-mono);">Focus Block</div>
+                </div>
+              </div>
+
+              <!-- Play / Pause trigger button -->
+              <div style="text-align: center; margin-top: 18px;">
+                <button type="button" id="home-timer-toggle-btn" class="interactive-dial-btn" style="background: #ffffff; color: #000000; border: none; font-weight: 700; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);">
+                  <span>▶ Start Sprint</span>
+                </button>
+              </div>
+
+              <div style="font-family: var(--font-mono); font-size: 0.62rem; color: #52525b; text-align: center; margin-top: 14px;">
+                Tactile Web Audio latch
+              </div>
             </div>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #71717a; margin-top: 10px;">MOBILE PWA SPECIMEN</span>
           </div>
 
         </div>
       </div>
     </article>
 
-    <!-- ==================== PROJECT 02 : SNCB TRANSIT ==================== -->
+    <!-- ==================== PROJECT 02 : SNCB TRANSIT BLUEPRINT ==================== -->
     <article class="open-project-spread">
       <div class="open-project-header">
         <div class="open-project-meta">
-          <span>02 / 03 · SPATIAL UX RESEARCH &amp; SIMULATION</span>
+          <span>02 / 03 · SPATIAL UX &amp; TRANSIT BLUEPRINT</span>
           <span>SNCB // 2024</span>
         </div>
         <h2 class="open-project-title">Solving Commuter Connection Anxiety</h2>
@@ -144,39 +181,55 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
         </div>
       </div>
 
-      <!-- IMMERSIVE VISUAL STAGE -->
-      <div class="open-stage-frame" style="background: #060b13; border-color: rgba(56, 189, 248, 0.2);">
-        <div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px; margin: 0 auto;">
-          <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.7rem; color: #38bdf8;">
-            <span>PLATFORM CROSS-SECTION // BRUSSELS-MIDI</span>
-            <span>TRANSFER WINDOW: 4 MIN</span>
+      <!-- IMMERSIVE VISUAL STAGE : ARCHITECTURAL BLUEPRINT -->
+      <div class="open-stage-frame" style="background: #09090c; border: 1px solid rgba(255, 255, 255, 0.08);">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- Blueprint Meta Strip -->
+          <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.68rem; color: #71717a; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
+            <span>SCHEMATIC 2D // BRUSSELS-MIDI PLATFORM 11</span>
+            <span>TRANSFER WINDOW: 04:00 MIN · PASSENGER FLOW: OPTIMAL</span>
           </div>
 
-          <!-- Train & Platform Cross Section Graphic -->
-          <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; flex-wrap: wrap; gap: 12px; font-family: var(--font-mono);">
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="color: #64748b;">[TRAIN IC 2108]</span>
-              <span style="color: #38bdf8; font-weight: 700;">CARRIAGE 03</span>
+          <!-- Train Cutaway & Platform Alignment SVG / Graphic -->
+          <div style="background: #000000; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 2rem 1.5rem;">
+            <!-- Train Top View / Cutaway -->
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #71717a; margin-bottom: 8px;">TRAIN IC 2108 · ROLLING STOCK CARRIAGE SPEC</div>
+            <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; gap: 8px; align-items: center; border: 1.5px solid #27272a; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+              <div style="text-align: center; font-family: var(--font-mono); font-size: 0.7rem; color: #71717a; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">DOOR 1A</div>
+              <div style="text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: #a1a1aa; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">PASSENGER CABIN A (36 SEATS)</div>
+              <div style="text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: #a1a1aa; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">PASSENGER CABIN B (36 SEATS)</div>
+              <div style="text-align: center; font-family: var(--font-mono); font-size: 0.7rem; color: #ffffff; background: #27272a; border: 1px solid #3f3f46; font-weight: 700; padding: 6px; border-radius: 4px; box-shadow: 0 0 12px rgba(255,255,255,0.15);">
+                DOOR 2B 🎯
+              </div>
             </div>
-            <div style="color: #94a3b8;">➔</div>
-            <div style="padding: 4px 10px; background: rgba(74, 222, 128, 0.15); border: 1px solid #4ade80; border-radius: 4px; color: #4ade80; font-weight: 700;">
-              DOOR B (TARGET EXIT)
+
+            <!-- Alignment Transfer Path Arrow -->
+            <div style="display: flex; align-items: center; justify-content: flex-end; padding-right: 32px; margin-bottom: 16px;">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #ffffff; font-weight: 700;">DIRECT DESCENT (0m WALK)</span>
+                <span style="font-family: var(--font-mono); font-size: 1.2rem; color: #ffffff; line-height: 1;">↓</span>
+              </div>
             </div>
-            <div style="color: #94a3b8;">➔</div>
-            <div style="display: flex; align-items: center; gap: 8px; color: #f4f2f7;">
-              <span>STAIRCASE 02</span>
-              <span style="color: #4ade80; font-size: 0.7rem;">(45m PATH)</span>
+
+            <!-- Platform & Staircase Level -->
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #71717a; margin-bottom: 8px;">PLATFORM 11 SURFACE &amp; ESCALATOR DEPLOYMENT</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 220px; gap: 12px; align-items: center; border: 1.5px dashed #27272a; border-radius: 8px; padding: 14px;">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #71717a;">PLATFORM WEST SECTOR</div>
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #71717a;">MIDWAY TACTILE PAVING</div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                STAIRCASE 02 ➔ CONNECTING LINE (45s)
+              </div>
             </div>
           </div>
 
-          <p style="font-size: 0.88rem; color: var(--texte-doux); margin: 0; line-height: 1.6;">
-            Eliminating cognitive transit anxiety by answering the passenger's question 5 minutes prior to arrival, while they are still seated.
-          </p>
+          <div style="font-size: 0.92rem; color: var(--texte-doux); line-height: 1.6; max-width: 680px;">
+            By resolving the spatial relationship between train doors and station staircases 5 minutes prior to arrival, passenger transfer anxiety drops to zero before their feet touch the platform.
+          </div>
         </div>
       </div>
     </article>
 
-    <!-- ==================== PROJECT 03 : SAP S/4HANA ==================== -->
+    <!-- ==================== PROJECT 03 : SAP S/4HANA PIPELINE ==================== -->
     <article class="open-project-spread">
       <div class="open-project-header">
         <div class="open-project-meta">
@@ -195,23 +248,42 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
         </div>
       </div>
 
-      <!-- IMMERSIVE VISUAL STAGE -->
-      <div class="open-stage-frame" style="background: #110906; border-color: rgba(180, 80, 45, 0.25);">
-        <div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px; margin: 0 auto;">
-          <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.7rem; color: #f0714b;">
-            <span>SYSTEM AUDIT // CONDITION PRICING FLOW</span>
-            <span>DISCREPANCY RATE: 0.0%</span>
+      <!-- IMMERSIVE VISUAL STAGE : DATA PIPELINE ARCHITECTURE -->
+      <div class="open-stage-frame" style="background: #09090c; border: 1px solid rgba(255, 255, 255, 0.08);">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- Pipeline Meta Strip -->
+          <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.68rem; color: #71717a; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
+            <span>DATA INTEGRITY PIPELINE // ORDER ENTRY TO SETTLEMENT</span>
+            <span>AUDIT DISCREPANCIES: 0.0%</span>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-            <div style="padding: 16px; background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 8px; font-family: var(--font-mono); font-size: 0.75rem;">
-              <div style="color: #ef4444; font-weight: 700; margin-bottom: 6px;">✕ BEFORE: SHADOW WORKFLOWS</div>
-              <div style="color: #fca5a5; line-height: 1.5;">Offline Excel pricing calculators with zero audit trail, causing recurring month-end billing disputes.</div>
+          <!-- Pipeline Architecture Grid -->
+          <div style="display: grid; grid-template-columns: 1fr auto 1.3fr auto 1fr; gap: 12px; align-items: center; background: #000000; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 2rem 1.5rem;">
+            <!-- Step 1 : Shadow State -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.72rem;">
+              <div style="color: #ef4444; font-weight: 700; margin-bottom: 6px;">SHADOW WORKFLOWS</div>
+              <div style="color: #71717a; line-height: 1.45;">Rogue Excel pricing calculators with manual multi-currency overrides.</div>
             </div>
-            <div style="padding: 16px; background: rgba(74, 222, 128, 0.06); border: 1px solid rgba(74, 222, 128, 0.25); border-radius: 8px; font-family: var(--font-mono); font-size: 0.75rem;">
-              <div style="color: #4ade80; font-weight: 700; margin-bottom: 6px;">✓ AFTER: ATOMIC SAP RECORDS</div>
-              <div style="color: #86efac; line-height: 1.5;">Standardized condition techniques directly inside S/4HANA core, eliminating manual workarounds.</div>
+
+            <div style="font-family: var(--font-mono); color: #71717a; font-size: 1.2rem;">➔</div>
+
+            <!-- Step 2 : S/4HANA Core Engine -->
+            <div style="background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 18px 16px; font-family: var(--font-mono); font-size: 0.75rem; box-shadow: 0 0 25px rgba(255,255,255,0.05);">
+              <div style="color: #ffffff; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 6px;">ATOMIC PRICING CORE</div>
+              <div style="color: #a1a1aa; line-height: 1.5;">Condition technique access sequences enforced at sales order entry. Zero manual overrides.</div>
             </div>
+
+            <div style="font-family: var(--font-mono); color: #71717a; font-size: 1.2rem;">➔</div>
+
+            <!-- Step 3 : Clean Settlement -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.72rem;">
+              <div style="color: #4ade80; font-weight: 700; margin-bottom: 6px;">CLEAN LEDGER</div>
+              <div style="color: #71717a; line-height: 1.45;">Automated month-end revenue recognition and zero dispute backlog.</div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.92rem; color: var(--texte-doux); line-height: 1.6; max-width: 680px;">
+            Eliminated month-end billing disputes across international subsidiaries by enforcing architectural constraints directly within the ERP core rather than trying to police human behavior.
           </div>
         </div>
       </div>
@@ -222,8 +294,8 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
   <!-- ============================================================
        SECTION 2 : WRITING & EXPLORATIONS (EDITORIAL BOOK INDEX)
        ============================================================ -->
-  <section style="margin-top: 4rem; padding-bottom: 3rem;">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--ligne); padding-bottom: 1rem; flex-wrap: wrap; gap: 10px;">
+  <section style="margin-top: 5rem; padding-bottom: 4rem;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--ligne); padding-bottom: 1.25rem; flex-wrap: wrap; gap: 10px;">
       <h2 style="font-size: 1.6rem; letter-spacing: -0.03em; margin: 0; color: var(--texte);">Writing &amp; Explorations</h2>
       <a href="{{ '/blog/' | relative_url }}" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--texte-doux); text-decoration: none;">All Notes →</a>
     </div>
@@ -267,7 +339,7 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
     if (!toggleBtn || !digits || !ring) return;
 
     const TOTAL_SECONDS = 25 * 60; // 25 mins
-    const CIRCUMFERENCE = 390;
+    const CIRCUMFERENCE = 352;
     let remaining = TOTAL_SECONDS;
     let timerId = null;
 
@@ -311,7 +383,7 @@ title: Nadia Cañadas Giménez · Product Designer & Design Engineer
       } else {
         toggleBtn.innerHTML = '<span>⏸ Pause Sprint</span>';
         label.textContent = 'Focusing...';
-        label.style.color = '#4ade80';
+        label.style.color = '#ffffff';
 
         timerId = setInterval(() => {
           if (remaining > 0) {

@@ -284,23 +284,25 @@
       background: rgba(168, 85, 247, 0.1);
     }
 
-    /* RESPONSIVE MOBILE BAR (@media max-width: 900px) */
-    .antechamber-mobile-header {
-      display: none;
+    /* RESPONSIVE MOBILE BAR (HIDDEN BY DEFAULT ON DESKTOP) */
+    .antechamber-mobile-header,
+    .mobile-rooms-drawer {
+      display: none !important;
     }
 
     @media (max-width: 900px) {
       .antechamber-sidebar-right {
-        display: none;
+        display: none !important;
       }
 
       .antechamber-main-viewport {
-        padding: 1.25rem 1.25rem 4rem;
-        margin-right: 0;
+        padding: 1.25rem 1.25rem 4rem !important;
+        margin-right: 0 !important;
+        width: 100% !important;
       }
 
       .antechamber-mobile-header {
-        display: flex;
+        display: flex !important;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.25rem;
@@ -312,7 +314,7 @@
       }
 
       .mobile-rooms-drawer {
-        display: flex;
+        display: flex !important;
         gap: 8px;
         overflow-x: auto;
         padding: 10px 1.25rem;

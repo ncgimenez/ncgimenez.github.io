@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.7' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.8' | relative_url }}">
 
   <style>
     /* ============================================================
@@ -16,11 +16,12 @@
 
     /* 1. Mode sombre (PAR DÉFAUT) : Neon Workshop & Ultraviolet Noir */
     :root,
-    :root[data-theme="dark"],
-    :root:not([data-theme="light"]) {
+    :root[data-theme="dark"] {
       --fond: #0b0912 !important;
       --fond-carte: #14111f !important;
       --fond-carte-hover: #1c182d !important;
+      --canvas-bg: #0d0a16 !important;
+      --sub-card-bg: #120e20 !important;
       --texte: #f4eeff !important;
       --texte-doux: #9d91ba !important;
       --texte-mute: #6b5f88 !important;
@@ -31,6 +32,8 @@
       --ligne: #27203b !important;
       --ligne-fine: rgba(255, 255, 255, 0.08);
       --halo-couleur: rgba(168, 85, 247, 0.16);
+      --shadow-poster: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 80px rgba(168, 85, 247, 0.08);
+      --stage-mat-bg: #08060e;
       --font-poster-sans: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-poster-serif: 'Instrument Serif', Georgia, serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -41,6 +44,8 @@
       --fond: #f2edf7 !important;
       --fond-carte: #ffffff !important;
       --fond-carte-hover: #f9f7fc !important;
+      --canvas-bg: #faf7fd !important;
+      --sub-card-bg: #ffffff !important;
       --texte: #1d1929 !important;
       --texte-doux: #5f5478 !important;
       --texte-mute: #8c82a5 !important;
@@ -50,7 +55,9 @@
       --accent-cyan: #0284c7 !important;
       --ligne: #ded4ea !important;
       --ligne-fine: rgba(0, 0, 0, 0.08);
-      --halo-couleur: rgba(126, 34, 206, 0.07);
+      --halo-couleur: rgba(126, 34, 206, 0.08);
+      --shadow-poster: 0 16px 40px rgba(95, 84, 120, 0.1);
+      --stage-mat-bg: #130f1d;
     }
 
     /* Halo lumineux d'ambiance et grain */
@@ -60,8 +67,8 @@
         radial-gradient(ellipse 90% 60% at 50% -10%, var(--halo-couleur), transparent),
         radial-gradient(ellipse 60% 40% at 85% 60%, rgba(56, 189, 248, 0.05), transparent) !important;
       background-repeat: no-repeat !important;
-      transition: background-color 0.25s ease;
-      color: var(--texte);
+      transition: background-color 0.25s ease, color 0.25s ease;
+      color: var(--texte) !important;
     }
 
     /* ============================================================
@@ -71,11 +78,12 @@
       max-width: 1240px;
       margin: 1.5rem auto 4rem;
       padding: 2rem 2.5rem;
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      background: #0d0a16;
+      border: 1px solid var(--ligne) !important;
+      background: var(--canvas-bg) !important;
       position: relative;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 80px rgba(168, 85, 247, 0.08);
-      border-radius: 4px;
+      box-shadow: var(--shadow-poster) !important;
+      border-radius: 6px;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
     }
 
     @media (max-width: 768px) {
@@ -161,8 +169,8 @@
       gap: 6px;
       padding: 4px 12px;
       border-radius: 999px;
-      background: rgba(168, 85, 247, 0.15);
-      border: 1px solid rgba(168, 85, 247, 0.4);
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.35);
       color: var(--accent-fonce);
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -197,17 +205,17 @@
       margin: 0;
     }
 
-    .poster-article-italic {
-      font-family: var(--font-poster-serif);
-      font-style: italic;
-      font-weight: 400;
-      text-transform: lowercase;
-      font-size: 0.55em;
+    /* "THE" in small uppercase matching the same font */
+    .poster-the-small {
+      font-family: inherit;
+      font-size: 0.38em;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--accent-fonce);
-      letter-spacing: 0.02em;
-      margin-right: 0.15rem;
-      vertical-align: 0.08em;
       display: inline-block;
+      vertical-align: 0.22em;
+      margin-right: 0.45rem;
     }
 
     .poster-title-highlight {
@@ -243,22 +251,23 @@
 
     /* Exhibition Frame (The Lens & Filmstrip) */
     .exhibition-view-card {
-      background: #120e20;
-      border: 1px solid var(--ligne);
+      background: var(--sub-card-bg) !important;
+      border: 1px solid var(--ligne) !important;
       border-radius: 8px;
       padding: 1.25rem;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: background-color 0.25s ease;
     }
 
     .exhibition-frame-stage {
       position: relative;
       width: 100%;
       aspect-ratio: 16/10;
-      background: #090710;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--stage-mat-bg) !important;
+      border: 1px solid var(--ligne-fine);
       border-radius: 6px;
       overflow: hidden;
       margin-bottom: 1rem;
@@ -276,8 +285,8 @@
     }
 
     .filmstrip-thumb {
-      background: #171228;
-      border: 1px solid var(--ligne);
+      background: var(--fond-carte) !important;
+      border: 1px solid var(--ligne) !important;
       border-radius: 4px;
       padding: 6px;
       cursor: pointer;
@@ -288,13 +297,13 @@
 
     .filmstrip-thumb:hover,
     .filmstrip-thumb.active {
-      border-color: var(--accent);
-      background: rgba(168, 85, 247, 0.18);
+      border-color: var(--accent) !important;
+      background: rgba(168, 85, 247, 0.14) !important;
       color: var(--texte);
     }
 
     .filmstrip-thumb.active {
-      box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
     }
 
     .filmstrip-thumb-num {
@@ -315,14 +324,15 @@
 
     /* Interactive Audio Bench */
     .audio-bench-card {
-      background: #120e20;
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      background: var(--sub-card-bg) !important;
+      border: 1px solid var(--ligne) !important;
       border-radius: 8px;
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      transition: background-color 0.25s ease;
     }
 
     .audio-vertical-stamp {
@@ -376,167 +386,6 @@
 
     .poster-link-item:hover {
       color: var(--accent-fonce);
-    }
-
-    .poster-frame::before {
-      content: '+';
-      position: absolute;
-      top: 8px;
-      left: 10px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--texte-mute);
-      opacity: 0.6;
-    }
-
-    .poster-frame::after {
-      content: '+';
-      position: absolute;
-      top: 8px;
-      right: 10px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--texte-mute);
-      opacity: 0.6;
-    }
-
-    .poster-vertical-meta {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transform: rotate(180deg);
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--texte-mute);
-      opacity: 0.75;
-      position: absolute;
-      right: 14px;
-      bottom: 24px;
-      pointer-events: none;
-    }
-
-    /* Photography Section */
-    .gallery-section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 1rem;
-      border-top: 1px solid var(--ligne);
-      padding-top: 3.5rem;
-      margin-top: 4rem;
-      margin-bottom: 2rem;
-    }
-
-    .gallery-title {
-      font-family: var(--font-poster-sans);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      margin: 0 0 0.5rem;
-      color: var(--texte);
-    }
-
-    .gallery-subtitle {
-      font-family: var(--font-poster-serif);
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--texte-doux);
-      margin: 0;
-      max-width: 620px;
-      line-height: 1.45;
-    }
-
-    /* Photography Grid */
-    .photo-exhibition-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .photo-plate {
-      background: var(--fond-carte);
-      border: 1px solid var(--ligne);
-      border-radius: 12px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      position: relative;
-    }
-
-    .photo-plate:hover {
-      transform: translateY(-4px);
-      border-color: rgba(168, 85, 247, 0.4);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-    }
-
-    .photo-viewfinder {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4/3;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #0f0d16;
-      border: 1px solid var(--ligne-fine);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .photo-viewfinder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .photo-plate:hover .photo-viewfinder img {
-      transform: scale(1.03);
-    }
-
-    .photo-plate-caption {
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid var(--ligne);
-    }
-
-    .photo-plate-num {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-fonce);
-      margin-bottom: 4px;
-    }
-
-    .photo-plate-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--texte);
-      margin: 0 0 6px;
-    }
-
-    .photo-plate-notes {
-      font-size: 0.88rem;
-      color: var(--texte-doux);
-      line-height: 1.5;
-      margin: 0 0 10px;
-    }
-
-    .photo-plate-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--texte-mute);
-      padding-top: 8px;
-      border-top: 1px dashed var(--ligne);
     }
   </style>
 </head>
@@ -622,10 +471,12 @@
       setTheme(currentTheme);
 
       if (themeBtn) {
-        themeBtn.addEventListener('click', function() {
-          const isDark = (root.getAttribute('data-theme') || root.dataset.theme) === 'dark';
+        themeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const current = root.getAttribute('data-theme') || root.dataset.theme || 'dark';
+          const newTheme = (current === 'dark') ? 'light' : 'dark';
           playMechanicalClick();
-          setTheme(isDark ? 'light' : 'dark');
+          setTheme(newTheme);
         });
       }
     })();

@@ -89,18 +89,6 @@
       });
     });
 
-    // Toggle Thème
-    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var newTheme = _isDark() ? 'light' : 'dark';
-        document.documentElement.dataset.theme = newTheme;
-        localStorage.setItem('ncg-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        _updateThemeIcons();
-      });
-    });
-
-    _updateThemeIcons();
     apply(savedLang);
   }
 

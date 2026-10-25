@@ -5,444 +5,364 @@ title: Personal Studio & Visual Gallery
 
 <div class="poster-container">
 
-  <!-- TOP SUPER-TITLE BAR (POSTER CATALOGUE HEADER) -->
-  <div class="poster-supertitle-bar">
-    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+  <!-- ============================================================
+       COMPACT EDITORIAL MASTHEAD (IMMEDIATELY VISIBLE & CONCISE)
+       ============================================================ -->
+  <header class="antechamber-masthead">
+    <div class="antechamber-title-lockup">
       <span class="poster-secret-pill">🗝️ Hi sneaky one — key access unlocked</span>
-      <span>Curated by Nadia Cañadas Giménez</span>
+      <h1 class="antechamber-title-main">
+        THE ANTI<span class="antechamber-title-accent">CHAMBER</span>
+      </h1>
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">
+        Curated by Nadia Cañadas Giménez · Personal Atelier &amp; Visual Notes · 2026
+      </div>
     </div>
-    <div>
-      <span>STUDIO CATALOGUE · VOL. 02 // 2026</span>
-    </div>
-  </div>
 
-  <!-- SPLIT POSTER TITLE (INSPIRED BY EDITORIAL POSTER REFERENCE) -->
-  <header class="poster-hero-split">
-    <h1 class="poster-split-top">THE ANTI-</h1>
-    <div class="poster-split-bottom-row">
-      <h2 class="poster-split-bottom">CHAMBER</h2>
-      <p class="poster-split-subscript">
-        “Welcome to the personal atelier. Behind the client briefs, design tokens, and enterprise ERP logic — a playground for physical teardowns, zero-latency audio, and quiet visual observation.”
-      </p>
-    </div>
+    <p class="antechamber-manifesto-badge">
+      “Behind the client briefs and enterprise ERP systems — a sanctuary for physical teardowns, zero-latency web audio, and quiet photographic observation.”
+    </p>
   </header>
 
-  <!-- ASYMMETRIC POSTER GRID: WORKBENCH MANIFESTO + LIVE AUDIO SYNTHESIZER -->
-  <div class="poster-editorial-grid">
-
-    <!-- LEFT COLUMN: EDITORIAL VISUAL FRAME & PHYSICAL WORKBENCH MANIFESTO -->
-    <div class="poster-frame" style="min-height: 480px;">
-      <span class="poster-vertical-meta">STUDIO // SPECULATIVE HARDWARE &amp; SOUND</span>
-      
-      <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-fonce); letter-spacing: 0.1em; text-transform: uppercase;">
-            PLATE 00 · PHYSICAL ARTIFACT
-          </span>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">
-            SPEC: TEARDOWN #07
-          </span>
-        </div>
-
-        <!-- STYLED GRAPHICAL SPECIMEN: HARDWARE / OSCILLATOR SCHEMATIC -->
-        <div style="width: 100%; aspect-ratio: 16/9; background: radial-gradient(circle at 50% 50%, #1d1730 0%, #0d0a16 100%); border: 1px solid var(--ligne); border-radius: 8px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-          <!-- SVG Schematic Overlay -->
-          <svg width="100%" height="100%" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.85;">
-            <!-- Grid lines -->
-            <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(168, 85, 247, 0.08)" stroke-width="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="400" height="225" fill="url(#grid)" />
-            
-            <!-- Circuit traces & nodes -->
-            <circle cx="200" cy="112" r="65" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.2" stroke-dasharray="4 3" />
-            <circle cx="200" cy="112" r="38" stroke="#a855f7" stroke-width="1.5" />
-            <circle cx="200" cy="112" r="6" fill="#38bdf8" />
-            
-            <!-- Oscilloscope Sine Wave Trace -->
-            <path d="M 50 112 Q 87.5 45, 125 112 T 200 112 T 275 112 T 350 112" stroke="#f0714b" stroke-width="2" fill="none" />
-            
-            <!-- Crosshairs -->
-            <line x1="200" y1="20" x2="200" y2="205" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-            <line x1="30" y1="112" x2="370" y2="112" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-            
-            <!-- Tech Labels -->
-            <text x="35" y="40" fill="#9d91ba" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="0.1em">AUDIO SPECTRUM // 48000 Hz</text>
-            <text x="35" y="195" fill="#6b5f88" font-family="JetBrains Mono, monospace" font-size="8">ZERO-LATENCY BROWSER SYNTHESIS</text>
-            <text x="300" y="195" fill="#a855f7" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="end">NODE: 0x9D5C</text>
-          </svg>
-        </div>
-
-        <h3 style="font-family: var(--font-poster-sans); font-size: 1.45rem; margin: 0 0 0.75rem; color: var(--texte); letter-spacing: -0.01em;">
-          Taking Things Apart
-        </h3>
-        
-        <p style="font-size: 0.95rem; line-height: 1.65; color: var(--texte-doux); margin: 0 0 1.25rem;">
-          In an era of glued glass enclosures and black-box SaaS platforms, opening screws and mapping signal traces is an act of clarity. When you understand how copper traces carry voltage or how an audio envelope dampens resonance, you stop accepting arbitrary UX friction.
-        </p>
-
-        <p style="font-family: var(--font-poster-serif); font-style: italic; font-size: 1.15rem; line-height: 1.45; color: var(--texte); margin: 0 0 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem;">
-          “A system you cannot take apart is a system that owns you. Software craft begins when you touch the metal.”
-        </p>
+  <!-- ============================================================
+       PHOTOGRAPHY EXHIBITION: VISUAL FIELD NOTES (SHOWN IMMEDIATELY)
+       ============================================================ -->
+  <section style="margin-bottom: 2rem;">
+    <div class="gallery-bar">
+      <div class="gallery-bar-title">
+        <span>📸</span>
+        <span>Visual Field Notes · The Lens</span>
       </div>
-
-      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-        <a href="{{ '/blog/disassembly.html' | relative_url }}" class="bouton" style="background: var(--accent); color: #fff; font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border-radius: 6px; text-decoration: none;">
-          Read Manifesto: I Take Things Apart →
-        </a>
-        <a href="{{ '/antechamber/about/' | relative_url }}" style="font-size: 0.85rem; color: var(--texte-doux); text-decoration: none; border-bottom: 1px dotted var(--ligne);">
-          Behind the Curtain
-        </a>
+      <div class="gallery-bar-meta">
+        <span>4 CURATED PLATES · 35MM &amp; MACRO STUDIES</span>
       </div>
     </div>
 
-    <!-- RIGHT COLUMN: LIVE WEB AUDIO SYNTHESIZER WORKBENCH -->
-    <div class="poster-frame" style="border-color: rgba(168, 85, 247, 0.35); background: #100d1c;">
+    <div class="photo-exhibition-grid">
+
+      <!-- PLATE 01 -->
+      <article class="photo-plate">
+        <div class="photo-viewfinder">
+          <svg width="100%" height="100%" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#181326" />
+                <stop offset="100%" stop-color="#0b0813" />
+              </linearGradient>
+              <linearGradient id="wallGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2a223d" />
+                <stop offset="100%" stop-color="#151121" />
+              </linearGradient>
+              <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25" />
+                <stop offset="100%" stop-color="#a855f7" stop-opacity="0.05" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#skyGrad)" />
+            <polygon points="0,250 240,40 400,100 400,250" fill="url(#wallGrad1)" />
+            <polygon points="120,250 280,80 360,110 200,250" fill="#0d0a14" opacity="0.7" />
+            <polygon points="60,40 220,10 180,250 0,250" fill="url(#beamGrad)" />
+            <line x1="240" y1="40" x2="400" y2="100" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+            <line x1="0" y1="250" x2="240" y2="40" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+            <circle cx="240" cy="40" r="3" fill="#a855f7" />
+            <text x="250" y="44" fill="#a855f7" font-family="JetBrains Mono, monospace" font-size="8">VERTEX 01</text>
+          </svg>
+        </div>
+        <div class="photo-plate-caption">
+          <div>
+            <div class="photo-plate-num">PLATE 01 · 35MM FRAMING</div>
+            <h4 class="photo-plate-title">Brutalist Angles &amp; Shear</h4>
+            <p class="photo-plate-notes">
+              Natural sunlight cutting across raw concrete joints. Eye tracks diagonal tension lines before any digital interface is applied.
+            </p>
+          </div>
+          <div class="photo-plate-meta">
+            <span>ƒ/2.8 · 1/500s</span>
+            <span>BRUSSELS</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PLATE 02 -->
+      <article class="photo-plate">
+        <div class="photo-viewfinder">
+          <svg width="100%" height="100%" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="lensReflect" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#241e33" />
+                <stop offset="70%" stop-color="#110d1c" />
+                <stop offset="100%" stop-color="#09070e" />
+              </radialGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#lensReflect)" />
+            <circle cx="200" cy="125" r="90" stroke="#2c2442" stroke-width="2" />
+            <circle cx="200" cy="125" r="75" stroke="#3d325c" stroke-width="1" stroke-dasharray="3 4" />
+            <circle cx="200" cy="125" r="60" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" />
+            <circle cx="200" cy="125" r="26" fill="#171224" stroke="#a855f7" stroke-width="2" />
+            <circle cx="200" cy="125" r="4" fill="#f59e0b" />
+            <line x1="200" y1="20" x2="200" y2="30" stroke="#a855f7" stroke-width="2" />
+            <line x1="200" y1="220" x2="200" y2="230" stroke="#a855f7" stroke-width="2" />
+            <line x1="95" y1="125" x2="105" y2="125" stroke="#a855f7" stroke-width="2" />
+            <line x1="295" y1="125" x2="305" y2="125" stroke="#a855f7" stroke-width="2" />
+            <path d="M 170 100 Q 200 115, 230 100" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none" />
+            <text x="200" y="240" fill="#6b5f88" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle">APERTURE // TACTILE DETENTS</text>
+          </svg>
+        </div>
+        <div class="photo-plate-caption">
+          <div>
+            <div class="photo-plate-num">PLATE 02 · MACRO CRAFT</div>
+            <h4 class="photo-plate-title">Brass, Knurling &amp; Detents</h4>
+            <p class="photo-plate-notes">
+              Physical dials with muscle memory and mechanical resistance from dismantled vintage audio and camera lenses.
+            </p>
+          </div>
+          <div class="photo-plate-meta">
+            <span>ƒ/1.8 · 1/125s</span>
+            <span>ATELIER BENCH</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PLATE 03 -->
+      <article class="photo-plate">
+        <div class="photo-viewfinder">
+          <svg width="100%" height="100%" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="railGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#140e24" />
+                <stop offset="50%" stop-color="#241b3d" />
+                <stop offset="100%" stop-color="#0a0812" />
+              </linearGradient>
+              <linearGradient id="glimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+                <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#railGrad)" />
+            <line x1="200" y1="60" x2="20" y2="250" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+            <line x1="200" y1="60" x2="380" y2="250" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+            <line x1="200" y1="60" x2="80" y2="250" stroke="#a855f7" stroke-width="1.2" opacity="0.4" />
+            <line x1="200" y1="60" x2="320" y2="250" stroke="#a855f7" stroke-width="1.2" opacity="0.4" />
+            <line x1="170" y1="100" x2="230" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+            <line x1="140" y1="140" x2="260" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+            <line x1="90" y1="190" x2="310" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
+            <line x1="30" y1="240" x2="370" y2="240" stroke="url(#glimmerGrad)" stroke-width="2.5" />
+            <circle cx="200" cy="60" r="10" fill="#f59e0b" opacity="0.8" />
+            <text x="200" y="42" fill="#f59e0b" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle">18:42 RAIL SLAB</text>
+          </svg>
+        </div>
+        <div class="photo-plate-caption">
+          <div>
+            <div class="photo-plate-num">PLATE 03 · KINETIC TRANSIT</div>
+            <h4 class="photo-plate-title">Dusk Light Across Rails</h4>
+            <p class="photo-plate-notes">
+              Platform circulation and optical vanishing points captured during the rail commute between Brussels and Antwerp.
+            </p>
+          </div>
+          <div class="photo-plate-meta">
+            <span>ƒ/2.2 · 1/60s</span>
+            <span>BRUSSELS-CENTRAL</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PLATE 04 -->
+      <article class="photo-plate">
+        <div class="photo-viewfinder">
+          <svg width="100%" height="100%" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1f1830" />
+                <stop offset="100%" stop-color="#0c0915" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#prismGrad)" />
+            <polygon points="180,50 320,200 80,200" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none" />
+            <polygon points="190,70 300,190 110,190" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" fill="none" />
+            <line x1="20" y1="100" x2="140" y2="125" stroke="#ffffff" stroke-width="2.5" />
+            <line x1="140" y1="125" x2="360" y2="80" stroke="#f0714b" stroke-width="2" opacity="0.8" />
+            <line x1="140" y1="125" x2="370" y2="100" stroke="#f59e0b" stroke-width="2" opacity="0.8" />
+            <line x1="140" y1="125" x2="375" y2="125" stroke="#4ade80" stroke-width="2" opacity="0.8" />
+            <line x1="140" y1="125" x2="370" y2="150" stroke="#38bdf8" stroke-width="2" opacity="0.8" />
+            <line x1="140" y1="125" x2="360" y2="175" stroke="#a855f7" stroke-width="2" opacity="0.8" />
+            <text x="35" y="85" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="8">WHITE LIGHT</text>
+            <text x="340" y="68" fill="#f0714b" font-family="JetBrains Mono, monospace" font-size="8">PRISM FAN</text>
+          </svg>
+        </div>
+        <div class="photo-plate-caption">
+          <div>
+            <div class="photo-plate-num">PLATE 04 · CHROMATIC STUDY</div>
+            <h4 class="photo-plate-title">Glass Refraction &amp; Color</h4>
+            <p class="photo-plate-notes">
+              Natural optical dispersion: how physical glass splits wavelengths smoothly without digital banding or quantization.
+            </p>
+          </div>
+          <div class="photo-plate-meta">
+            <span>ƒ/4.0 · 1/200s</span>
+            <span>STUDIO WINDOW</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WORKBENCH GRID: LIVE WEB AUDIO SYNTH + HARDWARE DISASSEMBLY
+       ============================================================ -->
+  <div class="poster-editorial-grid">
+
+    <!-- SYNTH BENCH (COMPACT & RESPONSIVE) -->
+    <div class="poster-frame" style="border-color: rgba(168, 85, 247, 0.35); background: #110e1e;">
       <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
           <span style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.7rem; color: #c084fc; text-transform: uppercase; letter-spacing: 0.08em;">
             <span style="width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 8px #4ade80;"></span>
             LIVE WEB AUDIO BENCH
           </span>
           <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute); text-transform: uppercase;">
-            0 kB Audio Payload · 0ms Latency
+            0 kB Payload · 0ms Latency
           </span>
         </div>
 
-        <h3 style="font-family: var(--font-poster-sans); font-size: 1.35rem; margin: 0 0 0.5rem; color: var(--texte);">
-          The Sound of Pure Logic
+        <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; margin: 0 0 0.4rem; color: var(--texte);">
+          Acoustic Logic in Real Time
         </h3>
-        <p style="font-size: 0.88rem; color: var(--texte-doux); margin: 0 0 1.25rem; line-height: 1.55;">
-          Press any key to generate an acoustic vibration straight from math equations inside your CPU. Observe the signal propagate across each transformation stage in real time:
+        <p style="font-size: 0.85rem; color: var(--texte-doux); margin: 0 0 1rem; line-height: 1.5;">
+          Touch any key to compute pure acoustic waves directly from math equations inside the browser:
         </p>
 
-        <!-- SIGNAL PIPELINE -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 1.25rem; padding: 10px; background: rgba(0,0,0,0.35); border-radius: 8px; border: 1px solid var(--ligne);">
-          <div id="stage-osc" style="padding: 6px 4px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.62rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">1. Source</div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: #c084fc; margin-top: 1px;">Oscillator</div>
-            <div style="font-size: 0.65rem; color: var(--texte-doux);" id="flow-osc-label">Triangle</div>
+        <!-- SIGNAL PIPELINE STAGES -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 1rem; padding: 8px; background: rgba(0,0,0,0.35); border-radius: 8px; border: 1px solid var(--ligne);">
+          <div id="stage-osc" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+            <div style="font-size: 0.6rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">1. Source</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #c084fc;">Oscillator</div>
+            <div style="font-size: 0.62rem; color: var(--texte-doux);" id="flow-osc-label">Triangle</div>
           </div>
-          <div id="stage-filter" style="padding: 6px 4px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.62rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">2. Cutoff</div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: #38bdf8; margin-top: 1px;">Biquad</div>
-            <div style="font-size: 0.65rem; color: var(--texte-doux);" id="flow-filter-label">1800 Hz</div>
+          <div id="stage-filter" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+            <div style="font-size: 0.6rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">2. Cutoff</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #38bdf8;">Filter</div>
+            <div style="font-size: 0.62rem; color: var(--texte-doux);" id="flow-filter-label">1800 Hz</div>
           </div>
-          <div id="stage-env" style="padding: 6px 4px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.62rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">3. ADSR</div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: #f0714b; margin-top: 1px;">Gain Dec.</div>
-            <div style="font-size: 0.65rem; color: var(--texte-doux);">40 / 700ms</div>
+          <div id="stage-env" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+            <div style="font-size: 0.6rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">3. ADSR</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #f0714b;">Envelope</div>
+            <div style="font-size: 0.62rem; color: var(--texte-doux);">40 / 700ms</div>
           </div>
-          <div id="stage-out" style="padding: 6px 4px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
-            <div style="font-size: 0.62rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">4. Out</div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: #4ade80; margin-top: 1px;">Speaker</div>
-            <div style="font-size: 0.65rem; color: var(--texte-doux);">Stereo D/A</div>
+          <div id="stage-out" style="padding: 5px 3px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
+            <div style="font-size: 0.6rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">4. Out</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #4ade80;">Speaker</div>
+            <div style="font-size: 0.62rem; color: var(--texte-doux);">Stereo D/A</div>
           </div>
         </div>
 
         <!-- KEYBOARD KEYS -->
-        <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 1.25rem;">
-          <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">C4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">261Hz</span></button>
-          <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">D4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">293Hz</span></button>
-          <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">E4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">329Hz</span></button>
-          <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">F4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">349Hz</span></button>
-          <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">G4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">392Hz</span></button>
-          <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">A4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">440Hz</span></button>
-          <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 18px 4px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">B4<br><span style="font-size: 0.65rem; font-weight: 400; color: var(--texte-mute);">494Hz</span></button>
+        <div id="synth-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 1rem;">
+          <button type="button" class="synth-key" data-freq="261.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">C4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">261Hz</span></button>
+          <button type="button" class="synth-key" data-freq="293.66" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">D4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">293Hz</span></button>
+          <button type="button" class="synth-key" data-freq="329.63" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">E4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">329Hz</span></button>
+          <button type="button" class="synth-key" data-freq="349.23" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">F4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">349Hz</span></button>
+          <button type="button" class="synth-key" data-freq="392.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">G4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">392Hz</span></button>
+          <button type="button" class="synth-key" data-freq="440.00" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">A4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">440Hz</span></button>
+          <button type="button" class="synth-key" data-freq="493.88" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; padding: 14px 2px; color: var(--texte); font-weight: 700; font-family: var(--font-mono); cursor: pointer; transition: all 0.1s ease; text-align: center;">B4<br><span style="font-size: 0.62rem; font-weight: 400; color: var(--texte-mute);">494Hz</span></button>
         </div>
 
         <!-- CONTROLS -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.8rem; color: var(--texte-doux); padding-top: 12px; border-top: 1px solid var(--ligne);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.78rem; color: var(--texte-doux); padding-top: 10px; border-top: 1px solid var(--ligne);">
           <div>
-            <label for="synth-wave" style="display: block; margin-bottom: 4px; font-weight: 600; color: var(--texte);">Waveform</label>
-            <select id="synth-wave" style="width: 100%; background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 6px 8px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.78rem;">
+            <label for="synth-wave" style="display: block; margin-bottom: 3px; font-weight: 600; color: var(--texte);">Waveform</label>
+            <select id="synth-wave" style="width: 100%; background: var(--fond); border: 1px solid var(--ligne); color: var(--texte); padding: 5px 6px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem;">
               <option value="triangle" selected>Triangle (Warm)</option>
-              <option value="sine">Sine (Pure 0 Harmonics)</option>
-              <option value="sawtooth">Sawtooth (Sharp &amp; Rich)</option>
-              <option value="square">Square (8-bit Vintage)</option>
+              <option value="sine">Sine (Pure Harmonic)</option>
+              <option value="sawtooth">Sawtooth (Sharp)</option>
+              <option value="square">Square (8-bit)</option>
             </select>
           </div>
           <div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <label for="synth-filter" style="font-weight: 600; color: var(--texte);">Filter Cutoff</label>
-              <span id="synth-filter-display" style="font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8;">1800 Hz</span>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+              <label for="synth-filter" style="font-weight: 600; color: var(--texte);">Cutoff</label>
+              <span id="synth-filter-display" style="font-family: var(--font-mono); font-size: 0.72rem; color: #38bdf8;">1800 Hz</span>
             </div>
             <input type="range" id="synth-filter" min="200" max="4000" value="1800" style="width: 100%; vertical-align: middle; accent-color: var(--accent);">
           </div>
         </div>
       </div>
 
-      <div style="margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--ligne); font-size: 0.78rem; color: var(--texte-mute); line-height: 1.45;">
-        <strong style="color: var(--texte-doux);">Systems Correlation:</strong> Just as ERP order pipelines validate constraints at each stage without payload bloat, this Web Audio chain shapes airwaves in real-time without fetching audio files.
+      <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--ligne); font-size: 0.74rem; color: var(--texte-mute);">
+        <strong style="color: var(--texte-doux);">Systems Parity:</strong> Zero-latency Web Audio models the same pipeline principles as real-time enterprise event buses.
       </div>
     </div>
 
-  </div>
+    <!-- HARDWARE TEARDOWN & ESSAYS (COMPACT & PUNCHY) -->
+    <div class="poster-frame">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.08em;">
+            STUDIO WRITINGS &amp; MANIFESTO
+          </span>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute);">
+            AUTONOMOUS ESSAYS
+          </span>
+        </div>
 
-  <!-- ============================================================
-       PHOTOGRAPHY EXHIBITION: VISUAL FIELD NOTES / THE LENS
-       ============================================================ -->
-  <section class="gallery-section-header">
-    <div>
-      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-fonce); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;">
-        VISUAL FIELD NOTES · OBSERVATION GALLERY
+        <h3 style="font-family: var(--font-poster-sans); font-size: 1.25rem; margin: 0 0 0.5rem; color: var(--texte);">
+          I Take Things Apart
+        </h3>
+        <p style="font-size: 0.86rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 1rem;">
+          In an era of sealed glass enclosures and black-box software, opening screws and mapping signal traces is an act of clarity. Software craft begins when you understand how physical mechanisms resist wear.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem;">
+          <a href="{{ '/blog/disassembly.html' | relative_url }}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 8px; text-decoration: none; color: var(--texte);">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 700;">Manifesto: I Take Things Apart</div>
+              <div style="font-size: 0.74rem; color: var(--texte-doux);">Why cracking open devices is the antidote to disposable UX</div>
+            </div>
+            <span style="color: var(--accent); font-weight: 700;">→</span>
+          </a>
+
+          <a href="{{ '/antechamber/notes.html' | relative_url }}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; text-decoration: none; color: var(--texte);">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 700;">Workshop Notebook</div>
+              <div style="font-size: 0.74rem; color: var(--texte-doux);">Modular audio wiring, bus routing, and digital resilience</div>
+            </div>
+            <span style="color: var(--texte-mute);">→</span>
+          </a>
+
+          <a href="{{ '/antechamber/about/' | relative_url }}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; text-decoration: none; color: var(--texte);">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 700;">Behind the Curtain</div>
+              <div style="font-size: 0.74rem; color: var(--texte-doux);">Why this sanctuary exists outside client deadlines &amp; metrics</div>
+            </div>
+            <span style="color: var(--texte-mute);">→</span>
+          </a>
+        </div>
       </div>
-      <h2 class="gallery-title">The Lens &amp; Physical Geometry</h2>
-      <p class="gallery-subtitle">
-        “A designer's eye is calibrated in the physical world. Looking for negative space, unexpected light refraction, and structural rhythms across everyday environments.”
-      </p>
+
+      <div style="font-family: var(--font-poster-serif); font-style: italic; font-size: 0.95rem; color: var(--texte-doux); border-top: 1px dashed var(--ligne); padding-top: 8px;">
+        “A system you cannot take apart is a system that owns you.”
+      </div>
     </div>
-    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); text-align: right;">
-      <span>CURATED EXHIBITION</span><br>
-      <span style="color: var(--accent-fonce);">4 OBSERVATION PLATES</span>
-    </div>
-  </section>
-
-  <!-- PHOTOGRAPHY PLATES GRID -->
-  <div class="photo-exhibition-grid">
-
-    <!-- PLATE 01 -->
-    <article class="photo-plate">
-      <div class="photo-viewfinder">
-        <!-- SVG Visual Study: Geometric Brutalism & Shadow Angle -->
-        <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-          <defs>
-            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#181326" />
-              <stop offset="100%" stop-color="#0b0813" />
-            </linearGradient>
-            <linearGradient id="wallGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2a223d" />
-              <stop offset="100%" stop-color="#151121" />
-            </linearGradient>
-            <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25" />
-              <stop offset="100%" stop-color="#a855f7" stop-opacity="0.05" />
-            </linearGradient>
-          </defs>
-          <rect width="400" height="300" fill="url(#skyGrad)" />
-          <!-- Diagonal architectural shadow lines -->
-          <polygon points="0,300 240,60 400,120 400,300" fill="url(#wallGrad1)" />
-          <polygon points="120,300 280,100 360,130 200,300" fill="#0d0a14" opacity="0.7" />
-          <polygon points="60,60 220,20 180,300 0,300" fill="url(#beamGrad)" />
-          <!-- Fine wireframe edge -->
-          <line x1="240" y1="60" x2="400" y2="120" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
-          <line x1="0" y1="300" x2="240" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
-          <!-- Crosshair marker -->
-          <circle cx="240" cy="60" r="3" fill="#a855f7" />
-          <text x="250" y="64" fill="#a855f7" font-family="JetBrains Mono, monospace" font-size="8">VERTEX 01</text>
-        </svg>
-      </div>
-
-      <div class="photo-plate-caption">
-        <div class="photo-plate-num">PLATE NO. 01 · 35MM FRAMING</div>
-        <h4 class="photo-plate-title">Brutalist Angles &amp; Shear Planes</h4>
-        <p class="photo-plate-notes">
-          Studying how sunlight cuts across raw concrete joints. The eye naturally aligns to diagonal tension lines before any graphic interface is introduced.
-        </p>
-        <div class="photo-plate-meta">
-          <span>EXPOSURE: ƒ/2.8 · 1/500s</span>
-          <span>LOCATION: BRUSSELS</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- PLATE 02 -->
-    <article class="photo-plate">
-      <div class="photo-viewfinder">
-        <!-- SVG Visual Study: Industrial Hardware & Mechanical Patina -->
-        <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-          <defs>
-            <radialGradient id="lensReflect" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#241e33" />
-              <stop offset="70%" stop-color="#110d1c" />
-              <stop offset="100%" stop-color="#09070e" />
-            </radialGradient>
-          </defs>
-          <rect width="400" height="300" fill="url(#lensReflect)" />
-          <!-- Mechanical Dial / Precision Rings -->
-          <circle cx="200" cy="150" r="100" stroke="#2c2442" stroke-width="2" />
-          <circle cx="200" cy="150" r="85" stroke="#3d325c" stroke-width="1" stroke-dasharray="3 4" />
-          <circle cx="200" cy="150" r="70" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" />
-          <circle cx="200" cy="150" r="30" fill="#171224" stroke="#a855f7" stroke-width="2" />
-          <circle cx="200" cy="150" r="5" fill="#f59e0b" />
-          
-          <!-- Tick Marks around perimeter -->
-          <line x1="200" y1="45" x2="200" y2="55" stroke="#a855f7" stroke-width="2" />
-          <line x1="200" y1="245" x2="200" y2="255" stroke="#a855f7" stroke-width="2" />
-          <line x1="95" y1="150" x2="105" y2="150" stroke="#a855f7" stroke-width="2" />
-          <line x1="295" y1="150" x2="305" y2="150" stroke="#a855f7" stroke-width="2" />
-          
-          <!-- Subtle macro glint -->
-          <path d="M 170 120 Q 200 135, 230 120" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none" />
-          <text x="200" y="275" fill="#6b5f88" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle">APERTURE MECHANISM // TACTILE DETENTS</text>
-        </svg>
-      </div>
-
-      <div class="photo-plate-caption">
-        <div class="photo-plate-num">PLATE NO. 02 · MACRO CRAFT</div>
-        <h4 class="photo-plate-title">Brass, Knurling &amp; Detents</h4>
-        <p class="photo-plate-notes">
-          Physical dials possess what touchscreens lack: tactile resistance and muscle memory. Documenting mechanical interfaces from vintage audio and optical gear.
-        </p>
-        <div class="photo-plate-meta">
-          <span>EXPOSURE: ƒ/1.8 · 1/125s</span>
-          <span>LOCATION: ATELIER BENCH</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- PLATE 03 -->
-    <article class="photo-plate">
-      <div class="photo-viewfinder">
-        <!-- SVG Visual Study: Transit Light / Kinetic Railroad Reflection -->
-        <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-          <defs>
-            <linearGradient id="railGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#140e24" />
-              <stop offset="50%" stop-color="#241b3d" />
-              <stop offset="100%" stop-color="#0a0812" />
-            </linearGradient>
-            <linearGradient id="glimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
-              <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8" />
-              <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1" />
-            </linearGradient>
-          </defs>
-          <rect width="400" height="300" fill="url(#railGrad)" />
-          <!-- Vanishing rails -->
-          <line x1="200" y1="80" x2="20" y2="300" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
-          <line x1="200" y1="80" x2="380" y2="300" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
-          <line x1="200" y1="80" x2="80" y2="300" stroke="#a855f7" stroke-width="1.2" opacity="0.4" />
-          <line x1="200" y1="80" x2="320" y2="300" stroke="#a855f7" stroke-width="1.2" opacity="0.4" />
-          
-          <!-- Railroad sleepers rhythm -->
-          <line x1="170" y1="120" x2="230" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
-          <line x1="140" y1="160" x2="260" y2="160" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
-          <line x1="90" y1="220" x2="310" y2="220" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
-          <line x1="30" y1="290" x2="370" y2="290" stroke="url(#glimmerGrad)" stroke-width="2.5" />
-          
-          <circle cx="200" cy="80" r="12" fill="#f59e0b" opacity="0.8" />
-          <text x="200" y="55" fill="#f59e0b" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle">VANISHING POINT // 18:42</text>
-        </svg>
-      </div>
-
-      <div class="photo-plate-caption">
-        <div class="photo-plate-num">PLATE NO. 03 · KINETIC TRANSIT</div>
-        <h4 class="photo-plate-title">Dusk Light Across Steel Rails</h4>
-        <p class="photo-plate-notes">
-          Rail platforms are masterclasses in human circulation and visual affordance. Captured during the commute between Brussels-Midi and Antwerp Central.
-        </p>
-        <div class="photo-plate-meta">
-          <span>EXPOSURE: ƒ/2.2 · 1/60s</span>
-          <span>LOCATION: BRUSSELS-CENTRAL</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- PLATE 04 -->
-    <article class="photo-plate">
-      <div class="photo-viewfinder">
-        <!-- SVG Visual Study: Glass Facet Refraction & Light Spectrum -->
-        <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-          <defs>
-            <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1f1830" />
-              <stop offset="100%" stop-color="#0c0915" />
-            </linearGradient>
-          </defs>
-          <rect width="400" height="300" fill="url(#prismGrad)" />
-          
-          <!-- Prism refraction triangles -->
-          <polygon points="180,60 320,240 80,240" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none" />
-          <polygon points="190,80 300,230 110,230" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" fill="none" />
-          
-          <!-- Incident white light ray -->
-          <line x1="20" y1="120" x2="140" y2="150" stroke="#ffffff" stroke-width="2.5" />
-          
-          <!-- Rainbow dispersion fan -->
-          <line x1="140" y1="150" x2="360" y2="100" stroke="#f0714b" stroke-width="2" opacity="0.8" />
-          <line x1="140" y1="150" x2="370" y2="120" stroke="#f59e0b" stroke-width="2" opacity="0.8" />
-          <line x1="140" y1="150" x2="375" y2="145" stroke="#4ade80" stroke-width="2" opacity="0.8" />
-          <line x1="140" y1="150" x2="370" y2="170" stroke="#38bdf8" stroke-width="2" opacity="0.8" />
-          <line x1="140" y1="150" x2="360" y2="195" stroke="#a855f7" stroke-width="2" opacity="0.8" />
-          
-          <text x="35" y="105" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="8">INCIDENT LIGHT</text>
-          <text x="350" y="85" fill="#f0714b" font-family="JetBrains Mono, monospace" font-size="8">SPECTRUM SPLIT</text>
-        </svg>
-      </div>
-
-      <div class="photo-plate-caption">
-        <div class="photo-plate-num">PLATE NO. 04 · CHROMATIC STUDY</div>
-        <h4 class="photo-plate-title">Glass Refraction &amp; Color Separation</h4>
-        <p class="photo-plate-notes">
-          Understanding optical physics directly influences digital color systems. How natural glass splits wavelengths without banding or artificial quantization.
-        </p>
-        <div class="photo-plate-meta">
-          <span>EXPOSURE: ƒ/4.0 · 1/200s</span>
-          <span>LOCATION: STUDIO WINDOW</span>
-        </div>
-      </div>
-    </article>
 
   </div>
 
   <!-- HOW TO DROP REAL PHOTOS NOTICE FOR NADIA -->
-  <div style="background: rgba(168, 85, 247, 0.06); border: 1px dashed rgba(168, 85, 247, 0.3); border-radius: 10px; padding: 18px 24px; margin-bottom: 4.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
-    <div>
-      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">
-        📸 Curating Your Photography Collection
+  <div style="background: rgba(168, 85, 247, 0.05); border: 1px dashed rgba(168, 85, 247, 0.25); border-radius: 8px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="font-size: 1.2rem;">📸</span>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-fonce); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">
+          Curating Your Personal Photography Collection
+        </div>
+        <p style="font-size: 0.82rem; color: var(--texte-doux); margin: 2px 0 0;">
+          Drop your JPEG or PNG photos into <code>assets/photography/</code> to populate the plates above.
+        </p>
       </div>
-      <p style="font-size: 0.88rem; color: var(--texte-doux); margin: 4px 0 0; line-height: 1.5;">
-        You can drop your actual photography files directly into <code>assets/photography/</code>. The gallery frames will automatically render your high-res scans or 35mm captures.
-      </p>
     </div>
-    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute); background: var(--fond-carte); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--ligne);">
-      Path: assets/photography/
+    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); background: var(--fond-carte); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--ligne);">
+      Folder: assets/photography/
     </span>
-  </div>
-
-  <!-- ============================================================
-       LATERAL EXPLORATIONS & ESSAYS
-       ============================================================ -->
-  <div style="border-top: 1px solid var(--ligne); padding-top: 3rem; margin-bottom: 2rem;">
-    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-fonce); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;">
-      CORRIDORS &amp; WRITINGS
-    </div>
-    <h3 style="font-family: var(--font-poster-sans); font-size: 1.8rem; margin: 0 0 1.5rem; color: var(--texte);">
-      Lateral Explorations
-    </h3>
-
-    <div class="grille" style="margin-bottom: 2rem;">
-      <a class="carte" href="{{ '/antechamber/notes.html' | relative_url }}">
-        <div class="carte-barre" style="background: #a855f7;"></div>
-        <span class="etiquette etiquette--violet">Workshop Notebook</span>
-        <h3>Field Notes &amp; Curiosities</h3>
-        <p>
-          Mental models on modular synthesizers, bus routing, and how physical constraints make digital software resilient.
-        </p>
-      </a>
-
-      <a class="carte" href="{{ '/blog/disassembly.html' | relative_url }}">
-        <div class="carte-barre" style="background: #f0714b;"></div>
-        <span class="etiquette etiquette--orange">Hardware Manifesto</span>
-        <h3>I Take Things Apart</h3>
-        <p>
-          Why cracking open glued devices and examining invisible mechanics is the antidote to disposable software design.
-        </p>
-      </a>
-
-      <a class="carte" href="{{ '/antechamber/about/' | relative_url }}">
-        <div class="carte-barre" style="background: #38bdf8;"></div>
-        <span class="etiquette etiquette--bleu">Philosophy</span>
-        <h3>Behind the Curtain</h3>
-        <p>
-          Why this sanctuary exists outside client deadlines, design systems, and business metrics.
-        </p>
-      </a>
-    </div>
   </div>
 
 </div>
@@ -479,8 +399,8 @@ title: Personal Studio & Visual Gallery
     // ADSR Envelope
     const now = audioCtx.currentTime;
     gain.gain.setValueAtTime(0, now);
-    gain.gain.linearRampToValueAtTime(0.28, now + 0.04);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
+    gain.gain.linearRampToValueAtTime(0.25, now + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.65);
 
     osc.connect(filter);
     filter.connect(gain);
@@ -502,20 +422,19 @@ title: Personal Studio & Visual Gallery
           el.style.borderColor = 'var(--ligne)';
           el.style.transform = 'none';
           el.style.boxShadow = 'none';
-        }, 300);
+        }, 280);
       }, delay);
     }
 
     pulseStage(stageOsc, '#c084fc', 0);
-    pulseStage(stageFilter, '#38bdf8', 40);
-    pulseStage(stageEnv, '#f0714b', 80);
-    pulseStage(stageOut, '#4ade80', 120);
+    pulseStage(stageFilter, '#38bdf8', 35);
+    pulseStage(stageEnv, '#f0714b', 70);
+    pulseStage(stageOut, '#4ade80', 105);
 
     osc.start(now);
-    osc.stop(now + 0.75);
+    osc.stop(now + 0.7);
   }
 
-  // Update controls display
   const waveSelect = document.getElementById('synth-wave');
   const filterInput = document.getElementById('synth-filter');
   const filterDisplay = document.getElementById('synth-filter-display');

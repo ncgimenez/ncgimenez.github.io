@@ -1,153 +1,308 @@
 ---
 layout: default
-title: Systems & Interfaces
+title: Nadia Cañadas Giménez · Product Designer & Systems Architect
 ---
 
   <main>
-    <!-- HERO -->
-    <span class="etiquette" style="color: var(--accent);">Product Designer &amp; Systems Architect</span>
-    <h1>Untangling complex systems. Building simple, enjoyable tools.</h1>
-    <p class="chapo">
-      Hi, I'm Nadia, a product designer with roots in enterprise ERP architecture (SAP S/4HANA &amp; Odoo). 
-      I look under the hood of messy workflows to build fast, tactile web applications that respect human attention.
-    </p>
+    <!-- HERO SECTION : HIGH-CRAFT & AUTHORITATIVE -->
+    <div style="margin-bottom: 2rem;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px; background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.25); font-family: var(--font-mono); font-size: 0.75rem; color: #22c55e; margin-bottom: 1rem; font-weight: 500;">
+        <span class="status-dot-pulse"></span>
+        <span>Available for Product Design &amp; Systems Roles · Brussels &amp; Remote</span>
+      </div>
 
-    <div class="actions" style="margin-bottom: 3.5rem;">
-      <a class="bouton plein" href="#software">Explore Live Apps ↓</a>
-      <a class="bouton" href="/projects/span-suite.html">Featured Case Study</a>
-      <a class="bouton" href="/about.html">About Me</a>
+      <h1 style="font-size: clamp(2.3rem, 5.4vw, 3.4rem); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.04em; font-weight: 800;">
+        Untangling complex systems.<br>
+        <span style="color: var(--accent);">Building calm, tactile tools.</span>
+      </h1>
+
+      <p class="chapo" style="font-size: 1.18rem; max-width: 44em; margin-bottom: 28px;">
+        Hi, I'm Nadia — a Product Designer &amp; Design Engineer with roots in Enterprise ERP Systems Architecture (SAP S/4HANA &amp; Odoo). 
+        I look under the hood of chaotic workflows to design and ship fast, opinionated web applications that respect human attention.
+      </p>
+
+      <div class="actions" style="margin-bottom: 2.75rem;">
+        <a class="bouton plein" href="#featured-software">Explore Shipped Software ↓</a>
+        <a class="bouton" href="{{ '/projects/span-suite.html' | relative_url }}">Span Suite Case Study</a>
+        <a class="bouton" href="{{ '/about.html' | relative_url }}">About &amp; Journey</a>
+      </div>
+    </div>
+
+    <!-- METRICS & CREDIBILITY STRIP -->
+    <div class="metrics-strip">
+      <div class="metric-strip-item">
+        <div class="metric-strip-num" style="color: var(--accent-alt);">2 Shipped PWAs</div>
+        <div class="metric-strip-label">Span Focus &amp; Span Plan in active production dogfooding</div>
+      </div>
+      <div class="metric-strip-item">
+        <div class="metric-strip-num" style="color: #38bdf8;">ERP Rigor</div>
+        <div class="metric-strip-label">SAP S/4HANA &amp; Odoo data flows mapped without workarounds</div>
+      </div>
+      <div class="metric-strip-item">
+        <div class="metric-strip-num" style="color: #4ade80;">Zero-Latency</div>
+        <div class="metric-strip-label">Tactile Web Audio, keyboard-first flows, and offline-first state</div>
+      </div>
     </div>
 
     <!-- SECTION 1 : VOS APPLICATIONS EN LIGNE (FEATURED SOFTWARE) -->
     <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1rem; flex-wrap: wrap; gap: 8px;">
-      <h2 id="software" style="margin: 0;">Featured Software: The Span Suite</h2>
-      <a href="/projects/span-suite.html" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;">Read full case study →</a>
+      <h2 id="featured-software" style="margin: 0; font-size: 1.6rem; letter-spacing: -0.03em;">Featured Software: The Span Suite</h2>
+      <a href="{{ '/projects/span-suite.html' | relative_url }}" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;">Read full design architecture →</a>
     </div>
-    <p class="chapo" style="font-size: 1rem; margin-top: 8px; margin-bottom: 24px;">
-      Most to-do lists turn into endless backlog anxiety. I built Span to separate morning planning from focused execution, so you can finish your day with peace of mind.
+    <p class="chapo" style="font-size: 1.05rem; margin-top: 8px; margin-bottom: 24px; max-width: 46em;">
+      Most task managers turn into endless backlog guilt. The Span Suite decouples high-level morning scheduling from single-task execution, so you can finish your workday with peace of mind.
     </p>
 
-    <div class="grille">
-      <!-- CARTE SPAN FOCUS -->
-      <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div class="carte-barre" style="background: #7c3aed;"></div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span class="etiquette etiquette--violet">Live PWA</span>
-            <span style="font-size: 0.8rem; color: var(--texte-doux);">Execution</span>
-          </div>
-          <h3>Span Focus</h3>
-          <p>
-            A distraction-free execution timer: 100% keyboard flow, tactile audio feedback, and offline-first storage so you never lose your flow.
-          </p>
-        </div>
-        <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
-          <a class="bouton plein" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Launch App ↗</a>
-          <a class="bouton" href="/projects/span-suite.html" style="padding: 7px 16px; font-size: 0.88rem;">Deep Dive</a>
-          <a class="bouton" href="https://github.com/ncgimenez/span-focus" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Code</a>
-        </div>
-      </div>
+    <!-- BESPOKE SHOWCASE CARDS WITH TACTILE UI SPECIMENS -->
+    <div class="showcase-feature-list">
 
-      <!-- CARTE SPAN PLAN -->
-      <div class="carte" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div class="carte-barre" style="background: #0284c7;"></div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span class="etiquette etiquette--bleu">Live Web App</span>
-            <span style="font-size: 0.8rem; color: var(--texte-doux);">Planning</span>
+      <!-- SHOWCASE 1: SPAN FOCUS -->
+      <article class="pro-showcase-card" style="--card-accent: #9d5cff;">
+        <div class="pro-showcase-content">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="etiquette etiquette--violet">Live Production PWA</span>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux); text-transform: uppercase;">Tactile Execution</span>
+            </div>
+
+            <h3 class="pro-showcase-title">Span Focus</h3>
+            <p class="pro-showcase-desc">
+              A distraction-free execution timer: 100% keyboard flow, tactile Web Audio mechanical clicks, and offline-first storage so you never lose your focus block when Wi-Fi drops.
+            </p>
+
+            <div class="tech-tag-row">
+              <span class="tech-tag">React PWA</span>
+              <span class="tech-tag">Supabase</span>
+              <span class="tech-tag">Web Audio API</span>
+              <span class="tech-tag">Local-First Cache</span>
+              <span class="tech-tag">100% Keyboard Driven</span>
+            </div>
           </div>
-          <h3>Span Plan</h3>
-          <p>
-            A calm daily planner: map out your day alongside calendar events, and let unfinished tasks roll over automatically to tomorrow without guilt or red alarms.
-          </p>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <a class="bouton plein" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener" style="padding: 8px 18px; font-size: 0.88rem; background: #9d5cff; border-color: #9d5cff; box-shadow: 0 2px 10px rgba(157, 92, 255, 0.35);">
+              Launch Live App ↗
+            </a>
+            <a class="bouton" href="{{ '/projects/span-suite.html' | relative_url }}" style="padding: 8px 16px; font-size: 0.88rem;">
+              Deep Dive Case Study
+            </a>
+            <a class="bouton" href="https://github.com/ncgimenez/span-focus" target="_blank" rel="noopener" style="padding: 8px 14px; font-size: 0.88rem; font-family: var(--font-mono); color: var(--texte-doux);">
+              Code ↗
+            </a>
+          </div>
         </div>
-        <div style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap;">
-          <a class="bouton plein" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Launch App ↗</a>
-          <a class="bouton" href="/projects/span-suite.html" style="padding: 7px 16px; font-size: 0.88rem;">Deep Dive</a>
-          <a class="bouton" href="https://github.com/ncgimenez/span-plan" target="_blank" rel="noopener" style="padding: 7px 16px; font-size: 0.88rem;">Code</a>
+
+        <!-- TACTILE UI SPECIMEN PREVIEW : SPAN FOCUS TIMER RING -->
+        <div class="ui-specimen" aria-hidden="true">
+          <div class="ui-specimen-header">
+            <div class="ui-specimen-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span>SPAN FOCUS · v1.4</span>
+            <span style="color: #4ade80;">● ONLINE</span>
+          </div>
+
+          <div class="ui-specimen-body">
+            <!-- Simulated Timer Dial with SVG Glow -->
+            <div style="position: relative; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center;">
+              <svg width="140" height="140" viewBox="0 0 140 140">
+                <circle cx="70" cy="70" r="58" stroke="rgba(255,255,255,0.08)" stroke-width="6" fill="none" />
+                <circle cx="70" cy="70" r="58" stroke="#9d5cff" stroke-width="6" stroke-dasharray="364" stroke-dashoffset="91" stroke-linecap="round" fill="none" style="filter: drop-shadow(0 0 8px rgba(157, 92, 255, 0.5));" />
+              </svg>
+              <div style="position: absolute; text-align: center;">
+                <div style="font-family: var(--font-mono); font-size: 1.7rem; font-weight: 800; color: #f4f2f7; line-height: 1;">25:00</div>
+                <div style="font-size: 0.65rem; color: #9d96aa; text-transform: uppercase; margin-top: 4px; font-family: var(--font-mono);">Focus Block</div>
+              </div>
+            </div>
+
+            <!-- Active Task Pill -->
+            <div style="margin-top: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(157, 92, 255, 0.15); border: 1px solid rgba(157, 92, 255, 0.35); font-family: var(--font-mono); font-size: 0.72rem; color: #c084fc;">
+              🎯 S/4HANA Pricing Architecture
+            </div>
+
+            <!-- Tactile Keyboard Hint -->
+            <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.68rem; color: #6d667a; display: flex; gap: 8px;">
+              <span><kbd style="background: rgba(255,255,255,0.1); padding: 1px 4px; border-radius: 3px;">SPACE</kbd> Pause</span>
+              <span><kbd style="background: rgba(255,255,255,0.1); padding: 1px 4px; border-radius: 3px;">M</kbd> Mute Audio</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <!-- SHOWCASE 2: SPAN PLAN -->
+      <article class="pro-showcase-card" style="--card-accent: #0284c7;">
+        <div class="pro-showcase-content">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="etiquette etiquette--bleu">Live Web Application</span>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux); text-transform: uppercase;">Calm Planning</span>
+            </div>
+
+            <h3 class="pro-showcase-title">Span Plan</h3>
+            <p class="pro-showcase-desc">
+              A humane daily planner: map out your day alongside calendar events, and let unfinished tasks roll over automatically to tomorrow without guilt, red alarms, or friction.
+            </p>
+
+            <div class="tech-tag-row">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Temporal Buffer</span>
+              <span class="tech-tag">Guilt-Free Rollover</span>
+              <span class="tech-tag">Local Storage</span>
+              <span class="tech-tag">Zero Backlog Fatigue</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <a class="bouton plein" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener" style="padding: 8px 18px; font-size: 0.88rem; background: #0284c7; border-color: #0284c7; box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35);">
+              Launch Live App ↗
+            </a>
+            <a class="bouton" href="{{ '/projects/span-suite.html' | relative_url }}" style="padding: 8px 16px; font-size: 0.88rem;">
+              Deep Dive Case Study
+            </a>
+            <a class="bouton" href="https://github.com/ncgimenez/span-plan" target="_blank" rel="noopener" style="padding: 8px 14px; font-size: 0.88rem; font-family: var(--font-mono); color: var(--texte-doux);">
+              Code ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- TACTILE UI SPECIMEN PREVIEW : SPAN PLAN CALENDAR BOARD -->
+        <div class="ui-specimen" aria-hidden="true">
+          <div class="ui-specimen-header">
+            <div class="ui-specimen-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span>SPAN PLAN · DAILY BUFFER</span>
+            <span style="color: #38bdf8;">TODAY · OCT 25</span>
+          </div>
+
+          <div class="ui-specimen-body" style="align-items: stretch; padding: 14px;">
+            <!-- Event 1: Fixed Meeting -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8; border-radius: 4px; margin-bottom: 6px;">
+              <div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #f4f2f7;">09:30 · Architecture Sync</div>
+                <div style="font-size: 0.68rem; color: #38bdf8; font-family: var(--font-mono);">Fixed Calendar Block (45m)</div>
+              </div>
+              <span style="font-size: 0.8rem;">🔒</span>
+            </div>
+
+            <!-- Event 2: Focus Work (Buffered) -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: rgba(157, 92, 255, 0.1); border-left: 3px solid #9d5cff; border-radius: 4px; margin-bottom: 8px;">
+              <div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #f4f2f7;">11:00 · O2C Pipeline Audit</div>
+                <div style="font-size: 0.68rem; color: #c084fc; font-family: var(--font-mono);">Protected Buffer (90m)</div>
+              </div>
+              <span style="font-size: 0.8rem;">⚡</span>
+            </div>
+
+            <!-- Rollover Engine Badge -->
+            <div style="padding: 6px 10px; border-radius: 6px; background: rgba(255, 255, 255, 0.04); border: 1px dashed rgba(255,255,255,0.12); display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-doux);">1 Task Rolled Over to Tomorrow</span>
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #4ade80;">No Guilt →</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
 
     <!-- SECTION 2 : CONCEPTS UX & MODÈLES D'INTERACTION -->
     <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4.5rem; flex-wrap: wrap; gap: 8px;">
-      <h2 style="margin: 0;">Interaction Redesigns &amp; Everyday UX</h2>
-      <a href="/projects/" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;">View all projects →</a>
+      <h2 style="margin: 0; font-size: 1.6rem; letter-spacing: -0.03em;">Interaction Ergonomics &amp; Everyday UX</h2>
+      <a href="{{ '/projects/' | relative_url }}" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;">View all projects →</a>
     </div>
-    <p class="chapo" style="font-size: 1rem; margin-top: 8px; margin-bottom: 24px;">
-      Fixing common digital frictions with intuitive, standard interactions.
+    <p class="chapo" style="font-size: 1.05rem; margin-top: 8px; margin-bottom: 24px;">
+      Auditing subtle moments of daily user friction and engineering intuitive, spatial solutions.
     </p>
 
     <div class="grille">
-      <a class="carte" href="/projects/mobile-UX.html">
-        <div class="carte-barre" style="background: #4a86b4;"></div>
-        <span class="etiquette">Mobile UX · Transit</span>
-        <h3>SNCB: Know Which Way to Run Before You Get There</h3>
-        <p>Helping passengers know which door to exit and which platform to run to before the train stops, turning stressful connections into calm transfers.</p>
+      <a class="carte" href="{{ '/projects/mobile-UX.html' | relative_url }}" style="position: relative; overflow: hidden;">
+        <div class="carte-barre" style="background: #38bdf8;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+          <span class="etiquette etiquette--bleu">Spatial UX · Transit</span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">2-Stage Simulator</span>
+        </div>
+        <h3 style="font-size: 1.25rem;">SNCB: Solving Connection Anxiety</h3>
+        <p>Helping passengers know which carriage door to exit and which platform staircase to target before the train halts, turning stressful connections into calm transfers.</p>
       </a>
-      <a class="carte" href="/projects/google-calendar.html">
-        <div class="carte-barre" style="background: #4a86b4;"></div>
-        <span class="etiquette">Desktop Ergonomics</span>
-        <h3>Google Calendar: The Missing Selection Box</h3>
-        <p>A standard marquee selection box to move multiple meetings at once instead of dragging them one by one.</p>
+
+      <a class="carte" href="{{ '/projects/google-calendar.html' | relative_url }}">
+        <div class="carte-barre" style="background: #f0714b;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+          <span class="etiquette">Desktop Ergonomics</span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Interactive Sandbox</span>
+        </div>
+        <h3 style="font-size: 1.25rem;">Google Calendar: The Missing Marquee Box</h3>
+        <p>Engineering a standard desktop drag-to-select marquee box to batch-reschedule multiple meetings at once instead of painfully moving them one by one.</p>
       </a>
     </div>
 
     <!-- SECTION 3 : ÉTUDES DE CAS SYSTÈMES & ERP -->
-    <h2 id="systems" style="margin-top: 4.5rem;">Enterprise Systems &amp; ERP Implementations</h2>
-    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4.5rem; flex-wrap: wrap; gap: 8px;">
+      <h2 id="systems" style="margin: 0; font-size: 1.6rem; letter-spacing: -0.03em;">Enterprise Systems &amp; ERP Implementations</h2>
+      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-doux); text-transform: uppercase;">Real Greenfield Architecture</span>
+    </div>
+    <p class="chapo" style="font-size: 1.05rem; margin-top: 8px; margin-bottom: 24px;">
       Diagnosing operational bottlenecks and building system guardrails that scale without manual workarounds.
     </p>
 
     <div class="grille">
-      <a class="carte" href="/projects/sap-o2c-standardization.html">
+      <a class="carte" href="{{ '/projects/sap-o2c-standardization.html' | relative_url }}">
         <div class="carte-barre" style="background: #b4502d;"></div>
-        <span class="etiquette">SAP S/4HANA</span>
-        <h3>O2C Without the Chaos: Standardising SAP SD</h3>
-        <p>Replacing spreadsheet workarounds with standardized condition pricing and automated billing during a greenfield SAP rollout.</p>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+          <span class="etiquette">SAP S/4HANA</span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">O2C Flow</span>
+        </div>
+        <h3 style="font-size: 1.25rem;">O2C Without the Chaos: Standardising SAP SD</h3>
+        <p>Replacing rogue spreadsheet calculations with standardized condition pricing and automated billing during a high-stakes SAP migration.</p>
       </a>
-      <a class="carte" href="/projects/odoo-inventory.html">
+
+      <a class="carte" href="{{ '/projects/odoo-inventory.html' | relative_url }}">
         <div class="carte-barre" style="background: #b4502d;"></div>
-        <span class="etiquette">Odoo ERP</span>
-        <h3>Three Disconnected Tools, One Coherent Flow</h3>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+          <span class="etiquette">Odoo ERP</span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Atomic Locking</span>
+        </div>
+        <h3 style="font-size: 1.25rem;">Three Disconnected Tools, One Coherent Flow</h3>
         <p>Connecting sales orders directly to warehouse stock to stop double-selling inventory and eliminate manual month-end reconciliations.</p>
       </a>
     </div>
 
     <!-- SECTION 4 : NOTES, ESSAIS & PHILOSOPHIE -->
-    <h2 style="margin-top: 4.5rem;">Notes, Teardowns &amp; Disassembly</h2>
-    <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
-      Observations on interaction models, friction, and taking complex systems apart.
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4.5rem; flex-wrap: wrap; gap: 8px;">
+      <h2 style="margin: 0; font-size: 1.6rem; letter-spacing: -0.03em;">Notes, Teardowns &amp; Disassembly</h2>
+      <a href="{{ '/blog/' | relative_url }}" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;">View all writings →</a>
+    </div>
+    <p class="chapo" style="font-size: 1.05rem; margin-top: 8px; margin-bottom: 24px;">
+      Observations on interaction models, physical hardware, friction, and taking complex systems apart.
     </p>
 
     <div class="grille">
-      <a class="carte" href="/blog/disassembly.html">
+      <a class="carte" href="{{ '/blog/disassembly.html' | relative_url }}">
         <div class="carte-barre" style="background: #7c3aed;"></div>
         <span class="etiquette etiquette--violet">Mindset</span>
-        <h3>I Take Things Apart</h3>
-        <p>On replacing phone batteries, tackling Logic Pro, and why looking under the surface reveals how processes really work.</p>
+        <h3 style="font-size: 1.2rem;">I Take Things Apart</h3>
+        <p>On replacing glued phone batteries, tackling audio buses, and why looking under the surface reveals how processes really hold together.</p>
       </a>
-      <a class="carte" href="/blog/app-critique.html">
-        <div class="carte-barre" style="background: #4a86b4;"></div>
-        <span class="etiquette">UX Teardown</span>
-        <h3>Structured Critique of an App</h3>
-        <p>3 friction points identified, 1 focused solution with clear hypotheses and measurable success metrics.</p>
-      </a>
-      <a class="carte" href="/blog/available-to-promise.html">
+
+      <a class="carte" href="{{ '/blog/available-to-promise.html' | relative_url }}">
         <div class="carte-barre" style="background: #b4502d;"></div>
         <span class="etiquette">Systems Logic</span>
-        <h3>Available-to-Promise in Order-to-Cash</h3>
+        <h3 style="font-size: 1.2rem;">Available-to-Promise &amp; Phantom States</h3>
         <p>Why promising delivery dates before checking actual warehouse stock creates quiet chaos across sales and logistics.</p>
       </a>
-      <a class="carte" href="/blog/focus-sessions.html">
+
+      <a class="carte" href="{{ '/blog/app-critique.html' | relative_url }}">
+        <div class="carte-barre" style="background: #4a86b4;"></div>
+        <span class="etiquette">UX Teardown</span>
+        <h3 style="font-size: 1.2rem;">Structured Critique of an App</h3>
+        <p>3 friction points identified, 1 focused solution with clear hypotheses and measurable product success metrics.</p>
+      </a>
+
+      <a class="carte" href="{{ '/blog/focus-sessions.html' | relative_url }}">
         <div class="carte-barre" style="background: #4caf6b;"></div>
-        <span class="etiquette">Product Concept</span>
-        <h3>Focus Sessions Tied to Your Calendar</h3>
-        <p>Connecting the time you plan with the time you actually protect.</p>
+        <span class="etiquette etiquette--vert">Product Concept</span>
+        <h3 style="font-size: 1.2rem;">Focus Sessions Tied to Your Calendar</h3>
+        <p>Connecting the time you plan with the focused time you actually protect in reality.</p>
       </a>
     </div>
-
-    <p style="margin-top: 2rem;">
-      <a href="/blog/" style="font-weight: 600; text-decoration: none;">View all notes &amp; writings →</a>
-    </p>
   </main>

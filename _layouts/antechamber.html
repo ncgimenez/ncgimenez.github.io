@@ -432,7 +432,8 @@
     <a href="{{ '/antechamber/lens.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'lens' %}is-active{% endif %}">01 The Lens</a>
     <a href="{{ '/antechamber/sound.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'sound' %}is-active{% endif %}">02 Sound Lab</a>
     <a href="{{ '/antechamber/notes.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'notes' %}is-active{% endif %}">03 Reading &amp; Notes</a>
-    <a href="{{ '/antechamber/about.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'about' %}is-active{% endif %}">04 Behind the Curtain</a>
+    <a href="{{ '/antechamber/reserve.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'reserve' %}is-active{% endif %}">04 The Reserve</a>
+    <a href="{{ '/antechamber/about.html' | relative_url }}" class="mobile-room-pill {% if page.url contains 'about' %}is-active{% endif %}">05 Behind the Curtain</a>
   </nav>
 
   <!-- MAIN TWO-COLUMN CONTAINER -->
@@ -479,8 +480,13 @@
           <span>Reading &amp; Notes 📚</span>
         </a>
 
-        <a href="{{ '/antechamber/about.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'about' %}is-active{% endif %}">
+        <a href="{{ '/antechamber/reserve.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'reserve' %}is-active{% endif %}">
           <span class="sidebar-nav-num">04</span>
+          <span>The Reserve 🗞️</span>
+        </a>
+
+        <a href="{{ '/antechamber/about.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'about' %}is-active{% endif %}">
+          <span class="sidebar-nav-num">05</span>
           <span>Behind Curtain 🎭</span>
         </a>
       </nav>

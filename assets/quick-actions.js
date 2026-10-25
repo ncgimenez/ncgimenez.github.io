@@ -78,6 +78,15 @@
     },
     {
       group: 'Sound & Atelier Bench',
+      title: 'The Reserve: Broadsheet Gazette',
+      sub: 'Dormant prototypes, archived hardware teardown logs & paused inventions',
+      icon: '🗞️',
+      badge: 'Gazette',
+      url: '/antechamber/reserve.html',
+      keywords: 'reserve gazette broadsheet archive prototype dormant on hold vault teardown chronos buffer'
+    },
+    {
+      group: 'Sound & Atelier Bench',
       title: 'Behind the Curtain',
       sub: 'Making tedious tasks effortless & the craft of disassembly',
       icon: '🎭',

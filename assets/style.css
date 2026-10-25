@@ -2498,6 +2498,178 @@ footer {
   font-weight: 600;
 }
 
+/* ============================================================
+   RADICAL OPEN CANVAS STYLES (Perry Wang / Bradley Ziffer)
+   ============================================================ */
+.open-canvas-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+.open-project-spread {
+  margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .open-project-spread {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.open-project-header {
+  margin-bottom: 1.5rem;
+  max-width: 780px;
+}
+
+.open-project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texte-muté);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.open-project-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--texte);
+}
+
+.open-project-summary {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--texte-doux);
+  margin: 0 0 1.25rem;
+}
+
+.open-project-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+}
+
+.open-action-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.open-action-link:hover {
+  color: var(--texte);
+  transform: translateX(2px);
+}
+
+.open-stage-frame {
+  width: 100%;
+  border-radius: 16px;
+  background: #110e1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+
+:root[data-theme="light"] .open-stage-frame {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+}
+
+.open-stage-frame:hover {
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 768px) {
+  .open-stage-frame {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* EDITORIAL WRITING LIST (NOT BOXED CARDS) */
+.editorial-index-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--ligne);
+  margin-top: 2rem;
+}
+
+.editorial-index-item {
+  display: grid;
+  grid-template-columns: 80px 1.2fr 2fr 100px;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--ligne);
+  text-decoration: none;
+  color: var(--texte);
+  transition: background-color 0.15s ease, padding-left 0.15s ease;
+}
+
+@media (max-width: 768px) {
+  .editorial-index-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 1.25rem 0;
+  }
+}
+
+.editorial-index-item:hover {
+  padding-left: 8px;
+}
+
+.editorial-index-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--texte-muté);
+}
+
+.editorial-index-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--texte);
+}
+
+.editorial-index-desc {
+  font-size: 0.92rem;
+  color: var(--texte-doux);
+  line-height: 1.5;
+}
+
+.editorial-index-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .editorial-index-tag {
+    text-align: left;
+  }
+}
+
 
 
 

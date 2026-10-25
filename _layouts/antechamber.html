@@ -77,21 +77,32 @@
        LAYOUT : MAIN CONTENT + RIGHT VERTICAL SIDEBAR
        ============================================================ */
     .antechamber-layout {
-      display: flex;
       min-height: 100vh;
       width: 100%;
+      position: relative;
+      background: var(--fond);
     }
 
+    /* Main viewport takes all space minus sidebar, perfectly centered */
+    main.antechamber-main-viewport,
     .antechamber-main-viewport {
-      flex: 1;
-      min-width: 0;
-      padding: 2.5rem 3rem 5rem;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 2rem 1.5rem 5rem !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
 
     @media (min-width: 901px) {
+      main.antechamber-main-viewport,
       .antechamber-main-viewport {
-        margin-right: 270px;
-        padding: 3rem 4rem 6rem;
+        width: calc(100% - 270px) !important;
+        margin-left: 0 !important;
+        margin-right: 270px !important;
+        padding: 2.5rem 3rem 6rem !important;
       }
     }
 
@@ -110,6 +121,7 @@
       padding: 2rem 1.5rem;
       z-index: 100;
       box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
       transition: background-color 0.25s ease, border-color 0.25s ease;
     }
 
@@ -332,8 +344,10 @@
 
     /* POSTER AESTHETICS */
     .art-poster-canvas {
-      max-width: 1060px;
+      width: 100%;
+      max-width: 1040px;
       margin: 0 auto;
+      box-sizing: border-box;
       border: 1px solid var(--ligne) !important;
       background: var(--canvas-bg) !important;
       position: relative;

@@ -9,7 +9,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.8' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css?v=2.9' | relative_url }}">
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('ncg-theme-v2');
+      const theme = savedTheme ? savedTheme : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
 
   {% if page.mermaid %}
   <script type="module">
@@ -51,8 +60,8 @@
         <span class="cmd-k-btn-text">Actions</span>
         <kbd class="cmd-k-btn-kbd">⌘K</kbd>
       </button>
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-        <span class="theme-icon">☀️</span>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème" title="Passer en mode sombre">
+        <span class="theme-icon">🌙</span>
       </button>
     </div>
 
@@ -75,10 +84,10 @@
     (function() {
       const themeBtn = document.getElementById('theme-toggle');
       const root = document.documentElement;
-      
       const themeIcon = document.querySelector('.theme-icon');
       
-      const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
+      const savedTheme = localStorage.getItem('ncg-theme-v2');
+      const currentTheme = savedTheme ? savedTheme : 'light';
       
       function playMechanicalClick() {
         try {
@@ -102,10 +111,15 @@
       function setTheme(theme) {
         root.setAttribute('data-theme', theme);
         root.dataset.theme = theme;
+        localStorage.setItem('ncg-theme-v2', theme);
         localStorage.setItem('ncg-theme', theme);
         localStorage.setItem('theme', theme);
         if (themeIcon) {
           themeIcon.textContent = (theme === 'dark') ? '☀️' : '🌙';
+        }
+        if (themeBtn) {
+          themeBtn.setAttribute('title', theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre');
+          themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre');
         }
       }
 

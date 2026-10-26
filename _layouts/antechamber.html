@@ -14,8 +14,30 @@
        Antichambre : Sanctuarisation des couleurs & Design Éditorial
        ============================================================ */
 
-    /* 1. Mode sombre (PAR DÉFAUT) */
+    /* 1. Mode clair (PAR DÉFAUT) */
     :root,
+    :root[data-theme="light"],
+    :root:not([data-theme="dark"]) {
+      --fond: #f2edf7 !important;
+      --fond-carte: #ffffff !important;
+      --fond-carte-hover: #f9f7fc !important;
+      --canvas-bg: #faf7fd !important;
+      --sub-card-bg: #ffffff !important;
+      --texte: #1d1929 !important;
+      --texte-doux: #5f5478 !important;
+      --texte-mute: #8c82a5 !important;
+      --accent: #7e22ce !important;
+      --accent-fonce: #6b21a8 !important;
+      --accent-or: #d97706 !important;
+      --accent-cyan: #0284c7 !important;
+      --ligne: #ded4ea !important;
+      --ligne-fine: rgba(0, 0, 0, 0.08);
+      --halo-couleur: rgba(126, 34, 206, 0.08);
+      --shadow-poster: 0 16px 40px rgba(95, 84, 120, 0.1);
+      --stage-mat-bg: #130f1d;
+    }
+
+    /* 2. Mode sombre sculptural */
     :root[data-theme="dark"] {
       --fond: #0b0912 !important;
       --fond-carte: #14111f !important;
@@ -37,27 +59,6 @@
       --font-poster-sans: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-poster-serif: 'Newsreader', Georgia, serif;
       --font-mono: 'JetBrains Mono', monospace;
-    }
-
-    /* 2. Mode clair adouci */
-    :root[data-theme="light"] {
-      --fond: #f2edf7 !important;
-      --fond-carte: #ffffff !important;
-      --fond-carte-hover: #f9f7fc !important;
-      --canvas-bg: #faf7fd !important;
-      --sub-card-bg: #ffffff !important;
-      --texte: #1d1929 !important;
-      --texte-doux: #5f5478 !important;
-      --texte-mute: #8c82a5 !important;
-      --accent: #7e22ce !important;
-      --accent-fonce: #6b21a8 !important;
-      --accent-or: #d97706 !important;
-      --accent-cyan: #0284c7 !important;
-      --ligne: #ded4ea !important;
-      --ligne-fine: rgba(0, 0, 0, 0.08);
-      --halo-couleur: rgba(126, 34, 206, 0.08);
-      --shadow-poster: 0 16px 40px rgba(95, 84, 120, 0.1);
-      --stage-mat-bg: #130f1d;
     }
 
     /* Halo lumineux d'ambiance */
@@ -540,7 +541,8 @@
       const themeBtns = document.querySelectorAll('.theme-toggle');
       const root = document.documentElement;
       
-      const currentTheme = localStorage.getItem('ncg-theme') || localStorage.getItem('theme') || 'dark';
+      const savedTheme = localStorage.getItem('ncg-theme-v2');
+      const currentTheme = savedTheme ? savedTheme : 'light';
       
       function playMechanicalClick() {
         try {
@@ -564,6 +566,7 @@
       function setTheme(theme) {
         root.setAttribute('data-theme', theme);
         root.dataset.theme = theme;
+        localStorage.setItem('ncg-theme-v2', theme);
         localStorage.setItem('ncg-theme', theme);
         localStorage.setItem('theme', theme);
         document.querySelectorAll('.theme-icon').forEach(icon => {
@@ -576,7 +579,7 @@
       themeBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
-          const current = root.getAttribute('data-theme') || root.dataset.theme || 'dark';
+          const current = root.getAttribute('data-theme') || root.dataset.theme || 'light';
           const newTheme = (current === 'dark') ? 'light' : 'dark';
           playMechanicalClick();
           setTheme(newTheme);

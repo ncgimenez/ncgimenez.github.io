@@ -73,6 +73,9 @@
     // Attach click handlers to buttons
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
+        if (typeof window.playMechanicalClick === 'function') {
+          window.playMechanicalClick();
+        }
         const cat = btn.getAttribute('data-filter');
         applyFilter(cat);
       });

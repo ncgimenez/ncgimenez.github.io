@@ -6,6 +6,25 @@
   <title>{% if page.title %}{{ page.title }} · Nadia Cañadas Giménez{% else %}Nadia Cañadas Giménez · Product Builder & Analyst{% endif %}</title>
   <meta name="description" content="Portfolio of Nadia Cañadas Giménez — Product Builder & Analyst. Designing focused digital products, from workflow architecture to interface detail.">
   
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="alternate icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/favicon.png' | relative_url }}">
+
+  <!-- Social Open Graph & Twitter Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nadia Cañadas Giménez">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · Nadia Cañadas Giménez{% else %}Nadia Cañadas Giménez · Product Builder &amp; Analyst{% endif %}">
+  <meta property="og:description" content="Portfolio of Nadia Cañadas Giménez — Product Builder &amp; Analyst. Designing focused digital products, from workflow architecture to interface detail.">
+  <meta property="og:image" content="https://ncgimenez.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://ncgimenez.github.io{{ page.url }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} · Nadia Cañadas Giménez{% else %}Nadia Cañadas Giménez · Product Builder &amp; Analyst{% endif %}">
+  <meta name="twitter:description" content="Portfolio of Nadia Cañadas Giménez — Product Builder &amp; Analyst. Designing focused digital products, from workflow architecture to interface detail.">
+  <meta name="twitter:image" content="https://ncgimenez.github.io/assets/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -50,6 +69,7 @@
         <ul>
           <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}aria-current="page"{% endif %}>Work</a></li>
           <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Notes</a></li>
+          <li><a href="{{ '/antechamber/' | relative_url }}" {% if page.url contains '/antechamber/' %}aria-current="page"{% endif %}>Atelier</a></li>
           <li><a href="{{ '/about.html' | relative_url }}" {% if page.url contains '/about' %}aria-current="page"{% endif %}>About</a></li>
           <li><a href="https://www.linkedin.com/in/ncgimenez" target="_blank" rel="noopener">LinkedIn ↗</a></li>
         </ul>
@@ -114,6 +134,7 @@
           osc.stop(ctx.currentTime + 0.035);
         } catch(e) {}
       }
+      window.playMechanicalClick = playMechanicalClick;
 
       function setTheme(theme) {
         root.setAttribute('data-theme', theme);

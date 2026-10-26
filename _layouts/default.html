@@ -57,7 +57,6 @@
 
     <div class="controles-header">
       <button type="button" class="cmd-k-btn" id="cmd-k-trigger" aria-label="Open Quick Actions (⌘K)" title="Quick Actions (⌘K)">
-        <span class="cmd-k-btn-icon">⚡</span>
         <span class="cmd-k-btn-text">Actions</span>
         <kbd class="cmd-k-btn-kbd">⌘K</kbd>
       </button>
@@ -76,7 +75,14 @@
         © {{ 'now' | date: "%Y" }} Nadia Cañadas Giménez · Built with care in Belgium.
       </p>
       <div>
-        <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Entrer dans l'Antichambre" aria-label="Entrer dans l'Antichambre">🗝️</a>
+        <a class="cle-secrete" href="{{ '/antechamber/' | relative_url }}" title="Studio Notes &amp; Atelier" aria-label="Studio Notes &amp; Atelier" style="display: inline-flex; align-items: center; justify-content: center; opacity: 0.4; transition: opacity 0.2s ease; color: var(--texte);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="7.5" cy="15.5" r="5.5"/>
+            <path d="m21 2-9.6 9.6"/>
+            <path d="m15.5 7.5 3 3"/>
+            <path d="m18.5 4.5 2 2"/>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>

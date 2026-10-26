@@ -20,6 +20,57 @@ mermaid: true
       <div><dt>Focus</dt><dd>Condition pricing &amp; order-to-billing</dd></div>
     </dl>
 
+    <!-- 3-PART FRAMEWORK OVERVIEW -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0; padding: 1.5rem; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon);">
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Challenge</div>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+          During a high-stakes ERP transformation, sales teams bypassed core software using rogue offline spreadsheets for multi-currency pricing, resulting in compounding revenue leaks and month-end ledger chaos.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The System</div>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+          Audited data bottlenecks, aligned cross-functional requirements, and engineered atomic pricing condition records directly into S/4HANA with automated validation rules and billing guardrails.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Interface</div>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+          Frictionless standard order entry flows that align user speed with strict accounting governance, eliminating shadow spreadsheet workarounds and driving audit discrepancies down to 0.0%.
+        </p>
+      </div>
+    </div>
+
+    <!-- DATA INTEGRITY PIPELINE SCHEMATIC -->
+    <div style="background: #09090c; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.75rem; margin: 2.5rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.68rem; color: #71717a; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); padding-bottom: 10px; margin-bottom: 14px;">
+        <span>DATA INTEGRITY PIPELINE // ORDER ENTRY TO SETTLEMENT</span>
+        <span>AUDIT DISCREPANCIES: 0.0%</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr auto 1.3fr auto 1fr; gap: 10px; align-items: center; background: #000000; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 1.5rem 1.25rem;">
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-family: var(--font-mono); font-size: 0.7rem;">
+          <div style="color: #ef4444; font-weight: 700; margin-bottom: 4px;">SHADOW WORKFLOWS</div>
+          <div style="color: #71717a; line-height: 1.4;">Rogue Excel pricing calculators with manual multi-currency overrides.</div>
+        </div>
+
+        <div style="font-family: var(--font-mono); color: #71717a; font-size: 1.1rem;">➔</div>
+
+        <div style="background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.72rem;">
+          <div style="color: #ffffff; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 4px;">ATOMIC PRICING CORE</div>
+          <div style="color: #a1a1aa; line-height: 1.45;">Condition technique access sequences enforced at sales order entry. Zero manual overrides.</div>
+        </div>
+
+        <div style="font-family: var(--font-mono); color: #71717a; font-size: 1.1rem;">➔</div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-family: var(--font-mono); font-size: 0.7rem;">
+          <div style="color: #4ade80; font-weight: 700; margin-bottom: 4px;">CLEAN LEDGER</div>
+          <div style="color: #71717a; line-height: 1.4;">Automated month-end revenue recognition and zero dispute backlog.</div>
+        </div>
+      </div>
+    </div>
+
     <h2>The Core Friction</h2>
     <p>
       When hypergrowth outpaces operational architecture, sales teams invent workarounds. For this hardware scale-up expanding across 14 European markets, every sales representative maintained an independent spreadsheet with custom discount matrices, legacy SKU overrides, and manual delivery commitments.

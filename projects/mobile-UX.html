@@ -23,6 +23,65 @@ title: SNCB Transit Mobile UX Redesign
     <div><dt>Core Metric</dt><dd>Connection Miss Rate &amp; Cognitive Panic</dd></div>
   </dl>
 
+  <!-- 3-PART FRAMEWORK OVERVIEW -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0; padding: 1.5rem; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon);">
+    <div>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Challenge</div>
+      <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+        Catching a tight 4-minute rail connection induces severe commuter stress. Standing at the wrong carriage door upon arrival at Brussels-Midi turns an easy transfer into a missed connection.
+      </p>
+    </div>
+    <div>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The System</div>
+      <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+        Cross-referenced rolling stock carriage vestibule layouts directly with station platform staircase and escalator coordinates, determining optimal transfer positioning 5 minutes prior to arrival.
+      </p>
+    </div>
+    <div>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Interface</div>
+      <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+        High-contrast 2D schematic cutaway aligning carriage doors directly with platform descents, reducing passenger walking distance to zero and eliminating orientation friction before the train stops.
+      </p>
+    </div>
+  </div>
+
+  <!-- ARCHITECTURAL BLUEPRINT SCHEMATIC -->
+  <div style="background: #09090c; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.75rem; margin: 2.5rem 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.68rem; color: #71717a; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); padding-bottom: 10px; margin-bottom: 14px;">
+      <span>SCHEMATIC 2D // BRUSSELS-MIDI PLATFORM 11</span>
+      <span>TRANSFER WINDOW: 04:00 MIN · PASSENGER FLOW: OPTIMAL</span>
+    </div>
+
+    <!-- Train Cutaway & Platform Alignment Graphic -->
+    <div style="background: #000000; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 1.5rem 1.25rem;">
+      <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #71717a; margin-bottom: 8px;">TRAIN IC 2108 · ROLLING STOCK CARRIAGE SPEC</div>
+      <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; gap: 8px; align-items: center; border: 1.5px solid #27272a; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+        <div style="text-align: center; font-family: var(--font-mono); font-size: 0.7rem; color: #71717a; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">DOOR 1A</div>
+        <div style="text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: #a1a1aa; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">PASSENGER CABIN A (36 SEATS)</div>
+        <div style="text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: #a1a1aa; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">PASSENGER CABIN B (36 SEATS)</div>
+        <div style="text-align: center; font-family: var(--font-mono); font-size: 0.7rem; color: #ffffff; background: #27272a; border: 1px solid #3f3f46; font-weight: 700; padding: 6px; border-radius: 4px; box-shadow: 0 0 12px rgba(255,255,255,0.15);">
+          DOOR 2B 🎯
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: flex-end; padding-right: 32px; margin-bottom: 16px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #ffffff; font-weight: 700;">DIRECT DESCENT (0m WALK)</span>
+          <span style="font-family: var(--font-mono); font-size: 1.2rem; color: #ffffff; line-height: 1;">↓</span>
+        </div>
+      </div>
+
+      <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #71717a; margin-bottom: 8px;">PLATFORM 11 SURFACE &amp; ESCALATOR DEPLOYMENT</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 220px; gap: 12px; align-items: center; border: 1.5px dashed #27272a; border-radius: 8px; padding: 14px;">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #71717a;">PLATFORM WEST SECTOR</div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #71717a;">MIDWAY TACTILE PAVING</div>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); padding: 8px 12px; border-radius: 6px; text-align: center;">
+          STAIRCASE 02 ➔ CONNECTING LINE (45s)
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 1. LE PROBLÈME RÉEL DU TERRAIN -->
   <h2>1. The Field Problem: When Track Numbers Lie to Passengers</h2>
   <p>

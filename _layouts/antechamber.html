@@ -443,8 +443,8 @@
       <button type="button" class="sidebar-theme-btn theme-toggle" aria-label="Toggle theme">
         <span class="theme-icon">☀️</span>
       </button>
-      <a href="{{ '/' | relative_url }}" class="sidebar-theme-btn" title="Exit to Portfolio" style="text-decoration: none;">
-        <span>💼</span>
+      <a href="{{ '/' | relative_url }}" class="sidebar-theme-btn" title="Exit to Portfolio" style="text-decoration: none; font-size: 0.72rem; font-family: var(--font-mono); padding: 4px 8px;">
+        <span>Work</span>
       </a>
     </div>
   </header>
@@ -489,27 +489,27 @@
 
         <a href="{{ '/antechamber/lens.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'lens' %}is-active{% endif %}">
           <span class="sidebar-nav-num">01</span>
-          <span>The Lens 📸</span>
+          <span>The Lens</span>
         </a>
 
         <a href="{{ '/antechamber/sound.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'sound' %}is-active{% endif %}">
           <span class="sidebar-nav-num">02</span>
-          <span>Sound Lab 🎹</span>
+          <span>Sound Lab</span>
         </a>
 
         <a href="{{ '/antechamber/notes.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'notes' %}is-active{% endif %}">
           <span class="sidebar-nav-num">03</span>
-          <span>Reading &amp; Notes 📚</span>
+          <span>Reading &amp; Notes</span>
         </a>
 
         <a href="{{ '/antechamber/reserve.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'reserve' %}is-active{% endif %}">
           <span class="sidebar-nav-num">04</span>
-          <span>The Reserve 🗞️</span>
+          <span>The Reserve</span>
         </a>
 
         <a href="{{ '/antechamber/about.html' | relative_url }}" class="sidebar-nav-item {% if page.url contains 'about' %}is-active{% endif %}">
           <span class="sidebar-nav-num">05</span>
-          <span>Behind Curtain 🎭</span>
+          <span>Behind Curtain</span>
         </a>
       </nav>
 
@@ -517,7 +517,7 @@
       <div class="sidebar-controls-block">
         <div class="sidebar-action-btn-row">
           <button type="button" class="sidebar-cmd-btn" id="cmd-k-trigger" aria-label="Open Quick Actions (⌘K)" title="Quick Actions (⌘K)">
-            <span>⚡ Actions</span>
+            <span>Actions</span>
             <kbd style="font-size: 0.65rem; background: rgba(168,85,247,0.15); padding: 2px 4px; border-radius: 4px;">⌘K</kbd>
           </button>
           <button type="button" class="sidebar-theme-btn theme-toggle" id="theme-toggle" aria-label="Changer de thème">
@@ -526,7 +526,7 @@
         </div>
 
         <a href="{{ '/' | relative_url }}" class="sidebar-exit-link" title="Exit to professional engineering portfolio">
-          <span>💼 Portfolio Pro</span>
+          <span>Portfolio</span>
           <span>→</span>
         </a>
       </div>

@@ -60,7 +60,7 @@ title: SNCB Transit Mobile UX Redesign
         <div style="text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: #a1a1aa; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">PASSENGER CABIN A (36 SEATS)</div>
         <div style="text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: #a1a1aa; padding: 6px; background: rgba(255,255,255,0.02); border-radius: 4px;">PASSENGER CABIN B (36 SEATS)</div>
         <div style="text-align: center; font-family: var(--font-mono); font-size: 0.7rem; color: #ffffff; background: #27272a; border: 1px solid #3f3f46; font-weight: 700; padding: 6px; border-radius: 4px; box-shadow: 0 0 12px rgba(255,255,255,0.15);">
-          DOOR 2B 🎯
+          DOOR 2B (OPTIMAL)
         </div>
       </div>
 
@@ -115,13 +115,13 @@ title: SNCB Transit Mobile UX Redesign
   <div class="sncb-simulator" id="sncb-simulator">
     <div class="sncb-scenario-bar" role="tablist" aria-label="Transfer scenarios">
       <button type="button" class="sncb-scenario-btn is-active" data-scenario="same_platform" role="tab" aria-selected="true">
-        🟢 Same Platform (Tracks 3 ➔ 4)
+        Same Platform (Tracks 3 ➔ 4)
       </button>
       <button type="button" class="sncb-scenario-btn" data-scenario="change_platform" role="tab" aria-selected="false">
-        🟠 Platform Change (Tracks 3 ➔ 8)
+        Platform Change (Tracks 3 ➔ 8)
       </button>
       <button type="button" class="sncb-scenario-btn" data-scenario="short_platform" role="tab" aria-selected="false">
-        ⚠️ Short Platform Edge-Case (Gare d'Ans)
+        Short Platform Warning (Ans)
       </button>
     </div>
 
@@ -139,7 +139,6 @@ title: SNCB Transit Mobile UX Redesign
             <div class="sncb-step-tag">Step 1 · Disembark</div>
             <div class="sncb-step-track sncb-track-arr">Track 3</div>
             <div class="sncb-exit-side">
-              <span>🚪</span>
               <span class="sncb-exit-side-label">DOORS ON LEFT</span>
             </div>
             <div class="sncb-exit-subtext">In train direction of travel (➔)</div>
@@ -158,7 +157,7 @@ title: SNCB Transit Mobile UX Redesign
 
         <!-- SPATIAL PLATFORM BANNER -->
         <div class="sncb-platform-banner sncb-banner--green">
-          <div class="sncb-banner-title">🟢 SAME PHYSICAL PLATFORM · NO STAIRS NEEDED</div>
+          <div class="sncb-banner-title">SAME PHYSICAL PLATFORM · NO STAIRS NEEDED</div>
           <div class="sncb-banner-desc">
             Do not go down into the underpass! Your connection departs directly from the other side of this same platform. Simply cross the central slab (15 seconds).
           </div>
@@ -179,19 +178,19 @@ title: SNCB Transit Mobile UX Redesign
   <div class="sncb-onboard-stage" id="sncb-onboard-stage">
     <div class="sncb-onboard-toolbar">
       <div class="sncb-train-motion-badge">
-        <span>🚆 Inbound Train IC 512</span>
+        <span>Inbound Train IC 512</span>
         <span class="sncb-motion-arrow">➔ ➔ ➔</span>
         <span style="color: var(--texte-doux); font-weight: 400;">Forward direction of travel</span>
       </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         <button type="button" class="sncb-onboard-btn is-active bouton" data-side="left" style="padding: 5px 12px; font-size: 0.8rem;">
-          ⬅️ Exit Doors on LEFT
+          Exit Doors on LEFT
         </button>
         <button type="button" class="sncb-onboard-btn bouton" data-side="right" style="padding: 5px 12px; font-size: 0.8rem;">
-          ➡️ Exit Doors on RIGHT
+          Exit Doors on RIGHT
         </button>
         <button type="button" class="sncb-chime-btn bouton" style="padding: 5px 10px; font-size: 0.8rem;" title="Play SNCB chime feedback">
-          🔊 SNCB Transit Chime
+          Play Transit Chime
         </button>
       </div>
     </div>
@@ -203,7 +202,7 @@ title: SNCB Transit Mobile UX Redesign
         <div class="door-title" style="color: #27c93f;">LEFT DOORS</div>
         <div style="font-size: 0.75rem; color: var(--texte-doux);">Platform Side · Track 3</div>
         <div class="door-status-pill door-status--left" style="background: rgba(39, 201, 63, 0.2); color: #27c93f; border: 1px solid #27c93f;">
-          🟢 EXIT HERE
+          EXIT HERE
         </div>
         <div style="font-size: 0.68rem; color: var(--texte-muté); margin-top: 8px;">
           Direction of travel (➔)
@@ -213,7 +212,7 @@ title: SNCB Transit Mobile UX Redesign
       <!-- Centre Vestibule : Voyageur & Écran Téléphone -->
       <div class="sncb-vestibule-center">
         <div style="font-size: 0.78rem; color: var(--texte-muté); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-          <span>🧭 Spatial orientation:</span>
+          <span>Spatial orientation:</span>
           <strong style="color: var(--texte);">Train forward motion (➔)</strong>
         </div>
 
@@ -228,7 +227,6 @@ title: SNCB Transit Mobile UX Redesign
               Approaching Liège-Guillemins (in 2 min)
             </div>
             <div class="phone-door-prompt" id="phone-door-text">
-              <span>⬅️</span>
               <span>DOORS ON LEFT</span>
             </div>
             <div class="phone-door-subtext" id="phone-door-subtext">
@@ -237,7 +235,7 @@ title: SNCB Transit Mobile UX Redesign
           </div>
         </div>
         <div style="font-size: 0.72rem; color: var(--texte-muté); margin-top: 12px;">
-          👤 Commuter with luggage: stands at the correct door 3 minutes before arrival
+          Commuter with luggage: stands at the correct door 3 minutes before arrival
         </div>
       </div>
 
@@ -247,7 +245,7 @@ title: SNCB Transit Mobile UX Redesign
         <div class="door-title" style="color: var(--texte-doux);">RIGHT DOORS</div>
         <div style="font-size: 0.75rem; color: var(--texte-muté);">Tracks · Rail Bed</div>
         <div class="door-status-pill door-status--right" style="background: rgba(255, 255, 255, 0.05); color: var(--texte-muté); border: 1px dashed var(--ligne);">
-          🔒 LOCKED
+          LOCKED
         </div>
         <div style="font-size: 0.68rem; color: var(--texte-muté); margin-top: 8px;">
           Between tracks with no platform
@@ -268,18 +266,18 @@ title: SNCB Transit Mobile UX Redesign
   <div class="sncb-platform-stage" id="sncb-platform-stage">
     <div class="platform-stage-toolbar">
       <div style="font-weight: 700; font-size: 0.88rem; color: var(--texte); display: flex; align-items: center; gap: 8px;">
-        <span>🚉 Central Island Platform (Liège-Guillemins)</span>
+        <span>Central Island Platform (Liège-Guillemins)</span>
         <span style="font-size: 0.75rem; color: var(--texte-doux); font-weight: 400;">Connection at 17:42</span>
       </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         <button type="button" class="sncb-platform-btn is-active bouton" data-mode="same" style="padding: 5px 12px; font-size: 0.8rem;">
-          🟢 Track 4 (Same Platform)
+          Track 4 (Same Platform)
         </button>
         <button type="button" class="sncb-platform-btn bouton" data-mode="diff" style="padding: 5px 12px; font-size: 0.8rem;">
-          🟠 Track 8 (Cross to Another Platform)
+          Track 8 (Cross to Another Platform)
         </button>
         <button type="button" class="sncb-platform-btn bouton" data-mode="mistake" style="padding: 5px 12px; font-size: 0.8rem;">
-          🔴 Without the App (The Stairs Trap)
+          Without Guidance (The Stairs Trap)
         </button>
       </div>
     </div>
@@ -292,7 +290,7 @@ title: SNCB Transit Mobile UX Redesign
           <div style="font-size: 0.72rem; color: var(--texte-doux);">Your inbound train</div>
           <div class="track-rails"></div>
           <div style="font-size: 0.7rem; color: #4ade80; background: rgba(74, 222, 128, 0.1); padding: 4px; border-radius: 6px;">
-            🚆 IC 512 at platform
+            IC 512 at platform
           </div>
         </div>
 
@@ -318,16 +316,16 @@ title: SNCB Transit Mobile UX Redesign
             <div class="platform-path-line" id="platform-path-line"></div>
             
             <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--texte-muté);">
-              <span>🚶 Level walk</span>
-              <span id="platform-time-estimate" style="color: #27c93f; font-weight: 700;">⏱️ 15 seconds · 0 stairs</span>
-              <span>🚪 Immediate boarding</span>
+              <span>Level walk</span>
+              <span id="platform-time-estimate" style="color: #27c93f; font-weight: 700;">15 seconds · 0 stairs</span>
+              <span>Immediate boarding</span>
             </div>
           </div>
 
           <!-- Stairs to Underground Tunnel (The trap to avoid) -->
           <div class="platform-stairs-trap" id="platform-stairs-trap">
             <div style="font-weight: 700; font-size: 0.8rem; color: #ff5f56; margin-bottom: 2px;" id="stairs-status-title">
-              🚫 DO NOT TAKE THE STAIRS!
+              DO NOT TAKE THE STAIRS
             </div>
             <div style="font-size: 0.72rem; color: var(--texte-doux);" id="stairs-status-desc">
               These stairs lead down to the underground tunnel. It is completely unnecessary: your connecting train is right behind you across this central platform.
@@ -341,14 +339,13 @@ title: SNCB Transit Mobile UX Redesign
           <div style="font-size: 0.72rem; color: var(--texte-doux);" id="track-right-desc">Same physical concrete slab</div>
           <div class="track-rails"></div>
           <div style="font-size: 0.7rem; color: var(--accent); background: rgba(240, 113, 75, 0.15); padding: 4px; border-radius: 6px;" id="track-right-status">
-            🚆 IC 1938 at platform
+            IC 1938 at platform
           </div>
         </div>
       </div>
 
       <!-- Spatial Status Badge -->
       <div class="platform-status-badge sncb-banner--green" id="platform-main-badge">
-        <span style="font-size: 1.4rem;">🟢</span>
         <div>
           <strong>Zero stairs needed:</strong> The passenger walks across the slab in 15 seconds, saving 3 minutes and avoiding carrying heavy bags down and up stairs.
         </div>
@@ -394,7 +391,7 @@ title: SNCB Transit Mobile UX Redesign
           <span style="font-size: 0.78rem; font-weight: 700; color: #27c93f;">Variant · SamePlatform</span>
           <span style="font-size: 0.7rem; color: var(--texte-muté);">High Confidence</span>
         </div>
-        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">🟢 Direct Cross-Walk (15s)</div>
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">Direct Cross-Walk (15s)</div>
         <div style="font-size: 0.8rem; color: var(--texte-doux); margin-top: 4px;">Disables stairs warnings; emphasizes that connecting train is on the opposite face of the same island platform.</div>
       </div>
 
@@ -404,7 +401,7 @@ title: SNCB Transit Mobile UX Redesign
           <span style="font-size: 0.78rem; font-weight: 700; color: #ffbd2e;">Variant · PlatformChange</span>
           <span style="font-size: 0.7rem; color: var(--texte-muté);">Tunnel Required</span>
         </div>
-        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">🟠 Underpass Transfer (3 min)</div>
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">Underpass Transfer (3 min)</div>
         <div style="font-size: 0.8rem; color: var(--texte-doux); margin-top: 4px;">Activates directional escalator guidance and highlights elevator access for passengers carrying heavy luggage.</div>
       </div>
 
@@ -414,7 +411,7 @@ title: SNCB Transit Mobile UX Redesign
           <span style="font-size: 0.78rem; font-weight: 700; color: #ff5f56;">Variant · ShortPlatformWarning</span>
           <span style="font-size: 0.7rem; color: var(--texte-muté);">Critical Edge-Case</span>
         </div>
-        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">⚠️ Train Overhang Alert</div>
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--texte);">Train Overhang Alert</div>
         <div style="font-size: 0.8rem; color: var(--texte-doux); margin-top: 4px;">Warns passengers before arrival that rear cars will not align with the platform, routing them forward to Cars 1–4.</div>
       </div>
     </div>

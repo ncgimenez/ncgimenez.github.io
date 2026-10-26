@@ -4,7 +4,7 @@
 (function() {
   const SCENARIOS = {
     same_platform: {
-      badge: '🟢 Same Physical Platform (Tracks 3 ➔ 4)',
+      badge: 'Same Physical Platform (Tracks 3 ➔ 4)',
       title: 'Approaching Brussels-Midi · In 3 min',
       trainNo: 'IC 512 (Liège ➔ Brussels)',
       trackArr: 'Track 3',
@@ -14,12 +14,11 @@
       depTime: '17:42 · Departs in 6 min',
       depDest: 'IC 1938 to Ghent / Bruges',
       bannerClass: 'sncb-banner--green',
-      bannerIcon: '🟢',
       bannerTitle: 'SAME PHYSICAL PLATFORM · NO STAIRS NEEDED',
       bannerDesc: 'Do not go down into the underpass! Your connection departs directly from the other side of this same platform. Simply cross the central slab (15 seconds).'
     },
     change_platform: {
-      badge: '🟠 Platform Change (Tracks 3 ➔ 8)',
+      badge: 'Platform Change (Tracks 3 ➔ 8)',
       title: 'Approaching Brussels-Midi · In 3 min',
       trainNo: 'IC 512 (Liège ➔ Brussels)',
       trackArr: 'Track 3',
@@ -29,12 +28,11 @@
       depTime: '17:44 · Departs in 8 min',
       depDest: 'IC 2115 to Namur / Luxembourg',
       bannerClass: 'sncb-banner--amber',
-      bannerIcon: '🟠',
       bannerTitle: 'PLATFORM CHANGE REQUIRED',
       bannerDesc: 'Take the central escalators down to the South underpass. Follow signs for Platform IV (Tracks 7–8). Approx. 3 minutes walking time with bags.'
     },
     short_platform: {
-      badge: '⚠️ Short Platform Edge-Case (Gare d\'Ans)',
+      badge: 'Short Platform Warning (Ans)',
       title: 'Approaching Ans · In 2 min',
       trainNo: 'IC 418 (Welkenraedt ➔ Liège)',
       trackArr: 'Track 1',
@@ -44,8 +42,7 @@
       depTime: 'Arrival 18:05 · Short stop (1 min)',
       depDest: 'Local stop Ans',
       bannerClass: 'sncb-banner--red',
-      bannerIcon: '⚠️',
-      bannerTitle: 'ATTENTION: SHORT PLATFORM (GARE D\'ANS)',
+      bannerTitle: 'SHORT PLATFORM WARNING (GARE D\'ANS)',
       bannerDesc: 'This train is longer than the station platform. Doors in cars 5 to 8 will remain locked. Move forward immediately to cars 1 to 4 to disembark!'
     }
   };
@@ -91,7 +88,7 @@
         depDestEl.textContent = data.depDest;
 
         bannerBox.className = `sncb-platform-banner ${data.bannerClass}`;
-        bannerTitle.innerHTML = `${data.bannerIcon} ${data.bannerTitle}`;
+        bannerTitle.textContent = data.bannerTitle;
         bannerDesc.textContent = data.bannerDesc;
 
         root.querySelector('.sncb-card-body').style.opacity = '1';
@@ -167,7 +164,7 @@
 
         const pillL = doorLeft.querySelector('.door-status-pill');
         if (pillL) {
-          pillL.textContent = '🟢 EXIT HERE';
+          pillL.textContent = 'EXIT HERE';
           pillL.style.background = 'rgba(39, 201, 63, 0.2)';
           pillL.style.color = '#27c93f';
           pillL.style.borderColor = '#27c93f';
@@ -175,14 +172,14 @@
 
         const pillR = doorRight.querySelector('.door-status-pill');
         if (pillR) {
-          pillR.textContent = '🔒 LOCKED';
+          pillR.textContent = 'LOCKED';
           pillR.style.background = 'rgba(255, 255, 255, 0.05)';
           pillR.style.color = 'var(--texte-muté)';
           pillR.style.borderColor = 'var(--ligne)';
         }
 
         if (phoneStation) phoneStation.textContent = 'Approaching Liège-Guillemins (in 2 min)';
-        if (phoneDoorText) phoneDoorText.innerHTML = '<span>⬅️</span><span>DOORS ON LEFT</span>';
+        if (phoneDoorText) phoneDoorText.innerHTML = '<span>DOORS ON LEFT</span>';
         if (phoneDoorSubtext) phoneDoorSubtext.textContent = 'In train direction of travel. You can line up calmly at the left doors before the train halts.';
       } else {
         doorLeft.className = 'sncb-train-door sncb-door--left is-locked-side';
@@ -190,7 +187,7 @@
 
         const pillL = doorLeft.querySelector('.door-status-pill');
         if (pillL) {
-          pillL.textContent = '🔒 LOCKED';
+          pillL.textContent = 'LOCKED';
           pillL.style.background = 'rgba(255, 255, 255, 0.05)';
           pillL.style.color = 'var(--texte-muté)';
           pillL.style.borderColor = 'var(--ligne)';
@@ -198,14 +195,14 @@
 
         const pillR = doorRight.querySelector('.door-status-pill');
         if (pillR) {
-          pillR.textContent = '🟢 EXIT HERE';
+          pillR.textContent = 'EXIT HERE';
           pillR.style.background = 'rgba(39, 201, 63, 0.2)';
           pillR.style.color = '#27c93f';
           pillR.style.borderColor = '#27c93f';
         }
 
         if (phoneStation) phoneStation.textContent = 'Approaching Brussels-Midi (in 3 min)';
-        if (phoneDoorText) phoneDoorText.innerHTML = '<span>➡️</span><span>DOORS ON RIGHT</span>';
+        if (phoneDoorText) phoneDoorText.innerHTML = '<span>DOORS ON RIGHT</span>';
         if (phoneDoorSubtext) phoneDoorSubtext.textContent = 'In train direction of travel. Prepare your bags on the right side of the vestibule.';
       }
     }
@@ -257,7 +254,7 @@
           pathLine.style.opacity = '1';
         }
         if (timeEstimate) {
-          timeEstimate.innerHTML = '⏱️ 15 seconds · 0 stairs';
+          timeEstimate.innerHTML = '15 seconds · 0 stairs';
           timeEstimate.style.color = '#27c93f';
         }
         if (stairsBox) {
@@ -265,7 +262,7 @@
           stairsBox.style.background = 'rgba(255, 95, 86, 0.08)';
         }
         if (stairsTitle) {
-          stairsTitle.textContent = '🚫 DO NOT TAKE THE STAIRS!';
+          stairsTitle.textContent = 'DO NOT TAKE THE STAIRS';
           stairsTitle.style.color = '#ff5f56';
         }
         if (stairsDesc) {
@@ -277,12 +274,12 @@
         }
         if (trackRightDesc) trackRightDesc.textContent = 'Same physical concrete slab';
         if (trackRightStatus) {
-          trackRightStatus.textContent = '🚆 IC 1938 at platform';
+          trackRightStatus.textContent = 'IC 1938 at platform';
           trackRightStatus.style.display = 'block';
         }
         if (mainBadge) {
           mainBadge.className = 'platform-status-badge sncb-banner--green';
-          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🟢</span><div><strong>Zero stairs needed:</strong> The passenger walks across the slab in 15 seconds, saving 3 minutes and avoiding carrying heavy bags down and up stairs.</div>';
+          mainBadge.innerHTML = '<div><strong>Zero stairs needed:</strong> The passenger walks across the slab in 15 seconds, saving 3 minutes and avoiding carrying heavy bags down and up stairs.</div>';
         }
       } else if (mode === 'diff') {
         // Mode B: Platform change (Track 8)
@@ -297,7 +294,7 @@
           pathLine.style.opacity = '1';
         }
         if (timeEstimate) {
-          timeEstimate.innerHTML = '⏱️ 2 min 40s · Stairs / Elevator B';
+          timeEstimate.innerHTML = '2 min 40s · Stairs / Elevator B';
           timeEstimate.style.color = '#ffbd2e';
         }
         if (stairsBox) {
@@ -305,7 +302,7 @@
           stairsBox.style.background = 'rgba(255, 189, 46, 0.12)';
         }
         if (stairsTitle) {
-          stairsTitle.textContent = '👇 TAKE THE CENTRAL STAIRS / ELEVATOR';
+          stairsTitle.textContent = 'TAKE THE CENTRAL STAIRS / ELEVATOR';
           stairsTitle.style.color = '#ffbd2e';
         }
         if (stairsDesc) {
@@ -322,13 +319,13 @@
         }
         if (mainBadge) {
           mainBadge.className = 'platform-status-badge sncb-banner--amber';
-          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🟠</span><div><strong>Guided platform transfer:</strong> The commuter knows immediately to go down. The app highlights the nearest elevator to avoid carrying heavy luggage down stairs.</div>';
+          mainBadge.innerHTML = '<div><strong>Guided platform transfer:</strong> The commuter knows immediately to go down. The app highlights the nearest elevator to avoid carrying heavy luggage down stairs.</div>';
         }
       } else {
         // Mode C: Commuter panic mistake (without app)
         if (screenInfo) screenInfo.textContent = 'TRACK 4 · Display invisible from underground tunnel';
         if (pathLabel) {
-          pathLabel.textContent = '⚠️ Mistake: Panic stairs sprint down, then back up';
+          pathLabel.textContent = 'Mistake: Panic stairs sprint down, then back up';
           pathLabel.style.color = '#ff5f56';
         }
         if (pathLine) {
@@ -336,7 +333,7 @@
           pathLine.style.boxShadow = 'none';
         }
         if (timeEstimate) {
-          timeEstimate.innerHTML = '⏱️ +3 minutes lost · Fatigue & Panic';
+          timeEstimate.innerHTML = '+3 minutes lost · Fatigue &amp; Stress';
           timeEstimate.style.color = '#ff5f56';
         }
         if (stairsBox) {
@@ -344,7 +341,7 @@
           stairsBox.style.background = 'rgba(255, 95, 86, 0.2)';
         }
         if (stairsTitle) {
-          stairsTitle.textContent = '⚠️ CLASSIC TRANSIT STATION TRAP';
+          stairsTitle.textContent = 'CLASSIC TRANSIT STATION TRAP';
           stairsTitle.style.color = '#ff5f56';
         }
         if (stairsDesc) {
@@ -352,7 +349,7 @@
         }
         if (mainBadge) {
           mainBadge.className = 'platform-status-badge sncb-banner--red';
-          mainBadge.innerHTML = '<span style="font-size: 1.4rem;">🔴</span><div><strong>The cost of missing spatial context:</strong> Running with heavy bags, unnecessary panic, and missed connections even though the train was 15 meters away.</div>';
+          mainBadge.innerHTML = '<div><strong>The cost of missing spatial context:</strong> Running with heavy bags, unnecessary panic, and missed connections even though the train was 15 meters away.</div>';
         }
       }
     }

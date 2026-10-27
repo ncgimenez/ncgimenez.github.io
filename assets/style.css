@@ -244,28 +244,35 @@ p { margin: 0 0 18px; color: var(--texte); }
 }
 
 .bouton.plein {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(240, 113, 75, 0.35);
+  background: var(--texte);
+  border-color: var(--texte);
+  color: var(--fond) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .bouton.plein:hover {
-  background: var(--accent-fonce);
-  border-color: var(--accent-fonce);
-  color: #ffffff;
+  background: var(--texte-doux);
+  border-color: var(--texte-doux);
+  color: var(--fond) !important;
 }
 
 .bouton.violet {
   background: var(--accent-alt);
   border-color: var(--accent-alt);
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(157, 92, 255, 0.3);
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(126, 34, 206, 0.25);
+}
+
+:root[data-theme="dark"] .bouton.violet {
+  background: #7e22ce;
+  border-color: #9333ea;
+  color: #ffffff !important;
 }
 
 .bouton.violet:hover {
-  background: #8745ea;
-  border-color: #8745ea;
+  background: #6b21a8;
+  border-color: #6b21a8;
+  color: #ffffff !important;
 }
 
 /* ---------- Cartes et Grilles ---------- */
@@ -506,7 +513,7 @@ ul.liste li strong { color: var(--texte); }
   height: calc(100% - 6px);
   width: calc(50% - 3px);
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--texte);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
@@ -530,7 +537,7 @@ ul.liste li strong { color: var(--texte); }
 
 .lang-toggle[data-active="en"] .lang-opt--en,
 .lang-toggle[data-active="fr"] .lang-opt--fr {
-  color: #fff;
+  color: var(--fond) !important;
 }
 
 /* ---------- Pied de page ---------- */
@@ -941,10 +948,10 @@ footer {
 }
 
 .filter-btn.is-active {
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--texte);
+  color: var(--fond) !important;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(240, 113, 75, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .filter-pill {
@@ -1352,11 +1359,11 @@ footer {
 }
 
 .sncb-scenario-btn.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
+  background: var(--texte);
+  border-color: var(--texte);
+  color: var(--fond) !important;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(240, 113, 75, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sncb-card {

@@ -776,10 +776,22 @@ footer {
 }
 
 .cmd-palette-icon {
-  font-size: 1.15rem;
-  width: 24px;
-  text-align: center;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--ligne);
+  color: var(--texte-doux);
+  transition: color 0.1s ease, background 0.1s ease;
+}
+
+.cmd-palette-row:hover .cmd-palette-icon,
+.cmd-palette-row.is-active .cmd-palette-icon {
+  color: var(--texte);
+  background: rgba(240, 113, 75, 0.15);
 }
 
 .cmd-palette-text {
@@ -834,9 +846,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-top: 1px solid var(--ligne);
-  background: rgba(0, 0, 0, 0.12);
+  background: var(--fond-carte-hover);
   font-size: 0.75rem;
   color: var(--texte-muté);
 }
@@ -844,15 +856,24 @@ footer {
 .cmd-palette-footer-keys {
   display: flex;
   gap: 12px;
+  align-items: center;
+}
+
+.cmd-palette-footer-keys span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .cmd-palette-footer-keys kbd {
   font-family: inherit;
   font-weight: 600;
-  padding: 1px 4px;
-  border-radius: 3px;
+  font-size: 0.68rem;
+  padding: 2px 5px;
+  border-radius: 4px;
   background: var(--ligne);
   color: var(--texte);
+  border: 1px solid var(--ligne-hover);
 }
 
 .cmd-palette-toast {

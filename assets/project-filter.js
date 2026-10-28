@@ -28,8 +28,9 @@
 
       // Filter cards
       cards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        const show = (category === 'all' || cardCat === category);
+        const cardCat = card.getAttribute('data-category') || '';
+        const cats = cardCat.split(/\s+/);
+        const show = (category === 'all' || cats.includes(category));
         
         if (show) {
           card.style.display = '';
@@ -49,8 +50,9 @@
 
       // Show/hide section headings if structured by section
       sections.forEach(sec => {
-        const secCat = sec.getAttribute('data-section-category');
-        if (category === 'all' || secCat === category) {
+        const secCat = sec.getAttribute('data-section-category') || '';
+        const sCats = secCat.split(/\s+/);
+        if (category === 'all' || sCats.includes(category)) {
           sec.style.display = '';
         } else {
           sec.style.display = 'none';

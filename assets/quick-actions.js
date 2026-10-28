@@ -242,12 +242,12 @@
     },
     {
       group: 'Systems Case Studies',
-      title: 'Pedagogical System Design',
-      sub: 'Structured curriculum sequencing and clear milestone progression',
+      title: 'Enterprise Enablement: Deloitte × reMarkable',
+      sub: 'Visual cheat-sheets, annotated step-by-step guides & kinetic video scripts',
       icon: 'network',
-      badge: 'Case Study',
+      badge: 'Enablement',
       url: '/projects/pedagogical-system-design.html',
-      keywords: 'pedagogical learning curriculum design system case study'
+      keywords: 'pedagogical enablement deloitte remarkable training sap cheat sheet video script guide instructional visual education'
     },
 
     // Quick Actions

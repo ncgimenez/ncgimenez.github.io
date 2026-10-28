@@ -43,8 +43,12 @@ title: Product Owner, Designer & Systems Analyst
       </div>
     </div>
 
-    <div style="display: flex; gap: 20px; font-family: var(--font-mono); font-size: 0.85rem; flex-wrap: wrap;">
-      <a href="#work" style="color: var(--texte); text-decoration: none; font-weight: 600; border-bottom: 1.5px solid var(--texte); padding-bottom: 2px;">Selected Work ↓</a>
+    <div style="display: flex; gap: 20px; font-family: var(--font-mono); font-size: 0.85rem; flex-wrap: wrap; align-items: baseline;">
+      <a href="#work" style="color: var(--texte); text-decoration: none; font-weight: 600; border-bottom: 1.5px solid var(--texte); padding-bottom: 2px;">Featured Work ↓</a>
+      <span style="color: var(--texte-muté);">·</span>
+      <a href="#all-projects" style="color: var(--texte-doux); text-decoration: none;">All 6 Projects Index ↓</a>
+      <span style="color: var(--texte-muté);">·</span>
+      <a href="{{ '/projects/' | relative_url }}" style="color: var(--texte-doux); text-decoration: none;">Work Hub ↗</a>
       <span style="color: var(--texte-muté);">·</span>
       <a href="{{ '/about.html' | relative_url }}" style="color: var(--texte-doux); text-decoration: none;">Background &amp; Story →</a>
     </div>
@@ -237,6 +241,69 @@ title: Product Owner, Designer & Systems Analyst
         </div>
       </div>
     </article>
+
+    <!-- ==================== ALL 6 CASE STUDIES DIRECTORY ==================== -->
+    <div id="all-projects" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--ligne);">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 1.5rem;">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-muté);">Complete Catalog</span>
+          <h2 style="font-size: 1.6rem; letter-spacing: -0.03em; margin: 4px 0 0; color: var(--texte);">All Projects &amp; Case Studies</h2>
+        </div>
+        <a class="bouton" href="{{ '/projects/' | relative_url }}" style="font-size: 0.82rem; padding: 6px 14px;">Open Filterable Projects Hub →</a>
+      </div>
+
+      <div class="editorial-index-list" style="margin-top: 0;">
+
+        <!-- 01 : SPAN SUITE -->
+        <a class="editorial-index-item" href="{{ '/projects/span-suite.html' | relative_url }}">
+          <span class="editorial-index-num">01</span>
+          <span class="editorial-index-title">The Span Suite</span>
+          <span class="editorial-index-desc">Two-part execution and scheduling suite (Span Focus &amp; Span Plan) decoupling morning planning from single-task execution.</span>
+          <span class="editorial-index-tag">Live Apps ↗</span>
+        </a>
+
+        <!-- 02 : ENTERPRISE ENABLEMENT (DELOITTE x REMARKABLE) -->
+        <a class="editorial-index-item" href="{{ '/projects/pedagogical-system-design.html' | relative_url }}" style="border-left: 2px solid #4caf6b; padding-left: 10px;">
+          <span class="editorial-index-num" style="color: #4caf6b; font-weight: 700;">02</span>
+          <span class="editorial-index-title">Enterprise Enablement (Deloitte × reMarkable)</span>
+          <span class="editorial-index-desc">Visual cheat-sheets, annotated step-by-step guides, and kinetic screencasts onboarding non-technical teams onto SAP without panic.</span>
+          <span class="editorial-index-tag" style="color: #4caf6b;">Case Study ↗</span>
+        </a>
+
+        <!-- 03 : SAP S/4HANA -->
+        <a class="editorial-index-item" href="{{ '/projects/sap-o2c-standardization.html' | relative_url }}">
+          <span class="editorial-index-num">03</span>
+          <span class="editorial-index-title">SAP S/4HANA O2C Standardization</span>
+          <span class="editorial-index-desc">Fixing multi-currency pricing chaos across 14 European markets with automated condition records and zero billing disputes.</span>
+          <span class="editorial-index-tag">Enterprise ↗</span>
+        </a>
+
+        <!-- 04 : SNCB TRANSIT -->
+        <a class="editorial-index-item" href="{{ '/projects/mobile-UX.html' | relative_url }}">
+          <span class="editorial-index-num">04</span>
+          <span class="editorial-index-title">SNCB Transit Connections</span>
+          <span class="editorial-index-desc">Spatial mobile UX helping commuters make tight 4-minute train transfers at Brussels-Midi with carriage door alignment.</span>
+          <span class="editorial-index-tag">Mobile UX ↗</span>
+        </a>
+
+        <!-- 05 : ODOO ERP -->
+        <a class="editorial-index-item" href="{{ '/projects/odoo-inventory.html' | relative_url }}">
+          <span class="editorial-index-num">05</span>
+          <span class="editorial-index-title">Odoo ERP Architecture</span>
+          <span class="editorial-index-desc">Synchronizing sales, warehouse, and finance across multiple branches to eliminate inventory race conditions.</span>
+          <span class="editorial-index-tag">ERP Architecture ↗</span>
+        </a>
+
+        <!-- 06 : GOOGLE CALENDAR -->
+        <a class="editorial-index-item" href="{{ '/projects/google-calendar.html' | relative_url }}">
+          <span class="editorial-index-num">06</span>
+          <span class="editorial-index-title">Google Calendar: Selection Box</span>
+          <span class="editorial-index-desc">Interaction teardown introducing standard marquee multi-event drag-and-drop to eliminate single-meeting rescheduling drudgery.</span>
+          <span class="editorial-index-tag">UX Teardown ↗</span>
+        </a>
+
+      </div>
+    </div>
 
   </section>
 

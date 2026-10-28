@@ -7,7 +7,7 @@
     if (!filterBar) return;
 
     const filterBtns = filterBar.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.carte[data-category]');
+    const cards = document.querySelectorAll('[data-category]');
     const countDisplay = document.getElementById('filter-count');
     const sections = document.querySelectorAll('[data-section-category]');
     const container = document.querySelector('.projects-container');

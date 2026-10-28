@@ -17,7 +17,7 @@
        Antichambre : Sanctuarisation des couleurs & Design Éditorial
        ============================================================ */
 
-    /* 1. Mode clair (PAR DÉFAUT) : Papier Crème Chaud & Ambre / Miel Pâle */
+    /* 1. Mode clair (PAR DÉFAUT) : Papier Crème Chaud & Ambre Doré */
     :root,
     :root[data-theme="light"],
     :root:not([data-theme="dark"]) {
@@ -29,9 +29,9 @@
       --texte: #1c1b18 !important;
       --texte-doux: #5e594f !important;
       --texte-mute: #8c867a !important;
-      --accent: #b45309 !important;          /* Ambre chaud / miel naturel */
-      --accent-alt: #d97706 !important;      /* Ambre doré */
-      --accent-fonce: #92400e !important;    /* Terracotta doux */
+      --accent: #d97706 !important;          /* Ambre doré lumineux */
+      --accent-alt: #f59e0b !important;
+      --accent-fonce: #b45309 !important;
       --accent-or: #d97706 !important;
       --accent-cyan: #0284c7 !important;
       --accent-pale: rgba(217, 119, 6, 0.08) !important;
@@ -54,8 +54,8 @@
       --texte: #f5f2eb !important;
       --texte-doux: #a8a294 !important;
       --texte-mute: #787366 !important;
-      --accent: #f59e0b !important;          /* Ambre lumineux et doux */
-      --accent-alt: #fbbf24 !important;      /* Or doux */
+      --accent: #f59e0b !important;          /* Ambre doré lumineux */
+      --accent-alt: #fbbf24 !important;
       --accent-fonce: #fde68a !important;
       --accent-or: #f59e0b !important;
       --accent-cyan: #38bdf8 !important;
@@ -427,7 +427,8 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent-fonce);
+      color: var(--texte);
+      opacity: 0.75;
       display: inline-block;
       vertical-align: 0.2em;
       margin-right: 0.45rem;
@@ -453,7 +454,7 @@
         <span class="theme-icon">☀️</span>
       </button>
       <a href="{{ '/' | relative_url }}" class="sidebar-theme-btn" title="Exit to Portfolio" style="text-decoration: none; font-size: 0.72rem; font-family: var(--font-mono); padding: 4px 8px;">
-        <span>Work</span>
+        <span>Projects</span>
       </a>
     </div>
   </header>

@@ -3,42 +3,42 @@
    Palette : Digital Workshop (Ardoise Studio & Accents Tactiles)
    ============================================================ */
 
-/* 1. Mode clair (PAR DÉFAUT) : Blanc galerie & Encre de Chine */
+/* 1. Mode clair (PAR DÉFAUT) : Papier Crème Chaud & Encre Typographique */
 :root,
 :root[data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --fond: #fcfcfd;
+  --fond: #f7f5f0;
   --fond-carte: #ffffff;
-  --fond-carte-hover: #f4f4f5;
-  --texte: #09090b;
-  --texte-doux: #52525b;
-  --texte-muté: #71717a;
-  --accent: #09090b;
-  --accent-alt: #7e22ce;
-  --accent-fonce: #27272a;
-  --ligne: rgba(0, 0, 0, 0.08);
-  --ligne-hover: rgba(0, 0, 0, 0.16);
-  --halo-couleur: rgba(0, 0, 0, 0.02);
+  --fond-carte-hover: #f0ede6;
+  --texte: #141416;
+  --texte-doux: #52504b;
+  --texte-muté: #78756d;
+  --accent: #141416;
+  --accent-alt: #141416;
+  --accent-fonce: #000000;
+  --ligne: rgba(20, 20, 22, 0.08);
+  --ligne-hover: rgba(20, 20, 22, 0.18);
+  --halo-couleur: transparent;
   --largeur: 1240px;
   --rayon: 14px;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
 }
 
-/* 2. Mode sombre sculptural : Noir de carbone & Argent pur */
+/* 2. Mode sombre sculptural : Noir Carbone d'Imprimerie & Blanc Cassé */
 :root[data-theme="dark"] {
-  --fond: #09090c;
-  --fond-carte: #121216;
-  --fond-carte-hover: #18181f;
-  --texte: #fafafa;
-  --texte-doux: #a1a1aa;
-  --texte-muté: #71717a;
-  --accent: #ffffff;          /* Blanc pur sculptural */
-  --accent-alt: #c084fc;      /* Lavande subtile */
-  --accent-fonce: #e4e4e7;
+  --fond: #101012;
+  --fond-carte: #18181b;
+  --fond-carte-hover: #222226;
+  --texte: #f4f3ee;
+  --texte-doux: #a3a199;
+  --texte-muté: #737168;
+  --accent: #f4f3ee;          /* Blanc crème sculptural */
+  --accent-alt: #f4f3ee;
+  --accent-fonce: #ffffff;
   --ligne: rgba(255, 255, 255, 0.08);
   --ligne-hover: rgba(255, 255, 255, 0.18);
-  --halo-couleur: rgba(255, 255, 255, 0.02);
+  --halo-couleur: transparent;
   --largeur: 1240px;
   --rayon: 14px;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -197,15 +197,27 @@ p { margin: 0 0 18px; color: var(--texte); }
 }
 
 .etiquette--violet {
-  color: #c084fc;
-  background: rgba(157, 92, 255, 0.12);
-  border-color: rgba(157, 92, 255, 0.3);
+  color: var(--texte);
+  background: rgba(0, 0, 0, 0.05);
+  border-color: var(--ligne);
+}
+
+:root[data-theme="dark"] .etiquette--violet {
+  color: var(--texte);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--ligne);
 }
 
 .etiquette--bleu {
-  color: #38bdf8;
-  background: rgba(2, 132, 199, 0.12);
-  border-color: rgba(2, 132, 199, 0.3);
+  color: var(--texte-doux);
+  background: rgba(0, 0, 0, 0.05);
+  border-color: var(--ligne);
+}
+
+:root[data-theme="dark"] .etiquette--bleu {
+  color: var(--texte-doux);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--ligne);
 }
 
 .chapo {
@@ -233,7 +245,7 @@ p { margin: 0 0 18px; color: var(--texte); }
   background: var(--fond-carte);
   color: var(--texte);
   transition: all 0.15s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .bouton:hover {
@@ -247,7 +259,7 @@ p { margin: 0 0 18px; color: var(--texte); }
   background: var(--texte);
   border-color: var(--texte);
   color: var(--fond) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .bouton.plein:hover {
@@ -257,22 +269,22 @@ p { margin: 0 0 18px; color: var(--texte); }
 }
 
 .bouton.violet {
-  background: var(--accent-alt);
-  border-color: var(--accent-alt);
-  color: #ffffff !important;
-  box-shadow: 0 2px 10px rgba(126, 34, 206, 0.25);
+  background: var(--texte);
+  border-color: var(--texte);
+  color: var(--fond) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 :root[data-theme="dark"] .bouton.violet {
-  background: #7e22ce;
-  border-color: #9333ea;
-  color: #ffffff !important;
+  background: var(--texte);
+  border-color: var(--texte);
+  color: var(--fond) !important;
 }
 
 .bouton.violet:hover {
-  background: #6b21a8;
-  border-color: #6b21a8;
-  color: #ffffff !important;
+  background: var(--texte-doux);
+  border-color: var(--texte-doux);
+  color: var(--fond) !important;
 }
 
 /* ---------- Cartes et Grilles ---------- */
@@ -1273,9 +1285,9 @@ footer {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #c084fc;
-  background: rgba(157, 92, 255, 0.12);
-  border: 1px solid rgba(157, 92, 255, 0.3);
+  color: var(--texte);
+  background: var(--fond-carte-hover);
+  border: 1px solid var(--ligne);
   padding: 3px 12px;
   border-radius: 999px;
   margin-bottom: 12px;
@@ -1311,7 +1323,7 @@ footer {
 .span-mini-progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #7c3aed, #f0714b);
+  background: var(--texte);
   border-radius: 999px;
   transition: width 0.3s ease;
 }
@@ -2446,30 +2458,30 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 1.75rem;
-  background: #0d0a16;
+  background: #111114;
   border-radius: 12px;
-  border: 1px solid rgba(157, 92, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
   box-sizing: border-box;
 }
 
 :root[data-theme="light"] .live-demo-dial-container {
-  background: #191426;
+  background: #18181b;
 }
 
 .interactive-dial-btn {
   padding: 8px 18px;
   border-radius: 999px;
-  background: #9d5cff;
-  border: 1px solid #c084fc;
-  color: #ffffff;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #111114;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   margin-top: 14px;
   transition: all 0.15s ease;
-  box-shadow: 0 4px 15px rgba(157, 92, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .interactive-dial-btn:hover {

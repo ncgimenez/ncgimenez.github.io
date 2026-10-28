@@ -1,15 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <style>
-    .bg { fill: #0e0d11; }
-    .mark { fill: #fcfcfd; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.04em; }
-    .dot { fill: #f0714b; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #fcfcfd; }
-      .mark { fill: #0e0d11; }
-      .dot { fill: #f0714b; }
-    }
-  </style>
-  <rect class="bg" width="64" height="64" rx="15"/>
-  <text class="mark" x="29" y="44" text-anchor="middle">N</text>
-  <circle class="dot" cx="45" cy="40" r="3.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#141416"/>
+  <path d="M18 44V20h6l12 16.5V20h6v24h-6L24 27.5V44h-6z" fill="#fdfbf7"/>
+  <circle cx="48" cy="40" r="3.5" fill="#d97706"/>
 </svg>

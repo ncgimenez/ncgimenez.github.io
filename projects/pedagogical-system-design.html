@@ -1,82 +1,347 @@
 ---
 layout: default
-title: Instructional Architecture & System Design
+title: Enterprise User Enablement & Pedagogical Architecture
 mermaid: true
 ---
 
   <main>
     <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
-    <span class="etiquette">Systems Thinking · Instructional Design</span>
-    <h1>Structuring a Language Course That Holds</h1>
+    <span class="etiquette">Instructional Design · Enterprise Enablement</span>
+    <h1>Demystifying the Labyrinth: Onboarding Non-Technical Teams onto Mission-Critical Systems</h1>
     <p class="chapo">
-      Breaking down complex grammar and pronunciation into clear, modular building blocks, so students understand the underlying logic instead of memorizing tables.
+      How turning complex ERP and logistics flows into visual cheat-sheets, annotated step-by-step guides, and silent kinetic screencasts helped international operations teams master SAP without panic during the Deloitte × reMarkable rollout.
     </p>
 
     <dl class="meta">
-      <div><dt>Subject</dt><dd>Instructional Design &amp; Language Learning</dd></div>
-      <div><dt>Domain</dt><dd>Instructional Design &amp; Curriculum Logic</dd></div>
-      <div><dt>Role</dt><dd>Course Architect &amp; Teacher</dd></div>
-      <div><dt>Approach</dt><dd>First Principles &amp; Active Speaking</dd></div>
+      <div><dt>Context</dt><dd>Deloitte × reMarkable (Nordic Hardware Scale-Up)</dd></div>
+      <div><dt>Domain</dt><dd>Instructional Design, Systems Enablement &amp; UX Writing</dd></div>
+      <div><dt>Role</dt><dd>Enablement Lead, Technical Writer &amp; Systems Designer</dd></div>
+      <div><dt>Deliverables</dt><dd>Visual Cheat-Sheets, Annotated Flow Guides, Kinetic Screencasts</dd></div>
     </dl>
 
-    <h2>The Flaw in Conventional Language Classes</h2>
-    <p>
-      Traditional language instruction relies on rigid textbook chapters: Unit 1 covers greetings, Unit 2 covers regular verbs, Unit 3 covers food vocabulary.
-    </p>
-    <p>
-      The problem is predictable: students are asked to memorize long conjugation tables and vocabulary lists from day one. But memorizing dozens of irregular verbs without explaining <em>why</em> the sounds change leads straight to frustration. When foundational rules are shaky, students freeze as soon as it's time to actually speak.
-    </p>
-
-    <div class="bandeau">
-      <strong>Core Insight:</strong> A language is not an endless list of exceptions; it's a logical system. If you teach the underlying rules (why vowels shift under syllable stress, how verb moods connect to real intentions), students learn to self-correct instead of guessing blindly.
+    <!-- 3-PART CONTEXT SUMMARY -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0; padding: 1.5rem; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon);">
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Human Problem</div>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+          Deploying an enterprise ERP is technically grueling, but humanly terrifying. Support agents, order dispatchers, and finance teams faced thousands of cryptic transaction codes and locked screens.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Conventional Failure</div>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+          Enterprise consultants typically produce 80-page Word documents and 2-hour monologue webinars. Result: zero retention, endless panic Slack pings, and rogue offline Excel sheets.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Pedagogical Solution</div>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
+          Modular, visual-first documentation: high-level mental map infographies, numbered UI cards, and 45-second silent screen walkthroughs with embedded kinetic subtitles.
+        </p>
+      </div>
     </div>
 
-    <h2>Roadmap: Building from Foundations to Conversation</h2>
+    <!-- SECTION 1 : THE FAILURE OF CONVENTIONAL TRAINING -->
+    <h2>1. Why Enterprise Training Fails (The Cognitive Cliff)</h2>
     <p>
-      Instead of arbitrary chapters, the course is structured as a clear progression: students master core sounds and regular patterns before attempting complex sentence structures.
+      When an enterprise scales from a startup mindset to an integrated ERP (such as SAP S/4HANA), teams are suddenly required to execute workflows where one wrong button click can freeze an entire warehouse shipment or corrupt VAT reporting across 14 European markets.
+    </p>
+    <p>
+      In this high-stakes environment, traditional technical documentation fails predictably:
+    </p>
+    <ul class="liste">
+      <li><strong>Cognitive Drowning:</strong> Manuals document <em>every possible field</em> rather than the <em>3 critical inputs</em> the user actually needs to complete their task.</li>
+      <li><strong>Lack of Mental Models:</strong> Users are told "type VA01, select OR, press Enter" without ever being shown where their action fits in the physical pipeline between the customer's web browser and the forklift in the warehouse.</li>
+      <li><strong>Invisible Failure Modes:</strong> Documentation rarely tells the user what <em>error messages actually mean</em> or how to recover gracefully when things get stuck.</li>
+    </ul>
+
+    <div class="bandeau">
+      <strong>Core Instructional Principle:</strong> If an operator doesn't understand the mental model behind a system, they won't remember the steps. And if they can't recover from an error in under 60 seconds, they will abandon the system and rebuild a private shadow spreadsheet.
+    </div>
+
+    <!-- SECTION 2 : VISUAL ARTIFACT 1 - THE ANATOMY OF AN ORDER (HUMOR & REALITY) -->
+    <h2 style="margin-top: 3rem;">2. Visual Deliverable 1: The Anatomy of an Order (Cheat-Sheet)</h2>
+    <p>
+      To demystify the backend without triggering anxiety, I developed an illustrated one-pager contrasting the frictionless illusion of modern e-commerce with the gritty operational labyrinth of enterprise logistics.
+    </p>
+    <p>
+      Blending accurate system architecture with grounded, relatable humor made this cheat-sheet the most bookmarked resource across both technical and non-technical teams:
+    </p>
+
+    <!-- INTERACTIVE / VISUAL INFOGRAPHIC CONTAINER -->
+    <div style="background: var(--fond-carte); border: 1.5px solid var(--ligne); border-radius: var(--rayon); padding: 1.75rem; margin: 2rem 0; box-shadow: var(--ombre);">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed var(--ligne); padding-bottom: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 8px;">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-doux);">INFOGRAPHIC TEARDOWN // FORMAT: ONE-PAGER POSTER</span>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">REVISION: EUROPEAN D2C PIPELINE</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        
+        <!-- STEP 1 -->
+        <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--accent); background: rgba(126, 34, 206, 0.1); padding: 2px 8px; border-radius: 4px;">PHASE 01</span>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute);">T + 0.00s</span>
+          </div>
+          <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The Carefree Click</h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
+            <strong>What the buyer imagines:</strong> They press "Buy Now" for a tablet and stylus. A gentle digital chime rings; a friendly elf instantly tucks the box into a clean delivery van.
+          </p>
+          <div style="background: var(--fond-carte); border-left: 2px solid var(--accent); padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
+            System reality: Webhook payload generated. 42 JSON attributes fired into the integration bus.
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--accent); background: rgba(126, 34, 206, 0.1); padding: 2px 8px; border-radius: 4px;">PHASE 02</span>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute);">T + 0.18s</span>
+          </div>
+          <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The Payment vs ERP Duel</h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
+            <strong>The speed gap:</strong> Stripe settles the charge in 140 milliseconds. Meanwhile, the ERP takes 3 seconds deliberating whether currency 'EUR' exists in exchange rate table TCURR.
+          </p>
+          <div style="background: var(--fond-carte); border-left: 2px solid var(--accent); padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
+            Status: IDoc generated. Credit check passed. Sales order status: OPEN.
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 2px 8px; border-radius: 4px;">PHASE 03 · THE CLIFF</span>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute);">T + 2m 14s</span>
+          </div>
+          <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The Infamous Address Edge-Case</h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
+            <strong>The human reality:</strong> The customer typed <em>"Rue de l'Église 14b, appartement sous combles sonnette droite"</em>. The carrier API max character limit is 35. 
+          </p>
+          <div style="background: var(--fond-carte); border-left: 2px solid #ef4444; padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
+            Validation block triggered: Order held in review queue before warehouse batch release.
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #0284c7; background: rgba(2, 132, 199, 0.1); padding: 2px 8px; border-radius: 4px;">PHASE 04</span>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute);">T + 4h 00m</span>
+          </div>
+          <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The 3PL Midnight Batch</h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
+            <strong>Warehouse floor:</strong> A forklift scanner in Tilburg pulls the delivery wave. Barcode confirmed, EAN paired, tamper seal inspected, carton packed and labeled.
+          </p>
+          <div style="background: var(--fond-carte); border-left: 2px solid #0284c7; padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
+            Inventory latch: Stock decremented from Unrestricted (MM) to In-Transit (MB51).
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 4px;">PHASE 05</span>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-mute);">T + 6h 30m</span>
+          </div>
+          <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The "Shipped" Phantom Notification</h4>
+          <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
+            <strong>The customer illusion:</strong> The customer gets an automated email: <em>"Your package is flying towards you!"</em> In reality, the carton is resting on Pallet 4B waiting for the 6:00 AM truck pickup.
+          </p>
+          <div style="background: var(--fond-carte); border-left: 2px solid #10b981; padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
+            EDI 856 Advanced Shipping Notice (ASN) dispatched to carrier network.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 3 : DELIVERABLE 2 - STEP-BY-STEP ANNOTATED GUIDE -->
+    <h2 style="margin-top: 3rem;">3. Visual Deliverable 2: The Annotated Step-by-Step Card</h2>
+    <p>
+      For recurring operational procedures, operators don't want paragraphs; they want **numbered visual callouts** superimposed on clean interface replicas, paired with explicit consequence mapping.
+    </p>
+
+    <!-- ANNOTATED MOCKUP CARD SPECIMEN -->
+    <div style="background: var(--fond-carte); border: 1.5px solid var(--ligne); border-radius: var(--rayon); padding: 1.75rem; margin: 2rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">PROCEDURE CARD · QUICK-START SPEC</span>
+          <h3 style="margin: 4px 0 0; font-size: 1.2rem;">Handling an In-Warranty Return (RMA) Without Deadlocking Stock</h3>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">TARGET TIME: &lt; 90 SECONDS</span>
+      </div>
+
+      <!-- SIMULATED ANNOTATED UI WORKSPACE -->
+      <div style="background: #0f0d14; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 1.25rem; color: #f4f2f7; font-family: var(--font-mono); font-size: 0.82rem; margin-bottom: 1.25rem;">
+        
+        <!-- HEADER OF MOCK INTERFACE -->
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px; margin-bottom: 12px; font-size: 0.72rem; color: #a1a1aa;">
+          <span>MODULE: SD-RMA // ORDER REFERENCE: #NO-984421</span>
+          <span style="color: #4ade80;">RECORD STATUS: VALIDATED</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+          <!-- UI STEP 1 -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 10px; position: relative;">
+            <div style="position: absolute; top: -10px; left: 10px; background: #7c3aed; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem;">1</div>
+            <div style="color: #94a3b8; font-size: 0.7rem; margin-top: 6px; margin-bottom: 4px;">RETURN REASON CODE</div>
+            <div style="background: rgba(0,0,0,0.4); padding: 6px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+              [E-INK-04] Screen Surface Non-Responsive
+            </div>
+            <div style="font-size: 0.7rem; color: #a1a1aa; margin-top: 6px;">Select hardware symptom code to route to Nordic inspection hub.</div>
+          </div>
+
+          <!-- UI STEP 2 -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 10px; position: relative;">
+            <div style="position: absolute; top: -10px; left: 10px; background: #7c3aed; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem;">2</div>
+            <div style="color: #94a3b8; font-size: 0.7rem; margin-top: 6px; margin-bottom: 4px;">DESTINATION STOCK LOCATION</div>
+            <div style="background: rgba(0,0,0,0.4); padding: 6px 8px; border-radius: 4px; border: 1.5px solid #f59e0b; color: #f59e0b;">
+              HOLDING-Q (Blocked Quality Stock)
+            </div>
+            <div style="font-size: 0.7rem; color: #f59e0b; margin-top: 6px;">DO NOT select 'Unrestricted' — doing so makes broken units sellable!</div>
+          </div>
+
+          <!-- UI STEP 3 -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 10px; position: relative;">
+            <div style="position: absolute; top: -10px; left: 10px; background: #7c3aed; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem;">3</div>
+            <div style="color: #94a3b8; font-size: 0.7rem; margin-top: 6px; margin-bottom: 4px;">REPLACEMENT DISPATCH TRIGGER</div>
+            <div style="background: rgba(0,0,0,0.4); padding: 6px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); color: #38bdf8;">
+              AUTO-RELEASE // ADVANCED SWAP
+            </div>
+            <div style="font-size: 0.7rem; color: #a1a1aa; margin-top: 6px;">Generates pre-paid return label and immediately queues replacement unit.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAP ALERT CALLOUT BOX -->
+      <div style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.25); border-left: 4px solid #ef4444; border-radius: 6px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start;">
+        <span style="font-family: var(--font-mono); font-size: 1.1rem; line-height: 1; color: #ef4444;">!</span>
+        <div style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5;">
+          <strong style="color: var(--texte); display: block; margin-bottom: 2px;">The Costly Trap We Solved:</strong>
+          In early testing, 35% of customer support agents accidentally selected <em>"Direct Restock (0001)"</em> instead of <em>"Blocked Quality (0002)"</em>, which immediately relisted scratched and defective hardware for resale on the European web store. By adding explicit visual badges and enforcing a mandatory dropdown lock, defective restocks dropped to **0.00%**.
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 : DELIVERABLE 3 - SILENT VIDEO WALKTHROUGHS & 3-COLUMN SCRIPT -->
+    <h2 style="margin-top: 3rem;">4. Visual Deliverable 3: Silent Video Walkthroughs (The 3-Column Storyboard)</h2>
+    <p>
+      One of the most consequential decisions made during the rollout was **banning rambling voiceover recordings**. 
+    </p>
+    <p>
+      In international enterprise environments, voiceover training videos suffer from major friction:
+    </p>
+    <ul class="liste">
+      <li><strong>Noise &amp; Environment:</strong> Support agents and dispatchers work in bustling open-plan offices or on noisy warehouse floors where listening to audio is impractical.</li>
+      <li><strong>Language Barrier:</strong> Non-native English speakers often struggle with fast-spoken accents or regional idioms.</li>
+      <li><strong>Zero Skimmability:</strong> Finding a 5-second fix inside a 15-minute audio recording is deeply irritating.</li>
+    </ul>
+
+    <p>
+      Instead, we scripted **silent, high-resolution 45-second micro-screencasts** powered by synchronized kinetic on-screen typography. Here is an authentic specimen of the 3-column script framework used to author these modules:
+    </p>
+
+    <!-- 3-COLUMN SCRIPT TABLE SPECIMEN -->
+    <div style="overflow-x: auto; margin: 1.5rem 0;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.86rem; border: 1px solid var(--ligne); background: var(--fond-carte); border-radius: 6px;">
+        <thead>
+          <tr style="background: var(--fond); border-bottom: 2px solid var(--ligne); text-align: left; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;">
+            <th style="padding: 10px 14px; width: 15%; color: var(--texte-mute);">Timing</th>
+            <th style="padding: 10px 14px; width: 42%; color: var(--texte);">On-Screen Interface Action</th>
+            <th style="padding: 10px 14px; width: 43%; color: var(--accent);">On-Screen Kinetic Captions (No Voice)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--ligne);">
+            <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:00 — 00:08</td>
+            <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
+              Cursor zooms in on the order search bar. Types order number <code>#NO-984421</code>. Order detail screen smoothly opens.
+            </td>
+            <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
+              <span style="background: rgba(126, 34, 206, 0.08); padding: 2px 6px; border-radius: 3px; display: inline-block;">
+                "Customer requested a country address update before warehouse batch."
+              </span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--ligne);">
+            <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:08 — 00:22</td>
+            <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
+              Cursor clicks <em>Header &gt; Partner Addresses</em>. Highlights the orange "Delivery Block" toggle and sets it to <code>ACTIVE</code>.
+            </td>
+            <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
+              <span style="background: rgba(239, 68, 68, 0.08); color: #dc2626; padding: 2px 6px; border-radius: 3px; display: inline-block;">
+                "Step 1: Freeze the delivery wave immediately so the forklift doesn't pack it."
+              </span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--ligne);">
+            <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:22 — 00:36</td>
+            <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
+              Updates postal code and street name. Green validation check appears next to the Norwegian postal carrier integration.
+            </td>
+            <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
+              <span style="background: rgba(16, 185, 129, 0.08); color: #059669; padding: 2px 6px; border-radius: 3px; display: inline-block;">
+                "Step 2: Update destination. Green check confirms postal code syntax."
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:36 — 00:45</td>
+            <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
+              Releases delivery block. Clicks <em>Save</em>. System shows success snackbar: <code>ORDER #NO-984421 QUEUED FOR NEXT WAVE</code>.
+            </td>
+            <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
+              <span style="background: rgba(126, 34, 206, 0.08); padding: 2px 6px; border-radius: 3px; display: inline-block;">
+                "Step 3: Release block. The order rejoins the next warehouse batch safely."
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 5 : THE ROOT PHILOSOPHY - LESSONS FROM SPECIAL EDUCATION -->
+    <h2 style="margin-top: 3rem;">5. The Underlying Philosophy: Radical Accessibility</h2>
+    <p>
+      My perspective on systems architecture and user documentation wasn't formed in corporate boardrooms; it was shaped when designing tailored language and cognitive learning materials for my sister in specialized education.
+    </p>
+    <p>
+      Teaching someone with unique cognitive and sensory processing needs teaches you an uncompromising truth: **if an instruction can be misinterpreted, it will be. Confusion is never the user's fault; it is an architectural flaw in the presentation of information.**
     </p>
 
     <div class="bpmn-wrap">
       <pre class="mermaid">
-flowchart TD
-  subgraph Foundation [1. Foundations: Sounds & Stress]
-    P1[Accentuation & Stress Rules] --> P2[Vowel Harmony]
-    P2 --> S1[Stem-Changing Verbs]
+flowchart LR
+  subgraph Foundation [1. Radical Foundation]
+    F1[Deconstruct to Atomic Primitives] --> F2[Eliminate Cognitive Ambiguity]
   end
 
-  subgraph Logic [2. Core Logic: Tenses & Moods]
-    S1 --> T1[Past Tenses: Story vs Context]
-    T1 --> M1[Subjunctive: Expressing Doubt & Emotion]
-    M1 --> M2[Hypotheticals: If-Clauses]
+  subgraph Structure [2. Structural Framing]
+    F2 --> S1[Visual Callouts &amp; Numbered Anchors]
+    S1 --> S2[High-Contrast Error Warnings]
   end
 
-  subgraph Retrieval [3. Real-World Practice]
-    M2 --> E1[Spontaneous Conversation]
-    T1 --> E1
+  subgraph Autonomy [3. Total User Autonomy]
+    S2 --> A1[Self-Service Error Recovery]
+    A1 --> A2[Zero-Anxiety Execution]
   end
 
   style Foundation fill:#16141c,stroke:#4caf6b,stroke-width:1px
-  style Logic fill:#16141c,stroke:#9d5cff,stroke-width:1px
-  style Retrieval fill:#16141c,stroke:#f0714b,stroke-width:1px
+  style Structure fill:#16141c,stroke:#9d5cff,stroke-width:1px
+  style Autonomy fill:#16141c,stroke:#38bdf8,stroke-width:1px
       </pre>
     </div>
-    <p class="bpmn-note">Step-by-step roadmap: mastering fundamental pronunciation and tense logic before attempting complex conversations.</p>
+    <p class="bpmn-note">The architectural continuum: from special education foundations to enterprise mission-critical enablement.</p>
 
-    <h2>Simple Principles That Work in Practice</h2>
-    <ul class="liste">
-      <li><strong>Bite-Sized Rules:</strong> Isolating individual grammar concepts into short, modular cards rather than burying students under pages of textbook theory.</li>
-      <li><strong>Immediate Spoken Feedback:</strong> Skipping passive fill-in-the-blank drills in favor of spoken practice with supportive, instant correction.</li>
-      <li><strong>Finding the Root Cause:</strong> When a student trips up during a conversation, pinpointing the actual misunderstanding (often a missed syllable stress rule rather than a vocabulary memory lapse).</li>
-    </ul>
-
-    <h2>Key Takeaway: Mental Models over Memorization</h2>
+    <h2>Key Takeaway: Enablement as a Product Feature</h2>
     <div class="bandeau">
-      <strong>Teaching the Engine, Not Just the Dashboard:</strong> When students understand why a language works the way it does—why a vowel shifts or why a certain intention requires a mood change—they stop feeling overwhelmed. Structuring a curriculum with clear prerequisites and fast conversational practice turns intimidating grammar into second nature.
+      <strong>Great documentation isn't an afterthought; it is an interface.</strong>
+      Whether you are designing a consumer productivity tool like Span Focus or standardizing a multi-million-euro SAP deployment across Europe, your software is only as good as the confidence of the human sitting in front of the keyboard. By replacing bureaucratic manuals with modular, visual-first enablement artifacts, we turned enterprise anxiety into operational autonomy.
     </div>
 
     <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
       <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
-      <a class="bouton plein" href="/projects/span-suite.html">Explore the Span Suite →</a>
+      <a class="bouton plein" href="/projects/sap-o2c-standardization.html">Explore SAP O2C Architecture →</a>
     </div>
   </main>

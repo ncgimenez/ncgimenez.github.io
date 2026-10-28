@@ -117,34 +117,34 @@ function renderPage(filePath, urlPath) {
     }
 
     .ncg-editor-pill {
-      background: #120e20;
-      border: 1px solid #a855f7;
+      background: #181614;
+      border: 1px solid #d97706;
       border-radius: 999px;
       padding: 8px 16px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(168, 85, 247, 0.35);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(217, 119, 6, 0.25);
       cursor: pointer;
-      color: #f4eeff;
+      color: #fbf9f5;
       transition: all 0.2s ease;
       user-select: none;
     }
 
     .ncg-editor-pill:hover {
-      background: #1a142e;
+      background: #24201c;
       transform: translateY(-2px);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(168, 85, 247, 0.5);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(217, 119, 6, 0.35);
     }
 
     .ncg-editor-panel {
       display: none;
-      background: #141124;
-      border: 1.5px solid #a855f7;
+      background: #1c1a17;
+      border: 1.5px solid #d97706;
       border-radius: 12px;
       padding: 16px 20px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(168, 85, 247, 0.3);
-      color: #f4eeff;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(217, 119, 6, 0.2);
+      color: #fbf9f5;
       flex-direction: column;
       gap: 14px;
       min-width: 380px;
@@ -158,15 +158,15 @@ function renderPage(filePath, urlPath) {
     }
 
     .ncg-editing-active [data-ncg-editable="true"]:hover {
-      outline: 1.5px dashed rgba(168, 85, 247, 0.75) !important;
+      outline: 1.5px dashed rgba(217, 119, 6, 0.75) !important;
       outline-offset: 4px;
       border-radius: 4px;
     }
 
     .ncg-editing-active [data-ncg-editable="true"]:focus {
-      outline: 2px solid #a855f7 !important;
+      outline: 2px solid #d97706 !important;
       outline-offset: 4px;
-      background: rgba(168, 85, 247, 0.14) !important;
+      background: rgba(217, 119, 6, 0.12) !important;
       border-radius: 4px;
     }
 
@@ -192,12 +192,12 @@ function renderPage(filePath, urlPath) {
     }
 
     .ncg-btn-save {
-      background: #a855f7;
+      background: #d97706;
       color: #ffffff;
-      border-color: #c084fc;
+      border-color: #f59e0b;
     }
     .ncg-btn-save:hover:not(:disabled) {
-      background: #9333ea;
+      background: #b45309;
       transform: translateY(-1px);
     }
     .ncg-btn-save:disabled {
@@ -229,15 +229,15 @@ function renderPage(filePath, urlPath) {
       transition: all 0.15s ease;
     }
     .ncg-font-opt-btn:hover {
-      border-color: #a855f7;
+      border-color: #d97706;
       color: #ffffff;
     }
     .ncg-font-opt-btn.is-active {
-      background: rgba(168, 85, 247, 0.35);
-      border-color: #c084fc;
+      background: rgba(217, 119, 6, 0.3);
+      border-color: #f59e0b;
       color: #ffffff;
       font-weight: 700;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+      box-shadow: 0 0 10px rgba(217, 119, 6, 0.25);
     }
 
     #ncg-toast-notice {
@@ -263,14 +263,14 @@ function renderPage(filePath, urlPath) {
     <div id="ncg-pill-trigger" class="ncg-editor-pill" title="Modifier le texte ou la typographie de cette page (Local)">
       <span style="width: 9px; height: 9px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 8px #4ade80;"></span>
       <span style="font-weight: 600;">✏️ Mode Édition</span>
-      <kbd style="font-size: 0.65rem; background: rgba(168,85,247,0.25); padding: 2px 6px; border-radius: 4px;">⌘E</kbd>
+      <kbd style="font-size: 0.65rem; background: rgba(217,119,6,0.25); padding: 2px 6px; border-radius: 4px; color: #fbbf24;">⌘E</kbd>
     </div>
 
     <div id="ncg-editor-panel" class="ncg-editor-panel">
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 8px;">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #a855f7;"></span>
-          <span style="font-weight: 700; color: #c084fc;">ÉDITEUR EN DIRECT (LOCAL)</span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #d97706;"></span>
+          <span style="font-weight: 700; color: #fbbf24;">ÉDITEUR EN DIRECT (LOCAL)</span>
         </div>
         <span id="ncg-mod-counter" style="font-size: 0.7rem; color: #94a3b8;">0 modif</span>
       </div>

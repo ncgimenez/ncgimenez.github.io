@@ -17,48 +17,56 @@
        Antichambre : Sanctuarisation des couleurs & Design Éditorial
        ============================================================ */
 
-    /* 1. Mode clair (PAR DÉFAUT) */
+    /* 1. Mode clair (PAR DÉFAUT) : Papier Crème Chaud & Ambre / Miel Pâle */
     :root,
     :root[data-theme="light"],
     :root:not([data-theme="dark"]) {
-      --fond: #f7f5f0 !important;
+      --fond: #faf7f0 !important;
       --fond-carte: #ffffff !important;
-      --fond-carte-hover: #f0ede6 !important;
-      --canvas-bg: #fdfcf9 !important;
+      --fond-carte-hover: #f4efe2 !important;
+      --canvas-bg: #fdfbf7 !important;
       --sub-card-bg: #ffffff !important;
-      --texte: #141416 !important;
-      --texte-doux: #52504b !important;
-      --texte-mute: #78756d !important;
-      --accent: #141416 !important;
-      --accent-fonce: #000000 !important;
-      --accent-or: #b45309 !important;
+      --texte: #1c1b18 !important;
+      --texte-doux: #5e594f !important;
+      --texte-mute: #8c867a !important;
+      --accent: #b45309 !important;          /* Ambre chaud / miel naturel */
+      --accent-alt: #d97706 !important;      /* Ambre doré */
+      --accent-fonce: #92400e !important;    /* Terracotta doux */
+      --accent-or: #d97706 !important;
       --accent-cyan: #0284c7 !important;
-      --ligne: #dedad0 !important;
-      --ligne-fine: rgba(20, 20, 22, 0.08);
+      --accent-pale: rgba(217, 119, 6, 0.08) !important;
+      --accent-pale-hover: rgba(217, 119, 6, 0.15) !important;
+      --accent-bordure: rgba(217, 119, 6, 0.28) !important;
+      --ligne: #e8e2d5 !important;
+      --ligne-fine: rgba(28, 27, 24, 0.08);
       --halo-couleur: transparent;
-      --shadow-poster: 0 16px 40px rgba(0, 0, 0, 0.06);
-      --stage-mat-bg: #141416;
+      --shadow-poster: 0 16px 40px rgba(94, 89, 79, 0.07);
+      --stage-mat-bg: #1c1b18;
     }
 
-    /* 2. Mode sombre sculptural */
+    /* 2. Mode sombre sculptural : Ardoise Chaude & Ambre Lumineux */
     :root[data-theme="dark"] {
-      --fond: #101012 !important;
-      --fond-carte: #18181b !important;
-      --fond-carte-hover: #222226 !important;
-      --canvas-bg: #141416 !important;
-      --sub-card-bg: #18181b !important;
-      --texte: #f4f3ee !important;
-      --texte-doux: #a3a199 !important;
-      --texte-mute: #737168 !important;
-      --accent: #f4f3ee !important;
-      --accent-fonce: #ffffff !important;
-      --accent-or: #d97706 !important;
+      --fond: #131210 !important;
+      --fond-carte: #1c1a17 !important;
+      --fond-carte-hover: #26231f !important;
+      --canvas-bg: #161512 !important;
+      --sub-card-bg: #1c1a17 !important;
+      --texte: #f5f2eb !important;
+      --texte-doux: #a8a294 !important;
+      --texte-mute: #787366 !important;
+      --accent: #f59e0b !important;          /* Ambre lumineux et doux */
+      --accent-alt: #fbbf24 !important;      /* Or doux */
+      --accent-fonce: #fde68a !important;
+      --accent-or: #f59e0b !important;
       --accent-cyan: #38bdf8 !important;
-      --ligne: #2a2a2e !important;
+      --accent-pale: rgba(245, 158, 11, 0.12) !important;
+      --accent-pale-hover: rgba(245, 158, 11, 0.22) !important;
+      --accent-bordure: rgba(245, 158, 11, 0.35) !important;
+      --ligne: #2b2822 !important;
       --ligne-fine: rgba(255, 255, 255, 0.08);
       --halo-couleur: transparent;
       --shadow-poster: 0 20px 60px rgba(0, 0, 0, 0.6);
-      --stage-mat-bg: #0a0a0c;
+      --stage-mat-bg: #0d0c0a;
       --font-poster-sans: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-poster-serif: 'Newsreader', Georgia, serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -205,28 +213,27 @@
     }
 
     .sidebar-nav-item:hover {
-      background: rgba(168, 85, 247, 0.08);
+      background: var(--accent-pale);
       color: var(--texte);
-      border-color: var(--ligne-fine);
+      border-color: var(--accent-bordure);
       transform: translateX(-2px);
     }
 
     .sidebar-nav-item.is-active {
-      background: rgba(168, 85, 247, 0.15);
+      background: var(--accent-pale-hover);
       border-color: var(--accent);
-      color: var(--accent-fonce);
+      color: var(--texte);
       font-weight: 600;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
     }
 
     .sidebar-nav-num {
       font-size: 0.68rem;
-      color: var(--texte-mute);
-      font-weight: 400;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     .sidebar-nav-item.is-active .sidebar-nav-num {
-      color: var(--accent-fonce);
+      color: var(--accent);
     }
 
     /* SIDEBAR BOTTOM CONTROLS */
@@ -291,8 +298,8 @@
       justify-content: space-between;
       padding: 8px 12px;
       border-radius: 6px;
-      background: rgba(168, 85, 247, 0.05);
-      border: 1px dashed var(--ligne);
+      background: var(--accent-pale);
+      border: 1px dashed var(--accent-bordure);
       text-decoration: none;
       color: var(--texte-doux);
       font-family: var(--font-mono);
@@ -303,7 +310,7 @@
     .sidebar-exit-link:hover {
       color: var(--texte);
       border-color: var(--accent);
-      background: rgba(168, 85, 247, 0.1);
+      background: var(--accent-pale-hover);
     }
 
     /* RESPONSIVE MOBILE BAR (HIDDEN BY DEFAULT ON DESKTOP) */
@@ -359,9 +366,9 @@
       }
 
       .mobile-room-pill.is-active {
-        background: rgba(168, 85, 247, 0.15);
+        background: var(--accent-pale-hover);
         border-color: var(--accent);
-        color: var(--accent-fonce);
+        color: var(--texte);
         font-weight: 600;
       }
     }
@@ -428,7 +435,6 @@
 
     .poster-title-highlight {
       color: var(--accent);
-      text-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
     }
   </style>
 </head>
@@ -521,7 +527,7 @@
         <div class="sidebar-action-btn-row">
           <button type="button" class="sidebar-cmd-btn" id="cmd-k-trigger" aria-label="Open Quick Actions (⌘K)" title="Quick Actions (⌘K)">
             <span>Actions</span>
-            <kbd style="font-size: 0.65rem; background: rgba(168,85,247,0.15); padding: 2px 4px; border-radius: 4px;">⌘K</kbd>
+            <kbd style="font-size: 0.65rem; background: var(--accent-pale); border: 1px solid var(--accent-bordure); padding: 2px 5px; border-radius: 4px; color: var(--accent);">⌘K</kbd>
           </button>
           <button type="button" class="sidebar-theme-btn theme-toggle" id="theme-toggle" aria-label="Changer de thème">
             <span class="theme-icon">☀️</span>

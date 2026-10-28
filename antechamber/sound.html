@@ -39,8 +39,8 @@ permalink: /antechamber/sound.html
   <!-- LIVE SYNTHESIZER BENCH -->
   <div class="audio-bench-card" style="margin-bottom: 2rem; padding: 2rem;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 10px;">
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.75rem; color: #c084fc; text-transform: uppercase; letter-spacing: 0.08em;">
-        <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 10px #4ade80;"></span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.75rem; color: #d97706; text-transform: uppercase; letter-spacing: 0.08em;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block;"></span>
         HARDWARE BENCH // SUBTRACTIVE CHAIN
       </span>
       <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); text-transform: uppercase;">
@@ -52,7 +52,7 @@ permalink: /antechamber/sound.html
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.5rem; padding: 12px; background: rgba(0,0,0,0.25); border-radius: 8px; border: 1px solid var(--ligne);">
       <div id="stage-osc" style="padding: 10px 6px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
         <div style="font-size: 0.65rem; color: var(--texte-mute); font-family: var(--font-mono); text-transform: uppercase;">1. Source</div>
-        <div style="font-size: 0.88rem; font-weight: 700; color: #c084fc; margin-top: 2px;">Oscillator</div>
+        <div style="font-size: 0.88rem; font-weight: 700; color: #d97706; margin-top: 2px;">Oscillator</div>
         <div style="font-size: 0.72rem; color: var(--texte-doux); margin-top: 2px;" id="flow-osc-label">Triangle</div>
       </div>
       <div id="stage-filter" style="padding: 10px 6px; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 6px; text-align: center; transition: all 0.15s ease;">
@@ -184,7 +184,7 @@ permalink: /antechamber/sound.html
       }, delay);
     }
 
-    pulseStage(stageOsc, '#c084fc', 0);
+    pulseStage(stageOsc, '#d97706', 0);
     pulseStage(stageFilter, '#38bdf8', 40);
     pulseStage(stageEnv, '#f0714b', 80);
     pulseStage(stageOut, '#4ade80', 120);
@@ -226,7 +226,7 @@ permalink: /antechamber/sound.html
       playTone(freq);
       key.style.transform = 'translateY(2px)';
       key.style.borderColor = 'var(--accent)';
-      key.style.background = 'rgba(168, 85, 247, 0.25)';
+      key.style.background = 'var(--accent-pale-hover)';
     });
 
     const resetKey = () => {

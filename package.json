@@ -1,14 +1,15 @@
 {
   "name": "ncgimenez-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio of Nadia Cañadas Giménez — Product Designer & Systems Engineer",
+  "description": "Portfolio of Nadia Cañadas Giménez — Product Owner, Product Designer & Systems Analyst",
   "scripts": {
     "dev": "node dev.js"
   },
   "keywords": [
     "portfolio",
+    "product-owner",
     "product-design",
-    "design-engineer"
+    "systems-analyst"
   ],
   "author": "Nadia Cañadas Giménez",
   "license": "MIT"

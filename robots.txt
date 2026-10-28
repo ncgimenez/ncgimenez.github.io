@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ncgimenez.github.io/sitemap.xml

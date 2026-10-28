@@ -1,1 +1,12 @@
+title: "Nadia Cañadas Giménez"
+description: "Portfolio of Nadia Cañadas Giménez — Product Owner, Product Designer & Systems Analyst."
+url: "https://ncgimenez.github.io"
+permalink: pretty
+markdown: kramdown
 
+exclude:
+  - node_modules
+  - dev.js
+  - package.json
+  - package-lock.json
+  - README.md

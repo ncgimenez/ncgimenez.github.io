@@ -286,10 +286,31 @@ mermaid: true
   <p class="bpmn-note" style="text-align: center; margin-top: -16px; margin-bottom: 32px;">Figure 1: Daily planning buffer integrating fixed calendar events with focused task allocations.</p>
 
   <!-- 5. ARCHITECTURE DÉCOUPLÉE : SCHEMA + 2 CARTES -->
-  <h2>5. How the Two Apps Work Together</h2>
+  <h2>5. Information Architecture &amp; Workflow Decoupling</h2>
   <p class="chapo" style="font-size: 1rem; margin-bottom: 20px;">
-    Planning your week and actually doing the work require two totally different mindsets:
+    Planning your week and executing a single task require completely different cognitive modes. I structured the information architecture into a strict 3-tier hierarchy to eliminate mental fatigue:
   </p>
+
+  <!-- IA & FORM MANAGEMENT HIGHLIGHT -->
+  <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; margin-bottom: 24px;">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+      Information Architecture &amp; Dense Form Reduction
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700; color: var(--texte); margin-bottom: 4px;">1. Strict 3-Tier Object Arborescence</div>
+        <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5; margin: 0;">
+          <strong>Backlog Pool ➔ Daily Schedule Buffer ➔ Active Focus Container.</strong> Tasks cannot exist in undefined floating states. A task is either parked safely in the contextual backlog, committed to today's fixed calendar buffer, or actively locked into the live timer.
+        </p>
+      </div>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700; color: var(--texte); margin-bottom: 4px;">2. Eliminating Modal Form Fatigue</div>
+        <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5; margin: 0;">
+          Traditional tools open heavy modal dialogs with 12 input fields (dates, subtasks, priorities, reminders). Span replaces modal popups with inline keyboard-first micro-inputs: <code>Enter</code> to save, natural language time estimation, and progressive disclosure for metadata.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <div class="bpmn-wrap">
     <pre class="mermaid">
@@ -433,59 +454,110 @@ flowchart LR
 
   <!-- 8. FIGMA SPECIFICATION & TOKENS -->
   <h2>8. Design Tokens &amp; Component System</h2>
-  <div class="figma-spec-box" style="border-style: solid; border-color: var(--ligne); text-align: left; padding: 24px;">
+  <div class="figma-spec-box" style="border-style: solid; border-color: var(--ligne); text-align: left; padding: 24px; background: var(--fond-carte); border-radius: var(--rayon);">
     <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-      <span class="etiquette etiquette--violet">Figma Component System</span>
-      <span style="font-size: 0.8rem; color: var(--texte-muté);">1:1 Token Mapping · Figma ➔ CSS</span>
+      <span class="etiquette">Figma Component Library &amp; Auto-Layout</span>
+      <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--texte-muté);">1:1 Token Mapping · 8pt Alignment Grid</span>
     </div>
-    <h4 style="margin: 0 0 6px;">Design Tokens &amp; Component Variants</h4>
+    <h4 style="margin: 0 0 6px;">Production-Ready Design System Architecture</h4>
     <p style="margin: 0 0 20px; font-size: 0.9rem; color: var(--texte-doux); max-width: 100%;">
-      Tokens defined in Figma and mapped directly to CSS custom properties to ensure full visual and ergonomic parity between design and production code:
+      All components are modeled in Figma using strict Auto-Layout, an 8pt spatial grid, and CSS-compatible token aliases to ensure 100% fidelity between design and production code:
     </p>
 
+    <!-- DESIGN-TO-DEV BRIDGE CALLOUT -->
+    <div style="background: var(--fond); border: 1px solid var(--ligne); border-left: 3px solid var(--accent); border-radius: 6px; padding: 14px 16px; margin-bottom: 24px;">
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+        The Design-to-Dev Superpower
+      </div>
+      <p style="font-size: 0.88rem; line-height: 1.55; color: var(--texte); margin: 0;">
+        Because I understand frontend layout engines and database constraints, I don't draw "static pictures" in Figma: every component specifies responsive auto-layout constraints (hug vs. fill), CSS box-model padding, and explicit edge-case states. Developers can inspect tokens and build immediately with zero guesswork or missing asset requests.
+      </p>
+    </div>
+
     <!-- Color Swatches Grid -->
+    <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--texte-muté); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Color Semantic Tokens</div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 24px;">
       <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
-        <div style="width: 100%; height: 26px; background: #121016; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 6px;"></div>
+        <div style="width: 100%; height: 26px; background: #faf7f0; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); margin-bottom: 6px;"></div>
         <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--fond</div>
-        <div style="font-size: 0.72rem; color: var(--texte-muté);">#121016 · Canvas</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#faf7f0 · Book Cream</div>
       </div>
 
       <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
-        <div style="width: 100%; height: 26px; background: #1c1924; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 6px;"></div>
+        <div style="width: 100%; height: 26px; background: #ffffff; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); margin-bottom: 6px;"></div>
         <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--fond-carte</div>
-        <div style="font-size: 0.72rem; color: var(--texte-muté);">#1c1924 · Surface</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#ffffff · Surface</div>
       </div>
 
       <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
-        <div style="width: 100%; height: 26px; background: #f0714b; border-radius: 4px; margin-bottom: 6px;"></div>
+        <div style="width: 100%; height: 26px; background: #d97706; border-radius: 4px; margin-bottom: 6px;"></div>
         <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent</div>
-        <div style="font-size: 0.72rem; color: var(--texte-muté);">#f0714b · Terracotta</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#d97706 · Amber Gold</div>
       </div>
 
       <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
-        <div style="width: 100%; height: 26px; background: #27272a; border-radius: 4px; margin-bottom: 6px;"></div>
-        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent-alt</div>
-        <div style="font-size: 0.72rem; color: var(--texte-muté);">#27272a · Carbon Slate</div>
+        <div style="width: 100%; height: 26px; background: #1c1b18; border-radius: 4px; margin-bottom: 6px;"></div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--texte</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#1c1b18 · Carbon Ink</div>
       </div>
 
       <div style="background: var(--fond); border: 1px solid var(--ligne); border-radius: 8px; padding: 10px;">
         <div style="width: 100%; height: 26px; background: #0284c7; border-radius: 4px; margin-bottom: 6px;"></div>
-        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent-bleu</div>
-        <div style="font-size: 0.72rem; color: var(--texte-muté);">#0284c7 · Plan Sky</div>
+        <div style="font-size: 0.76rem; font-weight: 600; color: var(--texte);">--accent-blue</div>
+        <div style="font-size: 0.72rem; color: var(--texte-muté);">#0284c7 · Fixed Event</div>
       </div>
     </div>
 
     <!-- Component States Preview -->
-    <div style="border-top: 1px solid var(--ligne); padding-top: 16px;">
-      <div style="font-size: 0.8rem; color: var(--texte-doux); margin-bottom: 12px; font-weight: 600;">Button Component State Matrix</div>
+    <div style="border-top: 1px solid var(--ligne); padding-top: 16px; margin-bottom: 24px;">
+      <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--texte-muté); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Interactive State Matrix (Figma Component Variants)</div>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-        <span class="bouton" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Default</span>
-        <span class="bouton violet" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Primary Focus</span>
-        <span class="bouton plein" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Primary Action</span>
-        <span class="bouton" style="pointer-events: none; opacity: 0.4; border-style: dashed; padding: 6px 14px; font-size: 0.82rem;">Disabled</span>
+        <div style="text-align: center;">
+          <span class="bouton" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem;">Default</span>
+          <div style="font-size: 0.65rem; color: var(--texte-muté); margin-top: 4px; font-family: var(--font-mono);">Resting</div>
+        </div>
+        <div style="text-align: center;">
+          <span class="bouton" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem; border-color: var(--accent); background: var(--fond-carte-hover);">Hover State</span>
+          <div style="font-size: 0.65rem; color: var(--texte-muté); margin-top: 4px; font-family: var(--font-mono);">Cursor Hover</div>
+        </div>
+        <div style="text-align: center;">
+          <span class="bouton plein" style="pointer-events: none; padding: 6px 14px; font-size: 0.82rem; outline: 2px solid var(--accent); outline-offset: 2px;">Active / Focus</span>
+          <div style="font-size: 0.65rem; color: var(--texte-muté); margin-top: 4px; font-family: var(--font-mono);">Keyboard Ring</div>
+        </div>
+        <div style="text-align: center;">
+          <span class="bouton" style="pointer-events: none; border-color: #ef4444; color: #ef4444; background: rgba(239, 68, 68, 0.06); padding: 6px 14px; font-size: 0.82rem;">Validation Error</span>
+          <div style="font-size: 0.65rem; color: var(--texte-muté); margin-top: 4px; font-family: var(--font-mono);">State Error</div>
+        </div>
+        <div style="text-align: center;">
+          <span class="bouton" style="pointer-events: none; opacity: 0.4; border-style: dashed; padding: 6px 14px; font-size: 0.82rem;">Disabled</span>
+          <div style="font-size: 0.65rem; color: var(--texte-muté); margin-top: 4px; font-family: var(--font-mono);">Locked</div>
+        </div>
       </div>
     </div>
+
+    <!-- Typographic Scale & Hierarchy -->
+    <div style="border-top: 1px solid var(--ligne); padding-top: 16px;">
+      <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--texte-muté); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Typographic Scale &amp; Hierarchy (Figma Text Styles)</div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-family: var(--font-sans);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed var(--ligne); padding-bottom: 4px;">
+          <span style="font-size: 1.3rem; font-weight: 800; color: var(--texte);">Headline XL (24px / 1.15)</span>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté);">Plus Jakarta Sans · Bold 800</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed var(--ligne); padding-bottom: 4px;">
+          <span style="font-size: 1.05rem; font-weight: 700; color: var(--texte);">Title MD (17px / 1.3)</span>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté);">Plus Jakarta Sans · Semi-Bold 700</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed var(--ligne); padding-bottom: 4px;">
+          <span style="font-size: 0.92rem; color: var(--texte-doux);">Body Regular (14px / 1.6)</span>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté);">Plus Jakarta Sans · Regular 400</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent);">Code / Meta (12px / 1.4)</span>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté);">JetBrains Mono · Medium 500</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- 9. ARBITRAGES TECHNIQUES & POST-MORTEMS -->

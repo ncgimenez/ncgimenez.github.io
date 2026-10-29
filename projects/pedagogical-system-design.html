@@ -224,8 +224,48 @@ mermaid: true
       </div>
     </div>
 
-    <!-- SECTION 4 : DELIVERABLE 3 - SILENT VIDEO WALKTHROUGHS & 3-COLUMN SCRIPT -->
-    <h2 style="margin-top: 3rem;">4. Visual Deliverable 3: Silent Video Walkthroughs (The 3-Column Storyboard)</h2>
+    <!-- CORPORATE & CONTENT INFORMATION ARCHITECTURE -->
+    <h2 style="margin-top: 3rem;">4. Information Architecture &amp; Dense Form Simplification</h2>
+    <p>
+      Enterprise logistics tools like SAP S/4HANA are notorious for their cognitive density: a single sales or return transaction presents over 50 input fields, 14 tabs, and cryptic system abbreviations. To eliminate operator panic, I restructured the entire content architecture:
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.75rem 0;">
+      <!-- IA Block 1: Modular Arborescence -->
+      <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">
+          Modular Arborescence
+        </div>
+        <h4 style="margin: 0 0 8px; font-size: 1.05rem;">3-Tier Content Hierarchy</h4>
+        <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.5; margin: 0 0 10px;">
+          Replaced monolithic 80-page manuals with an intuitive 3-level content tree:
+        </p>
+        <ul class="liste--compact" style="font-size: 0.82rem; color: var(--texte-doux);">
+          <li><strong>Tier 1 · Mental Model:</strong> High-level visual map of the end-to-end order lifecycle.</li>
+          <li><strong>Tier 2 · Modular Cards:</strong> Self-contained, task-specific procedure cards (&lt; 90s execution).</li>
+          <li><strong>Tier 3 · Triage Trees:</strong> Fast error recovery guides indexed by actual system error codes.</li>
+        </ul>
+      </div>
+
+      <!-- IA Block 2: Dense Form Management -->
+      <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">
+          Form Ergonomics
+        </div>
+        <h4 style="margin: 0 0 8px; font-size: 1.05rem;">Taming 50+ Field ERP Screens</h4>
+        <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.5; margin: 0 0 10px;">
+          Drastically reduced cognitive strain on non-technical operators through structural rules:
+        </p>
+        <ul class="liste--compact" style="font-size: 0.82rem; color: var(--texte-doux);">
+          <li><strong>Visual Chunking:</strong> Segmenting monolithic screens into 3 digestible zones (Header Context, Line Items, Delivery Triggers).</li>
+          <li><strong>Validation Guardrails:</strong> Isolating the 3 business-critical inputs while auto-deriving technical metadata (Incoterms, plant codes).</li>
+          <li><strong>Immediate Error Resolution:</strong> Showing operators exactly how to self-correct red validation locks in under 30 seconds.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION 5 : DELIVERABLE 3 - SILENT VIDEO WALKTHROUGHS & 3-COLUMN SCRIPT -->
+    <h2 style="margin-top: 3rem;">5. Visual Deliverable 3: Silent Video Walkthroughs (The 3-Column Storyboard)</h2>
     <p>
       One of the most consequential decisions made during the rollout was **banning rambling voiceover recordings**. 
     </p>

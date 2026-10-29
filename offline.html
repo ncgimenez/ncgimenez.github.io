@@ -1,0 +1,703 @@
+---
+permalink: /offline.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Mode · Circuit Runner · Nadia Cañadas Giménez</title>
+  <meta name="description" content="Offline mode. Play Circuit Runner while waiting for internet connectivity.">
+  
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png?v=4">
+  <link rel="shortcut icon" href="/favicon.ico?v=4">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=2.9">
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('ncg-theme-v2');
+      const theme = savedTheme ? savedTheme : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+
+  <style>
+    body.page-offline {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: var(--fond);
+      color: var(--texte);
+    }
+
+    .header-offline {
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .brand-offline {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: var(--texte);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge-offline {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    .main-offline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px 20px 40px;
+      margin: auto;
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .title-offline {
+      font-family: var(--font-sans);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      margin: 0 0 12px;
+      color: var(--texte);
+    }
+
+    .desc-offline {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--texte-doux);
+      margin: 0 0 24px;
+      max-width: 580px;
+    }
+
+    /* MINI GAME CONTAINER */
+    .game-box {
+      width: 100%;
+      max-width: 700px;
+      background: var(--fond-carte);
+      border: 1.5px solid var(--ligne);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .game-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--texte-muté);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .game-score-badge {
+      color: #d97706;
+      font-weight: 600;
+    }
+
+    canvas#game-canvas {
+      width: 100%;
+      height: 200px;
+      display: block;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+      touch-action: none;
+    }
+
+    :root[data-theme="dark"] canvas#game-canvas {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .game-hint {
+      margin-top: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--texte-muté);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .game-hint kbd {
+      background: var(--fond-carte-hover);
+      border: 1px solid var(--ligne);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--texte);
+    }
+
+    /* ACTION BUTTONS */
+    .actions-offline {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-action-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: var(--texte);
+      color: var(--fond) !important;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-action-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--fond-carte);
+      color: var(--texte);
+      border: 1px solid var(--ligne-hover);
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action-secondary:hover {
+      background: var(--fond-carte-hover);
+      border-color: #d97706;
+      transform: translateY(-2px);
+    }
+
+    .footer-offline {
+      padding: 20px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--texte-muté);
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body class="page-offline">
+
+  <!-- TOP BAR -->
+  <header class="header-offline">
+    <a href="/" class="brand-offline" title="Return to Homepage">
+      <span>Nadia Cañadas Giménez</span>
+      <span class="brand-badge-offline">
+        <span class="pulse-dot"></span>
+        <span>NO CARRIER SIGNAL</span>
+      </span>
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--ligne); background: var(--fond-carte); color: var(--texte); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN VIEWPORT -->
+  <main class="main-offline">
+
+    <h1 class="title-offline">
+      You're completely off the grid.
+    </h1>
+
+    <p class="desc-offline">
+      No internet connection detected. But because this portfolio is built with offline-first standards, you can jump over broken circuit traces while waiting for the signal to return.
+    </p>
+
+    <!-- MINI GAME: CIRCUIT RUNNER -->
+    <div class="game-box">
+      <div class="game-bar">
+        <span>CIRCUIT_RUNNER // HARDWARE EDITION</span>
+        <div>
+          <span>PACKETS: </span>
+          <span class="game-score-badge" id="score-display">000</span>
+          <span style="margin-left: 12px; opacity: 0.6;">BEST: </span>
+          <span id="best-display" style="opacity: 0.8;">000</span>
+        </div>
+      </div>
+
+      <canvas id="game-canvas" width="660" height="200"></canvas>
+
+      <div class="game-hint">
+        <span>Controls: Press <kbd>SPACE</kbd> or <kbd>TAP</kbd> to jump over resistors</span>
+        <span id="network-status" style="color: var(--texte-doux);">Checking signal...</span>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions-offline">
+      <button type="button" class="btn-action-primary" id="btn-reconnect">
+        🔄 Reconnect to Portfolio
+      </button>
+      <a href="/" class="btn-action-secondary">
+        Return to Cached Home →
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer-offline">
+    <div>
+      Service Worker Active · PWA Offline Cache
+    </div>
+    <div>
+      © Nadia Cañadas Giménez
+    </div>
+  </footer>
+
+  <!-- SCRIPT: GAME ENGINE + THEME + NETWORK LISTENER -->
+  <script>
+    (function() {
+      // 1. THEME TOGGLE
+      const themeBtn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+
+      function updateIcon(theme) {
+        if (!themeBtn) return;
+        const icon = themeBtn.querySelector('.theme-icon');
+        if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+
+      updateIcon(root.getAttribute('data-theme') || 'light');
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function() {
+          const currentTheme = root.getAttribute('data-theme') || 'light';
+          const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', nextTheme);
+          root.dataset.theme = nextTheme;
+          localStorage.setItem('ncg-theme-v2', nextTheme);
+          updateIcon(nextTheme);
+        });
+      }
+
+      // 2. NETWORK STATUS MONITOR
+      const statusText = document.getElementById('network-status');
+      const reconnectBtn = document.getElementById('btn-reconnect');
+
+      function updateNetStatus() {
+        if (navigator.onLine) {
+          if (statusText) statusText.innerHTML = '<span style="color: #10b981;">✔ Signal restored! Online.</span>';
+          if (reconnectBtn) {
+            reconnectBtn.style.background = '#10b981';
+            reconnectBtn.textContent = '✔ Signal Restored — Click to Reload';
+          }
+        } else {
+          if (statusText) statusText.innerHTML = '<span style="color: #ef4444;">● Offline (Waiting for connection...)</span>';
+        }
+      }
+
+      window.addEventListener('online', updateNetStatus);
+      window.addEventListener('offline', updateNetStatus);
+      updateNetStatus();
+
+      if (reconnectBtn) {
+        reconnectBtn.addEventListener('click', function() {
+          if (navigator.onLine) {
+            window.location.href = '/';
+          } else {
+            statusText.textContent = 'Testing carrier signal...';
+            fetch('/', { cache: 'no-store' })
+              .then(() => { window.location.href = '/'; })
+              .catch(() => {
+                statusText.innerHTML = '<span style="color: #ef4444;">Still offline. Keep jumping!</span>';
+              });
+          }
+        });
+      }
+
+      // 3. RETRO AUDIO EFFECTS (WEB AUDIO API)
+      let audioCtx = null;
+      function playTone(freq, type = 'sine', duration = 0.08) {
+        try {
+          if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + duration);
+        } catch(e) {}
+      }
+
+      // 4. THE CIRCUIT RUNNER MINI-GAME
+      const canvas = document.getElementById('game-canvas');
+      const ctx = canvas.getContext('2d');
+      const scoreEl = document.getElementById('score-display');
+      const bestEl = document.getElementById('best-display');
+
+      let bestScore = parseInt(localStorage.getItem('ncg_circuit_best') || '0', 10);
+      bestEl.textContent = String(bestScore).padStart(3, '0');
+
+      let width = canvas.width;
+      let height = canvas.height;
+      const groundY = height - 45;
+
+      let score = 0;
+      let isPlaying = false;
+      let isGameOver = false;
+      let gameSpeed = 4.8;
+      let frameId = null;
+
+      // Player Probe Spark
+      const player = {
+        x: 60,
+        y: groundY - 14,
+        size: 14,
+        vy: 0,
+        gravity: 0.58,
+        jumpPower: -10.5,
+        isGrounded: true
+      };
+
+      // Obstacles (Resistors / Gaps on PCB)
+      let obstacles = [];
+      let particles = [];
+      let spawnTimer = 0;
+
+      function resetGame() {
+        score = 0;
+        gameSpeed = 4.8;
+        obstacles = [];
+        particles = [];
+        player.y = groundY - player.size;
+        player.vy = 0;
+        player.isGrounded = true;
+        isGameOver = false;
+        isPlaying = true;
+        scoreEl.textContent = '000';
+      }
+
+      function jump() {
+        if (!isPlaying) {
+          resetGame();
+          playTone(440, 'triangle', 0.1);
+          return;
+        }
+        if (isGameOver) {
+          resetGame();
+          playTone(440, 'triangle', 0.1);
+          return;
+        }
+        if (player.isGrounded) {
+          player.vy = player.jumpPower;
+          player.isGrounded = false;
+          playTone(587, 'sine', 0.08); // D5
+
+          // Spark particles on jump
+          for (let i = 0; i < 6; i++) {
+            particles.push({
+              x: player.x + player.size / 2,
+              y: player.y + player.size,
+              vx: (Math.random() - 0.5) * 4,
+              vy: Math.random() * 2 + 1,
+              life: 18,
+              color: '#d97706'
+            });
+          }
+        }
+      }
+
+      // Input listeners
+      window.addEventListener('keydown', function(e) {
+        if (e.code === 'Space' || e.code === 'ArrowUp') {
+          e.preventDefault();
+          jump();
+        }
+      });
+
+      canvas.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        jump();
+      });
+
+      canvas.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        jump();
+      }, { passive: false });
+
+      // Obstacle Spawner
+      function spawnObstacle() {
+        const types = ['resistor', 'gap', 'tall_resistor'];
+        const type = types[Math.floor(Math.random() * types.length)];
+        let w = 22, h = 26;
+        if (type === 'gap') { w = 34; h = 10; }
+        if (type === 'tall_resistor') { w = 24; h = 38; }
+
+        obstacles.push({
+          x: width + 20,
+          y: groundY - h,
+          w: w,
+          h: h,
+          type: type
+        });
+      }
+
+      function update() {
+        if (!isPlaying || isGameOver) return;
+
+        score += 0.2;
+        scoreEl.textContent = String(Math.floor(score)).padStart(3, '0');
+
+        if (score > bestScore) {
+          bestScore = Math.floor(score);
+          bestEl.textContent = String(bestScore).padStart(3, '0');
+          localStorage.setItem('ncg_circuit_best', bestScore);
+        }
+
+        // Speed ramp up gently
+        if (gameSpeed < 9.5) {
+          gameSpeed += 0.001;
+        }
+
+        // Player physics
+        player.vy += player.gravity;
+        player.y += player.vy;
+
+        if (player.y >= groundY - player.size) {
+          player.y = groundY - player.size;
+          player.vy = 0;
+          player.isGrounded = true;
+        }
+
+        // Spawn obstacles
+        spawnTimer++;
+        if (spawnTimer > 75 + Math.random() * 50) {
+          spawnObstacle();
+          spawnTimer = 0;
+        }
+
+        // Move obstacles & collision
+        for (let i = obstacles.length - 1; i >= 0; i--) {
+          const obs = obstacles[i];
+          obs.x -= gameSpeed;
+
+          // Simple AABB Collision box with a little forgiveness margin
+          const padding = 3;
+          if (
+            player.x + padding < obs.x + obs.w - padding &&
+            player.x + player.size - padding > obs.x + padding &&
+            player.y + padding < obs.y + obs.h - padding &&
+            player.y + player.size - padding > obs.y + padding
+          ) {
+            // CRASH!
+            isGameOver = true;
+            playTone(180, 'sawtooth', 0.25);
+
+            // Explosion sparks
+            for (let k = 0; k < 18; k++) {
+              particles.push({
+                x: player.x + player.size / 2,
+                y: player.y + player.size / 2,
+                vx: (Math.random() - 0.5) * 8,
+                vy: (Math.random() - 0.5) * 8,
+                life: 30,
+                color: k % 2 === 0 ? '#ef4444' : '#d97706'
+              });
+            }
+          }
+
+          if (obs.x + obs.w < -20) {
+            obstacles.splice(i, 1);
+          }
+        }
+
+        // Update particles
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life--;
+          if (p.life <= 0) particles.splice(i, 1);
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        const isDark = (root.getAttribute('data-theme') || root.dataset.theme) === 'dark';
+        const traceColor = isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(20, 20, 22, 0.2)';
+        const copperColor = '#d97706';
+
+        // 1. Draw PCB Circuit Ground Line with solder solder pads
+        ctx.beginPath();
+        ctx.moveTo(0, groundY);
+        ctx.lineTo(width, groundY);
+        ctx.strokeStyle = traceColor;
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        // Decorative circuit dots on track
+        const dotOffset = (Date.now() / 20 * (isPlaying && !isGameOver ? gameSpeed : 0)) % 40;
+        for (let x = -dotOffset; x < width; x += 40) {
+          ctx.beginPath();
+          ctx.arc(x, groundY, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = traceColor;
+          ctx.fill();
+        }
+
+        // 2. Draw Obstacles
+        obstacles.forEach(obs => {
+          if (obs.type === 'gap') {
+            // Broken wire spark
+            ctx.clearRect(obs.x, groundY - 4, obs.w, 8);
+            ctx.strokeStyle = '#ef4444';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(obs.x, groundY - 3, obs.w, 6);
+          } else {
+            // Resistor component body
+            ctx.fillStyle = isDark ? '#262629' : '#e5e2db';
+            ctx.strokeStyle = copperColor;
+            ctx.lineWidth = 1.8;
+            ctx.fillRect(obs.x, obs.y, obs.w, obs.h);
+            ctx.strokeRect(obs.x, obs.y, obs.w, obs.h);
+
+            // Resistor color stripes
+            ctx.fillStyle = copperColor;
+            ctx.fillRect(obs.x + 4, obs.y, 3, obs.h);
+            ctx.fillStyle = '#ef4444';
+            ctx.fillRect(obs.x + 10, obs.y, 3, obs.h);
+          }
+        });
+
+        // 3. Draw Player: The Glowing Pulse Probe
+        if (!isGameOver) {
+          // Probe body
+          ctx.save();
+          ctx.shadowColor = copperColor;
+          ctx.shadowBlur = 12;
+          ctx.fillStyle = copperColor;
+          ctx.beginPath();
+          ctx.arc(player.x + player.size / 2, player.y + player.size / 2, player.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Internal bright core
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(player.x + player.size / 2, player.y + player.size / 2, player.size / 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+
+        // 4. Draw Particles
+        particles.forEach(p => {
+          ctx.fillStyle = p.color;
+          ctx.fillRect(p.x, p.y, 3, 3);
+        });
+
+        // 5. Game Over / Start Prompt Overlay
+        if (!isPlaying) {
+          ctx.fillStyle = isDark ? '#f4f3ee' : '#141416';
+          ctx.font = '600 15px "Plus Jakarta Sans", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('PRESS SPACE OR TAP TO INITIALIZE PROBE', width / 2, height / 2 - 10);
+          ctx.font = '12px "JetBrains Mono", monospace';
+          ctx.fillStyle = '#d97706';
+          ctx.fillText('⚡ Test your circuit reflexes', width / 2, height / 2 + 14);
+        } else if (isGameOver) {
+          ctx.fillStyle = '#ef4444';
+          ctx.font = '700 17px "Plus Jakarta Sans", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('CIRCUIT SHORTED // PACKET LOSS', width / 2, height / 2 - 12);
+          ctx.font = '12px "JetBrains Mono", monospace';
+          ctx.fillStyle = isDark ? '#a3a199' : '#52504b';
+          ctx.fillText('Press SPACE or TAP to re-solder & restart', width / 2, height / 2 + 12);
+        }
+      }
+
+      function loop() {
+        update();
+        draw();
+        frameId = requestAnimationFrame(loop);
+      }
+
+      // Initial draw
+      draw();
+      loop();
+    })();
+  </script>
+
+</body>
+</html>

@@ -603,5 +603,12 @@
     })();
   </script>
   <script src="{{ '/assets/quick-actions.js' | relative_url }}"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}").catch(function() {});
+      });
+    }
+  </script>
 </body>
 </html>

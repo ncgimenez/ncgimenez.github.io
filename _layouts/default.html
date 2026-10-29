@@ -57,20 +57,20 @@
   {% endif %}
 
   <style>
-    .nav-studio-pill {
-      display: inline-flex !important;
-      align-items: center;
-      gap: 5px;
-      font-weight: 600;
+    header.site nav ul {
+      align-items: baseline;
     }
     .nav-studio-star {
       color: #d97706;
-      font-size: 0.72rem;
+      font-size: 0.65rem;
+      margin-left: 4px;
       display: inline-block;
+      vertical-align: 1px;
+      line-height: 1;
       transition: transform 0.25s ease;
     }
-    .nav-studio-pill:hover .nav-studio-star {
-      transform: rotate(45deg) scale(1.25);
+    header.site nav a:hover .nav-studio-star {
+      transform: rotate(45deg) scale(1.2);
     }
   </style>
 </head>
@@ -85,7 +85,7 @@
           <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}aria-current="page"{% endif %}>Projects</a></li>
           <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Writing</a></li>
           <li><a href="{{ '/about.html' | relative_url }}" {% if page.url contains '/about' %}aria-current="page"{% endif %}>About</a></li>
-          <li><a href="{{ '/antechamber/' | relative_url }}" class="nav-studio-pill" {% if page.url contains '/antechamber/' %}aria-current="page"{% endif %}>Studio <span class="nav-studio-star">✦</span></a></li>
+          <li><a href="{{ '/antechamber/' | relative_url }}" {% if page.url contains '/antechamber/' %}aria-current="page"{% endif %}>Studio<span class="nav-studio-star">✦</span></a></li>
         </ul>
       </nav>
 

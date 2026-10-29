@@ -297,8 +297,13 @@ permalink: /offline.html
       <canvas id="game-canvas" width="660" height="200"></canvas>
 
       <div class="game-hint">
-        <span>Controls: Press <kbd>SPACE</kbd> or <kbd>TAP</kbd> to jump over resistors</span>
-        <span id="network-status" style="color: var(--texte-doux);">Checking signal...</span>
+        <span>Controls: Press <kbd>SPACE</kbd> or <kbd>↑</kbd> to jump over resistors</span>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button type="button" id="btn-game-restart" style="display: none; background: #d97706; color: #ffffff; border: none; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 4px; cursor: pointer;">
+            ↺ Restart Circuit
+          </button>
+          <span id="network-status" style="color: var(--texte-doux);">Checking signal...</span>
+        </div>
       </div>
     </div>
 
@@ -437,6 +442,9 @@ permalink: /offline.html
       let particles = [];
       let spawnTimer = 0;
 
+      const restartBtn = document.getElementById('btn-game-restart');
+      let lastGameOverTime = 0;
+
       function resetGame() {
         score = 0;
         gameSpeed = 4.8;
@@ -448,6 +456,7 @@ permalink: /offline.html
         isGameOver = false;
         isPlaying = true;
         scoreEl.textContent = '000';
+        if (restartBtn) restartBtn.style.display = 'none';
       }
 
       function jump() {
@@ -457,6 +466,8 @@ permalink: /offline.html
           return;
         }
         if (isGameOver) {
+          // Prevent accidental restart within 800ms of crashing
+          if (Date.now() - lastGameOverTime < 800) return;
           resetGame();
           playTone(440, 'triangle', 0.1);
           return;
@@ -480,7 +491,7 @@ permalink: /offline.html
         }
       }
 
-      // Input listeners
+      // Input listeners: Keyboard Space & ArrowUp are primary
       window.addEventListener('keydown', function(e) {
         if (e.code === 'Space' || e.code === 'ArrowUp') {
           e.preventDefault();
@@ -488,11 +499,16 @@ permalink: /offline.html
         }
       });
 
-      canvas.addEventListener('mousedown', function(e) {
-        e.preventDefault();
-        jump();
-      });
+      // Explicit restart button click
+      if (restartBtn) {
+        restartBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          resetGame();
+          playTone(440, 'triangle', 0.1);
+        });
+      }
 
+      // Touch screens only (not desktop trackpad hover/brushes)
       canvas.addEventListener('touchstart', function(e) {
         e.preventDefault();
         jump();
@@ -564,6 +580,8 @@ permalink: /offline.html
           ) {
             // CRASH!
             isGameOver = true;
+            lastGameOverTime = Date.now();
+            if (restartBtn) restartBtn.style.display = 'inline-block';
             playTone(180, 'sawtooth', 0.25);
 
             // Explosion sparks

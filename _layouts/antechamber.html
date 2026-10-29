@@ -225,10 +225,13 @@
     }
 
     .sidebar-nav-item.is-active {
-      background: var(--accent-pale-hover);
-      border-color: var(--accent);
-      color: var(--texte);
-      font-weight: 600;
+      background: var(--accent-pale-hover) !important;
+      border-color: var(--accent) !important;
+      border-left: 4px solid var(--accent) !important;
+      color: var(--texte) !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08), inset 0 0 12px rgba(217, 119, 6, 0.1);
+      transform: translateX(-2px);
     }
 
     .sidebar-nav-num {
@@ -238,7 +241,8 @@
     }
 
     .sidebar-nav-item.is-active .sidebar-nav-num {
-      color: var(--accent);
+      color: var(--accent) !important;
+      font-weight: 800;
     }
 
     /* SIDEBAR BOTTOM CONTROLS */
@@ -399,10 +403,11 @@
       }
 
       .mobile-room-pill.is-active {
-        background: var(--accent-pale-hover);
-        border-color: var(--accent);
-        color: var(--texte);
-        font-weight: 600;
+        background: var(--accent) !important;
+        border-color: var(--accent) !important;
+        color: var(--fond) !important;
+        font-weight: 700 !important;
+        box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
       }
     }
 
@@ -635,6 +640,37 @@
     })();
   </script>
   <script src="{{ '/assets/quick-actions.js' | relative_url }}"></script>
+  
+  <!-- ACTIVE ROOM HIGHLIGHTER -->
+  <script>
+    (function() {
+      const path = (window.location.pathname || '').toLowerCase();
+      const items = document.querySelectorAll('.sidebar-nav-item, .mobile-room-pill');
+      
+      items.forEach(el => {
+        const href = (el.getAttribute('href') || '').toLowerCase();
+        let active = false;
+
+        if (path.includes('lens') && href.includes('lens')) active = true;
+        else if (path.includes('sound') && href.includes('sound')) active = true;
+        else if (path.includes('notes') && href.includes('notes')) active = true;
+        else if (path.includes('reserve') && href.includes('reserve')) active = true;
+        else if (path.includes('about') && href.includes('about')) active = true;
+        else if ((path === '/antechamber' || path === '/antechamber/' || path.endsWith('/antechamber/index.html')) && (href === '/antechamber/' || href === '/antechamber' || href.endsWith('/antechamber/index.html') || href === '/antechamber/index')) {
+          active = true;
+        }
+
+        if (active) {
+          el.classList.add('is-active');
+          el.setAttribute('aria-current', 'page');
+        } else {
+          el.classList.remove('is-active');
+          el.removeAttribute('aria-current');
+        }
+      });
+    })();
+  </script>
+
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {

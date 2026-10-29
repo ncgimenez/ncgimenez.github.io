@@ -641,6 +641,17 @@ const server = http.createServer((req, res) => {
   }
 
   if (!fs.existsSync(filePath)) {
+    const custom404 = path.join(ROOT, '404.html');
+    if (fs.existsSync(custom404)) {
+      try {
+        const html = renderPage(custom404, reqUrl);
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'Connection': 'close' });
+        res.end(html);
+        return;
+      } catch (err) {
+        // fallback
+      }
+    }
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8', 'Connection': 'close' });
     res.end('404 Not Found');
     return;

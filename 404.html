@@ -1,0 +1,119 @@
+---
+layout: default
+title: 404 — Subroutine Not Found
+permalink: /404.html
+---
+
+<main style="max-width: 820px; margin: 60px auto 100px; padding: 0 20px;">
+  
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <span class="etiquette" style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; border-color: rgba(217, 119, 6, 0.4); background: rgba(217, 119, 6, 0.08); color: #d97706;">
+      SYSTEM EXCEPTION // STATUS 404
+    </span>
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-muté);">
+      [ERR_ROUTE_NOT_FOUND]
+    </span>
+  </div>
+
+  <h1 style="font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.08; letter-spacing: -0.04em; margin: 0 0 20px; font-weight: 800;">
+    Even with an oscilloscope and a heat gun, we couldn't find this page.
+  </h1>
+
+  <p style="font-size: 1.18rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 36px; max-width: 680px;">
+    You've arrived at an unmapped coordinate. Either this route was deprioritized during sprint backlog grooming, deleted in a database migration, or secretly relocated into the Atelier.
+  </p>
+
+  <!-- RETRO HARDWARE DIAGNOSTIC TERMINAL -->
+  <div style="background: var(--fond-carte); border: 1.5px solid var(--ligne); border-radius: 12px; padding: 24px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); position: relative; overflow: hidden;">
+    
+    <!-- Top Terminal Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ligne); padding-bottom: 12px; margin-bottom: 18px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté);">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #d97706; box-shadow: 0 0 8px #d97706;"></span>
+        <span>SYSTEM_DIAGNOSTIC_CONSOLE // v2.6.4</span>
+      </div>
+      <span>SYS_CHECK: FAIL</span>
+    </div>
+
+    <!-- Diagnostic Details -->
+    <div style="font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7; color: var(--texte);">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap;">
+        <span style="color: var(--texte-muté);">→ Target URL:</span>
+        <span id="diagnostic-url" style="color: #d97706; font-weight: 600;">unknown</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap;">
+        <span style="color: var(--texte-muté);">→ Root Cause Analysis:</span>
+        <span style="color: var(--texte-doux);">Circuit interrupted or dead permalink</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap;">
+        <span style="color: var(--texte-muté);">→ Systems Analyst Status:</span>
+        <span style="color: #10b981; font-weight: 600;">Investigating the anomaly ☕</span>
+      </div>
+    </div>
+
+    <!-- Interactive Troubleshoot Section -->
+    <div id="troubleshoot-output" style="margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--ligne); display: none; font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6;">
+      <p style="margin: 0 0 6px; color: #10b981;">✔ Ping test: 0ms latency.</p>
+      <p style="margin: 0 0 6px; color: #10b981;">✔ 24 active case studies and blog notes verified online.</p>
+      <p style="margin: 0; color: var(--texte-doux);">
+        <strong>Conclusion:</strong> Your internet is fine and the portfolio is 100% operational. You just discovered the single empty pocket of the entire site!
+      </p>
+    </div>
+
+    <div style="margin-top: 18px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <button type="button" id="btn-troubleshoot" style="background: transparent; border: 1px solid var(--ligne-hover); color: var(--texte); font-family: var(--font-mono); font-size: 0.74rem; padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
+        ⚡ Run Diagnostics
+      </button>
+      <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté);">
+        Tip: Press <kbd style="font-size: 0.68rem; background: var(--fond-carte-hover); border: 1px solid var(--ligne); padding: 2px 6px; border-radius: 4px;">⌘K</kbd> to jump anywhere
+      </span>
+    </div>
+
+  </div>
+
+  <!-- ESCAPE ROUTES / NAVIGATION -->
+  <div>
+    <h3 style="font-size: 0.82rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--texte-muté); margin: 0 0 16px;">
+      Recommended Recovery Vectors
+    </h3>
+
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+      <a href="/" class="bouton plein">
+        ← Return to Homepage
+      </a>
+      <a href="/projects/" class="bouton">
+        Browse Case Studies →
+      </a>
+      <a href="/antechamber/" class="bouton" style="border-color: rgba(217, 119, 6, 0.4); color: #d97706;">
+        Slip into The Studio ✦
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  (function() {
+    // Fill the actual path that triggered the 404
+    const urlDisplay = document.getElementById('diagnostic-url');
+    if (urlDisplay) {
+      urlDisplay.textContent = window.location.pathname || 'unspecified_route';
+    }
+
+    // Troubleshoot button action
+    const btn = document.getElementById('btn-troubleshoot');
+    const output = document.getElementById('troubleshoot-output');
+    if (btn && output) {
+      btn.addEventListener('click', function() {
+        btn.textContent = '⚡ Running checks...';
+        btn.disabled = true;
+        setTimeout(function() {
+          output.style.display = 'block';
+          btn.textContent = '✔ Diagnostics Complete';
+          btn.style.borderColor = '#10b981';
+          btn.style.color = '#10b981';
+        }, 350);
+      });
+    }
+  })();
+</script>

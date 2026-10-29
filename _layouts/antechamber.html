@@ -300,7 +300,7 @@
     .sidebar-exit-link {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 8px;
       padding: 8px 12px;
       border-radius: 6px;
       background: var(--accent-pale);
@@ -316,6 +316,34 @@
       color: var(--texte);
       border-color: var(--accent);
       background: var(--accent-pale-hover);
+      transform: translateX(-2px);
+    }
+
+    .sidebar-top-exit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--texte-mute);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--fond-carte);
+      border: 1px solid var(--ligne);
+      margin-bottom: 1.25rem;
+      width: fit-content;
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-top-exit-btn:hover {
+      color: var(--texte);
+      border-color: var(--accent);
+      background: var(--accent-pale);
+      transform: translateX(-2px);
     }
 
     /* RESPONSIVE MOBILE BAR (HIDDEN BY DEFAULT ON DESKTOP) */
@@ -458,8 +486,8 @@
       <button type="button" class="sidebar-theme-btn theme-toggle" aria-label="Toggle theme">
         <span class="theme-icon">☀️</span>
       </button>
-      <a href="{{ '/' | relative_url }}" class="sidebar-theme-btn" title="Exit to Portfolio" style="text-decoration: none; font-size: 0.72rem; font-family: var(--font-mono); padding: 4px 8px;">
-        <span>Projects</span>
+      <a href="{{ '/' | relative_url }}" class="sidebar-theme-btn" title="Return to Portfolio" style="text-decoration: none; font-size: 0.72rem; font-family: var(--font-mono); padding: 4px 10px; width: auto; display: inline-flex; align-items: center; gap: 4px;">
+        <span>← Portfolio</span>
       </a>
     </div>
   </header>
@@ -484,7 +512,12 @@
     <!-- RIGHT: FIXED VERTICAL SIDEBAR (DESKTOP) -->
     <aside class="antechamber-sidebar-right" aria-label="Sidebar Navigation">
       
-      <!-- TOP: BRAND & COORDINATES -->
+      <!-- TOP: RETURN TO MAIN PORTFOLIO -->
+      <a href="{{ '/' | relative_url }}" class="sidebar-top-exit-btn" title="Return to main portfolio">
+        <span>← Back to Portfolio</span>
+      </a>
+
+      <!-- BRAND & COORDINATES -->
       <div class="sidebar-brand-block">
         <a href="{{ '/antechamber/' | relative_url }}" class="sidebar-brand-title">
           THE ANTI<br><span>CHAMBER</span>
@@ -540,9 +573,8 @@
           </button>
         </div>
 
-        <a href="{{ '/' | relative_url }}" class="sidebar-exit-link" title="Exit to professional engineering portfolio">
-          <span>Portfolio</span>
-          <span>→</span>
+        <a href="{{ '/' | relative_url }}" class="sidebar-exit-link" title="Return to main portfolio">
+          <span>← Back to Portfolio</span>
         </a>
       </div>
 

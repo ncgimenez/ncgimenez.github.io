@@ -186,6 +186,62 @@ title: Foyer | The Antechamber
     </div>
   </section>
 
+  <!-- ATELIER SPECIMENS : EDGE CASES & PWA EXPERIMENTS -->
+  <section style="margin-top: 1.5rem; margin-bottom: 2.5rem; border-top: 1px dashed var(--ligne); padding-top: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 8px;">
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-fonce); letter-spacing: 0.1em; text-transform: uppercase;">
+        ATELIER BENCH · EDGE CASES &amp; PWA SPECIMENS
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute);">
+        GRACEFUL DEGRADATION EXPERIMENTS
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+      
+      <!-- SPECIMEN 01: THE 404 EYE -->
+      <a href="{{ '/404.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--ligne)'; this.style.transform='none';">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-fonce); text-transform: uppercase;">SPECIMEN // 01</span>
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); background: var(--accent-pale); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-bordure);">404 ANOMALY</span>
+          </div>
+          <h4 style="font-family: var(--font-poster-sans); font-size: 1.15rem; color: var(--texte); margin: 0 0 6px;">
+            The 404 Eye Tracker
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 1rem;">
+            A sculptural error recovery interface featuring a vector pupil tracking the user's cursor in real time, with a project teleportation engine.
+          </p>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--ligne); padding-top: 8px;">
+          <span>Inspect Error State</span>
+          <span>↗</span>
+        </div>
+      </a>
+
+      <!-- SPECIMEN 02: CIRCUIT RUNNER -->
+      <a href="{{ '/offline.html' | relative_url }}" style="background: var(--sub-card-bg); border: 1px solid var(--ligne); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--ligne)'; this.style.transform='none';">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-fonce); text-transform: uppercase;">SPECIMEN // 02</span>
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.25);">OFFLINE PWA</span>
+          </div>
+          <h4 style="font-family: var(--font-poster-sans); font-size: 1.15rem; color: var(--texte); margin: 0 0 6px;">
+            Circuit Runner Mini-Game
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 1rem;">
+            A retro jump-and-dodge arcade runner powered by HTML5 Canvas, Web Audio sound synthesis, and Service Worker caching when connection drops.
+          </p>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--ligne); padding-top: 8px;">
+          <span>Play Circuit Runner</span>
+          <span>⚡</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
   <!-- BOTTOM METRICS & EXIT BAR -->
   <footer style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ligne); padding-top: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute); flex-wrap: wrap; gap: 10px;">
     <div>

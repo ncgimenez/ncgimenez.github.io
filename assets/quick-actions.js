@@ -26,7 +26,9 @@
     audio: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v4"/><path d="M6 6v12"/><path d="M10 3v18"/><path d="M14 8v8"/><path d="M18 5v14"/><path d="M22 10v4"/></svg>',
     book: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>',
     gazette: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>',
-    manifesto: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>'
+    manifesto: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>',
+    game: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4"/><path d="M8 10v4"/><circle cx="17" cy="10" r="1"/><circle cx="15" cy="13" r="1"/></svg>',
+    eye: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>'
   };
 
   // ============================================================
@@ -116,6 +118,24 @@
       badge: 'Manifesto',
       url: '/antechamber/about.html',
       keywords: 'behind curtain atelier workshop philosophy manifesto'
+    },
+    {
+      group: 'Workbench Experiments',
+      title: 'Circuit Runner: Offline PWA Mini-Game',
+      sub: 'Jump over PCB resistors & signal breaks when offline (Web Audio & Canvas)',
+      icon: 'game',
+      badge: 'Mini-Game',
+      url: '/offline.html',
+      keywords: 'game offline runner circuit pwa dino mini-game play canvas web audio'
+    },
+    {
+      group: 'Workbench Experiments',
+      title: '404 Anomaly: The Eye Tracker',
+      sub: 'Sculptural 404 page featuring real-time mouse-tracking pupil & random teleport',
+      icon: 'eye',
+      badge: 'Interactive',
+      url: '/404.html',
+      keywords: '404 error eye lost page teleport anomaly interactive experiment'
     },
 
     // Quick Studio Actions
@@ -248,6 +268,26 @@
       badge: 'Enablement',
       url: '/projects/pedagogical-system-design.html',
       keywords: 'pedagogical enablement deloitte remarkable training sap cheat sheet video script guide instructional visual education'
+    },
+
+    // Interactive Specimens & Edge Cases
+    {
+      group: 'Edge Cases & Specimens',
+      title: 'Circuit Runner: Offline PWA Fallback',
+      sub: 'Jump over PCB resistors & signal breaks when offline (Web Audio & Canvas)',
+      icon: 'game',
+      badge: 'Mini-Game',
+      url: '/offline.html',
+      keywords: 'game offline runner circuit pwa dino mini-game play canvas web audio resilience'
+    },
+    {
+      group: 'Edge Cases & Specimens',
+      title: '404 Anomaly: The Eye Tracker',
+      sub: 'Sculptural 404 page featuring real-time mouse-tracking pupil & random teleport',
+      icon: 'eye',
+      badge: 'Interactive',
+      url: '/404.html',
+      keywords: '404 error eye lost page teleport anomaly interactive experiment recovery'
     },
 
     // Quick Actions

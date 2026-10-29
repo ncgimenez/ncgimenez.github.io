@@ -290,9 +290,9 @@ permalink: /offline.html
           <span>CIRCUIT_RUNNER // HARDWARE EDITION</span>
         </div>
         <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-          <span style="color: #d97706; font-weight: 600;">👑 OWNER: 1,342</span>
+          <span style="color: #d97706; font-weight: 600;">👑 BEST SCORE: <span id="crown-best-display">1,342</span></span>
           <span>PACKETS: <span class="game-score-badge" id="score-display">000</span></span>
-          <span style="opacity: 0.7;">YOUR BEST: <span id="best-display" style="font-weight: 600;">000</span></span>
+          <span style="opacity: 0.7;">DEVICE BEST: <span id="best-display" style="font-weight: 600;">000</span></span>
         </div>
       </div>
 
@@ -526,12 +526,18 @@ permalink: /offline.html
 
       function renderLeaderboard() {
         const tbody = document.getElementById('leaderboard-body');
-        if (!tbody) return;
+        const crownEl = document.getElementById('crown-best-display');
 
         const localEntries = getLeaderboard();
         const allEntries = [OWNER_ENTRY, ...localEntries];
 
         allEntries.sort((a, b) => b.score - a.score);
+
+        if (crownEl && allEntries.length > 0) {
+          crownEl.textContent = allEntries[0].score.toLocaleString();
+        }
+
+        if (!tbody) return;
         const topList = allEntries.slice(0, 6);
 
         tbody.innerHTML = topList.map((entry, idx) => {

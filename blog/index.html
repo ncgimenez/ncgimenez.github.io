@@ -1,63 +1,72 @@
 ---
 layout: default
-title: Writing & Teardowns
+title: Writing & Field Notes | Nadia Cañadas Giménez
 ---
 
 <main>
-  <span class="etiquette">Writing &amp; Field Notes</span>
-  <h1>Observations on Systems, Friction &amp; Craft</h1>
+  <a class="retour" href="/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← Home</a>
+
+  <span class="etiquette">Writing · Field Notes</span>
+  <h1>Observations on Systems, Friction &amp; Workflows</h1>
   <p class="chapo">
-    Short essays, systems thinking, and interaction teardowns. Taking things apart to understand how digital workflows and enterprise architectures actually tick.
+    The field observations and operational irritants that led to my projects: why enterprise tools break down, what rogue spreadsheets reveal, and how building for your own use changes software ergonomics.
   </p>
 
-  <div class="grille" style="margin-top: 36px;">
-    <!-- 01 : DISASSEMBLY -->
-    <a class="carte" href="{{ '/blog/disassembly.html' | relative_url }}">
-      <span class="etiquette">01 · Mindset &amp; Craft</span>
-      <h3>I Take Things Apart</h3>
-      <p>On replacing glued smartphone batteries, demystifying signal routing in Logic Pro, and why looking under the surface reveals how processes really work.</p>
-    </a>
+  <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem;">
 
-    <!-- 02 : ATP LOGIC -->
-    <a class="carte" href="{{ '/blog/available-to-promise.html' | relative_url }}">
-      <span class="etiquette">02 · Systems Logic</span>
-      <h3>Available-to-Promise in Order-to-Cash</h3>
-      <p>Why promising delivery dates before checking actual warehouse stock creates quiet operational chaos across sales and logistics.</p>
-    </a>
+    <!-- NOTE 1: PÉDAGOGIE & ERGONOMIE COGNITIVE -->
+    <article style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; transition: border-color 0.2s ease;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+        <span class="etiquette etiquette--violet">Enablement &amp; Cognitive Ergonomics</span>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté);">MAY 2024</span>
+      </div>
+      <h2 style="margin: 0 0 8px; font-size: 1.25rem;">
+        <a href="/blog/note-deloitte.html" style="color: var(--texte); text-decoration: none;">Nobody Is Bad at Computers: Cognitive Load and Enterprise Systems</a>
+      </h2>
+      <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+        Designing visual materials for specialized learners taught me a universal truth: when people freeze in front of software, the problem isn't their technical skill—it's cognitive overload. Why 60-page manuals gather dust and how visual scaffolding unlocks dense enterprise tools.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px dashed var(--ligne); padding-top: 12px;">
+        <a class="bouton" href="/blog/note-deloitte.html">Read Note →</a>
+        <span style="font-size: 0.78rem; color: var(--texte-muté);">Led to: <em>Enterprise Enablement</em></span>
+      </div>
+    </article>
 
-    <!-- 03 : REQUIREMENTS SPECIFICATION -->
-    <a class="carte" href="{{ '/blog/note-rd.html' | relative_url }}">
-      <span class="etiquette">03 · Systems Analysis</span>
-      <h3>What Makes a Requirements Document Actually Useful</h3>
-      <p>Why most requirement templates gather dust after kickoff, and how to write specifications that engineering teams actually build from with confidence.</p>
-    </a>
+    <!-- NOTE 2: LE SPREADSHEET CLANDESTIN -->
+    <article style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; transition: border-color 0.2s ease;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+        <span class="etiquette etiquette--bleu">Process Governance &amp; Data</span>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté);">MARCH 2025</span>
+      </div>
+      <h2 style="margin: 0 0 8px; font-size: 1.25rem;">
+        <a href="/blog/note-erp.html" style="color: var(--texte); text-decoration: none;">The Rogue Spreadsheet Is Your Best Functional Specification</a>
+      </h2>
+      <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+        When operational teams create a secret Excel file alongside the official ERP, management usually calls it bad compliance. In reality, that spreadsheet is the purest, most accurate list of requirements you will ever find.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px dashed var(--ligne); padding-top: 12px;">
+        <a class="bouton" href="/blog/note-erp.html">Read Note →</a>
+        <span style="font-size: 0.78rem; color: var(--texte-muté);">Led to: <em>SAP SD Standardization &amp; Odoo ERP</em></span>
+      </div>
+    </article>
 
-    <!-- 04 : USER = CONSULTANT -->
-    <a class="carte" href="{{ '/blog/note-sf.html' | relative_url }}">
-      <span class="etiquette">04 · Enterprise Reality</span>
-      <h3>When the Consultant Is Also the User</h3>
-      <p>On suffering through clunky enterprise software from the user's side, and how the memory of wanting to close the tab shapes better systems implementations.</p>
-    </a>
+    <!-- NOTE 3: DU DOGFOODING SUBI AU DOGFOODING ACTIF -->
+    <article style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; transition: border-color 0.2s ease;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+        <span class="etiquette">Product Ergonomics</span>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté);">FEBRUARY 2026</span>
+      </div>
+      <h2 style="margin: 0 0 8px; font-size: 1.25rem;">
+        <a href="/blog/note-sf.html" style="color: var(--texte); text-decoration: none;">From Suffering Mismatched Tools to Active Dogfooding</a>
+      </h2>
+      <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+        For years, I assumed I was simply bad at staying organized: to-do lists piled up with red overdue flags and calendar changes required endless clicking. The shift happened when I realized the software was fighting human working memory—and started building and using my own tools under daily stress.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px dashed var(--ligne); padding-top: 12px;">
+        <a class="bouton" href="/blog/note-sf.html">Read Note →</a>
+        <span style="font-size: 0.78rem; color: var(--texte-muté);">Led to: <em>The Span Suite &amp; Calendar Interactions</em></span>
+      </div>
+    </article>
 
-    <!-- 05 : APP CRITIQUE -->
-    <a class="carte" href="{{ '/blog/app-critique.html' | relative_url }}">
-      <span class="etiquette">05 · UX Teardown</span>
-      <h3>Structured Critique of an App</h3>
-      <p>Three concrete friction points identified in daily mobile interfaces, with focused architectural solutions and measurable success criteria.</p>
-    </a>
-
-    <!-- 06 : FOCUS SESSIONS -->
-    <a class="carte" href="{{ '/blog/focus-sessions.html' | relative_url }}">
-      <span class="etiquette">06 · Product Architecture</span>
-      <h3>Focus Sessions Tied to Your Calendar</h3>
-      <p>Closing the psychological gap between the hours we plan and the execution blocks we actually protect from distraction.</p>
-    </a>
-
-    <!-- 07 : PUBLIC DATA -->
-    <a class="carte" href="{{ '/blog/public-data.html' | relative_url }}">
-      <span class="etiquette">07 · Data Strategy</span>
-      <h3>Public Data → Actionable Recommendation</h3>
-      <p>Bridging the gap between raw open datasets and executive decision-making: why analysis without a concrete next step remains unfinished.</p>
-    </a>
   </div>
 </main>

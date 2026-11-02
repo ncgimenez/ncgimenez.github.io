@@ -1,55 +1,134 @@
 ---
 layout: default
-title: When the Consultant Is Also the User
+title: From Suffering Mismatched Tools to Active Dogfooding | Nadia Cañadas Giménez
 ---
 
-  <main>
-    <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Writing</a>
+<main>
+  <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Field Notes</a>
 
-    <span class="etiquette">Enterprise UX &amp; Reality</span>
-    <h1>When the Consultant Is Also the User</h1>
-    <p class="chapo">
-      On what it means to have been on the wrong side of the tools you implement —
-      and why that changes how you work.
-    </p>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette">Product Ergonomics</span>
+    <span class="etiquette etiquette--violet">Interaction Design</span>
+  </div>
 
-    <p>
-      I stopped filling in a job application mid-way through because of SuccessFactors.
-      Not because I changed my mind about the role. Because I'd been re-entering my entire
-      work history from scratch, field by field, with no indication of how far I still had to go —
-      and at some point the effort tipped past the motivation. I closed the tab.
-    </p>
-    <p>
-      I am an SAP consultant. SuccessFactors is an SAP product. The irony wasn't lost on me.
-    </p>
-    <p>
-      What stayed with me wasn't frustration — it was recognition. Because I had seen that exact
-      moment before, from the other side. On an implementation I was part of, a B2B sales team
-      had been managing their orders entirely through email and spreadsheets. When we moved them
-      into SAP, the pushback was immediate: <em>too rigid, too many steps, not how we work.</em>
-      The system was sound. The resistance was real.
-    </p>
-    <p>
-      At the time I understood their position intellectually. What the SuccessFactors moment gave
-      me was something more specific: I knew exactly what it felt like to be in front of a system
-      you didn't choose, that doesn't fit your workflow, that asks more of you than it gives back —
-      at least at first.
-    </p>
-    <p>
-      That experience doesn't make me a better technician. It makes me a more useful one in the
-      room when a team is resisting a system that is, objectively, better for them. Because I'm not
-      working from a theory of resistance — I'm working from the memory of wanting to close the tab.
-    </p>
-    <p>
-      The practical takeaway, for anyone doing this kind of work: the quality of an implementation
-      isn't just measured in go-live. It's measured in whether people use it six months later — and
-      that depends almost entirely on whether they ever felt heard before it was switched on.
-    </p>
-    <p>
-      I walked the B2B team through their first orders in SAP myself. Not because it was in my
-      scope, but because it was the only way to make the system feel less foreign. It worked.
-      Not immediately — but order by order.
-    </p>
+  <h1>From Suffering Mismatched Tools to Active Dogfooding</h1>
+  <p class="chapo">
+    For years, I assumed I was simply bad at staying organized: to-do lists piled up with overdue red badges and moving meetings took endless clicks. The real shift happened when I realized the software was fighting human working memory—and started designing tools I use under daily pressure.
+  </p>
 
-    <a class="retour" href="/blog/" style="margin: 0;">← Back to all writing</a>
-  </main>
+  <dl class="meta">
+    <div><dt>Published</dt><dd>February 2026</dd></div>
+    <div><dt>Focus</dt><dd>Cognitive Ergonomics &amp; Daily Dogfooding</dd></div>
+    <div><dt>Explorations</dt><dd>Task Rollover, Tactile Timers &amp; Batch Interactions</dd></div>
+    <div><dt>Direct Link</dt><dd><a href="/projects/span-suite.html" style="color: var(--texte);">The Span Suite Case Study</a></dd></div>
+  </dl>
+
+  <h2>1. The Guilt Factory of Mainstream Productivity</h2>
+  <p>
+    Like almost everyone trying to juggle complex projects, I spent years cycling through mainstream productivity software. I installed every celebrated note-taking system, every nested task manager, and every color-coded calendar app on the market.
+  </p>
+  <p>
+    The lifecycle of each tool was always depressingly identical:
+  </p>
+  <ul class="liste">
+    <li><strong>Week 1:</strong> Optimism. Everything is sorted into pristine hierarchies, folders, tags, and priorities.</li>
+    <li><strong>Week 2:</strong> Friction. Life happens, unexpected meetings disrupt the morning schedule, and tasks start slipping.</li>
+    <li><strong>Week 3:</strong> The guilt wall. The app greets me with 18 flashing red overdue badges, demanding that I reschedule each item one by one.</li>
+  </ul>
+  <p>
+    For a long time, my reaction was self-blame: <em>"I'm just not disciplined enough,"</em> or <em>"I haven't found the right organizational framework yet."</em>
+  </p>
+  <p>
+    That self-blame was completely misplaced. The problem wasn't human discipline; it was a fundamental architectural flaw in how productivity software is built.
+  </p>
+
+  <div class="bandeau">
+    <strong>The Core Mismatch:</strong> Most productivity tools demand more cognitive maintenance than the actual work they are supposed to organize. At the exact moment your brain needs clarity to start, the app forces you into administrative bookkeeping.
+  </div>
+
+  <h2>2. When Software Fights Human Working Memory</h2>
+  <p>
+    When you break down why mainstream task apps fail real-world humans, two major design antipatterns stand out:
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+    <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem;">
+      <span class="etiquette" style="color: #ff5f56; border-color: rgba(255, 95, 86, 0.2);">Antipattern 01</span>
+      <h3 style="margin: 8px 0; font-size: 1.05rem;">The Punitive Overdue Horizon</h3>
+      <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.55; margin: 0;">
+        Treating an unfinished daily task as an emergency failure creates avoidance anxiety. A realistic day is dynamic, yet traditional lists punish delayed tasks instead of absorbing them naturally.
+      </p>
+    </div>
+
+    <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem;">
+      <span class="etiquette" style="color: #ff5f56; border-color: rgba(255, 95, 86, 0.2);">Antipattern 02</span>
+      <h3 style="margin: 8px 0; font-size: 1.05rem;">Single-Item Friction</h3>
+      <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.55; margin: 0;">
+        If a sudden disruption requires shifting four afternoon meetings on a calendar, why must an operator perform four separate drag-and-drop gestures? Software frequently forgets batch desktop ergonomics.
+      </p>
+    </div>
+  </div>
+
+  <h2>3. Crossing the Mirror: Active Dogfooding</h2>
+  <p>
+    Tired of adapting my thinking to tools that didn't fit, I crossed the mirror and started building my own web utilities and productivity software.
+  </p>
+  <p>
+    That transition completely reshaped my understanding of product design. When you design a tool for a hypothetical user in a clean Figma canvas, every feature looks reasonable. But when you **dogfood your own prototype every single morning under genuine pressure**, theory collapses immediately:
+  </p>
+
+  <ul class="liste">
+    <li>
+      <strong>Guilt-Free Rollover:</strong> Tasks should never scream at you in red. If a task isn't completed today, it simply flows silently into tomorrow without manual re-dating or reprimand.
+    </li>
+    <li>
+      <strong>Decoupling Planning from Execution:</strong> A weekly calendar requires big-picture spatial orientation. A 25-minute focus session requires blinders. Trying to force both into a single screen guarantees sensory overload.
+    </li>
+    <li>
+      <strong>Zero-Latency Interaction:</strong> If starting a timer or jotting a quick thought requires more than a single keystroke, the friction wins and the thought is lost.
+    </li>
+  </ul>
+
+  <h2>4. Software Ergonomics Under Pressure</h2>
+  <p>
+    True dogfooding is not a corporate buzzword you put on a slide deck. It is an honest feedback loop: using what you build when you are tired, rushed, or dealing with a disrupted train schedule.
+  </p>
+  <p>
+    If an interaction feels awkward to you on a stressful Monday morning, it will be unbearable to an end user trying to get through their workday. Respecting cognitive load isn't an optional aesthetic polish—it is the baseline requirement of software designed for actual human beings.
+  </p>
+
+  <!-- RELATED CASE STUDIES -->
+  <div style="margin-top: 3.5rem; padding: 1.5rem; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon);">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+      Applied Case Studies
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+      <div>
+        <h4 style="margin: 0 0 4px; font-size: 1rem;">
+          <a href="/projects/span-suite.html" style="color: var(--texte); text-decoration: none;">
+            The Span Suite: Planning Without Overwhelm →
+          </a>
+        </h4>
+        <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5; margin: 0;">
+          Explore the dual-app architecture built on guilt-free rollover, tactile timers, and offline-first PWA resilience.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin: 0 0 4px; font-size: 1rem;">
+          <a href="/projects/google-calendar.html" style="color: var(--texte); text-decoration: none;">
+            Google Calendar: The Missing Selection Box →
+          </a>
+        </h4>
+        <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5; margin: 0;">
+          Rethinking desktop scheduling ergonomics by introducing marquee batch-selection to schedule shifts.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a class="bouton" href="/blog/note-erp.html">← Previous: The Rogue Spreadsheet</a>
+    <a class="retour" href="/blog/" style="margin: 0;">All Field Notes</a>
+    <a class="bouton plein" href="/projects/">Explore All Case Studies →</a>
+  </div>
+</main>

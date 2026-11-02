@@ -1,194 +1,188 @@
 ---
 layout: default
-title: Projects & Case Studies
+title: Projects & Systems Architecture | Nadia Cañadas Giménez
 ---
 
 <main>
-  <span class="etiquette">Catalog</span>
-  <h1>Projects &amp; Case Studies</h1>
+  <span class="etiquette">Portfolio · Case Studies</span>
+  <h1>Systems, Workflows &amp; Interaction Architecture</h1>
   <p class="chapo">
-    Enterprise ERP architecture, user enablement systems, production digital tools, and interaction teardowns.
+    From enterprise ERP data pipelines and instructional enablement to consumer productivity tools and spatial transit ergonomics.
   </p>
 
-  <!-- FILTRES INTERACTIFS -->
-  <div class="filter-bar" id="project-filter-bar" role="toolbar" aria-label="Filtrer les projets">
-    <div class="filter-group" role="tablist">
-      <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
-        <span>All (6)</span>
-      </button>
-      <button type="button" class="filter-btn" data-filter="enablement" role="tab" aria-selected="false">
-        <span>Enablement &amp; Guides</span>
-      </button>
-      <button type="button" class="filter-btn" data-filter="systems" role="tab" aria-selected="false">
-        <span>Systems Architecture</span>
-      </button>
-      <button type="button" class="filter-btn" data-filter="apps" role="tab" aria-selected="false">
-        <span>Digital Tools &amp; Apps</span>
-      </button>
-      <button type="button" class="filter-btn" data-filter="ux" role="tab" aria-selected="false">
-        <span>UX &amp; Interaction</span>
-      </button>
-    </div>
+  <!-- FILTER CONTROLS -->
+  <div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 2rem 0 2.5rem;" role="tablist" aria-label="Project category filters">
+    <button type="button" class="bouton plein filter-btn is-active" data-filter="all">All (6)</button>
+    <button type="button" class="bouton filter-btn" data-filter="enterprise">Enterprise &amp; Systems (3)</button>
+    <button type="button" class="bouton filter-btn" data-filter="product">Product &amp; Interaction (3)</button>
   </div>
 
-  <div class="projects-container" style="margin-top: 2rem;">
+  <!-- PROJECT GRID -->
+  <div class="grille-projets" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
 
-    <!-- ==================== 01 : SPAN SUITE ==================== -->
-    <article class="carte" data-category="apps" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.15s ease, transform 0.15s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase;">01 · PRODUCT DESIGN &amp; DEPLOYED PWA</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Cognitive Ergonomics · Modular Information Architecture</span>
+    <!-- 1. ENTERPRISE ENABLEMENT (DELOITTE) -->
+    <article class="carte-projet" data-category="enterprise" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
+      <div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="etiquette etiquette--violet">Instructional Design</span>
+          <span class="etiquette">Enterprise Enablement</span>
+        </div>
+        <h3 style="margin: 0 0 8px; font-size: 1.25rem;">
+          <a href="/projects/pedagogical-system-design.html" style="color: var(--texte); text-decoration: none;">Enterprise Enablement (Deloitte × reMarkable)</a>
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+          Demystifying the labyrinth: turning complex ERP and logistics flows into visual cheat-sheets, annotated step-by-step guides, and modular job-aids to help international operations teams master SAP without panic.
+        </p>
       </div>
-
-      <h2 style="font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
-        <a href="{{ '/projects/span-suite.html' | relative_url }}" style="color: var(--texte); text-decoration: none;">The Span Suite: Planning Without Overwhelm</a>
-      </h2>
-
-      <p style="font-size: 0.96rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 1.25rem; max-width: 820px;">
-        A two-part execution and scheduling suite built to eliminate cognitive fatigue and backlog guilt. Decoupling high-level daily timeboxing from single-task execution sprints, supported by a production Figma design system, keyboard-driven ergonomics, and zero-latency offline PWA architecture.
-      </p>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--ligne); padding-top: 1rem;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="etiquette" style="margin: 0;">Cognitive Ergonomics</span>
-          <span class="etiquette" style="margin: 0;">Information Architecture</span>
-          <span class="etiquette" style="margin: 0;">Figma Component System</span>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); margin-bottom: 12px; border-top: 1px dashed var(--ligne); padding-top: 10px;">
+          SCOPE: S/4HANA ENABLEMENT · VISUAL JOB-AIDS · UX WRITING
         </div>
-        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-          <a class="bouton plein" href="{{ '/projects/span-suite.html' | relative_url }}" style="padding: 6px 16px; font-size: 0.85rem;">Read Case Study →</a>
-          <a class="bouton" href="https://ncgimenez.github.io/span-focus/" target="_blank" rel="noopener" style="padding: 6px 14px; font-size: 0.85rem;">Launch Focus ↗</a>
-          <a class="bouton" href="https://ncgimenez.github.io/span-plan/" target="_blank" rel="noopener" style="padding: 6px 14px; font-size: 0.85rem;">Launch Plan ↗</a>
-        </div>
+        <a class="bouton" href="/projects/pedagogical-system-design.html" style="display: inline-block;">Read Case Study →</a>
       </div>
     </article>
 
-    <!-- ==================== 02 : ENTERPRISE ENABLEMENT (DELOITTE x REMARKABLE) ==================== -->
-    <article class="carte" data-category="enablement" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.15s ease, transform 0.15s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase;">02 · INSTRUCTIONAL ARCHITECTURE &amp; ENABLEMENT</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux); font-weight: 600;">Deloitte × reMarkable Rollout</span>
-      </div>
-      
-      <h2 style="font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
-        <a href="{{ '/projects/pedagogical-system-design.html' | relative_url }}" style="color: var(--texte); text-decoration: none;">Enterprise Enablement (Deloitte × reMarkable)</a>
-      </h2>
-
-      <p style="font-size: 0.96rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 1.25rem; max-width: 820px;">
-        Onboarding non-technical logistics and support teams onto mission-critical SAP workflows. Tamed 50+ field dense ERP forms through visual chunking and inline validation guardrails, supported by a 3-tier modular content arborescence and 45-second silent kinetic screencasts. Reduced defective restock errors to 0.00%.
-      </p>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--ligne); padding-top: 1rem;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="etiquette" style="margin: 0;">Instructional Architecture</span>
-          <span class="etiquette" style="margin: 0;">User Enablement</span>
-          <span class="etiquette" style="margin: 0;">Dense Form Ergonomics</span>
-          <span class="etiquette" style="margin: 0;">0.00% Defect Restock Rate</span>
+    <!-- 2. SAP S/4HANA O2C STANDARDIZATION -->
+    <article class="carte-projet" data-category="enterprise" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
+      <div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="etiquette etiquette--bleu">SAP S/4HANA SD</span>
+          <span class="etiquette">Process Governance</span>
         </div>
-        <a class="bouton plein" href="{{ '/projects/pedagogical-system-design.html' | relative_url }}" style="padding: 6px 16px; font-size: 0.85rem;">Read Case Study →</a>
+        <h3 style="margin: 0 0 8px; font-size: 1.25rem;">
+          <a href="/projects/sap-o2c-standardization.html" style="color: var(--texte); text-decoration: none;">O2C Without the Chaos: Standardising SAP SD</a>
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+          Mapping, debugging, and standardising a broken order-to-cash pipeline across 14 European markets to eliminate rogue Excel calculators, automated condition records, and reduce billing disputes to 0.0%.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); margin-bottom: 12px; border-top: 1px dashed var(--ligne); padding-top: 10px;">
+          SCOPE: SAP SD CORE · MM &amp; FI-AR TOUCHPOINTS · PR00 PRICING
+        </div>
+        <a class="bouton" href="/projects/sap-o2c-standardization.html" style="display: inline-block;">Read Case Study →</a>
       </div>
     </article>
 
-    <!-- ==================== 03 : SAP S/4HANA O2C ==================== -->
-    <article class="carte" data-category="systems" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.15s ease, transform 0.15s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase;">03 · SYSTEMS ARCHITECTURE · SAP S/4HANA</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Order-to-Cash (SD / MM / FI-AR)</span>
-      </div>
-
-      <h2 style="font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
-        <a href="{{ '/projects/sap-o2c-standardization.html' | relative_url }}" style="color: var(--texte); text-decoration: none;">O2C Without the Chaos: Standardising SAP SD</a>
-      </h2>
-
-      <p style="font-size: 0.96rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 1.25rem; max-width: 820px;">
-        Eliminating rogue spreadsheet pricing calculators across 14 European markets by embedding automated condition pricing records, access sequences, and billing guardrails directly in the SAP core. Reduced month-end billing disputes down to 0.0%.
-      </p>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--ligne); padding-top: 1rem;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="etiquette" style="margin: 0;">Condition Pricing PR00</span>
-          <span class="etiquette" style="margin: 0;">0.0% Billing Disputes</span>
-          <span class="etiquette" style="margin: 0;">Fit-Gap Analysis</span>
+    <!-- 3. ODOO INVENTORY & MARGIN ARCHITECTURE -->
+    <article class="carte-projet" data-category="enterprise" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
+      <div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="etiquette etiquette--bleu">Odoo ERP</span>
+          <span class="etiquette">Inventory Valuation</span>
         </div>
-        <a class="bouton plein" href="{{ '/projects/sap-o2c-standardization.html' | relative_url }}" style="padding: 6px 16px; font-size: 0.85rem;">Read Case Study →</a>
+        <h3 style="margin: 0 0 8px; font-size: 1.25rem;">
+          <a href="/projects/odoo-inventory.html" style="color: var(--texte); text-decoration: none;">Three Disconnected Tools, One Real Margin (Odoo ERP)</a>
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+          Synchronizing sales orders, warehouse movements, and automated accounting entries to replace blurred cost averages with exact lot margins (FIFO) and eliminate manual month-end reconciliations.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); margin-bottom: 12px; border-top: 1px dashed var(--ligne); padding-top: 10px;">
+          SCOPE: REAL-TIME FIFO · LANDED COSTS · AUTOMATED COGS
+        </div>
+        <a class="bouton" href="/projects/odoo-inventory.html" style="display: inline-block;">Read Case Study →</a>
       </div>
     </article>
 
-    <!-- ==================== 04 : SNCB TRANSIT CONNECTIONS ==================== -->
-    <article class="carte" data-category="ux" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.15s ease, transform 0.15s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase;">04 · MOBILE INTERACTION &amp; SPATIAL UX</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Belgian Rail · Brussels-Midi Hub</span>
-      </div>
-
-      <h2 style="font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
-        <a href="{{ '/projects/mobile-UX.html' | relative_url }}" style="color: var(--texte); text-decoration: none;">SNCB: Know Which Way to Run Before You Get There</a>
-      </h2>
-
-      <p style="font-size: 0.96rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 1.25rem; max-width: 820px;">
-        Redesigning the mobile transit connection experience to eliminate transfer panic during tight 4-minute train windows. Context-aware Live Activity showing carriage door alignment with platform descent stairs before the train comes to a complete stop.
-      </p>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--ligne); padding-top: 1rem;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="etiquette" style="margin: 0;">Spatial Translation</span>
-          <span class="etiquette" style="margin: 0;">2-Stage Simulator</span>
-          <span class="etiquette" style="margin: 0;">Live Activity</span>
+    <!-- 4. THE SPAN SUITE -->
+    <article class="carte-projet" data-category="product" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
+      <div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="etiquette etiquette--violet">Product Design</span>
+          <span class="etiquette etiquette--bleu">Productivity PWA</span>
         </div>
-        <a class="bouton plein" href="{{ '/projects/mobile-UX.html' | relative_url }}" style="padding: 6px 16px; font-size: 0.85rem;">Explore Case Study &amp; Simulator →</a>
+        <h3 style="margin: 0 0 8px; font-size: 1.25rem;">
+          <a href="/projects/span-suite.html" style="color: var(--texte); text-decoration: none;">The Span Suite: Planning Without Overwhelm</a>
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+          Two interconnected web applications designed to decouple high-level calendar scheduling from distraction-free execution: featuring guilt-free task rollover, tactile timers, and offline-first PWA resilience.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); margin-bottom: 12px; border-top: 1px dashed var(--ligne); padding-top: 10px;">
+          SCOPE: DESIGN SYSTEM · AUTO-LAYOUT · DOGFOODING
+        </div>
+        <a class="bouton" href="/projects/span-suite.html" style="display: inline-block;">Read Case Study →</a>
       </div>
     </article>
 
-    <!-- ==================== 05 : ODOO ERP ARCHITECTURE ==================== -->
-    <article class="carte" data-category="systems" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.15s ease, transform 0.15s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase;">05 · ERP &amp; INVENTORY ARCHITECTURE</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Sales · Inventory · Invoicing</span>
-      </div>
-
-      <h2 style="font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
-        <a href="{{ '/projects/odoo-inventory.html' | relative_url }}" style="color: var(--texte); text-decoration: none;">Three Disconnected Tools, One Coherent Flow (Odoo ERP)</a>
-      </h2>
-
-      <p style="font-size: 0.96rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 1.25rem; max-width: 820px;">
-        Replacing three disconnected SaaS tools with a unified Odoo ERP implementation for a Belgian SME. Implemented atomic stock reservation across multi-location warehouses to permanently solve race conditions on fast-moving physical inventory.
-      </p>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--ligne); padding-top: 1rem;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="etiquette" style="margin: 0;">Atomic Stock Reservation</span>
-          <span class="etiquette" style="margin: 0;">Warehouse Routing</span>
-          <span class="etiquette" style="margin: 0;">Multi-Branch Sync</span>
+    <!-- 5. SNCB TRANSIT UX -->
+    <article class="carte-projet" data-category="product" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
+      <div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="etiquette etiquette--bleu">Mobile Product Design</span>
+          <span class="etiquette etiquette--violet">Wayfinding</span>
         </div>
-        <a class="bouton plein" href="{{ '/projects/odoo-inventory.html' | relative_url }}" style="padding: 6px 16px; font-size: 0.85rem;">Read Case Study →</a>
+        <h3 style="margin: 0 0 8px; font-size: 1.25rem;">
+          <a href="/projects/mobile-UX.html" style="color: var(--texte); text-decoration: none;">SNCB: Know Which Way to Run Before You Get There</a>
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+          Rethinking transit notifications for tight 4-minute rail connections. Translating raw dispatcher track data into physical platform reality to eliminate unnecessary staircase sprints.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); margin-bottom: 12px; border-top: 1px dashed var(--ligne); padding-top: 10px;">
+          SCOPE: SPATIAL IA · LIVE ACTIVITIES · INTERACTION SPEC
+        </div>
+        <a class="bouton" href="/projects/mobile-UX.html" style="display: inline-block;">Read Case Study →</a>
       </div>
     </article>
 
-    <!-- ==================== 06 : GOOGLE CALENDAR INTERACTION ==================== -->
-    <article class="carte" data-category="ux" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.15s ease, transform 0.15s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase;">06 · INTERACTION REDESIGN</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-doux);">Marquee Multi-Select Sandbox</span>
-      </div>
-
-      <h2 style="font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
-        <a href="{{ '/projects/google-calendar.html' | relative_url }}" style="color: var(--texte); text-decoration: none;">Google Calendar: The Missing Selection Box</a>
-      </h2>
-
-      <p style="font-size: 0.96rem; line-height: 1.6; color: var(--texte-doux); margin: 0 0 1.25rem; max-width: 820px;">
-        Why enterprise calendar clients lack standard desktop marquee drag-and-drop selection, forcing users to reschedule meetings one-by-one. Includes an interactive canvas sandbox demonstrating bulk event rescheduling with multi-meeting displacement vectors.
-      </p>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--ligne); padding-top: 1rem;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="etiquette" style="margin: 0;">Marquee Selection</span>
-          <span class="etiquette" style="margin: 0;">Interactive Canvas Sandbox</span>
-          <span class="etiquette" style="margin: 0;">Bulk Displacement</span>
+    <!-- 6. GOOGLE CALENDAR MARQUEE -->
+    <article class="carte-projet" data-category="product" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
+      <div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="etiquette etiquette--bleu">Interaction Design</span>
+          <span class="etiquette">Desktop Ergonomics</span>
         </div>
-        <a class="bouton plein" href="{{ '/projects/google-calendar.html' | relative_url }}" style="padding: 6px 16px; font-size: 0.85rem;">Explore Redesign &amp; Sandbox →</a>
+        <h3 style="margin: 0 0 8px; font-size: 1.25rem;">
+          <a href="/projects/google-calendar.html" style="color: var(--texte); text-decoration: none;">Google Calendar: The Missing Selection Box</a>
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0 0 16px;">
+          Why shifting four meetings takes four separate drags. Introducing desktop marquee batch-selection to schedule modifications while maintaining single-click creation.
+        </p>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); margin-bottom: 12px; border-top: 1px dashed var(--ligne); padding-top: 10px;">
+          SCOPE: DESKTOP MUSCLE MEMORY · BATCH RESCHEDULING
+        </div>
+        <a class="bouton" href="/projects/google-calendar.html" style="display: inline-block;">Read Case Study →</a>
       </div>
     </article>
 
   </div>
 
-  <script src="{{ '/assets/project-filter.js' | relative_url }}"></script>
+  <!-- SCRIPT DE FILTRAGE INSTANTANÉ SANS SAUT DE PAGE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.carte-projet');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const filter = this.getAttribute('data-filter');
+
+          // Mise à jour de l'apparence des boutons
+          filterButtons.forEach(btn => {
+            btn.classList.remove('plein');
+            btn.classList.remove('is-active');
+          });
+          this.classList.add('plein');
+          this.classList.add('is-active');
+
+          // Filtrage fluide des cartes
+          projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </main>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Odoo ERP Integration & Stock Synchronization
+title: Odoo ERP Integration & Margin Architecture | Nadia Cañadas Giménez
 mermaid: true
 ---
 
@@ -8,97 +8,130 @@ mermaid: true
     <a class="retour" href="/projects/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Projects</a>
 
     <span class="etiquette">Enterprise Systems · Odoo ERP</span>
-    <h1>Three Disconnected Tools, One Coherent Flow</h1>
+    <h1>Three Disconnected Tools, One Real Margin (Odoo ERP)</h1>
     <p class="chapo">
-      Connecting Sales, Inventory, and Accounting for a Belgian distributor to stop double-selling stock and eliminate manual month-end reconciliations.
+      Synchronizing sales orders, warehouse movements, and automated accounting entries to replace blurred cost averages with exact lot margins (FIFO) and eliminate manual month-end reconciliations.
     </p>
 
     <dl class="meta">
       <div><dt>Platform</dt><dd>Odoo 17 (Enterprise)</dd></div>
-      <div><dt>Scope</dt><dd>Sales, Inventory (WMS), Invoicing</dd></div>
-      <div><dt>Role</dt><dd>Functional Analyst &amp; Solution Architect</dd></div>
-      <div><dt>Focus</dt><dd>Real-time reservation &amp; accounting sync</dd></div>
+      <div><dt>Scope</dt><dd>Inventory Valuation (FIFO / Landed Costs), WMS &amp; Invoicing</dd></div>
+      <div><dt>Role</dt><dd>Functional Analyst (Odoo ERP)</dd></div>
+      <div><dt>Focus</dt><dd>Automated COGS &amp; Real-Time Margin Tracking</dd></div>
     </dl>
 
-    <h2>The Problem: Disconnected Tools and Ghost Stock</h2>
+    <h2>The Problem: The Margin Blur &amp; Split Spreadsheets</h2>
     <p>
-      A fast-growing distributor was running their business on three separate tools: an online shop, an unlinked spreadsheet in the warehouse, and desktop accounting software.
+      A fast-growing Belgian distributor was managing operations across three siloed environments: an e-commerce platform, standalone warehouse spreadsheets, and desktop accounting software.
     </p>
     <p>
-      Because these tools weren't talking in real time, the sales team regularly sold items that had physically left the warehouse an hour earlier for another client. This created expensive rush shipping, backorders, and constant blame games between sales reps and warehouse operators.
+      Because inventory receipts and supplier invoices were reconciled manually weeks after deliveries took place, the company relied on generic cost averages (AVCO). In a market with volatile freight rates and multi-supplier price shifts, this blurred actual profitability: management only discovered whether high-volume deals were truly profitable long after month-end closing.
     </p>
 
     <div class="bandeau">
-      <strong>The Core Rule:</strong> Stock must be locked the second an order is confirmed. Without real-time reservation, the inventory number on a screen is just a guess—leading two sales reps to accidentally promise the exact same box to different clients.
+      <strong>The Operational Bottleneck:</strong> Without automated cost layers tied to physical picking lots, financial margins remain a delayed guess. Moving from manual reconciliation to real-time valuation ensures that every delivery slip instantly records its true cost of goods sold (COGS).
+    </div>
+
+    <!-- FIFO VS AVCO FINANCIAL SPECIMEN -->
+    <div style="background: #09090c; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+      <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.68rem; color: #71717a; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px; margin-bottom: 14px;">
+        <span>VALUATION LOGIC // SALE OF 120 UNITS @ €25.00</span>
+        <span style="color: #4ade80;">METHOD: REAL-TIME FIFO</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+        <!-- AVCO Card -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.75rem;">
+          <div style="color: #cbd5e1; font-weight: 700; margin-bottom: 6px;">BLURRED AVERAGE (AVCO)</div>
+          <div style="color: #71717a; line-height: 1.5; margin-bottom: 8px;">
+            Lot 1: 100u @ €10 · Lot 2: 100u @ €15<br>
+            Blended Average Cost: €12.50 / unit
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 8px; color: #a1a1aa;">
+            Recorded COGS: €1,500<br>
+            <span style="color: #f59e0b;">Result: Artificially smoothed margin</span>
+          </div>
+        </div>
+
+        <!-- FIFO Card -->
+        <div style="background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.25); padding: 14px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.75rem;">
+          <div style="color: #ffffff; font-weight: 800; margin-bottom: 6px;">STRUCTURED LOT MARGIN (FIFO)</div>
+          <div style="color: #a1a1aa; line-height: 1.5; margin-bottom: 8px;">
+            Lot 1: 100u @ €10.00 (€1,000)<br>
+            Lot 2: 20u @ €15.00 (€300)
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px; color: #ffffff;">
+            Recorded COGS: €1,300<br>
+            <span style="color: #4ade80;">Exact Gross Margin: €1,700 (True P&amp;L)</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size: 0.68rem; font-family: var(--font-mono); color: #71717a; margin-top: 10px; text-align: right;">
+        Remaining 80 units in Lot 2 valued accurately at €15.00 on balance sheet
+      </div>
     </div>
 
     <h2>Integrated Flow Architecture</h2>
     <p>
-      We replaced three disconnected tools with a unified Odoo workflow, connecting sales confirmation directly to warehouse pick slips and instant accounting entries:
+      We unified commercial orders, warehouse fulfillment, and general ledger journal postings into an automated event-driven flow:
     </p>
 
     <div class="bpmn-wrap">
       <pre class="mermaid">
 flowchart LR
-  subgraph Sales [Sales & Quotation]
+  subgraph Sales [Commercial Layer]
     SO[Sales Order Confirmed]
   end
 
-  subgraph Stock [Automated Inventory Engine]
-    RES[Stock Reservation Rule Triggered]
+  subgraph Stock [Warehouse & Fulfillment]
     PACK[Pick & Pack Slip Generated]
     SHIP[Outgoing Delivery Validated]
   end
 
-  subgraph Finance [Accounting Real-Time Sync]
-    INV[Draft Invoice Auto-Created]
-    JOURNAL[Stock Valuation Journal Entry]
+  subgraph Valuation [Automated Accounting Core]
+    Landed[Landed Costs Allocated to Lots]
+    FIFO[COGS Calculated via FIFO Layers]
+    JOURNAL[Automated Stock Valuation Journal Entry]
   end
 
-  SO --> RES
-  RES --> PACK
+  SO --> PACK
   PACK --> SHIP
-  SHIP --> INV
-  SHIP --> JOURNAL
+  SHIP --> FIFO
+  Landed -.-> FIFO
+  FIFO --> JOURNAL
 
   style Sales fill:#16141c,stroke:#38bdf8,stroke-width:1px
   style Stock fill:#161619,stroke:#a3a199,stroke-width:1px
-  style Finance fill:#16141c,stroke:#f0714b,stroke-width:1px
+  style Valuation fill:#16141c,stroke:#f0714b,stroke-width:1px
       </pre>
     </div>
-    <p class="bpmn-note">Event-driven state transitions across Odoo modules.</p>
+    <p class="bpmn-note">Automated valuation and accounting entries triggered on physical dispatch.</p>
 
-    <h2>3 Key Improvements We Put in Place</h2>
-
-    <!-- FIFO EXPLAINED SIMPLY -->
-    <div class="bandeau" style="border-left-color: var(--accent-alt); margin-bottom: 24px;">
-      <strong>Why FIFO (First In, First Out) instead of Average Cost (AVCO)?</strong>
-      <br>• <strong>In the warehouse:</strong> Odoo automatically reserves the oldest inventory lots first so goods don't sit forgotten on high shelves.
-      <br>• <strong>In accounting:</strong> If you buy Batch A at $10 in January and Batch B at $14 in February, FIFO calculates your true margin lot-by-lot, rather than blurring everything into an average. The finance team always knows the real profit margin on every shipment.
-    </div>
+    <h2>3 Key Operational Improvements</h2>
 
     <ul class="liste">
       <li>
-        <strong>Instant Stock Reservation (No Double-Selling):</strong> 
-        The moment a sales rep confirms a quote, Odoo locks the physical pallet in the warehouse. Sales reps can clearly see what is physically on the shelf (<em>On Hand</em>) versus what is already promised (<em>Forecasted</em>), ending emergency backorders.
+        <strong>Automated Real-Time FIFO Costing:</strong> 
+        Odoo tracks inventory valuation lot by lot. When orders ship, the system depletes the oldest purchase layers first, posting the exact cost of goods sold (COGS) straight to the profit-and-loss ledger.
       </li>
       <li>
-        <strong>Automated Landed Costs (True Margins on Day 1):</strong> 
-        When imported goods arrive, overseas shipping fees and customs taxes are automatically added to the product cost. Finance knows the true margin immediately, instead of discovering surprise carrier bills weeks later.
+        <strong>Automated Landed Costs (True Landed Margins):</strong> 
+        Overseas maritime freight and customs duties are distributed proportionally across incoming product receipts, ensuring inventory valuation reflects actual landed cost rather than basic factory invoices.
       </li>
       <li>
-        <strong>Automated Bank Reconciliation:</strong> 
-        Daily bank feeds match incoming payments directly against open customer invoices using simple matching rules, replacing manual month-end Excel reconciliations.
+        <strong>Direct Bank Reconciliation:</strong> 
+        Automated bank synchronization matches customer remittances against open invoices via defined reference rules, removing manual end-of-month reconciliations.
       </li>
     </ul>
 
-    <h2>Key Takeaway: Operations as a Single Pipeline</h2>
+    <h2>Key Takeaway: Accounting Tied to Physical Reality</h2>
     <div class="bandeau">
-      <strong>Connecting the Dots:</strong> An ERP rollout succeeds when sales, warehousing, and accounting talk about the exact same physical box at the exact same second. When the software handles inventory locks automatically, sales reps and warehouse operators never have to argue about who promised what.
+      <strong>Connecting the Dots:</strong> An ERP implementation succeeds when finance and logistics speak about the exact same physical movement at the exact same moment. Moving to automated FIFO valuation turned inventory management from a periodic guessing game into an exact operational balance sheet.
     </div>
 
     <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <a class="retour" href="/projects/" style="margin: 0;">← Back to all projects</a>
-      <a class="bouton plein" href="/projects/mobile-UX.html">Next: Mobile Transit UX →</a>
+      <a class="bouton" href="/projects/sap-o2c-standardization.html">← Previous: SAP S/4HANA O2C</a>
+      <a class="retour" href="/projects/" style="margin: 0;">All Projects</a>
+      <a class="bouton plein" href="/projects/span-suite.html">Next: The Span Suite →</a>
     </div>
   </main>

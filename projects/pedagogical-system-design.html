@@ -10,15 +10,14 @@ mermaid: true
     <span class="etiquette">Instructional Design · Enterprise Enablement</span>
     <h1>Enterprise Enablement (Deloitte × reMarkable)</h1>
     <p class="chapo">
-      Demystifying the labyrinth: how turning complex ERP and logistics flows into visual cheat-sheets, annotated step-by-step guides, and silent kinetic screencasts helped international operations teams master SAP without panic.
+      Demystifying the labyrinth: how turning complex ERP and logistics flows into visual cheat-sheets, annotated step-by-step guides, and modular job-aids helped international operations teams master SAP without panic.
     </p>
 
-    
     <dl class="meta">
       <div><dt>Context</dt><dd>Deloitte × reMarkable (Nordic Hardware Scale-Up)</dd></div>
       <div><dt>Domain</dt><dd>Instructional Design, Systems Enablement &amp; UX Writing</dd></div>
       <div><dt>Role</dt><dd>Enablement Lead, Technical Writer &amp; Systems Designer</dd></div>
-      <div><dt>Deliverables</dt><dd>Visual Cheat-Sheets, Annotated Flow Guides, Kinetic Screencasts</dd></div>
+      <div><dt>Deliverables</dt><dd>Visual Cheat-Sheets, Annotated Flow Guides, Modular Job-Aids</dd></div>
     </dl>
 
     <!-- 3-PART CONTEXT SUMMARY -->
@@ -38,7 +37,7 @@ mermaid: true
       <div>
         <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-mute); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Pedagogical Solution</div>
         <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
-          Modular, visual-first documentation: high-level mental map infographies, numbered UI cards, and 45-second silent screen walkthroughs with embedded kinetic subtitles.
+          Modular, visual-first documentation: high-level mental map infographies, numbered UI cards, and structured micro-learning scenario guides.
         </p>
       </div>
     </div>
@@ -102,10 +101,10 @@ mermaid: true
           </div>
           <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The Payment vs ERP Duel</h4>
           <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
-            <strong>The speed gap:</strong> Stripe settles the charge in 140 milliseconds. Meanwhile, the ERP takes 3 seconds deliberating whether currency 'EUR' exists in exchange rate table TCURR.
+            <strong>The speed gap:</strong> Stripe settles the charge in 140 milliseconds. Meanwhile, the ERP takes 3 seconds deliberating whether currency 'EUR' exists in currency exchange rate table (TCURR).
           </p>
           <div style="background: var(--fond-carte); border-left: 2px solid var(--accent); padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
-            Status: IDoc generated. Credit check passed. Sales order status: OPEN.
+            Status: IDoc (SAP data transmission file) generated. Credit check passed. Sales order status: OPEN.
           </div>
         </div>
 
@@ -132,7 +131,7 @@ mermaid: true
           </div>
           <h4 style="margin: 0 0 6px; font-size: 1.05rem;">The 3PL Midnight Batch</h4>
           <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.45; margin: 0 0 10px;">
-            <strong>Warehouse floor:</strong> A forklift scanner in Tilburg pulls the delivery wave. Barcode confirmed, EAN paired, tamper seal inspected, carton packed and labeled.
+            <strong>Warehouse floor:</strong> A forklift scanner in Tilburg pulls the delivery wave from the third-party logistics hub (3PL). Barcode confirmed, EAN paired, tamper seal inspected, carton packed and labeled.
           </p>
           <div style="background: var(--fond-carte); border-left: 2px solid #0284c7; padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
             Inventory latch: Stock decremented from Unrestricted (MM) to In-Transit (MB51).
@@ -150,7 +149,7 @@ mermaid: true
             <strong>The customer illusion:</strong> The customer gets an automated email: <em>"Your package is flying towards you!"</em> In reality, the carton is resting on Pallet 4B waiting for the 6:00 AM truck pickup.
           </p>
           <div style="background: var(--fond-carte); border-left: 2px solid #10b981; padding: 6px 10px; font-size: 0.8rem; color: var(--texte); font-family: var(--font-mono);">
-            EDI 856 Advanced Shipping Notice (ASN) dispatched to carrier network.
+            EDI 856 (Advanced Shipping Notice / carrier dispatch) transmitted to carrier network.
           </div>
         </div>
 
@@ -168,7 +167,7 @@ mermaid: true
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 8px;">
         <div>
           <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">PROCEDURE CARD · QUICK-START SPEC</span>
-          <h3 style="margin: 4px 0 0; font-size: 1.2rem;">Handling an In-Warranty Return (RMA) Without Deadlocking Stock</h3>
+          <h3 style="margin: 4px 0 0; font-size: 1.2rem;">Handling an In-Warranty Return (RMA / Return Merchandise Authorization)</h3>
         </div>
         <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-mute);">TARGET TIME: &lt; 90 SECONDS</span>
       </div>
@@ -178,7 +177,7 @@ mermaid: true
         
         <!-- HEADER OF MOCK INTERFACE -->
         <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px; margin-bottom: 12px; font-size: 0.72rem; color: #a1a1aa;">
-          <span>MODULE: SD-RMA // ORDER REFERENCE: #NO-984421</span>
+          <span>MODULE: SD-RMA (Sales &amp; Distribution - Returns) // ORDER REF: #NO-984421</span>
           <span style="color: #4ade80;">RECORD STATUS: VALIDATED</span>
         </div>
 
@@ -220,7 +219,7 @@ mermaid: true
         <span style="font-family: var(--font-mono); font-size: 1.1rem; line-height: 1; color: #ef4444;">!</span>
         <div style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5;">
           <strong style="color: var(--texte); display: block; margin-bottom: 2px;">The Costly Trap We Solved:</strong>
-          In early testing, 35% of customer support agents accidentally selected <em>"Direct Restock (0001)"</em> instead of <em>"Blocked Quality (0002)"</em>, which immediately relisted scratched and defective hardware for resale on the European web store. By adding explicit visual badges and enforcing a mandatory dropdown lock, defective restocks dropped to **0.00%**.
+          In early testing, 35% of customer support agents accidentally selected <em>"0001 (Direct Unrestricted Restock)"</em> instead of <em>"HOLDING-Q (Blocked Quality Stock)"</em>, which immediately relisted scratched and defective hardware for resale on the European web store. By adding explicit visual badges and enforcing a mandatory dropdown lock, defective restocks dropped to **0.00%**.
         </div>
       </div>
     </div>
@@ -265,22 +264,19 @@ mermaid: true
       </div>
     </div>
 
-    <!-- SECTION 5 : DELIVERABLE 3 - SILENT VIDEO WALKTHROUGHS & 3-COLUMN SCRIPT -->
-    <h2 style="margin-top: 3rem;">5. Visual Deliverable 3: Silent Video Walkthroughs (The 3-Column Storyboard)</h2>
+    <!-- SECTION 5 : MICRO-LEARNING SPECIFICATION -->
+    <h2 style="margin-top: 3rem;">5. Micro-Learning Specification (Action-Oriented Scenario)</h2>
     <p>
-      One of the most consequential decisions made during the rollout was **banning rambling voiceover recordings**. 
-    </p>
-    <p>
-      In international enterprise environments, voiceover training videos suffer from major friction:
+      In international enterprise environments, rambling training webinars and unformatted text manuals create major friction:
     </p>
     <ul class="liste">
-      <li><strong>Noise &amp; Environment:</strong> Support agents and dispatchers work in bustling open-plan offices or on noisy warehouse floors where listening to audio is impractical.</li>
-      <li><strong>Language Barrier:</strong> Non-native English speakers often struggle with fast-spoken accents or regional idioms.</li>
-      <li><strong>Zero Skimmability:</strong> Finding a 5-second fix inside a 15-minute audio recording is deeply irritating.</li>
+      <li><strong>Noise &amp; Environment:</strong> Support agents and dispatchers work in bustling open-plan offices or on warehouse floors where listening to audio is impractical.</li>
+      <li><strong>Language Barrier:</strong> Non-native English speakers often struggle with long text paragraphs and fast-spoken accents.</li>
+      <li><strong>Zero Skimmability:</strong> Finding a 5-second fix inside a 15-minute recording or an 80-page PDF is deeply frustrating.</li>
     </ul>
 
     <p>
-      Instead, we scripted **silent, high-resolution 45-second micro-screencasts** powered by synchronized kinetic on-screen typography. Here is an authentic specimen of the 3-column script framework used to author these modules:
+      Instead, we engineered **rapid-reference action tables** providing instant visual cues and consequence mapping. Here is an authentic specimen of the micro-learning scenario framework used across operations teams:
     </p>
 
     <!-- 3-COLUMN SCRIPT TABLE SPECIMEN -->
@@ -288,53 +284,53 @@ mermaid: true
       <table style="width: 100%; border-collapse: collapse; font-size: 0.86rem; border: 1px solid var(--ligne); background: var(--fond-carte); border-radius: 6px;">
         <thead>
           <tr style="background: var(--fond); border-bottom: 2px solid var(--ligne); text-align: left; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;">
-            <th style="padding: 10px 14px; width: 15%; color: var(--texte-mute);">Timing</th>
-            <th style="padding: 10px 14px; width: 42%; color: var(--texte);">On-Screen Interface Action</th>
-            <th style="padding: 10px 14px; width: 43%; color: var(--accent);">On-Screen Kinetic Captions (No Voice)</th>
+            <th style="padding: 10px 14px; width: 15%; color: var(--texte-mute);">Time Target</th>
+            <th style="padding: 10px 14px; width: 42%; color: var(--texte);">Target Interface Action</th>
+            <th style="padding: 10px 14px; width: 43%; color: var(--accent);">On-Screen Visual Cue &amp; Rule</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom: 1px solid var(--ligne);">
             <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:00 — 00:08</td>
             <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
-              Cursor zooms in on the order search bar. Types order number <code>#NO-984421</code>. Order detail screen smoothly opens.
+              Order search bar lookup. Input order reference <code>#NO-984421</code>. Order detail view displays.
             </td>
             <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
               <span style="background: var(--fond-carte-hover); border: 1px solid var(--ligne); padding: 2px 6px; border-radius: 3px; display: inline-block;">
-                "Customer requested a country address update before warehouse batch."
+                "Goal: Update delivery destination prior to warehouse wave release."
               </span>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid var(--ligne);">
             <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:08 — 00:22</td>
             <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
-              Cursor clicks <em>Header &gt; Partner Addresses</em>. Highlights the orange "Delivery Block" toggle and sets it to <code>ACTIVE</code>.
+              Navigate to <em>Header &gt; Partner Addresses</em>. Toggle the orange "Delivery Block" to <code>ACTIVE</code>.
             </td>
             <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
               <span style="background: rgba(239, 68, 68, 0.08); color: #dc2626; padding: 2px 6px; border-radius: 3px; display: inline-block;">
-                "Step 1: Freeze the delivery wave immediately so the forklift doesn't pack it."
+                "Rule 1: Lock the order immediately so the forklift operator cannot pull it."
               </span>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid var(--ligne);">
             <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:22 — 00:36</td>
             <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
-              Updates postal code and street name. Green validation check appears next to the Norwegian postal carrier integration.
+              Update postal code and street name. Green validation indicator displays next to the carrier routing gateway.
             </td>
             <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
               <span style="background: rgba(16, 185, 129, 0.08); color: #059669; padding: 2px 6px; border-radius: 3px; display: inline-block;">
-                "Step 2: Update destination. Green check confirms postal code syntax."
+                "Rule 2: Update fields. Green indicator validates postal code syntax."
               </span>
             </td>
           </tr>
           <tr>
             <td style="padding: 12px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-mute);">00:36 — 00:45</td>
             <td style="padding: 12px 14px; line-height: 1.45; color: var(--texte-doux);">
-              Releases delivery block. Clicks <em>Save</em>. System shows success snackbar: <code>ORDER #NO-984421 QUEUED FOR NEXT WAVE</code>.
+              Release delivery block. Click <em>Save</em>. Status banner: <code>ORDER #NO-984421 QUEUED FOR NEXT BATCH</code>.
             </td>
             <td style="padding: 12px 14px; line-height: 1.45; font-weight: 500;">
               <span style="background: var(--fond-carte-hover); border: 1px solid var(--ligne); padding: 2px 6px; border-radius: 3px; display: inline-block;">
-                "Step 3: Release block. The order rejoins the next warehouse batch safely."
+                "Rule 3: Release lock. The order returns to the active pick wave safely."
               </span>
             </td>
           </tr>
@@ -342,8 +338,8 @@ mermaid: true
       </table>
     </div>
 
-    <!-- SECTION 5 : THE ROOT PHILOSOPHY - LESSONS FROM SPECIAL EDUCATION -->
-    <h2 style="margin-top: 3rem;">5. The Underlying Philosophy: Radical Accessibility</h2>
+    <!-- SECTION 6 : THE ROOT PHILOSOPHY - LESSONS FROM SPECIAL EDUCATION -->
+    <h2 style="margin-top: 3rem;">6. The Underlying Philosophy: Radical Accessibility</h2>
     <p>
       My perspective on systems architecture and user documentation wasn't formed in corporate boardrooms; it was shaped when designing tailored language and cognitive learning materials for my sister in specialized education.
     </p>

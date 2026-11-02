@@ -1,0 +1,144 @@
+---
+layout: default
+title: The Rogue Spreadsheet Is Your Best Functional Specification | Nadia Cañadas Giménez
+---
+
+<main>
+  <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Field Notes</a>
+
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette etiquette--bleu">Process Governance &amp; Data</span>
+    <span class="etiquette">Systems Architecture</span>
+  </div>
+
+  <h1>The Rogue Spreadsheet Is Your Best Functional Specification</h1>
+  <p class="chapo">
+    When operational teams run critical business calculations on secret desktop spreadsheets, management calls it poor discipline. In reality, that rogue Excel file is the most honest requirements document you will ever read.
+  </p>
+
+  <dl class="meta">
+    <div><dt>Published</dt><dd>March 2025</dd></div>
+    <div><dt>Focus</dt><dd>Shadow IT, Business Logic &amp; ERP Governance</dd></div>
+    <div><dt>Systems</dt><dd>SAP S/4HANA (SD/Pricing) &amp; Odoo ERP</dd></div>
+    <div><dt>Direct Link</dt><dd><a href="/projects/sap-o2c-standardization.html" style="color: var(--texte);">SAP SD Case Study</a></dd></div>
+  </dl>
+
+  <h2>1. The Archaeology of the Desktop Workbook</h2>
+  <p>
+    An organization invests millions into an enterprise ERP implementation. Dashboards are configured, sign-offs are obtained, and leadership announces that data is finally centralized into a single source of truth.
+  </p>
+  <p>
+    Yet two months later, if you walk over to the desk of a regional sales lead or warehouse logistics coordinator, you will almost certainly find it: an unassuming file on their desktop named something like <code>Tarif_Calculateur_Europe_v4_FINAL_copie(2).xlsx</code>.
+  </p>
+  <p>
+    The classic corporate reaction to this discovery is punitive: <em>"We need to tighten user permissions,"</em> or <em>"Teams are showing bad compliance habits."</em>
+  </p>
+  <p>
+    That diagnosis misses the entire point. People do not create shadow spreadsheets out of malice or technical defiance. They build them because the official system left an operational blind spot, and they still have quotas to hit, invoices to clear, and customers waiting on the phone.
+  </p>
+
+  <div class="bandeau">
+    <strong>The Functional Reality:</strong> A shadow spreadsheet is never a behavioral problem; it is a symptom of system rigidity. It is the operational team's spontaneous patch for a workflow that broke under real-world pressure.
+  </div>
+
+  <h2>2. Why Excel Always Wins the Short-Term War</h2>
+  <p>
+    When an enterprise system clashes with a desktop spreadsheet, Excel wins every single time on two decisive fronts:
+  </p>
+
+  <div class="bento-grid-3" style="margin: 2rem 0;">
+    <div class="bento-card bento-card--terracotta">
+      <span class="etiquette">Latency</span>
+      <h3>Zero-Friction Updates</h3>
+      <p>
+        Updating a customer tier discount in an ERP can require navigating multiple transaction screens, submitting a formal master data request, or waiting for IT approval. In Excel, the operator edits one cell and the result recalculates in four milliseconds.
+      </p>
+    </div>
+
+    <div class="bento-card bento-card--blue">
+      <span class="etiquette etiquette--bleu">Visibility</span>
+      <h3>Transparent Logic</h3>
+      <p>
+        In an ERP, pricing condition techniques (like SAP condition exclusions or access sequences) often appear as an opaque black box. In a spreadsheet, the formula is visible: the operator can read the exact multiplication happening right in front of them.
+      </p>
+    </div>
+
+    <div class="bento-card bento-card--violet">
+      <span class="etiquette etiquette--violet">Agility</span>
+      <h3>Immediate Exception Handling</h3>
+      <p>
+        Commercial reality rarely fits rigid boundaries. When an unlisted transport surcharge or a one-off bundled promotion arrives on a Friday afternoon, Excel accommodates it instantly without throwing a system validation error.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    The fatal catch, of course, is that while Excel solves the immediate headache for the individual operator, it creates total chaos for the enterprise: pricing rules diverge between subsidiaries, margin calculations become unverifiable, and month-end accounting reconciliations turn into forensic investigations.
+  </p>
+
+  <h2>3. Reverse-Engineering the Spreadsheet</h2>
+  <p>
+    As a functional analyst, the single most valuable thing you can do during a process audit is not to open the existing system documentation—which is often obsolete within six months of go-live. It is to sit next to the operational staff and respectfully ask to look at their spreadsheets.
+  </p>
+  <p>
+    Every part of that unauthorized workbook can be reverse-engineered into a pristine functional specification:
+  </p>
+
+  <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; margin: 2rem 0;">
+    <table class="gap-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th style="width: 40%;">What the Rogue Spreadsheet Contains</th>
+          <th style="width: 60%;">What It Teaches the System Architect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Unmapped Columns</strong><br><span style="font-size: 0.8rem; color: var(--texte-muté);">(e.g., specific freight zones, packaging fees)</span></td>
+          <td><strong>Missing Master Data:</strong> Attributes your core records never captured, forcing staff to store critical context off-ledger.</td>
+        </tr>
+        <tr>
+          <td><strong>Nested Nested IF() Formulas</strong><br><span style="font-size: 0.8rem; color: var(--texte-muté);">(e.g., volume tiers, customer group overrides)</span></td>
+          <td><strong>System Pricing Sequences:</strong> Exact condition tables (such as SAP <code>PR00</code> and discount records <code>K004</code>) that should have been configured into standard access logic.</td>
+        </tr>
+        <tr>
+          <td><strong>Color-Coded Status Cells</strong><br><span style="font-size: 0.8rem; color: var(--texte-muté);">(e.g., yellow for "Waiting on warehouse manager")</span></td>
+          <td><strong>Missing Approval Gates:</strong> Gaps where operational status transitions have no clear state or notification within the ERP workflow.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4. Sunset by Superiority, Not Prohibition</h2>
+  <p>
+    You cannot eliminate shadow IT by sending company-wide memos or revoking access rights. If you ban a spreadsheet without fixing the root friction, teams will simply recreate it under a different filename or run it on their personal phones.
+  </p>
+  <p>
+    The only lasting way to retire a rogue spreadsheet is to make the official system <strong>faster, more transparent, and more reliable</strong> than the workbook.
+  </p>
+  <p>
+    When sales reps see that selecting a customer code automatically applies the exact negotiated multi-tier discount, calculates estimated freight automatically, and updates their gross margin line in real time, the spreadsheet stops being a survival mechanism. It becomes unnecessary overhead—and operators voluntarily leave it behind.
+  </p>
+
+  <!-- RELATED CASE STUDY PROPOSAL -->
+  <div style="margin-top: 3.5rem; padding: 1.5rem; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon);">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+      Applied Case Study
+    </div>
+    <h3 style="margin: 0 0 6px; font-size: 1.1rem;">
+      <a href="/projects/sap-o2c-standardization.html" style="color: var(--texte); text-decoration: none;">
+        Standardising SAP SD: Eliminating the Excel Pricing Calculators →
+      </a>
+    </h3>
+    <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.5; margin: 0 0 12px;">
+      See how this exact forensic audit eliminated rogue pricing workbooks across 14 European markets by embedding transparent condition techniques directly into SAP S/4HANA Order-to-Cash.
+    </p>
+    <a class="bouton" href="/projects/sap-o2c-standardization.html">Read Case Study →</a>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a class="bouton" href="/blog/note-deloitte.html">← Previous: Nobody Is Bad at Computers</a>
+    <a class="retour" href="/blog/" style="margin: 0;">All Field Notes</a>
+    <a class="bouton plein" href="/blog/note-sf.html">Next Note: Active Dogfooding →</a>
+  </div>
+</main>

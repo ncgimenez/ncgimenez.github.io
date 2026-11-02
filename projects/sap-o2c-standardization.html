@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SAP S/4HANA O2C Standardization
+title: SAP S/4HANA O2C Standardization | Nadia Cañadas Giménez
 mermaid: true
 ---
 
@@ -15,8 +15,8 @@ mermaid: true
 
     <dl class="meta">
       <div><dt>System</dt><dd>SAP S/4HANA Cloud (Public)</dd></div>
-      <div><dt>Role</dt><dd>Systems &amp; Business Analyst</dd></div>
-      <div><dt>Scope</dt><dd>Order-to-Cash (SD, MM, FI-AR)</dd></div>
+      <div><dt>Role</dt><dd>Business &amp; Systems Analyst (SAP SD)</dd></div>
+      <div><dt>Scope</dt><dd>Order-to-Cash (SAP SD Core · MM &amp; FI-AR integration touchpoints)</dd></div>
       <div><dt>Format</dt><dd>Systems Architecture &amp; Process Fit-Gap</dd></div>
     </dl>
 
@@ -35,9 +35,9 @@ mermaid: true
         </p>
       </div>
       <div>
-        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Interface</div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--texte-muté); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">The Architecture &amp; Governance</div>
         <p style="font-size: 0.9rem; line-height: 1.55; color: var(--texte-doux); margin: 0;">
-          A fast, straightforward order entry screen that keeps salespeople moving while locking in pricing accuracy, cutting month-end billing disputes down to 0.0%.
+          Automated condition access sequences and billing guardrails embedded directly in the SAP core, eliminating rogue spreadsheets and cutting dispute rates to 0.0%.
         </p>
       </div>
     </div>
@@ -59,7 +59,7 @@ mermaid: true
 
         <div style="background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.72rem;">
           <div style="color: #ffffff; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 4px;">ATOMIC PRICING CORE</div>
-          <div style="color: #a1a1aa; line-height: 1.45;">Condition technique access sequences enforced at sales order entry. Zero manual overrides.</div>
+          <div style="color: #a1a1aa; line-height: 1.45;">Standard condition technique access sequences enforced at order entry. Zero manual overrides.</div>
         </div>
 
         <div style="font-family: var(--font-mono); color: #71717a; font-size: 1.1rem;">➔</div>
@@ -101,11 +101,11 @@ flowchart TD
   end
 
   subgraph TO_BE [Standardised S/4HANA Flow: Automated Pricing & Delivery]
-    A2[Electronic EDI / Portal Order] --> B2[Condition Technique PR00 + Automatic Discounts]
-    B2 --> C2[Real-Time ATP Check against Plant Stock]
+    A2[Electronic EDI / Portal Order] --> B2[Condition Technique PR00 Base + Automatic Discounts]
+    B2 --> C2[Real-Time ATP Stock Check against Plant Stock]
     C2 --> D2[Automatic Delivery Order Creation]
     D2 --> E2[Automated Collective Billing Job]
-    E2 --> F2[Clean Ledger Posting in FI-AR]
+    E2 --> F2[Clean Ledger Posting in FI-AR Accounts Receivable]
   end
 
   style AS_IS fill:#16141c,stroke:#b4502d,stroke-width:1px
@@ -127,20 +127,20 @@ flowchart TD
       <tbody>
         <tr>
           <td><strong>Tiered Volume Pricing</strong></td>
-          <td>Standard Condition Technique (PR00, K004)</td>
+          <td>Standard Condition Technique (PR00 Base Price, K004 Customer Discount)</td>
           <td>Complex rebate tiers based on quarterly rolling volume across customer subsidiaries.</td>
           <td>Configured condition contract management with scale-based discount calculation schemas.</td>
         </tr>
         <tr>
           <td><strong>Automated Credit Check</strong></td>
-          <td>SAP Credit Management (FSCM)</td>
+          <td>SAP Credit Management (FSCM - Financial Supply Chain)</td>
           <td>Blocking orders caused manual email loops during Nordic market peak hours.</td>
           <td>Introduced dynamic credit checks tied to automated payment terms and pre-authorized thresholds.</td>
         </tr>
         <tr>
           <td><strong>3PL Fulfillment Sync</strong></td>
           <td>Standard Outbound Delivery</td>
-          <td>Warehouse partner required specialized shipping condition flags per transport lane.</td>
+          <td>Warehouse partner (3PL) required specialized shipping condition flags per transport lane.</td>
           <td>Standardized partner determination procedures and automated delivery split parameters.</td>
         </tr>
       </tbody>
@@ -148,7 +148,7 @@ flowchart TD
 
     <h2>Operational Outcomes</h2>
     <ul class="liste">
-      <li><strong>No more rogue spreadsheets:</strong> Volume rebate tiers and customer discounts were modeled directly in SAP condition contracts (PR00, K004), eliminating off-system side calculations.</li>
+      <li><strong>No more rogue spreadsheets:</strong> Volume rebate tiers and customer discounts were modeled directly in SAP condition contracts (PR00 base price, K004 discount), eliminating off-system side calculations.</li>
       <li><strong>Clean billing runs:</strong> Automated collective billing replaced 4 days of manual month-end credit notes and invoice reconciliation.</li>
       <li><strong>Predictable warehouse handoffs:</strong> Standardized partner determination and shipping condition keys stopped delivery blocks before picking tickets were printed.</li>
     </ul>
@@ -159,8 +159,8 @@ flowchart TD
     </p>
 
     <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <a class="bouton" href="/projects/mobile-UX.html">← Previous: SNCB Transit Connections</a>
-      <a class="retour" href="/" style="margin: 0;">Overview</a>
-      <a class="bouton plein" href="/projects/span-suite.html">Next: Span Suite →</a>
+      <a class="bouton" href="/projects/pedagogical-system-design.html">← Previous: Enterprise Enablement</a>
+      <a class="retour" href="/projects/" style="margin: 0;">All Projects</a>
+      <a class="bouton plein" href="/projects/odoo-inventory.html">Next: Odoo ERP Architecture →</a>
     </div>
   </main>

@@ -23,7 +23,7 @@ title: Projects & Systems Architecture
     <!-- 1. ENTERPRISE ENABLEMENT (DELOITTE) -->
     <article class="carte-projet" data-category="enterprise" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
       <div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="etiquettes-groupe">
           <span class="etiquette etiquette--violet">Instructional Design</span>
           <span class="etiquette">Enterprise Enablement</span>
         </div>
@@ -45,7 +45,7 @@ title: Projects & Systems Architecture
     <!-- 2. SAP S/4HANA O2C STANDARDIZATION -->
     <article class="carte-projet" data-category="enterprise" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
       <div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="etiquettes-groupe">
           <span class="etiquette etiquette--bleu">SAP S/4HANA SD</span>
           <span class="etiquette">Process Governance</span>
         </div>
@@ -67,7 +67,7 @@ title: Projects & Systems Architecture
     <!-- 3. ODOO INVENTORY & MARGIN ARCHITECTURE -->
     <article class="carte-projet" data-category="enterprise" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
       <div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="etiquettes-groupe">
           <span class="etiquette etiquette--bleu">Odoo ERP</span>
           <span class="etiquette">Inventory Valuation</span>
         </div>
@@ -89,7 +89,7 @@ title: Projects & Systems Architecture
     <!-- 4. THE SPAN SUITE -->
     <article class="carte-projet" data-category="product" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
       <div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="etiquettes-groupe">
           <span class="etiquette etiquette--violet">Product Design</span>
           <span class="etiquette etiquette--bleu">Productivity PWA</span>
         </div>
@@ -111,7 +111,7 @@ title: Projects & Systems Architecture
     <!-- 5. SNCB TRANSIT UX -->
     <article class="carte-projet" data-category="product" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
       <div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="etiquettes-groupe">
           <span class="etiquette etiquette--bleu">Mobile Product Design</span>
           <span class="etiquette etiquette--violet">Wayfinding</span>
         </div>
@@ -133,7 +133,7 @@ title: Projects & Systems Architecture
     <!-- 6. GOOGLE CALENDAR MARQUEE -->
     <article class="carte-projet" data-category="product" style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;">
       <div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="etiquettes-groupe">
           <span class="etiquette etiquette--bleu">Interaction Design</span>
           <span class="etiquette">Desktop Ergonomics</span>
         </div>
@@ -164,7 +164,6 @@ title: Projects & Systems Architecture
         button.addEventListener('click', function () {
           const filter = this.getAttribute('data-filter');
 
-          // Mise à jour de l'apparence des boutons
           filterButtons.forEach(btn => {
             btn.classList.remove('plein');
             btn.classList.remove('is-active');
@@ -172,7 +171,6 @@ title: Projects & Systems Architecture
           this.classList.add('plein');
           this.classList.add('is-active');
 
-          // Filtrage fluide des cartes
           projectCards.forEach(card => {
             const category = card.getAttribute('data-category');
             if (filter === 'all' || category === filter) {

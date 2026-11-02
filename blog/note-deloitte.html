@@ -1,0 +1,126 @@
+---
+layout: default
+title: Nobody Is Bad at Computers | Nadia Cañadas Giménez
+---
+
+<main>
+  <a class="retour" href="/blog/" style="margin-top: 0; margin-bottom: 24px; display: inline-block;">← All Field Notes</a>
+
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+    <span class="etiquette etiquette--violet">Enablement &amp; Cognitive Ergonomics</span>
+    <span class="etiquette">Systems Thinking</span>
+  </div>
+
+  <h1>Nobody Is Bad at Computers: Cognitive Load in Enterprise Systems</h1>
+  <p class="chapo">
+    When office workers freeze in front of software, the default corporate diagnosis is "user resistance." What teaching in specialized education taught me about working memory, panic states, and why 60-page manuals gather dust.
+  </p>
+
+  <dl class="meta">
+    <div><dt>Published</dt><dd>May 2024</dd></div>
+    <div><dt>Focus</dt><dd>Instructional Scaffolding &amp; Enterprise Software</dd></div>
+    <div><dt>Context</dt><dd>Specialized Pedagogy ➔ Enterprise Operations</dd></div>
+    <div><dt>Direct Link</dt><dd><a href="/projects/pedagogical-system-design.html" style="color: var(--texte);">Deloitte × reMarkable Case Study</a></dd></div>
+  </dl>
+
+  <h2>1. The Myth of the "Uncomfortable" User</h2>
+  <p>
+    In corporate environments, whenever a rollout runs into delays or operational teams fall back onto manual workarounds, leadership lands on the same convenient explanation: <em>"People just don't like change,"</em> or <em>"Our operations team isn't very comfortable with complex IT tools."</em>
+  </p>
+  <p>
+    Before working on systems and interaction flows, I designed instructional materials for learners in specialized education. In that classroom, whenever a student pushed their sheet away, stared blankly at the wall, or refused to complete a task, the easiest thing to do was blame their "short attention span."
+  </p>
+  <p>
+    Every single time, the diagnosis was wrong.
+  </p>
+  <p>
+    The student wasn't refusing to learn. The instructional sheet was visually cluttered, instructions were chained without hierarchy, and their working memory hit an immediate wall. The refusal wasn't laziness; it was a protective defense against cognitive paralysis.
+  </p>
+  <p>
+    Put a veteran logistics specialist in front of an ERP screen displaying 45 dense input fields, three-letter acronym codes (<code>VA01</code>, <code>PR00</code>, <code>VK11</code>), and unhelpful warning modals. Their reaction is identical: heart rate spikes, anxiety over causing an irreversible accounting error takes over, and the brain shuts down. 
+  </p>
+
+  <div class="bandeau">
+    <strong>Core Insight:</strong> Adults do not fail enterprise software because they lack intelligence. They fail because their working memory is saturated before they have even found the cursor.
+  </div>
+
+  <h2>2. Why 60-Page Manuals Gather Dust</h2>
+  <p>
+    When IT implementation teams attempt to "train" end users, they usually produce what I call the <em>Encyclopedia of Good Intentions</em>: a dense, 60-page PDF manual covering every possible edge-case across seventeen European legal entities.
+  </p>
+  <p>
+    These documents suffer from the <strong>Curse of Knowledge</strong>: the technical author knows the underlying relational database inside out, so they document the architecture instead of documenting the human action.
+  </p>
+
+  <!-- COMPARISON TABLE: THEORY VS GROUND REALITY -->
+  <div style="background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 1.5rem; margin: 2rem 0;">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--texte-muté); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">
+      The Mismatch Between Specification and Human Survival
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div style="border-left: 2px solid #ff5f56; padding-left: 14px;">
+        <div style="font-weight: 700; color: #ff5f56; font-size: 0.88rem; margin-bottom: 6px;">What the Implementation Team Writes</div>
+        <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5; margin: 0;">
+          "The organizational unit must ensure sales organization 1020 aligns with distribution channel 10 and division 00 prior to executing standard order document type OR."
+        </p>
+      </div>
+      <div style="border-left: 2px solid #27c93f; padding-left: 14px;">
+        <div style="font-weight: 700; color: #27c93f; font-size: 0.88rem; margin-bottom: 6px;">What the Stressed Operator Actually Needs</div>
+        <p style="font-size: 0.85rem; color: var(--texte-doux); line-height: 1.5; margin: 0;">
+          "Entering a Scandinavian return? Type <strong>RE</strong> here. Everything else fills automatically. Click green checkmark to confirm."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    When an operator has an angry client on the phone and a truck driver waiting at the loading dock, nobody opens a 60-page PDF. They ask a colleague, guess, or maintain an unofficial notepad file.
+  </p>
+
+  <h2>3. Translating Instructional Scaffolding into Enterprise Systems</h2>
+  <p>
+    Specialized pedagogy relies heavily on <strong>instructional scaffolding</strong>—temporarily supporting working memory until an action becomes muscle memory. Translating this practice into corporate enablement means replacing exhaustive theory with three structural habits:
+  </p>
+
+  <ul class="liste">
+    <li>
+      <strong>Signal Isolation:</strong> If a screen has 40 fields, an operator typically only needs 4 to complete a routine task. Enablement materials must visually isolate those 4 fields, deliberately dimming background noise so the brain instantly knows where to look.
+    </li>
+    <li>
+      <strong>Modular Physical Job-Aids:</strong> Instead of multi-page manuals buried in a SharePoint folder nobody can find, give people physical, laminated desk-side cheat-sheets or single-glance digital cards. If a step cannot be grasped in 15 seconds, the job-aid is already too long.
+    </li>
+    <li>
+      <strong>Demystifying the Error Horizon:</strong> The number one source of user hesitation is the fear of breaking the database. Explicitly labeling what is completely reversible (<em>"You can edit this draft until you click Post"</em>) immediately cuts the cortisol spike and builds exploration confidence.
+    </li>
+  </ul>
+
+  <h2>4. Ergonomics Is Mental Load Management</h2>
+  <p>
+    Too often, digital product design is reduced to aesthetics: picking a clean color palette or rounding button borders. But in complex enterprise environments, real ergonomics is about <strong>respecting human cognitive limits</strong>.
+  </p>
+  <p>
+    Whether configuring an ERP order-to-cash workflow, designing transit notifications, or drafting user documentation, our goal is identical: eliminating unnecessary cognitive friction so that doing the right thing requires zero hesitation.
+  </p>
+
+  <!-- RELATED CASE STUDY PROPOSAL -->
+  <div style="margin-top: 3.5rem; padding: 1.5rem; background: var(--fond-carte); border: 1px solid var(--ligne); border-radius: var(--rayon);">
+    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+      Applied Case Study
+    </div>
+    <h3 style="margin: 0 0 6px; font-size: 1.1rem;">
+      <a href="/projects/pedagogical-system-design.html" style="color: var(--texte); text-decoration: none;">
+        Enterprise Enablement: Deloitte × reMarkable →
+      </a>
+    </h3>
+    <p style="font-size: 0.88rem; color: var(--texte-doux); line-height: 1.5; margin: 0 0 12px;">
+      Explore how these visual scaffolding principles were deployed across international logistics operations to help distributed teams master complex supply chain tools without panic.
+    </p>
+    <a class="bouton" href="/projects/pedagogical-system-design.html">Read Case Study →</a>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ligne); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a class="retour" href="/blog/" style="margin: 0;">← All Field Notes</a>
+    <a class="bouton plein" href="/blog/note-erp.html">Next Note: The Rogue Spreadsheet →</a>
+  </div>
+</main>

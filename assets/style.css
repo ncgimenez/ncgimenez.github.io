@@ -196,6 +196,21 @@ p { margin: 0 0 18px; color: var(--texte); }
   margin-bottom: 14px;
 }
 
+/* Regroupement compact des étiquettes multiples */
+.carte-projet > div:first-child > div:first-child,
+.etiquettes-groupe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin-bottom: 14px;
+}
+
+.carte-projet > div:first-child > div:first-child .etiquette,
+.etiquettes-groupe .etiquette {
+  margin-bottom: 0 !important;
+}
+
+
 .etiquette--violet {
   color: var(--texte);
   background: rgba(0, 0, 0, 0.05);

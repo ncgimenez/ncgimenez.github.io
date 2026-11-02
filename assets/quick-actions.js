@@ -89,7 +89,7 @@
       sub: 'Why opening screws and examining mechanics is the antidote to disposable software',
       icon: 'tool',
       badge: 'Essay',
-      url: '/blog/disassembly.html',
+      url: '/antechamber/disassembly.html',
       keywords: 'teardown disassembly hardware tools repair manifesto'
     },
     {
@@ -219,7 +219,7 @@
       sub: 'Unscrew 4 pentalobe screws to pry open the smartphone battery compartment',
       icon: 'tool',
       badge: 'Interactive',
-      url: '/blog/disassembly.html#teardown-sandbox',
+      url: '/antechamber/disassembly.html#teardown-sandbox',
       keywords: 'teardown disassembly hardware screw battery iphone repair'
     },
 
